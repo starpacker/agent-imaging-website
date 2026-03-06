@@ -21,6 +21,8 @@ const DOMAIN_LABELS = [
   'Spectroscopy / Scattering', 'Mechanics',
 ];
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 /* ── Helper: Stat Card ── */
 function StatCard({ value, label, icon }: { value: string; label: string; icon: React.ReactNode }) {
   return (
@@ -42,8 +44,8 @@ function CompareTeaser({ taskId, title, hasInput }: { taskId: string; title: str
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  const leftImg = hasInput ? `/images/compare/task${taskId}_input.png` : `/images/compare/task${taskId}_gt.png`;
-  const rightImg = `/images/compare/task${taskId}_recon.png`;
+  const leftImg = hasInput ? `${BASE_PATH}/images/compare/task${taskId}_input.png` : `${BASE_PATH}/images/compare/task${taskId}_gt.png`;
+  const rightImg = `${BASE_PATH}/images/compare/task${taskId}_recon.png`;
   const leftLabel = hasInput ? 'Input' : 'Ground Truth';
   const rightLabel = 'Reconstruction';
 

@@ -40,6 +40,9 @@ export interface TasksDB {
   tasks: Record<string, TaskData>;
 }
 
+/* ── Resolve basePath at runtime for fetch / img URLs ── */
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 /* ── Page Component ── */
 export default function Home() {
   const [db, setDb] = useState<TasksDB | null>(null);
@@ -47,7 +50,7 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/data/tasks_db.json')
+    fetch(`${BASE_PATH}/data/tasks_db.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();

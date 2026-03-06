@@ -12,9 +12,11 @@ const DOMAIN_ACCENT: Record<string, string> = {
   E: '#22c55e', F: '#3b82f6', G: '#ec4899', H: '#f97316',
 };
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 /* ── Helper: image path for a task ── */
 function getImagePath(task: TaskData): string {
-  return `/images/tasks/${task.images.folder}_${task.images.vis_result}`;
+  return `${BASE_PATH}/images/tasks/${task.images.folder}_${task.images.vis_result}`;
 }
 
 /* ── Code Block with copy ── */

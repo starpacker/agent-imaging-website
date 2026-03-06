@@ -14,8 +14,10 @@ const DOMAIN_BG: Record<string, string> = {
   E: 'rgba(34,197,94,0.06)', F: 'rgba(59,130,246,0.06)', G: 'rgba(236,72,153,0.06)', H: 'rgba(249,115,22,0.06)',
 };
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 function getImagePath(task: TaskData): string {
-  return `/images/tasks/${task.images.folder}_${task.images.vis_result}`;
+  return `${BASE_PATH}/images/tasks/${task.images.folder}_${task.images.vis_result}`;
 }
 
 interface Props {
