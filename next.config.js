@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '',
+  basePath: '/agent-imaging-website',
   trailingSlash: true,
   transpilePackages: ['react-compare-slider'],
   experimental: {
