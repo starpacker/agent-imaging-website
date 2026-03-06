@@ -9,9 +9,9 @@ import {
 
 /* ── Constants ── */
 const COMPARE_TASKS = [
-  { id: '01', title: 'Sparse Hessian Deconvolution', domain: 'Optical Microscopy', hasInput: true },
-  { id: '75', title: 'Sparse-View CT Reconstruction', domain: 'X-ray / CT', hasInput: false },
-  { id: '76', title: 'Abel Inversion', domain: 'X-ray / CT', hasInput: false },
+  { id: '44', title: 'Digital Holographic Microscopy', domain: 'Optical Microscopy', hasInput: true },
+  { id: '15', title: 'Lensless ADMM Reconstruction', domain: 'Computational Photography', hasInput: true },
+  { id: '43', title: 'Abel Inversion (PyAbel)', domain: 'X-ray / CT', hasInput: false },
 ] as const;
 
 const DOMAIN_ICONS = [Microscope, Camera, Zap, Activity, Globe2, Telescope, Rainbow, Cog];
