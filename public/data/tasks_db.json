@@ -165,11 +165,11 @@
     "task_01": {
       "id": "01",
       "id_num": 1,
-      "name": "",
+      "name": "sim",
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Sparse Hessian Deconvolution",
-      "description": "Sparse Hessian Deconvolution inverse problem.",
+      "description": "This code implements a **Sparse Hessian Deconvolution** algorithm for microscopy image reconstruction. The pipeline consists of:\n\n1. **Data Preprocessing**: Load image, estimate and subtract background using wavelet decomposition, normalize, optionally upsample\n2. **Sparse Hessian Reconstruction**: ADMM-based optimization minimizing Hessian regularization + L1 sparsity + data fidelity\n3. **Iterative Deconvolution**: Post-processing with Richardson-Lucy or Landweber deconvolution\n4. **Evaluation**: Compute PSNR, SSIM, MSE against expected output\n\n---",
       "metrics": {},
       "images": {
         "folder": "Task_01_sim",
@@ -179,11 +179,11 @@
     "task_02": {
       "id": "02",
       "id_num": 2,
-      "name": "",
+      "name": "ptyrad",
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Ptychography Phase Retrieval",
-      "description": "Ptychography Phase Retrieval inverse problem.",
+      "description": "This code implements **ptychographic reconstruction using automatic differentiation (AD)**. Ptychography is a computational imaging technique that reconstructs a complex-valued object (amplitude and phase) from a series of diffraction patterns collected at overlapping scan positions.\n\n**Pipeline Stages:**\n1. `data_preprocessing`: Load parameters, initialize variables, loss functions, and constraints\n2. `forward_model`: Multislice ptychographic forward operator computing predicted diffraction patterns\n3. `inversion`: Gradient-based optimization to minimize discrepancy between predicted and measured patterns\n4. `evaluation`: Compute reconstruction quality metrics and statistics\n\n**Physical Model:** The forward operator implements `y = A(x)` where:\n- `x`: Latent variables (object amplitude/phase, probe, tilts, thickness, position shifts)\n- `A`: Multislice ptychographic propagation model\n- `y`: Predicted diffraction pattern intensities\n\n---",
       "metrics": {},
       "images": {
         "folder": "Task_02_ptyrad",
@@ -193,11 +193,11 @@
     "task_03": {
       "id": "03",
       "id_num": 3,
-      "name": "",
+      "name": "lfm",
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Light Field Microscopy",
-      "description": "Light Field Microscopy inverse problem.",
+      "description": "This code implements a Light Field Microscopy (LFM) 3D volume reconstruction pipeline using Richardson-Lucy iterative deconvolution. The pipeline consists of five stages:\n\n1. **Data Loading**: Load calibration image, configuration, and raw lenslet image\n2. **Geometry Computation**: Calculate camera parameters, lenslet geometry, and forward/backward projection operators\n3. **Image Correction**: Apply geometric transformation and normalization to raw lenslet image\n4. **Volume Reconstruction**: Iterative Richardson-Lucy deconvolution with optional anti-aliasing filtering\n5. **Visualization**: Generate error convergence plot and input/output comparison\n\nThe algorithm reconstructs a 3D volume from a 2D light field image by iteratively refining an initial estimate using forward and backward projections through the light field imaging model.\n\n---",
       "metrics": {},
       "images": {
         "folder": "Task_03_lfm",
@@ -207,11 +207,11 @@
     "task_04": {
       "id": "04",
       "id_num": 4,
-      "name": "",
+      "name": "PyTomography-main",
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "PET/SPECT Reconstruction",
-      "description": "PET/SPECT Reconstruction inverse problem.",
+      "description": "This code implements a **SPECT (Single Photon Emission Computed Tomography) image reconstruction pipeline** using the **Ordered Subsets Expectation Maximization (OSEM)** algorithm. The pipeline consists of:\n\n1. **Phantom Generation**: Create a 3D Shepp-Logan phantom as ground truth\n2. **Forward Projection**: Simulate SPECT acquisition by projecting the 3D object onto 2D detector planes at multiple angles\n3. **Noise Simulation**: Add Poisson noise to projections to simulate realistic photon counting statistics\n4. **Iterative Reconstruction**: Recover the 3D object from noisy projections using OSEM\n5. **Evaluation**: Compute image quality metrics (PSNR, SSIM)\n\nThe system matrix implements rotation-based projection/backprojection with padding to handle rotation artifacts.\n\n---",
       "metrics": {},
       "images": {
         "folder": "Task_04_PyTomography",
@@ -221,11 +221,11 @@
     "task_05": {
       "id": "05",
       "id_num": 5,
-      "name": "",
+      "name": "s2ISM-main",
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Image Scanning Microscopy",
-      "description": "Image Scanning Microscopy inverse problem.",
+      "description": "This pipeline implements a simulation and reconstruction framework for Image Scanning Microscopy (ISM) data. The algorithm performs:\n\n1. **Phantom Generation**: Create synthetic biological sample (tubulin filaments) at multiple z-planes\n2. **PSF Simulation**: Calculate Point Spread Functions for SPAD detector array with optimal out-of-focus plane determination\n3. **Forward Model**: Generate synthetic ISM measurements via convolution and Poisson noise\n4. **Inverse Problem**: Reconstruct the original object using Richardson-Lucy maximum likelihood deconvolution\n5. **Evaluation**: Assess reconstruction quality using image quality metrics\n\nThe core reconstruction uses an iterative expectation-maximization approach with FFT-accelerated convolutions for multi-plane, multi-detector ISM data.",
       "metrics": {},
       "images": {
         "folder": "Task_05_s2ISM",
@@ -235,11 +235,11 @@
     "task_06": {
       "id": "06",
       "id_num": 6,
-      "name": "",
+      "name": "semiblindpsfdeconv-master",
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Semi-Blind PSF Deconvolution",
-      "description": "Semi-Blind PSF Deconvolution inverse problem.",
+      "description": "This code implements a **semi-blind spatially-variant deconvolution** pipeline for image restoration. The system consists of:\n\n1. **Forward Model**: Simulates spatially-variant Gaussian blur using a grid of PSFs with bilinear interpolation weights, plus additive Gaussian noise\n2. **PSF Estimation**: Uses a pre-trained ResNet CNN with sliding window inference to estimate local blur parameters (FWHM_x, FWHM_y) across the image\n3. **Inverse Model**: Performs spatially-variant Richardson-Lucy deconvolution with Total Variation (TV) regularization\n4. **Evaluation**: Computes PSNR and SSIM between ground truth and restored images",
       "metrics": {},
       "images": {
         "folder": "Task_06_semiblindpsfdeconv",
@@ -249,11 +249,11 @@
     "task_07": {
       "id": "07",
       "id_num": 7,
-      "name": "",
+      "name": "oopao_sh_wfs",
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "Shack-Hartmann Wavefront Sensing",
-      "description": "Shack-Hartmann Wavefront Sensing inverse problem.",
+      "description": "This code implements a closed-loop Adaptive Optics (AO) simulation using a Shack-Hartmann Wavefront Sensor (SH-WFS). The pipeline consists of:\n\n1. **System Initialization**: Configure telescope, source, atmosphere, deformable mirror (DM), and wavefront sensor\n2. **Calibration**: Compute reference PSF, reference slopes, interaction matrix via push-pull, and reconstructor via SVD\n3. **Closed-Loop Control**: Run integral control to minimize residual wavefront error\n4. **Evaluation**: Compute Strehl ratio history and performance statistics\n\nThe inversion problem finds DM commands that minimize wavefront aberrations introduced by atmospheric turbulence.\n\n---",
       "metrics": {},
       "images": {
         "folder": "Task_07_oopao_sh_wfs",
@@ -263,11 +263,11 @@
     "task_08": {
       "id": "08",
       "id_num": 8,
-      "name": "",
+      "name": "oopao_image_zernike",
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "Zernike Wavefront Estimation",
-      "description": "Zernike Wavefront Estimation inverse problem.",
+      "description": "This code implements an adaptive optics simulation pipeline with two main components:\n\n1. **Forward Model**: Computes the Point Spread Function (PSF) from a phase aberration map using Fourier optics principles\n2. **Inverse Model**: Decomposes atmospheric turbulence (OPD maps) into Zernike polynomial coefficients using least-squares fitting\n\nThe pipeline stages are:\n1. System initialization (telescope, source, atmosphere, Zernike basis)\n2. Explicit Zernike mode generation using radial polynomial formulas\n3. Forward PSF computation via FFT\n4. Iterative atmospheric OPD decomposition\n5. Reconstruction quality evaluation",
       "metrics": {},
       "images": {
         "folder": "Task_08_oopao_imag_zernike",
@@ -277,11 +277,11 @@
     "task_09": {
       "id": "09",
       "id_num": 9,
-      "name": "",
+      "name": "bayhunt",
       "domain": "E",
       "domain_name": "Geophysics",
       "title": "Bayesian Seismic Inversion",
-      "description": "Bayesian Seismic Inversion inverse problem.",
+      "description": "This code implements a **Bayesian MCMC inversion** for joint inversion of seismic data: **surface wave dispersion (SWD)** and **receiver function (RF)** data. The goal is to estimate subsurface shear velocity (Vs) structure as a function of depth using a transdimensional approach where the number of layers is also inferred.\n\n**Pipeline stages:**\n1. `data_preprocessing`: Generate synthetic test data, add noise, load configuration\n2. `forward_modeling`: Compute predicted SWD and RF from velocity model\n3. `mcmc_inversion`: Run parallel MCMC chains to sample posterior distribution\n4. `evaluation`: Save final model distribution and generate diagnostic plots\n\n---",
       "metrics": {},
       "images": {
         "folder": "Task_09_bayhunt",
@@ -295,7 +295,7 @@
       "domain": "E",
       "domain_name": "Geophysics",
       "title": "Electrical Impedance Tomography",
-      "description": "This code implements 3D Electrical Impedance Tomography (EIT) reconstruction using the Jacobian (JAC) method. The pipeline consists of:\n\n1. **Mesh Generation**: Create 3D tetrahedral mesh with electrodes on a ball-shaped domain\n2. **Protocol Setup**: Define excitation and measurement patterns for adjacent-mode EIT\n3. **Forward Problem**: Solve Poisson equation via FEM to compute boundary voltages from conductivity\n4. **Inverse Problem**: Linearized reconstruction using Jacobian-based Tikhonov re",
+      "description": "This code implements 3D Electrical Impedance Tomography (EIT) reconstruction using the Jacobian (JAC) method. The pipeline consists of:\n\n1. **Mesh Generation**: Create 3D tetrahedral mesh with electrodes on a ball-shaped domain\n2. **Protocol Setup**: Define excitation and measurement patterns for adjacent-mode EIT\n3. **Forward Problem**: Solve Poisson equation via FEM to compute boundary voltages from conductivity\n4. **Inverse Problem**: Linearized reconstruction using Jacobian-based Tikhonov regularization\n5. **Evaluation**: Compute reconstruction statistics and visualize results\n\nThe algorithm reconstructs element-wise conductivity changes from differential boundary voltage measurements.",
       "metrics": {
         "eval_type": "Conductivity distribution error (EIT)"
       },
@@ -311,7 +311,7 @@
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Beam Propagation ODT",
-      "description": "This code implements a Beam Propagation Method (BPM) inverse solver for Optical Diffraction Tomography (ODT). The pipeline reconstructs the 3D refractive index perturbation (delta_ri) of a sample from measured input and output complex optical fields under multiple illumination angles.\n\n**Pipeline Stages:**\n1. **Data Preprocessing**: Load fields, compute propagation kernels, propagate fields to inlet/outlet planes\n2. **Initialization**: Zero-initialize refractive index volume and FISTA momentum v",
+      "description": "This code implements a Beam Propagation Method (BPM) inverse solver for Optical Diffraction Tomography (ODT). The pipeline reconstructs the 3D refractive index perturbation (delta_ri) of a sample from measured input and output complex optical fields under multiple illumination angles.\n\n**Pipeline Stages:**\n1. **Data Preprocessing**: Load fields, compute propagation kernels, propagate fields to inlet/outlet planes\n2. **Initialization**: Zero-initialize refractive index volume and FISTA momentum variables\n3. **Iterative Optimization**: FISTA-accelerated gradient descent with adjoint-based gradient computation\n4. **Regularization**: Total Variation (TV) denoising with value range clamping and optional sparsity\n5. **Evaluation**: Compute ROI statistics and loss metrics",
       "metrics": {
         "eval_type": "Refractive index reconstruction loss (BPM)"
       },
@@ -327,7 +327,7 @@
       "domain": "H",
       "domain_name": "Mechanics",
       "title": "Differentiable Optical Metrology",
-      "description": "This code implements **optical lens metrology via differentiable ray tracing**. The pipeline recovers physical lens parameters (surface curvatures, thickness, position, tilt angles) from measured ray-display intersection points using gradient-based optimization.\n\n**Pipeline stages:**\n1. `data_preprocessing`: Load calibration data, measurement images, solve for intersection points\n2. `forward_operator`: Ray tracing through lens system to compute predicted intersection points\n3. `inversion`: Optim",
+      "description": "This code implements **optical lens metrology via differentiable ray tracing**. The pipeline recovers physical lens parameters (surface curvatures, thickness, position, tilt angles) from measured ray-display intersection points using gradient-based optimization.\n\n**Pipeline stages:**\n1. `data_preprocessing`: Load calibration data, measurement images, solve for intersection points\n2. `forward_operator`: Ray tracing through lens system to compute predicted intersection points\n3. `inversion`: Optimize lens parameters to minimize discrepancy between measured and predicted intersections\n4. `evaluation`: Compute displacement error and generate visualizations",
       "metrics": {
         "eval_type": "Optical system optimization metrics (differentiable optics)"
       },
@@ -343,7 +343,7 @@
       "domain": "E",
       "domain_name": "Geophysics",
       "title": "InSAR Phase Unwrapping",
-      "description": "This code implements an InSAR (Interferometric Synthetic Aperture Radar) phase unwrapping algorithm using ADMM (Alternating Direction Method of Multipliers). The pipeline recovers continuous unwrapped phase values from wrapped phase measurements (constrained to [-π, π]) by solving a sparse optimization problem that minimizes the p-norm of gradient residuals.\n\n**Pipeline Stages:**\n1. `data_preprocessing`: Load interferogram, extract wrapped phase, compute differentiation matrices and wrapped grad",
+      "description": "This code implements an InSAR (Interferometric Synthetic Aperture Radar) phase unwrapping algorithm using ADMM (Alternating Direction Method of Multipliers). The pipeline recovers continuous unwrapped phase values from wrapped phase measurements (constrained to [-π, π]) by solving a sparse optimization problem that minimizes the p-norm of gradient residuals.\n\n**Pipeline Stages:**\n1. `data_preprocessing`: Load interferogram, extract wrapped phase, compute differentiation matrices and wrapped gradients\n2. `forward_operator`: Compute spatial gradients of unwrapped phase estimate\n3. `run_inversion`: ADMM optimization loop to solve the unwrapping problem\n4. `evaluation`: Compute statistics and save results",
       "metrics": {
         "eval_type": "Phase unwrapping residual (InSAR)"
       },
@@ -359,7 +359,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "Photoacoustic Tomography",
-      "description": "This code implements a **Photoacoustic Tomography (PAT) reconstruction pipeline** with oxygen saturation estimation. The pipeline consists of five stages:\n\n1. **Data Loading & Preprocessing**: Load HDF5 data, apply bandpass filtering, extract envelope via Hilbert transform\n2. **Image Reconstruction**: Delay-and-Sum (DAS) backprojection algorithm\n3. **Spectral Unmixing**: Linear unmixing to estimate hemoglobin concentrations\n4. **sO2 Calculation**: Compute oxygen saturation from hemoglobin concen",
+      "description": "This code implements a **Photoacoustic Tomography (PAT) reconstruction pipeline** with oxygen saturation estimation. The pipeline consists of five stages:\n\n1. **Data Loading & Preprocessing**: Load HDF5 data, apply bandpass filtering, extract envelope via Hilbert transform\n2. **Image Reconstruction**: Delay-and-Sum (DAS) backprojection algorithm\n3. **Spectral Unmixing**: Linear unmixing to estimate hemoglobin concentrations\n4. **sO2 Calculation**: Compute oxygen saturation from hemoglobin concentrations\n5. **Evaluation**: Compute metrics and generate visualizations\n\nThe forward model relates initial pressure distribution to detected time-domain signals based on acoustic wave propagation.",
       "metrics": {
         "eval_type": "SO2 estimation accuracy (photoacoustic)"
       },
@@ -375,7 +375,7 @@
       "domain": "B",
       "domain_name": "Lensless/Computational Photography",
       "title": "Lensless ADMM Reconstruction",
-      "description": "This code implements an ADMM (Alternating Direction Method of Multipliers) algorithm for lensless image reconstruction. The pipeline reconstructs a latent image from a raw sensor measurement using a known Point Spread Function (PSF). The algorithm solves a regularized inverse problem with Total Variation (TV) regularization and non-negativity constraints.\n\n**Pipeline Stages:**\n1. `data_preprocessing`: Load and normalize PSF and measurement data\n2. `initialization`: Set up padded arrays, precompu",
+      "description": "This code implements an ADMM (Alternating Direction Method of Multipliers) algorithm for lensless image reconstruction. The pipeline reconstructs a latent image from a raw sensor measurement using a known Point Spread Function (PSF). The algorithm solves a regularized inverse problem with Total Variation (TV) regularization and non-negativity constraints.\n\n**Pipeline Stages:**\n1. `data_preprocessing`: Load and normalize PSF and measurement data\n2. `initialization`: Set up padded arrays, precompute FFT matrices\n3. `main_process`: ADMM iterative optimization\n4. `evaluation`: Compute statistics and save results",
       "metrics": {
         "eval_type": "Visual reconstruction quality (lensless ADMM)"
       },
@@ -391,7 +391,7 @@
       "domain": "B",
       "domain_name": "Lensless/Computational Photography",
       "title": "Lensless Deep Learning",
-      "description": "This code implements an image deconvolution algorithm to recover a latent image from blurred measurements using a known Point Spread Function (PSF). The algorithm uses Accelerated Proximal Gradient Descent (APGD), also known as FISTA (Fast Iterative Shrinkage-Thresholding Algorithm), with FFT-based convolution for computational efficiency.\n\n**Pipeline stages:**\n1. `data_preprocessing`: Load and prepare PSF and measurement images\n2. `forward_operator`: FFT-based convolution setup\n3. `run_inversio",
+      "description": "This code implements an image deconvolution algorithm to recover a latent image from blurred measurements using a known Point Spread Function (PSF). The algorithm uses Accelerated Proximal Gradient Descent (APGD), also known as FISTA (Fast Iterative Shrinkage-Thresholding Algorithm), with FFT-based convolution for computational efficiency.\n\n**Pipeline stages:**\n1. `data_preprocessing`: Load and prepare PSF and measurement images\n2. `forward_operator`: FFT-based convolution setup\n3. `run_inversion`: APGD optimization loop\n4. `evaluate_results`: Save and report reconstruction statistics",
       "metrics": {
         "eval_type": "Visual reconstruction quality (lensless DL)"
       },
@@ -407,7 +407,7 @@
       "domain": "G",
       "domain_name": "Spectroscopy/Scattering",
       "title": "CASSI Hyperspectral Imaging",
-      "description": "This code implements **Generalized Alternating Projection with Total Variation denoising (GAP-TV)** for reconstructing 3D spectral image cubes from 2D compressed measurements in Coded Aperture Snapshot Spectral Imaging (CASSI) systems.\n\n**Pipeline Stages:**\n1. Data loading and preprocessing (mask preparation, measurement simulation)\n2. Iterative GAP-TV reconstruction\n3. Evaluation and result output\n\n**Physical Model:** CASSI uses a coded aperture mask and dispersive element to encode multiple sp",
+      "description": "This code implements **Generalized Alternating Projection with Total Variation denoising (GAP-TV)** for reconstructing 3D spectral image cubes from 2D compressed measurements in Coded Aperture Snapshot Spectral Imaging (CASSI) systems.\n\n**Pipeline Stages:**\n1. Data loading and preprocessing (mask preparation, measurement simulation)\n2. Iterative GAP-TV reconstruction\n3. Evaluation and result output\n\n**Physical Model:** CASSI uses a coded aperture mask and dispersive element to encode multiple spectral channels into a single 2D measurement through spatial shifting and summation.",
       "metrics": {
         "psnr": 21.76
       },
@@ -423,7 +423,7 @@
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Fourier Ptychographic Microscopy",
-      "description": "This code implements **FPM-INR (Fourier Ptychographic Microscopy with Implicit Neural Representations)** for high-resolution complex image reconstruction. The pipeline:\n\n1. **Data Preprocessing**: Load low-resolution intensity measurements from multiple LED illuminations, compute frequency-space parameters, pupil support, and angular spectrum propagation kernel\n2. **Neural Representation**: Use learnable 3D feature tensors with bilinear interpolation and MLP rendering to represent amplitude and ",
+      "description": "This code implements **FPM-INR (Fourier Ptychographic Microscopy with Implicit Neural Representations)** for high-resolution complex image reconstruction. The pipeline:\n\n1. **Data Preprocessing**: Load low-resolution intensity measurements from multiple LED illuminations, compute frequency-space parameters, pupil support, and angular spectrum propagation kernel\n2. **Neural Representation**: Use learnable 3D feature tensors with bilinear interpolation and MLP rendering to represent amplitude and phase images\n3. **Forward Model**: Simulate FPM image formation via FFT, sub-aperture extraction, pupil masking, and defocus propagation\n4. **Optimization**: Minimize intensity mismatch using Adam optimizer with Smooth L1 loss\n5. **Evaluation**: Compute reconstruction statistics and save results",
       "metrics": {
         "psnr": 39.15
       },
@@ -439,7 +439,7 @@
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Fourier Light Field Microscopy",
-      "description": "This code implements a **Richardson-Lucy (RL) deconvolution** algorithm for reconstructing a 3D volume from a 2D widefield microscopy measurement. The forward model simulates depth-varying blur by convolving each z-slice of a 3D object with a corresponding 2D PSF and summing the results. The inverse problem recovers the 3D object using multiplicative iterative updates derived from maximum likelihood estimation under Poisson noise assumptions.\n\n**Pipeline Stages:**\n1. `data_preprocessing`: Genera",
+      "description": "This code implements a **Richardson-Lucy (RL) deconvolution** algorithm for reconstructing a 3D volume from a 2D widefield microscopy measurement. The forward model simulates depth-varying blur by convolving each z-slice of a 3D object with a corresponding 2D PSF and summing the results. The inverse problem recovers the 3D object using multiplicative iterative updates derived from maximum likelihood estimation under Poisson noise assumptions.\n\n**Pipeline Stages:**\n1. `data_preprocessing`: Generate synthetic PSF, ground truth object, and simulated measurement\n2. `initialization`: Set initial 3D estimate\n3. `main_process`: Execute Richardson-Lucy iterative updates\n4. `evaluation`: Compute reconstruction quality metrics",
       "metrics": {
         "psnr": 45.16
       },
@@ -455,7 +455,7 @@
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "Gravitational Lensing (Ring)",
-      "description": "This code implements a gravitational lens modeling inverse problem using the lenstronomy library. The pipeline:\n1. Simulates a lensed galaxy image with realistic noise (Poisson + Gaussian)\n2. Fits lens mass model, source light, and lens light parameters using optimization (PSO) followed by MCMC sampling\n3. Evaluates fit quality through chi-squared statistics and parameter recovery\n\nThe forward model computes a lensed image given: lens mass distribution (SIE + external shear), background source l",
+      "description": "This code implements a gravitational lens modeling inverse problem using the lenstronomy library. The pipeline:\n1. Simulates a lensed galaxy image with realistic noise (Poisson + Gaussian)\n2. Fits lens mass model, source light, and lens light parameters using optimization (PSO) followed by MCMC sampling\n3. Evaluates fit quality through chi-squared statistics and parameter recovery\n\nThe forward model computes a lensed image given: lens mass distribution (SIE + external shear), background source light (Sersic profile), and foreground lens light (Sersic profile), convolved with a PSF.",
       "metrics": {
         "eval_type": "Lens model parameter error (gravitational lensing)"
       },
@@ -471,7 +471,7 @@
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "Gravitational Lensing (Quad)",
-      "description": "This code implements a gravitational lensing simulation and parameter inference pipeline using the `lenstronomy` library. The pipeline consists of:\n1. **Data Generation**: Simulate a strong gravitational lensing system with lens galaxy, lensed source, and point sources\n2. **Noise Addition**: Add realistic Poisson (shot) noise and Gaussian background noise\n3. **Forward Modeling**: Compute predicted images given model parameters\n4. **Parameter Inference**: Fit lens model parameters using Particle ",
+      "description": "This code implements a gravitational lensing simulation and parameter inference pipeline using the `lenstronomy` library. The pipeline consists of:\n1. **Data Generation**: Simulate a strong gravitational lensing system with lens galaxy, lensed source, and point sources\n2. **Noise Addition**: Add realistic Poisson (shot) noise and Gaussian background noise\n3. **Forward Modeling**: Compute predicted images given model parameters\n4. **Parameter Inference**: Fit lens model parameters using Particle Swarm Optimization (PSO) followed by Markov Chain Monte Carlo (MCMC)\n5. **Evaluation**: Compare fitted parameters against ground truth and compute residuals",
       "metrics": {
         "eval_type": "Lens model parameter error (gravitational lensing)"
       },
@@ -487,7 +487,7 @@
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "Gravitational Lensing (Double)",
-      "description": "This pipeline performs gravitational lens modeling—an inverse problem that recovers lens mass distribution and source properties from observed lensed images. The workflow consists of three stages:\n\n1. **Data Generation**: Simulate mock strong lensing observations with realistic noise (Poisson + Gaussian)\n2. **Parameter Inversion**: Fit lens model parameters using Particle Swarm Optimization (PSO) followed by Markov Chain Monte Carlo (MCMC) sampling\n3. **Evaluation**: Compare fitted parameters to",
+      "description": "This pipeline performs gravitational lens modeling—an inverse problem that recovers lens mass distribution and source properties from observed lensed images. The workflow consists of three stages:\n\n1. **Data Generation**: Simulate mock strong lensing observations with realistic noise (Poisson + Gaussian)\n2. **Parameter Inversion**: Fit lens model parameters using Particle Swarm Optimization (PSO) followed by Markov Chain Monte Carlo (MCMC) sampling\n3. **Evaluation**: Compare fitted parameters to ground truth and compute image residual statistics\n\nThe forward model computes a lensed image given lens mass parameters, source light distribution, lens galaxy light, and point source positions, convolved with a PSF.",
       "metrics": {
         "eval_type": "Lens model parameter error (gravitational lensing)"
       },
@@ -503,7 +503,7 @@
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "Gravitational Lensing (Shapelets)",
-      "description": "This code implements a gravitational lensing inverse problem for source reconstruction. The pipeline:\n1. **Data Simulation**: Generate a synthetic lensed image of a complex source galaxy with realistic noise\n2. **Linear Inversion**: Reconstruct the source using shapelet basis functions via weighted least squares\n3. **Forward Operator**: Map shapelet coefficients through lensing and PSF convolution to image space\n4. **Evaluation**: Compute reconstruction quality metrics\n\nThe core algorithm solves",
+      "description": "This code implements a gravitational lensing inverse problem for source reconstruction. The pipeline:\n1. **Data Simulation**: Generate a synthetic lensed image of a complex source galaxy with realistic noise\n2. **Linear Inversion**: Reconstruct the source using shapelet basis functions via weighted least squares\n3. **Forward Operator**: Map shapelet coefficients through lensing and PSF convolution to image space\n4. **Evaluation**: Compute reconstruction quality metrics\n\nThe core algorithm solves a linear inverse problem where the unknown source is parameterized by shapelet basis function coefficients.",
       "metrics": {
         "psnr": 27.67
       },
@@ -519,7 +519,7 @@
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "Gravitational Lensing (Host)",
-      "description": "This pipeline performs astronomical image simulation and model fitting for a quasar-host galaxy system. The workflow consists of:\n\n1. **Data Generation**: Simulate an astronomical image containing a point source (quasar) and extended host galaxy (disk + bulge components) with realistic noise\n2. **Forward Modeling**: Compute predicted images given model parameters using PSF convolution\n3. **Parameter Inversion**: Recover model parameters from noisy observations using Particle Swarm Optimization (",
+      "description": "This pipeline performs astronomical image simulation and model fitting for a quasar-host galaxy system. The workflow consists of:\n\n1. **Data Generation**: Simulate an astronomical image containing a point source (quasar) and extended host galaxy (disk + bulge components) with realistic noise\n2. **Forward Modeling**: Compute predicted images given model parameters using PSF convolution\n3. **Parameter Inversion**: Recover model parameters from noisy observations using Particle Swarm Optimization (PSO)\n4. **Evaluation**: Assess reconstruction quality through residual analysis\n\nThe system uses lenstronomy library for astronomical image modeling with Sérsic light profiles and Gaussian PSF convolution.",
       "metrics": {
         "eval_type": "Host galaxy decomposition error (gravitational lensing)"
       },
@@ -535,7 +535,7 @@
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "DPI Radio Interferometry",
-      "description": "This code implements Deep Probabilistic Imaging (DPI) for radio interferometry image reconstruction. The pipeline:\n1. Loads UV-FITS observation data and constructs forward operators (DFT matrix, closure phase mappings)\n2. Trains a RealNVP normalizing flow to generate posterior image samples\n3. Optimizes using closure phase data fidelity, entropy regularization, flux constraints, and log-determinant terms\n4. Evaluates reconstruction quality via flux error and closure phase residuals\n\nThe approach",
+      "description": "This code implements Deep Probabilistic Imaging (DPI) for radio interferometry image reconstruction. The pipeline:\n1. Loads UV-FITS observation data and constructs forward operators (DFT matrix, closure phase mappings)\n2. Trains a RealNVP normalizing flow to generate posterior image samples\n3. Optimizes using closure phase data fidelity, entropy regularization, flux constraints, and log-determinant terms\n4. Evaluates reconstruction quality via flux error and closure phase residuals\n\nThe approach enables uncertainty quantification by sampling from the learned posterior distribution.",
       "metrics": {
         "eval_type": "Interferometry reconstruction quality (DPI)"
       },
@@ -551,7 +551,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "DPI MRI Reconstruction",
-      "description": "This algorithm performs MRI image reconstruction from undersampled k-space measurements using Deep Probabilistic Imaging (DPI). The approach uses a RealNVP normalizing flow as a generative prior, optimizing the flow parameters to produce images consistent with observed k-space data while incorporating regularization.\n\n**Pipeline Stages:**\n1. `data_preprocessing`: Load MRI image and mask, compute noisy k-space measurements\n2. `initialization`: Set up RealNVP model, scale factor, and optimizer\n3. ",
+      "description": "This algorithm performs MRI image reconstruction from undersampled k-space measurements using Deep Probabilistic Imaging (DPI). The approach uses a RealNVP normalizing flow as a generative prior, optimizing the flow parameters to produce images consistent with observed k-space data while incorporating regularization.\n\n**Pipeline Stages:**\n1. `data_preprocessing`: Load MRI image and mask, compute noisy k-space measurements\n2. `initialization`: Set up RealNVP model, scale factor, and optimizer\n3. `main_process`: Iterative optimization via stochastic gradient descent\n4. `evaluation`: Compute reconstruction quality metrics (RMSE, PSNR)",
       "metrics": {
         "psnr": 20.26
       },
@@ -567,7 +567,7 @@
       "domain": "C",
       "domain_name": "X-ray/CT",
       "title": "DPI CT Reconstruction",
-      "description": "This code implements a variational inference approach for radio interferometric image reconstruction using normalizing flows. The pipeline:\n\n1. **Data Preprocessing**: Load UVFITS observation data, compute DFT matrices, and build closure quantity index maps\n2. **Generative Model**: A RealNVP normalizing flow transforms standard Gaussian samples to geometric image parameters\n3. **Forward Model**: Geometric parameters → Image → Visibilities → Closure phases/amplitudes\n4. **Optimization**: Minimize",
+      "description": "This code implements a variational inference approach for radio interferometric image reconstruction using normalizing flows. The pipeline:\n\n1. **Data Preprocessing**: Load UVFITS observation data, compute DFT matrices, and build closure quantity index maps\n2. **Generative Model**: A RealNVP normalizing flow transforms standard Gaussian samples to geometric image parameters\n3. **Forward Model**: Geometric parameters → Image → Visibilities → Closure phases/amplitudes\n4. **Optimization**: Minimize alpha-divergence between approximate posterior and true posterior via stochastic gradient descent\n5. **Evaluation**: Generate posterior samples and compute reconstruction statistics\n\nThe geometric model produces crescent-shaped images (motivated by black hole imaging) with optional Gaussian nuisance components.",
       "metrics": {
         "eval_type": "CT reconstruction quality (DPI)"
       },
@@ -583,7 +583,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "NODDI Microstructure",
-      "description": "This pipeline implements NODDI (Neurite Orientation Dispersion and Density Imaging) parameter estimation using the AMICO (Accelerated Microstructure Imaging via Convex Optimization) framework. The algorithm:\n\n1. **Data Loading**: Loads diffusion-weighted MRI data, acquisition scheme, and brain mask\n2. **DTI Preprocessing**: Fits diffusion tensor to obtain principal fiber directions\n3. **Forward Model Generation**: Creates a dictionary of NODDI signal kernels across parameter space\n4. **Sparse In",
+      "description": "This pipeline implements NODDI (Neurite Orientation Dispersion and Density Imaging) parameter estimation using the AMICO (Accelerated Microstructure Imaging via Convex Optimization) framework. The algorithm:\n\n1. **Data Loading**: Loads diffusion-weighted MRI data, acquisition scheme, and brain mask\n2. **DTI Preprocessing**: Fits diffusion tensor to obtain principal fiber directions\n3. **Forward Model Generation**: Creates a dictionary of NODDI signal kernels across parameter space\n4. **Sparse Inversion**: Solves a regularized linear inverse problem per voxel using LASSO\n5. **Parameter Extraction**: Computes NDI, ODI, and FWF from fitted coefficients\n\nThe NODDI model comprises three tissue compartments: intra-cellular (Watson-distributed sticks), extra-cellular (hindered diffusion), and isotropic (free water/CSF).",
       "metrics": {
         "psnr": 2.08
       },
@@ -599,7 +599,7 @@
       "domain": "G",
       "domain_name": "Spectroscopy/Scattering",
       "title": "CARS Spectroscopy Fitting",
-      "description": "This code implements an inverse problem for recovering gas temperature from Coherent Anti-Stokes Raman Spectroscopy (CARS) measurements of N2. The pipeline consists of:\n\n1. **Forward Model**: Synthesizes theoretical CARS spectra from molecular physics (energy levels, population distributions, susceptibility calculations with collisional narrowing)\n2. **Data Generation**: Creates synthetic \"measured\" data by adding noise to ground truth spectra\n3. **Inversion**: Uses nonlinear least-squares fitti",
+      "description": "This task recovers gas temperature from N2 Coherent Anti-Stokes Raman Spectroscopy (CARS) spectra.\n\nPipeline:\n1. **Forward model**: Generate theoretical CARS spectra from molecular physics, including rovibrational populations, susceptibility terms, and collisional narrowing.\n2. **Synthetic measurement**: Create noisy observed spectra from a known ground-truth temperature.\n3. **Inversion**: Use nonlinear least-squares fitting to estimate temperature by minimizing residuals between measured and modeled spectra.\n4. **Evaluation**: Compare estimated temperature and reconstructed spectra against ground truth using error metrics.",
       "metrics": {
         "psnr": 11.48
       },
@@ -615,7 +615,7 @@
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "Gravitational Lensing (Caustics)",
-      "description": "This code solves a **gravitational lensing source reconstruction** inverse problem. Given an observed lensed image, the algorithm recovers the original unlensed source image by optimizing through a differentiable forward model.\n\n**Pipeline stages:**\n1. `data_preprocessing`: Load/create source image, generate synthetic lensed observation\n2. `forward_model`: Simulate gravitational lensing using SIE lens + ray tracing\n3. `inversion`: Gradient-based optimization to recover source from observation\n4.",
+      "description": "This code solves a **gravitational lensing source reconstruction** inverse problem. Given an observed lensed image, the algorithm recovers the original unlensed source image by optimizing through a differentiable forward model.\n\n**Pipeline stages:**\n1. `data_preprocessing`: Load/create source image, generate synthetic lensed observation\n2. `forward_model`: Simulate gravitational lensing using SIE lens + ray tracing\n3. `inversion`: Gradient-based optimization to recover source from observation\n4. `evaluation`: Compute reconstruction quality metrics (PSNR, SSIM)",
       "metrics": {
         "psnr": 14.06,
         "ssim": 0.7486
@@ -632,7 +632,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "CT/MR Perfusion Imaging",
-      "description": "This code implements a **CT/MR Perfusion (CTP/MRP) Analysis Pipeline** that solves an inverse problem to extract hemodynamic perfusion parameters from 4D medical imaging data. The pipeline consists of four stages:\n\n1. **Data Preprocessing**: Load NIfTI images, reorient, downsample, smooth, and generate brain masks\n2. **Forward Operator**: Convert raw signal intensity to concentration-time curves (CTC)\n3. **Inversion (SVD Deconvolution)**: Estimate Arterial Input Function (AIF) and solve the deco",
+      "description": "This code implements a **CT/MR Perfusion (CTP/MRP) Analysis Pipeline** that solves an inverse problem to extract hemodynamic perfusion parameters from 4D medical imaging data. The pipeline consists of four stages:\n\n1. **Data Preprocessing**: Load NIfTI images, reorient, downsample, smooth, and generate brain masks\n2. **Forward Operator**: Convert raw signal intensity to concentration-time curves (CTC)\n3. **Inversion (SVD Deconvolution)**: Estimate Arterial Input Function (AIF) and solve the deconvolution problem to extract perfusion maps\n4. **Evaluation**: Compare generated maps against reference using image quality metrics\n\nThe core inverse problem models tissue concentration as a convolution: `C(t) = CBF · (AIF ⊗ R)(t)`, solved via truncated SVD regularization.",
       "metrics": {},
       "images": {
         "folder": "Task_31_CT-and-MR-Perfusion-Tool-main",
@@ -646,7 +646,7 @@
       "domain": "B",
       "domain_name": "Lensless/Computational Photography",
       "title": "Diffuser Camera Reconstruction",
-      "description": "This code implements **optical lens metrology via differentiable ray tracing**. The pipeline recovers physical lens parameters (surface curvatures, thickness, position, tilt angles) from measured ray-display intersection points using gradient-based optimization.\n\n**Pipeline stages:**\n1. `data_preprocessing`: Load calibration data, measurement images, solve for intersection points\n2. `forward_operator`: Ray tracing through lens system to compute predicted intersection points\n3. `inversion`: Optim",
+      "description": "This code implements a **lensless camera image reconstruction** algorithm using **ADMM (Alternating Direction Method of Multipliers)**. The pipeline reconstructs a scene from a coded sensor measurement captured through a diffuser (characterized by a Point Spread Function).\n\n**Pipeline Stages:**\n1. **Data Preprocessing**: Load and downsample PSF and sensor data, apply background subtraction and normalization\n2. **Precomputation**: Compute frequency-domain operators and division matrices for efficient ADMM updates\n3. **ADMM Iteration**: Alternating updates of primal, auxiliary, and dual variables\n4. **Post-processing**: Crop reconstructed image to sensor size, enforce non-negativity\n5. **Evaluation**: Compute PSNR and SSIM on synthetic data with known ground truth",
       "metrics": {
         "psnr": 4.18,
         "ssim": 0.008
@@ -663,7 +663,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "Diffusion MRI Microstructure",
-      "description": "This code implements a **Ball & Stick model** fitting pipeline for diffusion MRI (dMRI) data. The pipeline:\n1. Generates synthetic multi-shell dMRI acquisition data with Rician noise\n2. Defines a forward model combining isotropic (Ball) and anisotropic (Stick) diffusion compartments\n3. Performs Non-Linear Least Squares (NLLS) inversion using L-BFGS-B optimization\n4. Evaluates parameter recovery accuracy and signal reconstruction quality\n\nThe Ball & Stick model represents tissue microstructure as",
+      "description": "This code implements a **Ball & Stick model** fitting pipeline for diffusion MRI (dMRI) data. The pipeline:\n1. Generates synthetic multi-shell dMRI acquisition data with Rician noise\n2. Defines a forward model combining isotropic (Ball) and anisotropic (Stick) diffusion compartments\n3. Performs Non-Linear Least Squares (NLLS) inversion using L-BFGS-B optimization\n4. Evaluates parameter recovery accuracy and signal reconstruction quality\n\nThe Ball & Stick model represents tissue microstructure as a mixture of free water diffusion (Ball) and restricted diffusion along a fiber orientation (Stick).",
       "metrics": {
         "psnr": 30.25
       },
@@ -679,7 +679,7 @@
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "High Contrast Imaging",
-      "description": "This code implements a **closed-loop adaptive optics (AO) simulation** for astronomical imaging. The pipeline consists of:\n\n1. **System Setup**: Define telescope parameters, pupil grid, aperture, wavefront sensor (WFS), and deformable mirror (DM)\n2. **Calibration**: Build interaction matrix via push-pull probing of DM modes, then invert using Tikhonov regularization\n3. **Closed-Loop Control**: Iteratively sense wavefront errors, estimate slopes, reconstruct commands, and apply corrections\n4. **E",
+      "description": "This code implements a **closed-loop adaptive optics (AO) simulation** for astronomical imaging. The pipeline consists of:\n\n1. **System Setup**: Define telescope parameters, pupil grid, aperture, wavefront sensor (WFS), and deformable mirror (DM)\n2. **Calibration**: Build interaction matrix via push-pull probing of DM modes, then invert using Tikhonov regularization\n3. **Closed-Loop Control**: Iteratively sense wavefront errors, estimate slopes, reconstruct commands, and apply corrections\n4. **Evaluation**: Compute image quality metrics (PSNR, Strehl ratio) for a binary star science scene\n\nThe simulation models a Shack-Hartmann wavefront sensor with centroid-based slope estimation and disk harmonic DM influence functions.",
       "metrics": {
         "psnr": 197.46
       },
@@ -695,7 +695,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "MEG/EEG Source Localization",
-      "description": "This code implements **Minimum Norm Estimate (MNE) source localization** with **dSPM (dynamic Statistical Parametric Mapping)** normalization for MEG/EEG inverse problems. The pipeline:\n\n1. **Data Preprocessing**: Load MEG sensor data, compute noise covariance from baseline, extract forward model (gain matrix), compute SSP projection matrix\n2. **Whitening**: Transform the problem to whitened space using noise covariance eigendecomposition\n3. **Inverse Operator Construction**: Use SVD-based regul",
+      "description": "This code implements **Minimum Norm Estimate (MNE) source localization** with **dSPM (dynamic Statistical Parametric Mapping)** normalization for MEG/EEG inverse problems. The pipeline:\n\n1. **Data Preprocessing**: Load MEG sensor data, compute noise covariance from baseline, extract forward model (gain matrix), compute SSP projection matrix\n2. **Whitening**: Transform the problem to whitened space using noise covariance eigendecomposition\n3. **Inverse Operator Construction**: Use SVD-based regularized least squares to compute the inverse operator\n4. **dSPM Normalization**: Normalize source estimates by noise variance for statistical interpretation\n5. **Evaluation**: Compare against MNE-Python reference implementation",
       "metrics": {
         "psnr": 220.63
       },
@@ -711,7 +711,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "Magnetic Particle Imaging",
-      "description": "This code implements a **Magnetic Particle Imaging (MPI) reconstruction pipeline** consisting of four stages:\n1. **Data Preprocessing**: Initialize physical constants, scanner parameters, spatial/temporal grids, drive fields, and generate a P-shaped phantom\n2. **Forward Operator**: Compute the system matrix using Langevin function derivatives and simulate frequency-domain measurements\n3. **Inversion**: Reconstruct the particle concentration image using regularized Kaczmarz algorithm\n4. **Evaluat",
+      "description": "This code implements a **Magnetic Particle Imaging (MPI) reconstruction pipeline** consisting of four stages:\n1. **Data Preprocessing**: Initialize physical constants, scanner parameters, spatial/temporal grids, drive fields, and generate a P-shaped phantom\n2. **Forward Operator**: Compute the system matrix using Langevin function derivatives and simulate frequency-domain measurements\n3. **Inversion**: Reconstruct the particle concentration image using regularized Kaczmarz algorithm\n4. **Evaluation**: Compute PSNR and SSIM metrics comparing reconstruction to ground truth\n\nThe pipeline solves the inverse problem: given induced voltage measurements, recover the spatial distribution of magnetic nanoparticle concentration.",
       "metrics": {
         "psnr": 16.41,
         "ssim": 0.9026
@@ -728,7 +728,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "MR Elastography",
-      "description": "This code implements **Magnetic Resonance Elastography (MRE) reconstruction** - an inverse problem that recovers tissue stiffness (Young's modulus E) from measured displacement fields. The pipeline consists of:\n\n1. **Data Preprocessing**: Load image, generate triangular mesh, compute FEM matrices with boundary conditions\n2. **Forward Model**: Solve elasticity equation K(E)u = f to generate synthetic displacement data\n3. **Noise Addition**: Add heteroscedastic Gaussian noise to displacement measu",
+      "description": "This code implements **Magnetic Resonance Elastography (MRE) reconstruction** - an inverse problem that recovers tissue stiffness (Young's modulus E) from measured displacement fields. The pipeline consists of:\n\n1. **Data Preprocessing**: Load image, generate triangular mesh, compute FEM matrices with boundary conditions\n2. **Forward Model**: Solve elasticity equation K(E)u = f to generate synthetic displacement data\n3. **Noise Addition**: Add heteroscedastic Gaussian noise to displacement measurements\n4. **Initialization**: Generate initial stiffness estimate from noisy ground truth with thresholding\n5. **Inversion**: Proximal optimization (Generalized Forward-Backward) with Mahalanobis data fidelity, TV regularization, and box constraints\n6. **Evaluation**: Compute CNR and RMSE metrics",
       "metrics": {
         "eval_type": "Elasticity modulus reconstruction CNR (MRE)"
       },
@@ -744,7 +744,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "MR Fingerprinting",
-      "description": "This code implements an **Invertible Neural Network (INN)** for **Magnetic Resonance Fingerprinting (MRF)** parameter estimation. The pipeline:\n\n1. **Data Loading**: Load MRF fingerprints and corresponding tissue parameters from disk\n2. **Model Construction**: Build an INN using Real-valued Non-Volume Preserving (RNVP) coupling blocks\n3. **Training**: Optimize bidirectional mapping loss (forward + backward MSE)\n4. **Inference**: Perform parameter estimation via inverse pass through trained INN\n5",
+      "description": "This code implements an **Invertible Neural Network (INN)** for **Magnetic Resonance Fingerprinting (MRF)** parameter estimation. The pipeline:\n\n1. **Data Loading**: Load MRF fingerprints and corresponding tissue parameters from disk\n2. **Model Construction**: Build an INN using Real-valued Non-Volume Preserving (RNVP) coupling blocks\n3. **Training**: Optimize bidirectional mapping loss (forward + backward MSE)\n4. **Inference**: Perform parameter estimation via inverse pass through trained INN\n5. **Evaluation**: Compare reconstructed parameters and predicted fingerprints against ground truth\n\nThe INN learns bijective mappings: **x (parameters) ↔ y (fingerprints)**, enabling both forward simulation and inverse parameter estimation.",
       "metrics": {
         "eval_type": "MR fingerprinting matching accuracy"
       },
@@ -760,7 +760,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "MRI ADMM-TV Reconstruction",
-      "description": "This code implements **Compressed Sensing MRI Reconstruction** using ADMM (Alternating Direction Method of Multipliers) with Total Variation (TV) regularization for parallel imaging. The pipeline consists of:\n\n1. **Data Preprocessing**: Load multi-coil k-space data, estimate coil sensitivity maps via ESPIRiT, generate undersampling mask\n2. **Forward Model**: Sensitivity encoding → 2D FFT → Undersampling mask application\n3. **Inverse Problem**: ADMM optimization minimizing data fidelity + TV regu",
+      "description": "This code implements **Compressed Sensing MRI Reconstruction** using ADMM (Alternating Direction Method of Multipliers) with Total Variation (TV) regularization for parallel imaging. The pipeline consists of:\n\n1. **Data Preprocessing**: Load multi-coil k-space data, estimate coil sensitivity maps via ESPIRiT, generate undersampling mask\n2. **Forward Model**: Sensitivity encoding → 2D FFT → Undersampling mask application\n3. **Inverse Problem**: ADMM optimization minimizing data fidelity + TV regularization\n4. **Evaluation**: Compute PSNR against fully-sampled reference\n\nThe algorithm reconstructs a 2D MRI image from undersampled multi-coil k-space measurements.",
       "metrics": {
         "psnr": 37.21
       },
@@ -776,7 +776,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "OCT Structural Imaging",
-      "description": "This code implements a **Spectral-Domain OCT Reconstruction Pipeline** that transforms raw interference fringe data into a structural intensity image. The pipeline consists of four stages:\n\n1. **Data Preprocessing**: Load metadata, calibration files, and raw OCT data; precompute reconstruction maps\n2. **Forward Operator**: Apply spectral processing chain (FFT → Zoom → Dechirp → Dispersion Compensation → FFT) to reconstruct complex tomograms\n3. **Inversion**: Convert complex tomograms to log-comp",
+      "description": "This code implements a **Spectral-Domain OCT Reconstruction Pipeline** that transforms raw interference fringe data into a structural intensity image. The pipeline consists of four stages:\n\n1. **Data Preprocessing**: Load metadata, calibration files, and raw OCT data; precompute reconstruction maps\n2. **Forward Operator**: Apply spectral processing chain (FFT → Zoom → Dechirp → Dispersion Compensation → FFT) to reconstruct complex tomograms\n3. **Inversion**: Convert complex tomograms to log-compressed intensity image with contrast scaling\n4. **Evaluation**: Compute image statistics and save visualization\n\nThe algorithm is a **deterministic signal processing pipeline** (non-iterative) that performs inverse scattering from k-space (wavenumber) to z-space (depth).",
       "metrics": {
         "eval_type": "OCT structural image quality"
       },
@@ -792,7 +792,7 @@
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "FLIM Phasor Analysis",
-      "description": "This code implements a **Phasor Transform** pipeline for Fluorescence Lifetime Imaging Microscopy (FLIM) data analysis. The pipeline consists of:\n\n1. **Data Loading**: Load time-domain FLIM image stack from TIFF file\n2. **Forward Operator**: Transform time-domain signal to phasor (frequency) domain using FFT\n3. **Filtering**: Apply median filtering and intensity thresholding on phasor coordinates\n4. **Inverse Operator**: Reconstruct time-domain signal from filtered phasor coordinates\n5. **Evalua",
+      "description": "This code implements a **Phasor Transform** pipeline for Fluorescence Lifetime Imaging Microscopy (FLIM) data analysis. The pipeline consists of:\n\n1. **Data Loading**: Load time-domain FLIM image stack from TIFF file\n2. **Forward Operator**: Transform time-domain signal to phasor (frequency) domain using FFT\n3. **Filtering**: Apply median filtering and intensity thresholding on phasor coordinates\n4. **Inverse Operator**: Reconstruct time-domain signal from filtered phasor coordinates\n5. **Evaluation**: Compute reconstruction quality metrics\n\nThe phasor approach represents periodic signals as points in a 2D coordinate system (G, S) derived from Fourier coefficients.",
       "metrics": {
         "psnr": 25.78
       },
@@ -808,7 +808,7 @@
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Ptychographic Reconstruction",
-      "description": "This code implements a **Ptychographic Iterative Engine (ePIE)** reconstruction algorithm for coherent diffraction imaging. The pipeline:\n\n1. **Data Loading**: Load ptychogram (diffraction patterns), scan positions, and geometry parameters from HDF5\n2. **Preprocessing**: Calculate pixel sizes, convert positions to array indices\n3. **Initialization**: Initialize complex object (ones) and probe (scaled disk)\n4. **Iterative Reconstruction**: ePIE algorithm with intensity constraint in Fourier domai",
+      "description": "This code implements a **Ptychographic Iterative Engine (ePIE)** reconstruction algorithm for coherent diffraction imaging. The pipeline:\n\n1. **Data Loading**: Load ptychogram (diffraction patterns), scan positions, and geometry parameters from HDF5\n2. **Preprocessing**: Calculate pixel sizes, convert positions to array indices\n3. **Initialization**: Initialize complex object (ones) and probe (scaled disk)\n4. **Iterative Reconstruction**: ePIE algorithm with intensity constraint in Fourier domain\n5. **Evaluation**: Align reconstruction to ground truth, compute PSNR/SSIM metrics\n\nThe algorithm reconstructs a complex-valued object and probe from intensity-only measurements at multiple overlapping scan positions.",
       "metrics": {
         "psnr": 7.97,
         "ssim": 0.2607
@@ -825,7 +825,7 @@
       "domain": "C",
       "domain_name": "X-ray/CT",
       "title": "Abel Inversion",
-      "description": "This code implements an **Abel Transform Inversion Pipeline** for reconstructing radially symmetric 3D density distributions from their 2D line-of-sight projections. The pipeline consists of:\n\n1. **Data Preprocessing**: Load image, center using autoconvolution, enforce odd/square dimensions, extract symmetry-averaged quadrant\n2. **Inversion**: Apply inverse Abel transform using Dasch Three-Point deconvolution method\n3. **Forward Projection**: Apply forward Abel transform using Hansen-Law state-s",
+      "description": "This code implements an **Abel Transform Inversion Pipeline** for reconstructing radially symmetric 3D density distributions from their 2D line-of-sight projections. The pipeline consists of:\n\n1. **Data Preprocessing**: Load image, center using autoconvolution, enforce odd/square dimensions, extract symmetry-averaged quadrant\n2. **Inversion**: Apply inverse Abel transform using Dasch Three-Point deconvolution method\n3. **Forward Projection**: Apply forward Abel transform using Hansen-Law state-space method for validation\n4. **Evaluation**: Compute reconstruction quality metrics (PSNR) comparing original projection to reprojection\n\nThe problem is a **linear inverse problem** where the forward operator is the Abel transform (radial integration along lines of sight).",
       "metrics": {
         "psnr": 56.83
       },
@@ -841,7 +841,7 @@
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Digital Holographic Microscopy",
-      "description": "This pipeline implements a **phase-shifting digital holographic microscopy (PS-DHM)** simulation and reconstruction system. The algorithm:\n\n1. **Data Preprocessing**: Loads ground truth amplitude image, synthesizes phase, creates complex object field\n2. **Forward Operator**: Simulates hologram recording with 4 phase-shifted reference waves using angular spectrum propagation\n3. **Inversion**: Recovers complex field using PS4 algorithm and back-propagation\n4. **Evaluation**: Computes PSNR and SSIM",
+      "description": "This pipeline implements a **phase-shifting digital holographic microscopy (PS-DHM)** simulation and reconstruction system. The algorithm:\n\n1. **Data Preprocessing**: Loads ground truth amplitude image, synthesizes phase, creates complex object field\n2. **Forward Operator**: Simulates hologram recording with 4 phase-shifted reference waves using angular spectrum propagation\n3. **Inversion**: Recovers complex field using PS4 algorithm and back-propagation\n4. **Evaluation**: Computes PSNR and SSIM metrics comparing reconstructed vs ground truth amplitude\n\nThe core physics involves wave propagation via the Angular Spectrum Method (ASM) and four-step phase-shifting interferometry for complex field recovery.",
       "metrics": {
         "psnr": 63.87,
         "ssim": 0.9998
@@ -858,7 +858,7 @@
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Holoscope Reconstruction",
-      "description": "This code implements an **inline digital holography reconstruction pipeline** using the **Angular Spectrum Method (ASM)**. The pipeline consists of four stages:\n\n1. **Data Preprocessing**: Load hologram/background images, perform background subtraction, optional windowing and downsampling\n2. **Forward Operator**: Wave propagation using ASM transfer function in Fourier domain\n3. **Inversion**: Back-propagation (adjoint operation) to reconstruct object plane from hologram\n4. **Evaluation**: Self-c",
+      "description": "This code implements an **inline digital holography reconstruction pipeline** using the **Angular Spectrum Method (ASM)**. The pipeline consists of four stages:\n\n1. **Data Preprocessing**: Load hologram/background images, perform background subtraction, optional windowing and downsampling\n2. **Forward Operator**: Wave propagation using ASM transfer function in Fourier domain\n3. **Inversion**: Back-propagation (adjoint operation) to reconstruct object plane from hologram\n4. **Evaluation**: Self-consistency check by forward-projecting reconstruction and comparing to input\n\nThe reconstruction is a **direct inversion** (single-step back-propagation), not an iterative optimization.",
       "metrics": {
         "psnr": 148.92,
         "ssim": 1.0
@@ -875,7 +875,7 @@
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "Single Molecule LFM",
-      "description": "This code implements a **Light Field Microscopy (LFM) 3D Reconstruction** algorithm that recovers 3D point positions from 2D localization measurements captured through a microlens array (MLA). The pipeline consists of:\n\n1. **Data Generation/Preprocessing**: Generate synthetic 2D localizations from ground truth 3D points, assign localizations to MLA lenses, compute parallax vectors\n2. **Forward Operator**: Physics-based projection model from 3D sample space to 2D sensor coordinates\n3. **Inversion",
+      "description": "This code implements a **Light Field Microscopy (LFM) 3D Reconstruction** algorithm that recovers 3D point positions from 2D localization measurements captured through a microlens array (MLA). The pipeline consists of:\n\n1. **Data Generation/Preprocessing**: Generate synthetic 2D localizations from ground truth 3D points, assign localizations to MLA lenses, compute parallax vectors\n2. **Forward Operator**: Physics-based projection model from 3D sample space to 2D sensor coordinates\n3. **Inversion**: Iterative least-squares fitting to recover 3D positions from grouped 2D measurements\n4. **Evaluation**: Match reconstructed points to ground truth and compute RMSE\n\nThe algorithm uses a **backward projection model** with least-squares optimization, iteratively grouping localizations by angular and disparity consistency before fitting.",
       "metrics": {
         "eval_type": "3D localization accuracy (single molecule LFM)"
       },
@@ -891,7 +891,7 @@
       "domain": "C",
       "domain_name": "X-ray/CT",
       "title": "Spectral CT Decomposition",
-      "description": "This code implements a **multi-material CT reconstruction** algorithm for spectral computed tomography. The pipeline reconstructs two material channels (bone/calcium and soft tissue) from correlated noisy projection data using a Douglas-Rachford Primal-Dual optimization framework with joint regularization.\n\n**Pipeline Stages:**\n1. Data loading and preprocessing (material combination, noise addition)\n2. Noise covariance estimation and whitening transform construction\n3. Forward operator setup (fa",
+      "description": "This code implements a **multi-material CT reconstruction** algorithm for spectral computed tomography. The pipeline reconstructs two material channels (bone/calcium and soft tissue) from correlated noisy projection data using a Douglas-Rachford Primal-Dual optimization framework with joint regularization.\n\n**Pipeline Stages:**\n1. Data loading and preprocessing (material combination, noise addition)\n2. Noise covariance estimation and whitening transform construction\n3. Forward operator setup (fan-beam CT with diagonal structure)\n4. Inverse problem formulation with whitened data fidelity and nuclear norm regularization\n5. Douglas-Rachford Primal-Dual optimization with FBP initialization\n6. Quality evaluation via PSNR and SSIM metrics",
       "metrics": {
         "psnr": 13.77,
         "ssim": 0.6286
@@ -908,7 +908,7 @@
       "domain": "A",
       "domain_name": "Optical Microscopy",
       "title": "STORM Super-Resolution",
-      "description": "This code implements a **STORM (Stochastic Optical Reconstruction Microscopy) single-molecule localization** pipeline. The algorithm detects fluorescent spots in microscopy images and fits 2D symmetric Gaussians to precisely localize molecular positions. The pipeline consists of:\n\n1. **Data Preprocessing**: Load DAX microscopy file and apply camera calibration (offset/gain correction)\n2. **Peak Detection**: Use Difference-of-Gaussians (DoG) filtering with thresholding and local maxima detection\n",
+      "description": "This code implements a **STORM (Stochastic Optical Reconstruction Microscopy) single-molecule localization** pipeline. The algorithm detects fluorescent spots in microscopy images and fits 2D symmetric Gaussians to precisely localize molecular positions. The pipeline consists of:\n\n1. **Data Preprocessing**: Load DAX microscopy file and apply camera calibration (offset/gain correction)\n2. **Peak Detection**: Use Difference-of-Gaussians (DoG) filtering with thresholding and local maxima detection\n3. **Gaussian Fitting (Inversion)**: Fit 2D symmetric Gaussians to each detected peak using Levenberg-Marquardt optimization\n4. **Forward Operator**: Reconstruct image from fitted Gaussian parameters\n5. **Evaluation**: Compute PSNR between original and reconstructed images",
       "metrics": {
         "psnr": 34.52
       },
@@ -924,7 +924,7 @@
       "domain": "B",
       "domain_name": "Lensless/Computational Photography",
       "title": "Structured Light 3D",
-      "description": "This pipeline implements a **stereo phase-shifting profilometry** system for 3D surface reconstruction. The algorithm:\n\n1. **Data Preprocessing**: Generates multi-frequency sinusoidal fringe patterns for vertical and horizontal orientations\n2. **Forward Operator**: Simulates stereo camera capture with known disparity shift\n3. **Inversion**: Extracts wrapped phase, performs temporal unwrapping, matches correspondences via phase values, and triangulates 3D points\n4. **Evaluation**: Computes recons",
+      "description": "This pipeline implements a **stereo phase-shifting profilometry** system for 3D surface reconstruction. The algorithm:\n\n1. **Data Preprocessing**: Generates multi-frequency sinusoidal fringe patterns for vertical and horizontal orientations\n2. **Forward Operator**: Simulates stereo camera capture with known disparity shift\n3. **Inversion**: Extracts wrapped phase, performs temporal unwrapping, matches correspondences via phase values, and triangulates 3D points\n4. **Evaluation**: Computes reconstruction accuracy metrics against theoretical depth\n\nThe core physics model: `Z = (f × Baseline) / Disparity`",
       "metrics": {
         "psnr": 146.8
       },
@@ -940,7 +940,7 @@
       "domain": "C",
       "domain_name": "X-ray/CT",
       "title": "Model-Based CT Reconstruction",
-      "description": "This code implements **Model-Based Image Reconstruction (MBIR)** for Computed Tomography (CT) using gradient descent with momentum and a Q-GGMRF (Q-Generalized Gaussian Markov Random Field) prior regularizer.\n\n**Pipeline stages:**\n1. `data_preprocessing`: Generate Shepp-Logan phantom, simulate sinogram via Radon transform, add noise\n2. `forward_operator`: Radon transform (line integrals at specified angles)\n3. `inversion`: Iterative reconstruction minimizing data fidelity + prior regularization\n",
+      "description": "This code implements **Model-Based Image Reconstruction (MBIR)** for Computed Tomography (CT) using gradient descent with momentum and a Q-GGMRF (Q-Generalized Gaussian Markov Random Field) prior regularizer.\n\n**Pipeline stages:**\n1. `data_preprocessing`: Generate Shepp-Logan phantom, simulate sinogram via Radon transform, add noise\n2. `forward_operator`: Radon transform (line integrals at specified angles)\n3. `inversion`: Iterative reconstruction minimizing data fidelity + prior regularization\n4. `evaluation`: Compute PSNR and SSIM metrics",
       "metrics": {
         "psnr": 23.89,
         "ssim": 0.7975
@@ -957,7 +957,7 @@
       "domain": "C",
       "domain_name": "X-ray/CT",
       "title": "CT FBP/SIRT Reconstruction",
-      "description": "This code implements a Computed Tomography (CT) image reconstruction pipeline with the following stages:\n1. **Data Acquisition Simulation**: Load phantom image, simulate X-ray CT acquisition with Poisson noise\n2. **Forward Model**: Radon transform (line integrals at multiple angles)\n3. **Reconstruction**: Two methods - Filtered Back Projection (FBP) and Simultaneous Iterative Reconstruction Technique (SIRT)\n4. **Evaluation**: Compare reconstructions against ground truth using PSNR and SSIM metri",
+      "description": "This code implements a Computed Tomography (CT) image reconstruction pipeline with the following stages:\n1. **Data Acquisition Simulation**: Load phantom image, simulate X-ray CT acquisition with Poisson noise\n2. **Forward Model**: Radon transform (line integrals at multiple angles)\n3. **Reconstruction**: Two methods - Filtered Back Projection (FBP) and Simultaneous Iterative Reconstruction Technique (SIRT)\n4. **Evaluation**: Compare reconstructions against ground truth using PSNR and SSIM metrics\n\nThe pipeline solves the inverse problem of recovering an image from its noisy sinogram measurements.",
       "metrics": {
         "psnr": 15.14,
         "ssim": 0.5155
@@ -974,7 +974,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "Ultrasound Beamforming",
-      "description": "This code implements an ultrasound B-mode image reconstruction pipeline for phased array imaging. The pipeline processes raw RF sensor data through preprocessing (time-gain compensation, filtering, interpolation, apodization), beamforming (fixed focus and dynamic focusing methods), and post-processing (envelope detection, log compression, scan conversion) to produce displayable grayscale ultrasound images. Quality metrics compare fixed-focus reconstruction against dynamic-focus reference.\n\n**Pip",
+      "description": "This code implements an ultrasound B-mode image reconstruction pipeline for phased array imaging. The pipeline processes raw RF sensor data through preprocessing (time-gain compensation, filtering, interpolation, apodization), beamforming (fixed focus and dynamic focusing methods), and post-processing (envelope detection, log compression, scan conversion) to produce displayable grayscale ultrasound images. Quality metrics compare fixed-focus reconstruction against dynamic-focus reference.\n\n**Pipeline Stages:**\n1. Data loading from HDF5\n2. Preprocessing (TGC, filtering, interpolation, apodization)\n3. Beamforming (two methods: fixed focus, dynamic focus)\n4. Post-processing (envelope detection, log compression, scan conversion)\n5. Evaluation (PSNR, RMSE)",
       "metrics": {
         "psnr": 31.65
       },
@@ -990,7 +990,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "Diffuse Optical Tomography",
-      "description": "This code implements a **Diffuse Optical Tomography (DOT) reconstruction pipeline** using the Finite Element Method (FEM) for solving the steady-state diffusion approximation and Tikhonov regularization for the inverse problem.\n\n**Pipeline Stages:**\n1. **Data Loading & Preprocessing**: Load mesh geometry, optical parameters, source/detector configurations; create synthetic anomaly; build mesh-to-grid interpolation\n2. **Forward Problem**: Assemble FEM system matrix, solve for fluence fields, extr",
+      "description": "This code implements a **Diffuse Optical Tomography (DOT) reconstruction pipeline** using the Finite Element Method (FEM) for solving the steady-state diffusion approximation and Tikhonov regularization for the inverse problem.\n\n**Pipeline Stages:**\n1. **Data Loading & Preprocessing**: Load mesh geometry, optical parameters, source/detector configurations; create synthetic anomaly; build mesh-to-grid interpolation\n2. **Forward Problem**: Assemble FEM system matrix, solve for fluence fields, extract boundary measurements\n3. **Jacobian Computation**: Use adjoint method to compute sensitivity matrix on a regular grid\n4. **Inverse Problem**: Solve linearized reconstruction using Tikhonov regularization\n5. **Evaluation**: Compute MSE and PSNR metrics, generate visualization",
       "metrics": {
         "psnr": 21.3
       },
@@ -1006,7 +1006,7 @@
       "domain": "G",
       "domain_name": "Spectroscopy/Scattering",
       "title": "X-ray/Neutron Reflectometry",
-      "description": "This code implements a self-contained benchmark for **X-ray / Neutron Reflectometry** inverse problem: **refnx** (Task #57).\n\n- **Forward model**: Abeles transfer-matrix method\n- **Inverse solver**: Differential evolution for SLD profile\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Abeles transfer-matrix method\n3. `inverse_solving`: Differential evolution for SLD profile\n4. `evaluation`: Compute metrics (PSNR, SSIM",
+      "description": "This code implements a self-contained benchmark for **X-ray / Neutron Reflectometry** inverse problem: **refnx** (Task #57).\n\n- **Forward model**: Abeles transfer-matrix method\n- **Inverse solver**: Differential evolution for SLD profile\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Abeles transfer-matrix method\n3. `inverse_solving`: Differential evolution for SLD profile\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "eval_type": "X-ray reflectometry thin-film fitting (correlation_logR=0.9999998, thickness_error=0.075 Å)"
       },
@@ -1022,7 +1022,7 @@
       "domain": "F",
       "domain_name": "Astrophysics",
       "title": "Exoplanet Transit Fitting",
-      "description": "This code implements a self-contained benchmark for **Astrophysics / Exoplanet Transit** inverse problem: **batman** (Task #75).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Mandel-Agol transit light curve model\n- **Inverse solver**: Differential evolution + L-BFGS-B for orbital parameter estimation\n\n**Reference**: Kreidberg, PASP 2015\n\n**Pipeline stages:**\n1. data_generation: Create synthetic ground-truth transit parameters and light cu",
+      "description": "This code implements a self-contained benchmark for **Astrophysics / Exoplanet Transit** inverse problem: **batman** (Task #75).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Mandel-Agol transit light curve model\n- **Inverse solver**: Differential evolution + L-BFGS-B for orbital parameter estimation\n\n**Reference**: Kreidberg, PASP 2015\n\n**Pipeline stages:**\n1. data_generation: Create synthetic ground-truth transit parameters and light curve\n2. forward_modeling: Mandel-Agol analytic transit model\n3. inverse_solving: DE + L-BFGS-B parameter estimation\n4. evaluation: Compute metrics and save results",
       "metrics": {
         "eval_type": "Exoplanet transit light curve fitting (correlation_flux=0.9999995, RMSE=12.3 ppm)"
       },
@@ -1038,7 +1038,7 @@
       "domain": "G",
       "domain_name": "Spectroscopy/Scattering",
       "title": "NMR Spectrum Reconstruction",
-      "description": "This code implements a self-contained benchmark for **Spectroscopy / NMR** inverse problem: **nmrglue** (Task #59).\n\n- **Forward model**: DFT mapping FID to spectrum\n- **Inverse solver**: Iterative Soft Thresholding (IST)\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: DFT mapping FID to spectrum\n3. `inverse_solving`: Iterative Soft Thresholding (IST)\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results",
+      "description": "This code implements a self-contained benchmark for **Spectroscopy / NMR** inverse problem: **nmrglue** (Task #59).\n\n- **Forward model**: DFT mapping FID to spectrum\n- **Inverse solver**: Iterative Soft Thresholding (IST)\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: DFT mapping FID to spectrum\n3. `inverse_solving`: Iterative Soft Thresholding (IST)\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 37.45,
         "eval_type": "NMR spectrum reconstruction from non-uniform sampling (CC=0.9756)"
@@ -1055,7 +1055,7 @@
       "domain": "E",
       "domain_name": "Geophysics",
       "title": "3D Gravity Inversion",
-      "description": "This code implements a **Sparse Hessian Deconvolution** algorithm for microscopy image reconstruction. The pipeline consists of:\n\n1. **Data Preprocessing**: Load image, estimate and subtract background using wavelet decomposition, normalize, optionally upsample\n2. **Sparse Hessian Reconstruction**: ADMM-based optimization minimizing Hessian regularization + L1 sparsity + data fidelity\n3. **Iterative Deconvolution**: Post-processing with Richardson-Lucy or Landweber deconvolution\n4. **Evaluation*",
+      "description": "This code implements a self-contained benchmark for **Geophysics / Gravity** inverse problem: **simpeg** (Task #63).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Newton's law: g_z from subsurface density distribution (thin-slab approximation)\n- **Inverse solver**: Tikhonov + smoothness regularization with GCV\n\n**Reference**: Cockett et al., Computers & Geosciences 2015\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Newton's law: g_z from subsurface density distribution (thin-slab approximation)\n3. `inverse_solving`: Tikhonov + smoothness regularization with GCV\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 22.01,
         "eval_type": "3D gravity inversion density model (correlation_density=0.509, correlation_gravity=0.777)"
@@ -1072,7 +1072,7 @@
       "domain": "E",
       "domain_name": "Geophysics",
       "title": "Magnetotelluric Inversion",
-      "description": "This code implements a **Sparse Hessian Deconvolution** algorithm for microscopy image reconstruction. The pipeline consists of:\n\n1. **Data Preprocessing**: Load image, estimate and subtract background using wavelet decomposition, normalize, optionally upsample\n2. **Sparse Hessian Reconstruction**: ADMM-based optimization minimizing Hessian regularization + L1 sparsity + data fidelity\n3. **Iterative Deconvolution**: Post-processing with Richardson-Lucy or Landweber deconvolution\n4. **Evaluation*",
+      "description": "This code implements a self-contained benchmark for **Geophysics / Magnetotellurics** inverse problem: **simpeg_MT** (Task #64).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: 1D MT impedance via Wait's recursive formula for layered earth\n- **Inverse solver**: Occam's inversion (smoothest model fitting data) with L-BFGS-B\n\n**Reference**: Constable et al., Geophysics 1987\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: 1D MT impedance via Wait's recursive formula for layered earth\n3. `inverse_solving`: Occam's inversion (smoothest model fitting data) with L-BFGS-B\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 15.05,
         "eval_type": "1D magnetotelluric resistivity inversion (CC_log_rho=0.827, CC_data=0.9997)"
@@ -1106,7 +1106,7 @@
       "domain": "G",
       "domain_name": "Spectroscopy/Scattering",
       "title": "Spectroscopic Ellipsometry",
-      "description": "This code implements a self-contained benchmark for **Optics / Spectroscopic Ellipsometry** inverse problem: **refellips** (Task #58).\n\n- **Forward model**: Fresnel + transfer-matrix method\n- **Inverse solver**: Differential evolution for optical constants\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Fresnel + transfer-matrix method\n3. `inverse_solving`: Differential evolution for optical constants\n4. `evaluation`:",
+      "description": "This code implements a self-contained benchmark for **Optics / Spectroscopic Ellipsometry** inverse problem: **refellips** (Task #58).\n\n- **Forward model**: Fresnel + transfer-matrix method\n- **Inverse solver**: Differential evolution for optical constants\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Fresnel + transfer-matrix method\n3. `inverse_solving`: Differential evolution for optical constants\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "eval_type": "Spectroscopic ellipsometry thin-film fitting (CC_psi=0.99999996, thickness_error=4.4e-5 nm)"
       },
@@ -1122,7 +1122,7 @@
       "domain": "C",
       "domain_name": "X-ray/CT",
       "title": "SAXS Electron Density",
-      "description": "This code implements a self-contained benchmark for **X-ray / Small-Angle Scattering** inverse problem: **DENSS** (Task #56).\n\n- **Forward model**: Debye formula for scattering profile\n- **Inverse solver**: HIO + shrink-wrap phase retrieval\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Debye formula for scattering profile\n3. `inverse_solving`: HIO + shrink-wrap phase retrieval\n4. `evaluation`: Compute metrics (PSNR,",
+      "description": "This code implements a self-contained benchmark for **X-ray / Small-Angle Scattering** inverse problem: **DENSS** (Task #56).\n\n- **Forward model**: Debye formula for scattering profile\n- **Inverse solver**: HIO + shrink-wrap phase retrieval\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Debye formula for scattering profile\n3. `inverse_solving`: HIO + shrink-wrap phase retrieval\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 13.04,
         "ssim": 0.4201,
@@ -1140,7 +1140,7 @@
       "domain": "G",
       "domain_name": "Spectroscopy/Scattering",
       "title": "EXAFS Fitting",
-      "description": "This code implements a self-contained benchmark for **X-ray / EXAFS** inverse problem: **xraylarch** (Task #60).\n\n- **Forward model**: EXAFS equation from scattering paths\n- **Inverse solver**: Differential evolution for shell fitting\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: EXAFS equation from scattering paths\n3. `inverse_solving`: Differential evolution for shell fitting\n4. `evaluation`: Compute metrics (PSNR",
+      "description": "This code implements a self-contained benchmark for **X-ray / EXAFS** inverse problem: **xraylarch** (Task #60).\n\n- **Forward model**: EXAFS equation from scattering paths\n- **Inverse solver**: Differential evolution for shell fitting\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: EXAFS equation from scattering paths\n3. `inverse_solving`: Differential evolution for shell fitting\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 46.37,
         "ssim": 0.9947,
@@ -1158,7 +1158,7 @@
       "domain": "H",
       "domain_name": "Mechanics",
       "title": "Residual Stress (Contour)",
-      "description": "This code implements a self-contained benchmark for **Mechanics / Residual Stress** inverse problem: **pyCM** (Task #52).\n\n- **Forward model**: Residual stress → surface deformation via elastic kernel convolution\n- **Inverse solver**: Fourier deconvolution with Tikhonov regularization\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Residual stress → surface deformation via elastic kernel convolution\n3. `inverse_solvin",
+      "description": "This code implements a self-contained benchmark for **Mechanics / Residual Stress** inverse problem: **pyCM** (Task #52).\n\n- **Forward model**: Residual stress → surface deformation via elastic kernel convolution\n- **Inverse solver**: Fourier deconvolution with Tikhonov regularization\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Residual stress → surface deformation via elastic kernel convolution\n3. `inverse_solving`: Fourier deconvolution with Tikhonov regularization\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 15.72,
         "ssim": 0.2274,
@@ -1176,7 +1176,7 @@
       "domain": "H",
       "domain_name": "Mechanics",
       "title": "Inverse Heat Conduction",
-      "description": "This code implements a self-contained benchmark for **Thermal / Heat Transfer** inverse problem: **IHCP** (Task #53).\n\n- **Forward model**: 1D heat equation mapping surface heat flux to interior temperature\n- **Inverse solver**: Tikhonov regularization with GCV\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: 1D heat equation mapping surface heat flux to interior temperature\n3. `inverse_solving`: Tikhonov regularizatio",
+      "description": "This code implements a self-contained benchmark for **Thermal / Heat Transfer** inverse problem: **IHCP** (Task #53).\n\n- **Forward model**: 1D heat equation mapping surface heat flux to interior temperature\n- **Inverse solver**: Tikhonov regularization with GCV\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: 1D heat equation mapping surface heat flux to interior temperature\n3. `inverse_solving`: Tikhonov regularization with GCV\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 14.29,
         "ssim": 0.5666,
@@ -1194,7 +1194,7 @@
       "domain": "H",
       "domain_name": "Mechanics",
       "title": "Virtual Fields Method",
-      "description": "This code implements a self-contained benchmark for **Mechanics / Material Identification** inverse problem: **VFM** (Task #54).\n\n- **Forward model**: Orthotropic plane-stress constitutive law\n- **Inverse solver**: Global stress-strain least-squares regression\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Orthotropic plane-stress constitutive law\n3. `inverse_solving`: Global stress-strain least-squares regression\n4.",
+      "description": "This code implements a self-contained benchmark for **Mechanics / Material Identification** inverse problem: **VFM** (Task #54).\n\n- **Forward model**: Orthotropic plane-stress constitutive law\n- **Inverse solver**: Global stress-strain least-squares regression\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Orthotropic plane-stress constitutive law\n3. `inverse_solving`: Global stress-strain least-squares regression\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 33.12,
         "ssim": 0.9689,
@@ -1212,7 +1212,7 @@
       "domain": "H",
       "domain_name": "Mechanics",
       "title": "PIV Pressure Reconstruction",
-      "description": "This code implements a self-contained benchmark for **Fluid Mechanics / Pressure from PIV** inverse problem: **SPICY** (Task #55).\n\n- **Forward model**: Navier-Stokes pressure Poisson equation\n- **Inverse solver**: FFT-based Poisson solver\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Navier-Stokes pressure Poisson equation\n3. `inverse_solving`: FFT-based Poisson solver\n4. `evaluation`: Compute metrics (PSNR, SSIM, ",
+      "description": "This code implements a self-contained benchmark for **Fluid Mechanics / Pressure from PIV** inverse problem: **SPICY** (Task #55).\n\n- **Forward model**: Navier-Stokes pressure Poisson equation\n- **Inverse solver**: FFT-based Poisson solver\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Navier-Stokes pressure Poisson equation\n3. `inverse_solving`: FFT-based Poisson solver\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 35.54,
         "ssim": 0.9457,
@@ -1247,7 +1247,7 @@
       "domain": "E",
       "domain_name": "Geophysics",
       "title": "Surface Wave Tomography",
-      "description": "This code implements a self-contained benchmark for **Seismology / Surface Wave Tomography** inverse problem: **seislib** (Task #65).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Phase velocity sensitivity kernels for layered earth\n- **Inverse solver**: LSQR tomographic inversion of travel times\n\n**Reference**: Magrini et al., GJI 2022\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise",
+      "description": "This code implements a self-contained benchmark for **Seismology / Surface Wave Tomography** inverse problem: **seislib** (Task #65).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Phase velocity sensitivity kernels for layered earth\n- **Inverse solver**: LSQR tomographic inversion of travel times\n\n**Reference**: Magrini et al., GJI 2022\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Phase velocity sensitivity kernels for layered earth\n3. `inverse_solving`: LSQR tomographic inversion of travel times\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 20.84,
         "ssim": 0.5402,
@@ -1265,7 +1265,7 @@
       "domain": "E",
       "domain_name": "Geophysics",
       "title": "Ambient Noise Tomography",
-      "description": "This code implements a self-contained benchmark for **Seismology / Ambient Noise Tomography** inverse problem: **NoisePy** (Task #66).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Straight-ray travel time through 2D velocity model\n- **Inverse solver**: LSQR tomography with multi-damping parameter selection\n\n**Reference**: Jiang & Denolle, Seismol. Res. Lett. 2020\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, ",
+      "description": "This code implements a self-contained benchmark for **Seismology / Ambient Noise Tomography** inverse problem: **NoisePy** (Task #66).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Straight-ray travel time through 2D velocity model\n- **Inverse solver**: LSQR tomography with multi-damping parameter selection\n\n**Reference**: Jiang & Denolle, Seismol. Res. Lett. 2020\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Straight-ray travel time through 2D velocity model\n3. `inverse_solving`: LSQR tomography with multi-damping parameter selection\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 22.12,
         "ssim": 0.724,
@@ -1283,7 +1283,7 @@
       "domain": "B",
       "domain_name": "Lensless/Computational Photography",
       "title": "SAR Imaging",
-      "description": "This code implements a self-contained benchmark for **Radar / Synthetic Aperture Radar** inverse problem: **RITSAR** (Task #67).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: SAR phase-history model from 2D reflectivity scene\n- **Inverse solver**: Backprojection image formation\n\n**Reference**: Gorham & Moore, SPIE 2010\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_model",
+      "description": "This code implements a self-contained benchmark for **Radar / Synthetic Aperture Radar** inverse problem: **RITSAR** (Task #67).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: SAR phase-history model from 2D reflectivity scene\n- **Inverse solver**: Backprojection image formation\n\n**Reference**: Gorham & Moore, SPIE 2010\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: SAR phase-history model from 2D reflectivity scene\n3. `inverse_solving`: Backprojection image formation\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 10.04,
         "ssim": 0.047,
@@ -1301,7 +1301,7 @@
       "domain": "E",
       "domain_name": "Geophysics",
       "title": "Ground Penetrating Radar",
-      "description": "This code implements a self-contained benchmark for **Radar / Ground Penetrating Radar** inverse problem: **GPRPy** (Task #68).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Exploding-reflector model (Born approximation) for B-scan\n- **Inverse solver**: Kirchhoff depth migration\n\n**Reference**: Stolt, Geophysics 1978\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modelin",
+      "description": "This code implements a self-contained benchmark for **Radar / Ground Penetrating Radar** inverse problem: **GPRPy** (Task #68).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Exploding-reflector model (Born approximation) for B-scan\n- **Inverse solver**: Kirchhoff depth migration\n\n**Reference**: Stolt, Geophysics 1978\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Exploding-reflector model (Born approximation) for B-scan\n3. `inverse_solving`: Kirchhoff depth migration\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 19.83,
         "ssim": 0.3172,
@@ -1319,7 +1319,7 @@
       "domain": "B",
       "domain_name": "Lensless/Computational Photography",
       "title": "Compressive Ghost Imaging",
-      "description": "This code implements a self-contained benchmark for **Optics / Computational Imaging** inverse problem: **ghost_imaging** (Task #69).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Random speckle illumination: y = Φ·x + noise\n- **Inverse solver**: Compressed sensing via ISTA (Iterative Shrinkage-Thresholding)\n\n**Reference**: Shapiro, Phys. Rev. Lett. 2008\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forwar",
+      "description": "This code implements a self-contained benchmark for **Optics / Computational Imaging** inverse problem: **ghost_imaging** (Task #69).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Random speckle illumination: y = Φ·x + noise\n- **Inverse solver**: Compressed sensing via ISTA (Iterative Shrinkage-Thresholding)\n\n**Reference**: Shapiro, Phys. Rev. Lett. 2008\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Random speckle illumination: y = Φ·x + noise\n3. `inverse_solving`: Compressed sensing via ISTA (Iterative Shrinkage-Thresholding)\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 14.11,
         "ssim": 0.4701,
@@ -1337,7 +1337,7 @@
       "domain": "B",
       "domain_name": "Lensless/Computational Photography",
       "title": "Non-Line-of-Sight Imaging",
-      "description": "This code implements a self-contained benchmark for **Optics / Non-Line-of-Sight Imaging** inverse problem: **NLOS** (Task #70).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Time-of-flight transient transport: confocal NLOS measurement model\n- **Inverse solver**: Light-cone transform backprojection (LCT)\n\n**Reference**: O'Toole et al., Nature 2018\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward mode",
+      "description": "This code implements a self-contained benchmark for **Optics / Non-Line-of-Sight Imaging** inverse problem: **NLOS** (Task #70).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Time-of-flight transient transport: confocal NLOS measurement model\n- **Inverse solver**: Light-cone transform backprojection (LCT)\n\n**Reference**: O'Toole et al., Nature 2018\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Time-of-flight transient transport: confocal NLOS measurement model\n3. `inverse_solving`: Light-cone transform backprojection (LCT)\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 9.6,
         "ssim": 0.2423,
@@ -1355,7 +1355,7 @@
       "domain": "B",
       "domain_name": "Lensless/Computational Photography",
       "title": "Event Camera to Video",
-      "description": "This code implements a self-contained benchmark for **Computer Vision / Event Camera** inverse problem: **e2vid** (Task #71).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Event generation model from intensity changes\n- **Inverse solver**: Temporal integration of events for frame reconstruction\n\n**Reference**: Rebecq et al., TPAMI 2020\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n",
+      "description": "This code implements a self-contained benchmark for **Computer Vision / Event Camera** inverse problem: **e2vid** (Task #71).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Event generation model from intensity changes\n- **Inverse solver**: Temporal integration of events for frame reconstruction\n\n**Reference**: Rebecq et al., TPAMI 2020\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Event generation model from intensity changes\n3. `inverse_solving`: Temporal integration of events for frame reconstruction\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 12.22,
         "ssim": 0.2706,
@@ -1373,7 +1373,7 @@
       "domain": "C",
       "domain_name": "X-ray/CT",
       "title": "Sparse-View CT",
-      "description": "This code implements a self-contained benchmark for **Medical Imaging / CT** inverse problem: **TIGRE** (Task #72).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Radon transform (parallel-beam projection) for 2D tomography\n- **Inverse solver**: FBP (Filtered Back-Projection) with Ram-Lak filter\n\n**Reference**: Biguri et al., Biomed. Phys. Eng. Express 2016\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forw",
+      "description": "This code implements a self-contained benchmark for **Medical Imaging / CT** inverse problem: **TIGRE** (Task #72).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Radon transform (parallel-beam projection) for 2D tomography\n- **Inverse solver**: FBP (Filtered Back-Projection) with Ram-Lak filter\n\n**Reference**: Biguri et al., Biomed. Phys. Eng. Express 2016\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Radon transform (parallel-beam projection) for 2D tomography\n3. `inverse_solving`: FBP (Filtered Back-Projection) with Ram-Lak filter\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 17.18,
         "ssim": 0.4718,
@@ -1391,7 +1391,7 @@
       "domain": "C",
       "domain_name": "X-ray/CT",
       "title": "Coherent Diffraction Imaging",
-      "description": "This code implements a self-contained benchmark for **X-ray / Coherent Diffraction Imaging** inverse problem: **CDI** (Task #73).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Far-field diffraction: I(q) = |FT{ρ(r)}|² (intensity, phase lost)\n- **Inverse solver**: HIO + ER iterative phase retrieval with known support\n\n**Reference**: Fienup, Appl. Opt. 1982\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forwa",
+      "description": "This code implements a self-contained benchmark for **X-ray / Coherent Diffraction Imaging** inverse problem: **CDI** (Task #73).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Far-field diffraction: I(q) = |FT{ρ(r)}|² (intensity, phase lost)\n- **Inverse solver**: HIO + ER iterative phase retrieval with known support\n\n**Reference**: Fienup, Appl. Opt. 1982\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Far-field diffraction: I(q) = |FT{ρ(r)}|² (intensity, phase lost)\n3. `inverse_solving`: HIO + ER iterative phase retrieval with known support\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 19.46,
         "ssim": 0.2051,
@@ -1409,7 +1409,7 @@
       "domain": "D",
       "domain_name": "Medical Imaging",
       "title": "Ultrasound CT (FWI)",
-      "description": "This code implements a self-contained benchmark for **Medical Imaging / USCT** inverse problem: **stride** (Task #74).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Straight-ray travel time through 2D speed-of-sound map (ring geometry)\n- **Inverse solver**: LSQR tomographic inversion with damping\n\n**Reference**: Pérez-Liva et al., Phys. Med. Biol. 2017\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward ",
+      "description": "This code implements a self-contained benchmark for **Medical Imaging / USCT** inverse problem: **stride** (Task #74).\n\nThe pipeline recovers unknown parameters/fields from indirect measurements using:\n- **Forward model**: Straight-ray travel time through 2D speed-of-sound map (ring geometry)\n- **Inverse solver**: LSQR tomographic inversion with damping\n\n**Reference**: Pérez-Liva et al., Phys. Med. Biol. 2017\n\n**Pipeline stages:**\n1. `data_generation`: Create synthetic ground-truth, run forward model, add noise\n2. `forward_modeling`: Straight-ray travel time through 2D speed-of-sound map (ring geometry)\n3. `inverse_solving`: LSQR tomographic inversion with damping\n4. `evaluation`: Compute metrics (PSNR, SSIM, CC, RE), save results and figures",
       "metrics": {
         "psnr": 24.43,
         "ssim": 0.7442,
@@ -1444,7 +1444,7 @@
       "domain": "H",
       "domain_name": "Mechanics",
       "title": "PIV Cross-Correlation",
-      "description": "This code implements a Particle Image Velocimetry (PIV) flow reconstruction pipeline using the OpenPIV library. The inverse problem recovers a 2D velocity field from a pair of synthetic particle images. A known velocity field (Lamb-Oseen vortex + uniform translation + strain) displaces tracer particles between two camera frames, and cross-correlation analysis in interrogation windows recovers the displacement (velocity) at each grid point.\n\n**Pipeline**: Generate synthetic particle pair → Cross-",
+      "description": "This code implements a Particle Image Velocimetry (PIV) flow reconstruction pipeline using the OpenPIV library. The inverse problem recovers a 2D velocity field from a pair of synthetic particle images. A known velocity field (Lamb-Oseen vortex + uniform translation + strain) displaces tracer particles between two camera frames, and cross-correlation analysis in interrogation windows recovers the displacement (velocity) at each grid point.\n\n**Pipeline**: Generate synthetic particle pair → Cross-correlation PIV → Outlier filtering → Velocity field reconstruction → Evaluate against ground truth.\n\nObjective: `argmax_d CC(W_a(x), W_b(x+d))` where CC is cross-correlation, W_a and W_b are interrogation windows, d is displacement",
       "metrics": {
         "psnr": 37.47,
         "ssim": 0.9958,
@@ -1462,7 +1462,7 @@
       "domain": "G",
       "domain_name": "Spectroscopy/Scattering",
       "title": "Mie Scattering Inversion",
-      "description": "This code implements aerosol particle refractive index and size inversion from multi-wavelength Mie scattering efficiency spectra. Given observed scattering (Qsca) and absorption (Qabs) efficiency spectra across UV-to-NIR wavelengths, the algorithm recovers the complex refractive index m = n + ik and particle diameter d using least-squares optimization against the Lorenz-Mie theory forward model.\n\n**Pipeline**: Generate synthetic Mie spectra → Add noise → Differential evolution global search → L",
+      "description": "This code implements aerosol particle refractive index and size inversion from multi-wavelength Mie scattering efficiency spectra. Given observed scattering (Qsca) and absorption (Qabs) efficiency spectra across UV-to-NIR wavelengths, the algorithm recovers the complex refractive index m = n + ik and particle diameter d using least-squares optimization against the Lorenz-Mie theory forward model.\n\n**Pipeline**: Generate synthetic Mie spectra → Add noise → Differential evolution global search → L-BFGS-B refinement → Parameter recovery → Spectral evaluation.\n\nObjective: `J(n,k,d) = Σ_λ [(Qsca_obs - Qsca_model)²/Qsca_obs² + (Qabs_obs - Qabs_model)²/Qabs_obs²]`",
       "metrics": {
         "psnr": 56.06,
         "eval_type": "1D spectral parameter inversion (CC_Qext=0.999997, n_RE=0.04%, k_RE=0.34%, d_RE=0.27%)"

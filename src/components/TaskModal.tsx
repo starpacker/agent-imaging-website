@@ -60,6 +60,35 @@ function MetricPill({ label, value, accent }: { label: string; value: string | n
   );
 }
 
+function DescriptionBlock({ text, accent }: { text: string; accent: string }) {
+  const lines = text.split('\n').map((line) => line.trim()).filter(Boolean);
+  return (
+    <div className="space-y-2.5">
+      {lines.map((line, idx) => {
+        const item = line.match(/^(\d+)\.\s*(?:\*\*(.+?)\*\*|([^:]+)):\s*(.*)$/);
+        if (item) {
+          const num = item[1];
+          const label = (item[2] || item[3] || '').trim();
+          const content = item[4].trim();
+          return (
+            <div key={`${idx}-${num}`} className="text-sm text-zinc-400 leading-relaxed">
+              <span className="text-zinc-300">{num}.</span>{' '}
+              <span className="font-semibold" style={{ color: accent }}>{label}</span>
+              {content ? <>: {content}</> : null}
+            </div>
+          );
+        }
+        const cleaned = line.replace(/\*\*(.*?)\*\*/g, '$1');
+        return (
+          <p key={idx} className="text-sm text-zinc-400 leading-relaxed">
+            {cleaned}
+          </p>
+        );
+      })}
+    </div>
+  );
+}
+
 /* ── Main Modal ── */
 interface TaskModalProps { task: TaskData; onClose: () => void; }
 
@@ -115,7 +144,7 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
             <div className="p-6 space-y-6">
               <div>
                 <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Problem Description</h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">{task.description}</p>
+                <DescriptionBlock text={task.description} accent={accent} />
               </div>
 
               <div>
