@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Agent-Imaging: A Universal Agent for Computational Imaging Inverse Problems",
-    "total_tasks": 138,
+    "total_tasks": 200,
     "total_domains": 8
   },
   "domains": {
@@ -9,8 +9,8 @@
       "name_en": "Optical Microscopy",
       "name_zh": "光学显微成像",
       "icon": "🔬",
-      "desc": "FPM, Holography, Deconvolution, FLIM, STORM, ISM, SIM, LFM, FLFM, SMLM, Ptychography, ODT, CDI",
-      "task_count": 14,
+      "desc": "Domain A tasks",
+      "task_count": 21,
       "task_ids": [
         1,
         2,
@@ -25,14 +25,21 @@
         44,
         45,
         46,
-        48
+        48,
+        141,
+        142,
+        149,
+        150,
+        178,
+        179,
+        191
       ]
     },
     "B": {
       "name_en": "Lensless/Computational Photography",
       "name_zh": "无透镜/计算摄影",
       "icon": "📷",
-      "desc": "DiffuserCam, Coded Aperture, Structured Light, Event Camera, Ghost Imaging, NLOS, SAR",
+      "desc": "Domain B tasks",
       "task_count": 8,
       "task_ids": [
         15,
@@ -49,8 +56,8 @@
       "name_en": "X-ray/CT",
       "name_zh": "X射线/CT成像",
       "icon": "☢️",
-      "desc": "Sparse-view CT, Spectral CT, CDI, Abel Inversion, SAXS, Model-Based CT",
-      "task_count": 15,
+      "desc": "Domain C tasks",
+      "task_count": 23,
       "task_ids": [
         27,
         43,
@@ -66,15 +73,23 @@
         122,
         123,
         124,
-        125
+        125,
+        148,
+        152,
+        153,
+        173,
+        188,
+        190,
+        192,
+        194
       ]
     },
     "D": {
       "name_en": "Medical Imaging",
       "name_zh": "医学成像",
       "icon": "🏥",
-      "desc": "MRI, Ultrasound, PET, DOT, MRE, MRF, NODDI, EEG/MEG, MPI, PAT, OCT, Perfusion, USCT",
-      "task_count": 24,
+      "desc": "Domain D tasks",
+      "task_count": 35,
       "task_ids": [
         4,
         14,
@@ -99,15 +114,26 @@
         112,
         113,
         114,
-        115
+        115,
+        144,
+        145,
+        146,
+        147,
+        151,
+        155,
+        156,
+        176,
+        177,
+        195,
+        196
       ]
     },
     "E": {
       "name_en": "Geophysics",
       "name_zh": "地球物理",
       "icon": "🌍",
-      "desc": "EIT, GPR, Gravity, MT, Seismic Tomography, InSAR, Ambient Noise",
-      "task_count": 10,
+      "desc": "Domain E tasks",
+      "task_count": 13,
       "task_ids": [
         9,
         10,
@@ -118,15 +144,18 @@
         69,
         71,
         88,
-        89
+        89,
+        163,
+        181,
+        182
       ]
     },
     "F": {
       "name_en": "Astrophysics",
       "name_zh": "天体物理",
       "icon": "🔭",
-      "desc": "VLBI, Exoplanet, Gravitational Lensing, Solar Corona, Faraday RM, Radial Velocity, Adaptive Optics, Coronagraph",
-      "task_count": 16,
+      "desc": "Domain F tasks",
+      "task_count": 23,
       "task_ids": [
         7,
         8,
@@ -143,15 +172,22 @@
         82,
         83,
         84,
-        85
+        85,
+        143,
+        160,
+        161,
+        162,
+        180,
+        183,
+        199
       ]
     },
     "G": {
       "name_en": "Spectroscopy/Scattering",
       "name_zh": "光谱/散射",
       "icon": "🌈",
-      "desc": "Hyperspectral, CARS, NMR, EXAFS, Reflectometry, Ellipsometry, EIS/DRT, Mie, THz-TDS",
-      "task_count": 34,
+      "desc": "Domain G tasks",
+      "task_count": 48,
       "task_ids": [
         17,
         29,
@@ -186,15 +222,29 @@
         135,
         136,
         137,
-        138
+        138,
+        154,
+        157,
+        158,
+        164,
+        165,
+        166,
+        170,
+        171,
+        172,
+        175,
+        184,
+        185,
+        187,
+        193
       ]
     },
     "H": {
       "name_en": "Mechanics",
       "name_zh": "力学",
       "icon": "⚙️",
-      "desc": "DIC, PIV, Residual Stress, IHCP, VFM, Differentiable Optics, Traction Force",
-      "task_count": 17,
+      "desc": "Domain H tasks",
+      "task_count": 29,
       "task_ids": [
         12,
         63,
@@ -212,7 +262,19 @@
         106,
         119,
         120,
-        121
+        121,
+        139,
+        140,
+        159,
+        167,
+        168,
+        169,
+        174,
+        186,
+        189,
+        197,
+        198,
+        200
       ]
     }
   },
@@ -229,7 +291,10 @@
       "images": {
         "folder": "Task_01_sim",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/WeisongZhao/sparse-deconv-py",
+      "paper_title": "Sparse deconvolution improves the resolution of live-cell super-resolution fluorescence microscopy",
+      "paper_link": "https://doi.org/10.1038/s41587-021-01092-2"
     },
     "task_02": {
       "id": "02",
@@ -243,7 +308,10 @@
       "images": {
         "folder": "Task_02_ptyrad",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/chiahao3/ptyrad",
+      "paper_title": "PtyRAD: A High-Performance and Flexible Ptychographic Reconstruction Framework with Automatic Differentiation",
+      "paper_link": "https://doi.org/10.1093/mam/ozaf070"
     },
     "task_03": {
       "id": "03",
@@ -257,7 +325,10 @@
       "images": {
         "folder": "Task_03_lfm",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/lambdaloop/pyolaf",
+      "paper_title": "Artifact-free deconvolution in light field microscopy",
+      "paper_link": "https://doi.org/10.1364/OE.27.031644"
     },
     "task_04": {
       "id": "04",
@@ -271,7 +342,10 @@
       "images": {
         "folder": "Task_04_PyTomography",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/qurit/PyTomography",
+      "paper_title": "PyTomography: A python library for medical image reconstruction",
+      "paper_link": "https://doi.org/10.1016/j.softx.2024.102020"
     },
     "task_05": {
       "id": "05",
@@ -285,7 +359,10 @@
       "images": {
         "folder": "Task_05_s2ISM",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/VicidominiLab/s2ISM",
+      "paper_title": "Structured detection for simultaneous super-resolution and optical sectioning in laser scanning microscopy",
+      "paper_link": "https://doi.org/10.1038/s41566-025-01695-0"
     },
     "task_06": {
       "id": "06",
@@ -299,7 +376,10 @@
       "images": {
         "folder": "Task_06_semiblindpsfdeconv",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/idiap/semiblindpsfdeconv",
+      "paper_title": "Semi-Blind Spatially-Variant Deconvolution in Optical Microscopy with Local Point Spread Function Estimation By Use Of Convolutional Neural Networks",
+      "paper_link": "https://doi.org/10.1109/ICIP.2018.8451736"
     },
     "task_07": {
       "id": "07",
@@ -313,7 +393,10 @@
       "images": {
         "folder": "Task_07_oopao_sh_wfs",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/cheritier/OOPAO",
+      "paper_title": "OOPAO: Object-Oriented Python Adaptive Optics",
+      "paper_link": "https://hal.science/hal-04402878v1"
     },
     "task_08": {
       "id": "08",
@@ -327,7 +410,10 @@
       "images": {
         "folder": "Task_08_oopao_imag_zernike",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/cheritier/OOPAO",
+      "paper_title": "OOPAO: Object-Oriented Python Adaptive Optics",
+      "paper_link": "https://hal.science/hal-04402878v1"
     },
     "task_09": {
       "id": "09",
@@ -341,7 +427,10 @@
       "images": {
         "folder": "Task_09_bayhunt",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/jenndrei/BayHunter",
+      "paper_title": "BayHunter - McMC transdimensional Bayesian inversion of receiver functions and surface wave dispersion",
+      "paper_link": "https://doi.org/10.5880/GFZ.2.4.2019.001"
     },
     "task_10": {
       "id": "10",
@@ -357,7 +446,10 @@
       "images": {
         "folder": "Task_10_pyeit",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/liubenyuan/pyEIT",
+      "paper_title": "pyEIT: A python based framework for Electrical Impedance Tomography",
+      "paper_link": "https://doi.org/10.1016/j.softx.2018.04.002"
     },
     "task_11": {
       "id": "11",
@@ -373,7 +465,10 @@
       "images": {
         "folder": "Task_11_bpm",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "️ No dedicated paper — Beam Propagation Method ODT reconstruction with adjoint-state gradient + FISTA acceleration",
+      "paper_link": ""
     },
     "task_12": {
       "id": "12",
@@ -389,7 +484,10 @@
       "images": {
         "folder": "Task_12_diff",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/vccimaging/DiffDeflectometry",
+      "paper_title": "Towards self-calibrated lens metrology by differentiable refractive deflectometry",
+      "paper_link": "https://doi.org/10.1364/oe.433237"
     },
     "task_13": {
       "id": "13",
@@ -405,7 +503,10 @@
       "images": {
         "folder": "Task_13_insar",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/scottstanie/spurs",
+      "paper_title": "Exploiting Sparsity for Phase Unwrapping",
+      "paper_link": ""
     },
     "task_14": {
       "id": "14",
@@ -421,7 +522,10 @@
       "images": {
         "folder": "Task_14_pat",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/BohndiekLab/patato",
+      "paper_title": "PATATO: a Python photoacoustic tomography analysis toolkit",
+      "paper_link": "https://doi.org/10.21105/joss.05686"
     },
     "task_15": {
       "id": "15",
@@ -437,7 +541,10 @@
       "images": {
         "folder": "Task_15_lensless_admm",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/LCAV/LenslessPiCam",
+      "paper_title": "LenslessPiCam: A Hardware and Software Platform for Lensless Computational Imaging with a Raspberry Pi",
+      "paper_link": "https://doi.org/10.21105/joss.04747"
     },
     "task_16": {
       "id": "16",
@@ -453,7 +560,10 @@
       "images": {
         "folder": "Task_16_lensless_dl",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/LCAV/LenslessPiCam",
+      "paper_title": "Towards Robust and Generalizable Lensless Imaging with Modular Learned Reconstruction",
+      "paper_link": "https://doi.org/10.1109/TCI.2025.3539448"
     },
     "task_17": {
       "id": "17",
@@ -469,7 +579,10 @@
       "images": {
         "folder": "Task_17_pnp_cassi",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/zsm1211/PnP-CASSI",
+      "paper_title": "Deep plug-and-play priors for spectral snapshot compressive imaging",
+      "paper_link": "https://doi.org/10.1364/PRJ.411745"
     },
     "task_18": {
       "id": "18",
@@ -485,7 +598,10 @@
       "images": {
         "folder": "Task_18_fpm_inr",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/hwzhou2020/FPM_INR",
+      "paper_title": "Fourier ptychographic microscopy image stack reconstruction using implicit neural representations",
+      "paper_link": "https://doi.org/10.1364/OPTICA.505283"
     },
     "task_19": {
       "id": "19",
@@ -501,7 +617,10 @@
       "images": {
         "folder": "Task_19_flfm",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/ssec-jhu/flfm",
+      "paper_title": "️ Fourier Light Field Microscopy - Richardson-Lucy deconvolution for volumetric imaging (software package)",
+      "paper_link": "https://doi.org/10.5281/zenodo.15353540"
     },
     "task_20": {
       "id": "20",
@@ -517,7 +636,10 @@
       "images": {
         "folder": "Task_20_lenstronomy_simple_ring",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/lenstronomy/lenstronomy",
+      "paper_title": "lenstronomy II: A gravitational lensing software ecosystem",
+      "paper_link": "https://doi.org/10.21105/joss.03283"
     },
     "task_21": {
       "id": "21",
@@ -533,7 +655,10 @@
       "images": {
         "folder": "Task_21_lenstronomy_quad_quasar",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/lenstronomy/lenstronomy",
+      "paper_title": "lenstronomy II: A gravitational lensing software ecosystem",
+      "paper_link": "https://joss.theoj.org/papers/10.21105/joss.03283"
     },
     "task_22": {
       "id": "22",
@@ -549,7 +674,10 @@
       "images": {
         "folder": "Task_22_lenstronomy_double_quasar",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/lenstronomy/lenstronomy",
+      "paper_title": "lenstronomy II: A gravitational lensing software ecosystem",
+      "paper_link": "https://joss.theoj.org/papers/10.21105/joss.03283"
     },
     "task_23": {
       "id": "23",
@@ -565,7 +693,10 @@
       "images": {
         "folder": "Task_23_lenstronomy_shapelets",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/lenstronomy/lenstronomy",
+      "paper_title": "lenstronomy II: A gravitational lensing software ecosystem",
+      "paper_link": "https://joss.theoj.org/papers/10.21105/joss.03283"
     },
     "task_24": {
       "id": "24",
@@ -581,7 +712,10 @@
       "images": {
         "folder": "Task_24_lenstronomy_host_decomp",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/lenstronomy/lenstronomy",
+      "paper_title": "lenstronomy II: A gravitational lensing software ecosystem",
+      "paper_link": "https://joss.theoj.org/papers/10.21105/joss.03283"
     },
     "task_25": {
       "id": "25",
@@ -597,7 +731,10 @@
       "images": {
         "folder": "Task_25_dpi_task1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/HeSunPU/DPI",
+      "paper_title": "Deep Probabilistic Imaging: Uncertainty Quantification and Multi-modal Solution Characterization for Computational Imaging",
+      "paper_link": "https://arxiv.org/abs/2010.14462"
     },
     "task_26": {
       "id": "26",
@@ -613,7 +750,10 @@
       "images": {
         "folder": "Task_26_dpi_task2",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/HeSunPU/DPI",
+      "paper_title": "Deep Probabilistic Imaging: Uncertainty Quantification and Multi-modal Solution Characterization for Computational Imaging",
+      "paper_link": "https://arxiv.org/abs/2010.14462"
     },
     "task_27": {
       "id": "27",
@@ -629,7 +769,10 @@
       "images": {
         "folder": "Task_27_dpi_task3",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/HeSunPU/DPI",
+      "paper_title": "Deep Probabilistic Imaging: Uncertainty Quantification and Multi-modal Solution Characterization for Computational Imaging",
+      "paper_link": "https://arxiv.org/abs/2010.14462"
     },
     "task_28": {
       "id": "28",
@@ -645,7 +788,10 @@
       "images": {
         "folder": "Task_28_AMICO-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/daducci/AMICO",
+      "paper_title": "Accelerated Microstructure Imaging via Convex Optimization (AMICO) from diffusion MRI data",
+      "paper_link": "https://doi.org/10.1016/j.neuroimage.2014.10.026"
     },
     "task_29": {
       "id": "29",
@@ -661,7 +807,10 @@
       "images": {
         "folder": "Task_29_carspy-main",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/chuckedfromspace/carspy",
+      "paper_title": "️ CARSpy: Synthesizing and fitting coherent anti-Stokes Raman spectra in Python (GitHub repo only, no journal paper)",
+      "paper_link": ""
     },
     "task_30": {
       "id": "30",
@@ -678,7 +827,10 @@
       "images": {
         "folder": "Task_30_caustics-main",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/Ciela-Institute/caustics",
+      "paper_title": "Caustics: A Python Package for Accelerated Strong Gravitational Lensing Simulations",
+      "paper_link": "https://doi.org/10.21105/joss.07081"
     },
     "task_31": {
       "id": "31",
@@ -692,7 +844,10 @@
       "images": {
         "folder": "Task_31_CT-and-MR-Perfusion-Tool-main",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/Marijn311/CT-and-MR-Perfusion-Tool",
+      "paper_title": "PyPeT: A Python Perfusion Tool for Automated Quantitative Brain CT and MR Perfusion Analysis",
+      "paper_link": "https://doi.org/10.48550/arXiv.2511.13310"
     },
     "task_32": {
       "id": "32",
@@ -709,7 +864,10 @@
       "images": {
         "folder": "Task_32_DiffuserCam-Tutorial-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/Waller-Lab/DiffuserCam-Tutorial",
+      "paper_title": "️ DiffuserCam: Lensless Single-exposure 3D Imaging (Antipa et al., Optica 2018; tutorial companion repo)",
+      "paper_link": "https://doi.org/10.1364/OPTICA.5.000001"
     },
     "task_33": {
       "id": "33",
@@ -725,7 +883,10 @@
       "images": {
         "folder": "Task_33_dmipy-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/AthenaEPI/dmipy",
+      "paper_title": "The Dmipy Toolbox: Diffusion MRI Multi-Compartment Modeling and Microstructure Recovery Made Easy",
+      "paper_link": "https://doi.org/10.3389/fninf.2019.00064"
     },
     "task_34": {
       "id": "34",
@@ -741,7 +902,10 @@
       "images": {
         "folder": "Task_34_hcipy-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/ehpor/hcipy",
+      "paper_title": "High Contrast Imaging for Python (HCIPy): an open-source adaptive optics and coronagraph simulator",
+      "paper_link": "https://doi.org/10.1117/12.2314407"
     },
     "task_35": {
       "id": "35",
@@ -757,7 +921,10 @@
       "images": {
         "folder": "Task_35_mne-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/mne-tools/mne-python",
+      "paper_title": "MEG and EEG data analysis with MNE-Python",
+      "paper_link": "https://doi.org/10.3389/fnins.2013.00267"
     },
     "task_36": {
       "id": "36",
@@ -774,7 +941,10 @@
       "images": {
         "folder": "Task_36_MPIRF-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/XiaoYaoNet/MPIRF",
+      "paper_title": "A novel software framework for magnetic particle imaging reconstruction",
+      "paper_link": "https://doi.org/10.1002/ima.22707"
     },
     "task_37": {
       "id": "37",
@@ -790,7 +960,10 @@
       "images": {
         "folder": "Task_37_MRE-elast-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/narges-mhm/MRE-elast",
+      "paper_title": "Finite Element Reconstruction of Stiffness Images in MR Elastography Using Statistical Physical Forward Modeling and Proximal Optimization Methods",
+      "paper_link": "https://doi.org/10.1109/ISBI48211.2021.9433873"
     },
     "task_38": {
       "id": "38",
@@ -806,7 +979,10 @@
       "images": {
         "folder": "Task_38_mrf-reconstruction-mlmir2020-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/fabianbalsiger/mrf-reconstruction-mlmir2020",
+      "paper_title": "Learning Bloch Simulations for MR Fingerprinting by Invertible Neural Networks",
+      "paper_link": "https://doi.org/10.1007/978-3-030-61598-7_6"
     },
     "task_39": {
       "id": "39",
@@ -822,7 +998,10 @@
       "images": {
         "folder": "Task_39_mripy-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/peng-cao/mripy",
+      "paper_title": "No associated paper (software toolbox without dedicated publication)",
+      "paper_link": ""
     },
     "task_40": {
       "id": "40",
@@ -838,7 +1017,10 @@
       "images": {
         "folder": "Task_40_oct-cbort-main",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/CBORT-NCBIB/oct-cbort",
+      "paper_title": "No dedicated paper (software library with Zenodo archive)",
+      "paper_link": "https://doi.org/10.5281/zenodo.6506425"
     },
     "task_41": {
       "id": "41",
@@ -854,7 +1036,10 @@
       "images": {
         "folder": "Task_41_phasorpy-main",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/phasorpy/phasorpy",
+      "paper_title": "️ Software library (cite via Zenodo)",
+      "paper_link": "https://doi.org/10.5281/zenodo.13862586"
     },
     "task_42": {
       "id": "42",
@@ -871,7 +1056,10 @@
       "images": {
         "folder": "Task_42_PtyLab-main",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/PtyLab/PtyLab.py",
+      "paper_title": "PtyLab.m/py/jl: a cross-platform, open-source inverse modeling toolbox for conventional and Fourier ptychography",
+      "paper_link": "https://doi.org/10.1364/OE.485370"
     },
     "task_43": {
       "id": "43",
@@ -887,7 +1075,10 @@
       "images": {
         "folder": "Task_43_PyAbel-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/PyAbel/PyAbel",
+      "paper_title": "PyAbel: A Python package for Abel transform inversion",
+      "paper_link": "https://doi.org/10.1063/1.5092635"
     },
     "task_44": {
       "id": "44",
@@ -904,7 +1095,10 @@
       "images": {
         "folder": "Task_44_pyDHM-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/catrujilla/pyDHM",
+      "paper_title": "pyDHM: A Python library for applications in digital holographic microscopy",
+      "paper_link": "https://doi.org/10.1371/journal.pone.0275818"
     },
     "task_45": {
       "id": "45",
@@ -921,7 +1115,10 @@
       "images": {
         "folder": "Task_45_PyHoloscope-main",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/MikeHughesKent/PyHoloscope",
+      "paper_title": "Not documented in README",
+      "paper_link": ""
     },
     "task_46": {
       "id": "46",
@@ -937,7 +1134,10 @@
       "images": {
         "folder": "Task_46_PySMLFM-main",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "Not found",
+      "paper_link": ""
     },
     "task_47": {
       "id": "47",
@@ -954,7 +1154,10 @@
       "images": {
         "folder": "Task_47_spectral_ct_examples-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "Not found",
+      "paper_link": ""
     },
     "task_48": {
       "id": "48",
@@ -970,7 +1173,10 @@
       "images": {
         "folder": "Task_48_storm-analysis-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/ZhuangLab/storm-analysis",
+      "paper_title": "️ Multiple algorithm papers (software package)",
+      "paper_link": "https://doi.org/10.5281/zenodo.3528330"
     },
     "task_49": {
       "id": "49",
@@ -986,7 +1192,10 @@
       "images": {
         "folder": "Task_49_structured-light-python-main",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "Not found",
+      "paper_link": ""
     },
     "task_50": {
       "id": "50",
@@ -1003,7 +1212,10 @@
       "images": {
         "folder": "Task_50_svmbir-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/cabouman/svmbir",
+      "paper_title": "️ Software library with multiple algorithm papers",
+      "paper_link": "https://doi.org/10.1109/TCI.2016.2599778"
     },
     "task_51": {
       "id": "51",
@@ -1020,7 +1232,10 @@
       "images": {
         "folder": "Task_51_tomopy-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/tomopy/tomopy",
+      "paper_title": "TomoPy: A framework for the analysis of synchrotron tomographic data",
+      "paper_link": "https://doi.org/10.1107/S1600577514013939"
     },
     "task_52": {
       "id": "52",
@@ -1036,7 +1251,10 @@
       "images": {
         "folder": "Task_52_us-beamform-linarray-master",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "Not found",
+      "paper_link": ""
     },
     "task_53": {
       "id": "53",
@@ -1052,7 +1270,10 @@
       "images": {
         "folder": "Task_53_nirfaster-FF-main_2",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/milabuob/nirfaster-FF",
+      "paper_title": "NIRFASTerFF: An accessible, cross-platform python package for fast photon modeling",
+      "paper_link": "https://doi.org/10.1117/1.jbo.30.11.115001"
     },
     "task_54": {
       "id": "54",
@@ -1068,7 +1289,10 @@
       "images": {
         "folder": "Task_54_refnx",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/fabrylab/pyTFM",
+      "paper_title": "️ References TFM and MSM papers but no specific pyTFM paper found",
+      "paper_link": ""
     },
     "task_55": {
       "id": "55",
@@ -1084,7 +1308,10 @@
       "images": {
         "folder": "Task_55_batman",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/lkreidberg/batman",
+      "paper_title": "batman: BAsic Transit Model cAlculatioN in Python",
+      "paper_link": "https://doi.org/10.1086/683602"
     },
     "task_56": {
       "id": "56",
@@ -1101,7 +1328,10 @@
       "images": {
         "folder": "Task_56_nmrglue",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "Not found",
+      "paper_link": ""
     },
     "task_57": {
       "id": "57",
@@ -1118,7 +1348,10 @@
       "images": {
         "folder": "Task_57_simpeg",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "Not found",
+      "paper_link": ""
     },
     "task_58": {
       "id": "58",
@@ -1135,7 +1368,10 @@
       "images": {
         "folder": "Task_58_simpeg_MT",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/mendezVKI/SPICY_VKI",
+      "paper_title": "A Meshless Method to Compute Pressure Fields from Image Velocimetry",
+      "paper_link": "https://doi.org/10.1088/1361-6501/ac70a9"
     },
     "task_59": {
       "id": "59",
@@ -1152,7 +1388,10 @@
       "images": {
         "folder": "Task_59_pyDRTtools",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/tdgrant1/denss",
+      "paper_title": "Ab initio electron density determination directly from solution scattering data",
+      "paper_link": "https://doi.org/10.1038/nmeth.4581"
     },
     "task_60": {
       "id": "60",
@@ -1168,7 +1407,10 @@
       "images": {
         "folder": "Task_60_refellips",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/refnx/refnx",
+      "paper_title": "️ refnx: neutron and X-ray reflectometry analysis in Python",
+      "paper_link": "https://doi.org/10.1107/s1600576718017296"
     },
     "task_61": {
       "id": "61",
@@ -1186,7 +1428,10 @@
       "images": {
         "folder": "Task_61_DENSS",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/refnx/refellips",
+      "paper_title": "refellips: Ellipsometry data analysis in Python",
+      "paper_link": "https://doi.org/10.1016/j.softx.2022.101225"
     },
     "task_62": {
       "id": "62",
@@ -1204,7 +1449,10 @@
       "images": {
         "folder": "Task_62_xraylarch",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/jjhelmus/nmrglue",
+      "paper_title": "Nmrglue: An open source Python package for the analysis of multidimensional NMR data",
+      "paper_link": "https://doi.org/10.1007/s10858-013-9718-x"
     },
     "task_63": {
       "id": "63",
@@ -1222,7 +1470,10 @@
       "images": {
         "folder": "Task_63_pyCM",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/xraypy/xraylarch",
+      "paper_title": "️ Larch: An Analysis Package for XAFS and Related Spectroscopies",
+      "paper_link": "https://doi.org/10.1088/1742-6596/430/1/012007"
     },
     "task_64": {
       "id": "64",
@@ -1240,7 +1491,10 @@
       "images": {
         "folder": "Task_64_IHCP",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/ciuccislab/pyDRTtools",
+      "paper_title": "Influence of the discretization methods on the distribution of relaxation times deconvolution: implementing radial basis functions with DRTtools",
+      "paper_link": "https://doi.org/10.1016/j.electacta.2015.09.097"
     },
     "task_65": {
       "id": "65",
@@ -1258,7 +1512,10 @@
       "images": {
         "folder": "Task_65_VFM",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/BehnoodRasti/HySUPP",
+      "paper_title": "Image Processing and Machine Learning for Hyperspectral Unmixing: An Overview and the HySUPP Python Package",
+      "paper_link": "https://doi.org/10.1109/TGRS.2024.3393570"
     },
     "task_66": {
       "id": "66",
@@ -1276,7 +1533,10 @@
       "images": {
         "folder": "Task_66_SPICY",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/simpeg/simpeg",
+      "paper_title": "SimPEG: An open source framework for simulation and gradient based parameter estimation in geophysical applications",
+      "paper_link": "https://doi.org/10.1016/j.cageo.2015.09.015"
     },
     "task_67": {
       "id": "67",
@@ -1293,7 +1553,10 @@
       "images": {
         "folder": "Task_67_HySUPP",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/simpeg/simpeg",
+      "paper_title": "SimPEG: An open source framework for simulation and gradient based parameter estimation in geophysical applications",
+      "paper_link": "https://doi.org/10.1016/j.cageo.2015.09.015"
     },
     "task_68": {
       "id": "68",
@@ -1311,7 +1574,10 @@
       "images": {
         "folder": "Task_68_seislib",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/fmagrini/seislib",
+      "paper_title": "Surface-wave tomography using SeisLib: a Python package for multi-scale seismic imaging",
+      "paper_link": "https://doi.org/10.1093/gji/ggac236"
     },
     "task_69": {
       "id": "69",
@@ -1329,7 +1595,10 @@
       "images": {
         "folder": "Task_69_NoisePy",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/noisepy/NoisePy",
+      "paper_title": "NoisePy: a new high-performance python tool for seismic ambient noise seismology",
+      "paper_link": "https://doi.org/10.1785/0220190364"
     },
     "task_70": {
       "id": "70",
@@ -1347,7 +1616,10 @@
       "images": {
         "folder": "Task_70_RITSAR",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/dm6718/RITSAR",
+      "paper_title": "Not found (software toolbox, no associated paper)",
+      "paper_link": ""
     },
     "task_71": {
       "id": "71",
@@ -1365,7 +1637,10 @@
       "images": {
         "folder": "Task_71_GPRPy",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/NSGeophysics/GPRPy",
+      "paper_title": "️ GPRPy: Open-Source Ground-Penetrating Radar Processing and Visualization Software",
+      "paper_link": "https://doi.org/10.1190/tle39050332.1"
     },
     "task_72": {
       "id": "72",
@@ -1383,7 +1658,10 @@
       "images": {
         "folder": "Task_72_ghost_imaging",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "Not found",
+      "paper_link": ""
     },
     "task_73": {
       "id": "73",
@@ -1401,7 +1679,10 @@
       "images": {
         "folder": "Task_73_NLOS",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/computational-imaging/nlos-fk",
+      "paper_title": "Wave-Based Non-Line-of-Sight Imaging using Fast f-k Migration",
+      "paper_link": ""
     },
     "task_74": {
       "id": "74",
@@ -1419,7 +1700,10 @@
       "images": {
         "folder": "Task_74_e2vid",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/uzh-rpg/rpg_e2vid",
+      "paper_title": "High Speed and High Dynamic Range Video with an Event Camera",
+      "paper_link": "https://doi.org/10.1109/TPAMI.2019.2963386"
     },
     "task_75": {
       "id": "75",
@@ -1437,7 +1721,10 @@
       "images": {
         "folder": "Task_75_TIGRE",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/CERN/TIGRE",
+      "paper_title": "TIGRE: A MATLAB-GPU toolbox for CBCT image reconstruction",
+      "paper_link": "https://doi.org/10.1088/2057-1976/2/5/055010"
     },
     "task_76": {
       "id": "76",
@@ -1455,7 +1742,10 @@
       "images": {
         "folder": "Task_76_CDI",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "Not found (multiple small repos, no single canonical package)",
+      "paper_link": ""
     },
     "task_77": {
       "id": "77",
@@ -1473,7 +1763,10 @@
       "images": {
         "folder": "Task_77_stride",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/trustimaging/stride",
+      "paper_title": "Stride: a flexible platform for high-performance ultrasound computed tomography",
+      "paper_link": "https://doi.org/10.1016/j.cmpb.2022.106855"
     },
     "task_78": {
       "id": "78",
@@ -1490,7 +1783,10 @@
       "images": {
         "folder": "Task_78_phoeniks",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/lkreidberg/batman",
+      "paper_title": "batman: Bad-Ass Transit Model cAlculatioN in Python",
+      "paper_link": "https://doi.org/10.1086/683602"
     },
     "task_79": {
       "id": "79",
@@ -1508,7 +1804,10 @@
       "images": {
         "folder": "Task_79_openpiv",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "Not found (domain mismatch with search hints)",
+      "paper_link": ""
     },
     "task_80": {
       "id": "80",
@@ -1525,7 +1824,10 @@
       "images": {
         "folder": "Task_80_pymiescat",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/OpenPIV/openpiv-python",
+      "paper_title": "OpenPIV: Open Source Particle Image Velocimetry (cite via Zenodo)",
+      "paper_link": "https://doi.org/10.5281/zenodo.4409178"
     },
     "task_81": {
       "id": "81",
@@ -1542,7 +1844,10 @@
       "images": {
         "folder": "Task_81_rmtools",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/bsumlin/PyMieScatt",
+      "paper_title": "Retrieving the Aerosol Complex Refractive Index using PyMieScatt: A Mie Computational Package with Visualization Capabilities",
+      "paper_link": "https://doi.org/10.1016/j.jqsrt.2017.10.012"
     },
     "task_82": {
       "id": "82",
@@ -1559,7 +1864,10 @@
       "images": {
         "folder": "Task_82_pfsspy",
         "vis_result": "reconstruction_result.png"
-      }
+      },
+      "github_repo": "https://github.com/CIRADA-Tools/RM-Tools",
+      "paper_title": "RM-synthesis, RM-clean and QU-fitting on polarised radio spectra",
+      "paper_link": "https://doi.org/10.3847/1538-4365/ae3dea"
     },
     "task_83": {
       "id": "83",
@@ -1576,7 +1884,10 @@
       "images": {
         "folder": "Task_83_radvel",
         "vis_result": "reconstruction_result.png"
-      }
+      },
+      "github_repo": "https://github.com/dstansby/pfsspy",
+      "paper_title": "Potential Field Source Surface model package for Python",
+      "paper_link": "https://doi.org/10.5281/zenodo.3257616"
     },
     "task_84": {
       "id": "84",
@@ -1593,7 +1904,10 @@
       "images": {
         "folder": "Task_84_blackhole_daps",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/California-Planet-Search/radvel",
+      "paper_title": "RadVel: The Radial Velocity Modeling Toolkit",
+      "paper_link": "https://doi.org/10.21105/joss.01544"
     },
     "task_85": {
       "id": "85",
@@ -1610,7 +1924,10 @@
       "images": {
         "folder": "Task_85_blackhole_lgd",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/brmather/pycurious",
+      "paper_title": "PyCurious: A Python module for computing the Curie depth from the magnetic anomaly",
+      "paper_link": "https://doi.org/10.21105/joss.01544"
     },
     "task_86": {
       "id": "86",
@@ -1626,7 +1943,10 @@
       "images": {
         "folder": "Task_86_cmaes_beeler_reuter_ap",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/austinpeel/lenspack",
+      "paper_title": "️ A collection of weak lensing tools in Python (no formal paper found)",
+      "paper_link": ""
     },
     "task_87": {
       "id": "87",
@@ -1642,7 +1962,10 @@
       "images": {
         "folder": "Task_87_cmaes_hodgkin_huxley_ik",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/carnisj/bcdi",
+      "paper_title": "BCDI: tools for pre(post)-processing Bragg coherent X-ray diffraction imaging data",
+      "paper_link": "https://doi.org/10.5281/zenodo.3257616"
     },
     "task_88": {
       "id": "88",
@@ -1660,7 +1983,10 @@
       "images": {
         "folder": "Task_88_fwi_diffpir",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/PyLops/pylops",
+      "paper_title": "PyLops—A linear-operator Python library for scalable algebra and optimization",
+      "paper_link": "https://doi.org/10.1016/j.softx.2019.100361"
     },
     "task_89": {
       "id": "89",
@@ -1678,7 +2004,10 @@
       "images": {
         "folder": "Task_89_fwi_reddiff",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/emsig/empymod",
+      "paper_title": "empymod: Open-source full 3D electromagnetic modeller for 1D VTI media",
+      "paper_link": "https://doi.org/10.5281/zenodo.593094"
     },
     "task_90": {
       "id": "90",
@@ -1696,7 +2025,10 @@
       "images": {
         "folder": "Task_90_inv-scatter_daps",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/py4dstem/py4DSTEM",
+      "paper_title": "py4DSTEM: A Software Package for Four-Dimensional Scanning Transmission Electron Microscopy Data Analysis",
+      "paper_link": "https://doi.org/10.1017/S1431927621000477"
     },
     "task_91": {
       "id": "91",
@@ -1714,7 +2046,10 @@
       "images": {
         "folder": "Task_91_inv-scatter_ddnm",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/hyperspy/hyperspy",
+      "paper_title": "HyperSpy: Open source Python framework for multi-dimensional data analysis",
+      "paper_link": "https://doi.org/10.5281/zenodo.592838"
     },
     "task_92": {
       "id": "92",
@@ -1732,7 +2067,10 @@
       "images": {
         "folder": "Task_92_inv-scatter_ddrm",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/ToFuProject/tofu",
+      "paper_title": "TOFU: Tomography for Fusion - an IMAS-compatible open-source Python library for tomography diagnostics",
+      "paper_link": ""
     },
     "task_93": {
       "id": "93",
@@ -1750,7 +2088,10 @@
       "images": {
         "folder": "Task_93_inv-scatter_diffpir",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/ronshnapp/MyPTV",
+      "paper_title": "️ MyPTV: A Python package for 3D particle tracking velocimetry (no formal paper confirmed)",
+      "paper_link": ""
     },
     "task_94": {
       "id": "94",
@@ -1768,7 +2109,10 @@
       "images": {
         "folder": "Task_94_inv-scatter_dps",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/acoular/acoular",
+      "paper_title": "Acoular – Acoustic testing and source mapping software",
+      "paper_link": ""
     },
     "task_95": {
       "id": "95",
@@ -1786,7 +2130,10 @@
       "images": {
         "folder": "Task_95_inv-scatter_fps",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/andre-batista/eispy2d",
+      "paper_title": "EISPY2D: An Open-Source Python Library for the Development and Comparison of Algorithms in Two-Dimensional Electromagnetic Inverse Scattering Problems",
+      "paper_link": "https://doi.org/10.1109/ACCESS.2025.3573679"
     },
     "task_96": {
       "id": "96",
@@ -1804,7 +2151,10 @@
       "images": {
         "folder": "Task_96_inv-scatter_lgd",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/manoharan-lab/holopy",
+      "paper_title": "HoloPy: Holography and Light Scattering in Python",
+      "paper_link": ""
     },
     "task_97": {
       "id": "97",
@@ -1822,7 +2172,10 @@
       "images": {
         "folder": "Task_97_inv-scatter_mcgdiff",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/MartianColonist/POSEIDON",
+      "paper_title": "POSEIDON: A Multidimensional Atmospheric Retrieval Code for Exoplanet Spectra",
+      "paper_link": "https://doi.org/10.3847/1538-4357/ac47fe"
     },
     "task_98": {
       "id": "98",
@@ -1840,7 +2193,10 @@
       "images": {
         "folder": "Task_98_inv-scatter_pigdm",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/folsomcp/ZDIpy",
+      "paper_title": "The evolution of surface magnetic fields in young solar-type stars II: the early main sequence (250-650 Myr)",
+      "paper_link": "https://ui.adsabs.harvard.edu/abs/2018MNRAS.474.4956F/abstract"
     },
     "task_99": {
       "id": "99",
@@ -1858,7 +2214,10 @@
       "images": {
         "folder": "Task_99_inv-scatter_pnpdm",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/21cmfast/21cmFAST",
+      "paper_title": "21cmFAST v3: A Python-integrated C code for generating 3D realizations of the cosmic 21cm signal",
+      "paper_link": "https://doi.org/10.1093/mnras/staa3408"
     },
     "task_100": {
       "id": "100",
@@ -1876,7 +2235,10 @@
       "images": {
         "folder": "Task_100_inv-scatter_reddiff",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "Spectroscopy Made Easy: A New Tool for Fitting Observations with Synthetic Spectra",
+      "paper_link": "https://doi.org/10.1051/0004-6361/201935310"
     },
     "task_101": {
       "id": "101",
@@ -1892,7 +2254,10 @@
       "images": {
         "folder": "Task_101_mcmc_fitzhugh_nagumo",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/jcolinhill/pyilc",
+      "paper_title": "️ pyilc: Internal Linear Combination for CMB foreground removal (no formal paper found)",
+      "paper_link": ""
     },
     "task_102": {
       "id": "102",
@@ -1908,7 +2273,10 @@
       "images": {
         "folder": "Task_102_mcmc_goodwin_oscillator",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/Zstone19/pypetal",
+      "paper_title": "pyPETaL: A Pipeline for Estimating AGN Time Lags",
+      "paper_link": ""
     },
     "task_103": {
       "id": "103",
@@ -1924,7 +2292,10 @@
       "images": {
         "folder": "Task_103_mcmc_hes1_michaelis_menten",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/achael/eht-imaging",
+      "paper_title": "Interferometric Imaging Directly with Closure Phases and Closure Amplitudes",
+      "paper_link": "https://doi.org/10.3847/1538-4357/aab6a8"
     },
     "task_104": {
       "id": "104",
@@ -1940,7 +2311,10 @@
       "images": {
         "folder": "Task_104_mcmc_lotka_volterra",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/clberube/bisip",
+      "paper_title": "Not documented",
+      "paper_link": ""
     },
     "task_105": {
       "id": "105",
@@ -1956,7 +2330,10 @@
       "images": {
         "folder": "Task_105_mcmc_repressilator",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/dmelgarm/MudPy",
+      "paper_title": "️ MudPy: Earthquake slip inversion and finite fault modeling (no formal paper found)",
+      "paper_link": ""
     },
     "task_106": {
       "id": "106",
@@ -1972,7 +2349,10 @@
       "images": {
         "folder": "Task_106_mcmc_sir",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "️ Strain determination using spatially discrete geodetic data (Shen et al., 2015; benchmark task uses custom reimplementation)",
+      "paper_link": ""
     },
     "task_107": {
       "id": "107",
@@ -1990,7 +2370,10 @@
       "images": {
         "folder": "Task_107_mri_L1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/nephilim2016/GPR-FWI-Py",
+      "paper_title": "️ No dedicated paper — standard GPR 1D convolutional model with Wiener deconvolution",
+      "paper_link": ""
     },
     "task_108": {
       "id": "108",
@@ -2008,7 +2391,10 @@
       "images": {
         "folder": "Task_108_mri_TV",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/zhonge/cryodrgn",
+      "paper_title": "CryoDRGN: reconstruction of heterogeneous cryo-EM structures using neural networks",
+      "paper_link": "https://doi.org/10.1038/s41592-020-01049-4"
     },
     "task_109": {
       "id": "109",
@@ -2026,7 +2412,10 @@
       "images": {
         "folder": "Task_109_mri_csgm_mri",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "️ No dedicated paper — standard Optical Projection Tomography with FBP reconstruction",
+      "paper_link": ""
     },
     "task_110": {
       "id": "110",
@@ -2044,7 +2433,10 @@
       "images": {
         "folder": "Task_110_mri_daps",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/KULL-Centre/FRETpredict",
+      "paper_title": "️ FRETpredict: FRET efficiency prediction for protein structure (no formal paper confirmed)",
+      "paper_link": ""
     },
     "task_111": {
       "id": "111",
@@ -2062,7 +2454,10 @@
       "images": {
         "folder": "Task_111_mri_diffpir",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "️ No dedicated paper — standard speckle imaging via memory effect + phase retrieval (HIO algorithm)",
+      "paper_link": ""
     },
     "task_112": {
       "id": "112",
@@ -2080,7 +2475,10 @@
       "images": {
         "folder": "Task_112_mri_dps",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/dmici/NeuTomPy-toolbox",
+      "paper_title": "NeuTomPy toolbox, a Python package for tomographic data processing and reconstruction",
+      "paper_link": "https://doi.org/10.1016/j.softx.2019.01.005"
     },
     "task_113": {
       "id": "113",
@@ -2098,7 +2496,10 @@
       "images": {
         "folder": "Task_113_mri_pnpdm",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/diffpy/diffpy.srfit",
+      "paper_title": "Complex modeling: a strategy and software program for combining multiple information sources to solve ill posed structure and nanostructure inverse problems",
+      "paper_link": "https://doi.org/10.1107/S2053273315014473"
     },
     "task_114": {
       "id": "114",
@@ -2116,7 +2517,10 @@
       "images": {
         "folder": "Task_114_mri_reddiff",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "️ No dedicated paper — implements Sader-Jarvis method from: Quantitative force measurements using frequency modulation atomic force microscopy",
+      "paper_link": "https://doi.org/10.1063/1.1667267"
     },
     "task_115": {
       "id": "115",
@@ -2134,7 +2538,10 @@
       "images": {
         "folder": "Task_115_mri_score_mri",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "️ No dedicated paper — standard constitutive model inverse calibration",
+      "paper_link": ""
     },
     "task_116": {
       "id": "116",
@@ -2150,7 +2557,10 @@
       "images": {
         "folder": "Task_116_multireflection_bcdi_SiC",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "️ No dedicated paper — standard thermoelastic stress analysis (TSA) reconstruction",
+      "paper_link": ""
     },
     "task_117": {
       "id": "117",
@@ -2166,7 +2576,10 @@
       "images": {
         "folder": "Task_117_multireflection_bcdi_adam_nodisloc",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "️ No dedicated paper — standard finite element model updating from modal data",
+      "paper_link": ""
     },
     "task_118": {
       "id": "118",
@@ -2182,7 +2595,10 @@
       "images": {
         "folder": "Task_118_multireflection_bcdi_adam_twodisloc",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/zhonge/cryodrgn",
+      "paper_title": "CryoDRGN: reconstruction of heterogeneous cryo-EM structures using neural networks",
+      "paper_link": "https://doi.org/10.1038/s41592-020-01049-4"
     },
     "task_119": {
       "id": "119",
@@ -2198,7 +2614,10 @@
       "images": {
         "folder": "Task_119_navier_stokes_dpg",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "",
+      "paper_title": "️ No dedicated paper — standard Optical Projection Tomography with FBP reconstruction",
+      "paper_link": ""
     },
     "task_120": {
       "id": "120",
@@ -2214,7 +2633,10 @@
       "images": {
         "folder": "Task_120_navier_stokes_enkg",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/KULL-Centre/FRETpredict",
+      "paper_title": "️ FRETpredict: FRET efficiency prediction for protein structure (no formal paper confirmed)",
+      "paper_link": ""
     },
     "task_121": {
       "id": "121",
@@ -2230,7 +2652,10 @@
       "images": {
         "folder": "Task_121_navier_stokes_scg",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/dmici/NeuTomPy-toolbox",
+      "paper_title": "NeuTomPy toolbox, a Python package for tomographic data processing and reconstruction",
+      "paper_link": "https://doi.org/10.1016/j.softx.2019.01.005"
     },
     "task_122": {
       "id": "122",
@@ -2247,7 +2672,10 @@
       "images": {
         "folder": "Task_122_tomo_fbp_cpu",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/ECSHackWeek/impedance.py",
+      "paper_title": "impedance.py: A Python package for electrochemical impedance analysis",
+      "paper_link": "https://doi.org/10.21105/joss.02349"
     },
     "task_123": {
       "id": "123",
@@ -2264,7 +2692,10 @@
       "images": {
         "folder": "Task_123_tomo_fbp_gpu",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/LCAV/pyroomacoustics",
+      "paper_title": "Pyroomacoustics: A Python package for audio room simulations and array processing algorithms",
+      "paper_link": "https://doi.org/10.1109/icassp.2018.8461310"
     },
     "task_124": {
       "id": "124",
@@ -2281,7 +2712,10 @@
       "images": {
         "folder": "Task_124_tomo_nnfbp",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/ndtatbristol/arim",
+      "paper_title": "A Model for Multiview Ultrasonic Array Inspection of Small Two-Dimensional Defects",
+      "paper_link": "https://doi.org/10.1109/TUFFC.2019.2909988"
     },
     "task_125": {
       "id": "125",
@@ -2298,7 +2732,10 @@
       "images": {
         "folder": "Task_125_tomo_sirt_gpu",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/flatironinstitute/CaImAn",
+      "paper_title": "CaImAn an open source tool for scalable calcium imaging data analysis",
+      "paper_link": "https://doi.org/10.7554/eLife.38173"
     },
     "task_126": {
       "id": "126",
@@ -2314,7 +2751,10 @@
       "images": {
         "folder": "Task_126_unmixing_AA_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/brandondube/prysm",
+      "paper_title": "prysm: A Python optics module",
+      "paper_link": "https://doi.org/10.21105/joss.01352"
     },
     "task_127": {
       "id": "127",
@@ -2330,7 +2770,10 @@
       "images": {
         "folder": "Task_127_unmixing_ADMMNet_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/RI-imaging/ODTbrain",
+      "paper_title": "ODTbrain: a Python library for full-view, dense diffraction tomography",
+      "paper_link": "https://doi.org/10.1186/s12859-015-0764-0"
     },
     "task_128": {
       "id": "128",
@@ -2346,7 +2789,10 @@
       "images": {
         "folder": "Task_128_unmixing_CLSUnSAL_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/gimli-org/pygimli",
+      "paper_title": "pyGIMLi: An open-source library for modelling and inversion in geophysics",
+      "paper_link": "https://doi.org/10.1016/j.cageo.2017.07.011"
     },
     "task_129": {
       "id": "129",
@@ -2362,7 +2808,10 @@
       "images": {
         "folder": "Task_129_unmixing_CNNAEU_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/bilby-dev/bilby",
+      "paper_title": "Bilby: A User-friendly Bayesian Inference Library for Gravitational-wave Astronomy",
+      "paper_link": "https://doi.org/10.3847/1538-4365/ab06fc"
     },
     "task_130": {
       "id": "130",
@@ -2378,7 +2827,10 @@
       "images": {
         "folder": "Task_130_unmixing_DS_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/CobayaSampler/cobaya",
+      "paper_title": "Cobaya: Code for Bayesian Analysis of hierarchical physical models",
+      "paper_link": "https://doi.org/10.1088/1475-7516/2021/05/057"
     },
     "task_131": {
       "id": "131",
@@ -2394,7 +2846,10 @@
       "images": {
         "folder": "Task_131_unmixing_EDAA_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/JohannesBuchner/BXA/",
+      "paper_title": "BXA: Bayesian X-ray Analysis",
+      "paper_link": "https://doi.org/10.21105/joss.03045"
     },
     "task_132": {
       "id": "132",
@@ -2410,7 +2865,10 @@
       "images": {
         "folder": "Task_132_unmixing_MSNet_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/SpikeInterface/spikeinterface",
+      "paper_title": "️ SpikeInterface (eLife publication)",
+      "paper_link": ""
     },
     "task_133": {
       "id": "133",
@@ -2426,7 +2884,10 @@
       "images": {
         "folder": "Task_133_unmixing_MiSiCNet_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/nielsenmb/PBjam",
+      "paper_title": "️ PBjam: A Python Package for Automating Asteroseismology",
+      "paper_link": ""
     },
     "task_134": {
       "id": "134",
@@ -2442,7 +2903,10 @@
       "images": {
         "folder": "Task_134_unmixing_PGMSU_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/NSLS-II/PyXRF",
+      "paper_title": "️ PyXRF (Proc. SPIE publication)",
+      "paper_link": ""
     },
     "task_135": {
       "id": "135",
@@ -2458,7 +2922,10 @@
       "images": {
         "folder": "Task_135_unmixing_S2WSU_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/AdvancedPhotonSource/GSAS-II",
+      "paper_title": "GSAS-II: the genesis of a modern open-source all purpose crystallography software package",
+      "paper_link": "https://doi.org/10.1107/S0021889813003531"
     },
     "task_136": {
       "id": "136",
@@ -2474,7 +2941,10 @@
       "images": {
         "folder": "Task_136_unmixing_SUnAA_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/Jashcraf/katsu",
+      "paper_title": "️ katsu (JOSS accepted)",
+      "paper_link": ""
     },
     "task_137": {
       "id": "137",
@@ -2490,7 +2960,10 @@
       "images": {
         "folder": "Task_137_unmixing_SUnCNN_DC1",
         "vis_result": "vis_result.png"
-      }
+      },
+      "github_repo": "https://github.com/ratt-ru/CubiCal",
+      "paper_title": "️ CubiCal: fast radio interferometric calibration",
+      "paper_link": ""
     },
     "task_138": {
       "id": "138",
@@ -2505,6 +2978,1251 @@
       },
       "images": {
         "folder": "Task_138_unmixing_SUnSAL_DC1",
+        "vis_result": "vis_result.png"
+      },
+      "github_repo": "https://github.com/LSSTDESC/NaMaster",
+      "paper_title": "️ A unified pseudo-Cℓ framework",
+      "paper_link": ""
+    },
+    "task_139": {
+      "id": "139",
+      "id_num": 139,
+      "name": "reptate_rheo",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "reptate_rheo",
+      "description": "Rheology parameter fitting using Rouse model\n- **配置文件源**: `config_task_4_B.yaml`\n- **Working Folder**: `/data/yjh/reptate_rheo_sandbox`\n- **Python Path**: `/data/yjh/reptate_rheo_env/bin/python`\n- **GT Code Path**: `/data/yjh/reptate_rheo_sandbox/reptate_rheo_code.py`\n- **PSNR**: 72.47 dB\n- **CC**: 1.0000\n- **评估类型**: 1D rheological spectral fitting (Rouse model parameter inversion)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_139_reptate_rheo/`\n- **核心数据清单**:\n  - Input: noisy G'(ω), G''(ω) dynam",
+      "github_repo": "https://github.com/jorge-ramirez-upm/RepTate",
+      "paper_title": "️ RepTate: Rheology of Entangled Polymers",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 72.47,
+        "eval_type": "1D rheological spectral fitting (Rouse model parameter inversion)"
+      },
+      "images": {
+        "folder": "Task_139_reptate_rheo",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_140": {
+      "id": "140",
+      "id_num": 140,
+      "name": "pyidi_dic",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "pyidi_dic",
+      "description": "Digital image correlation using ZNCC and Lucas-Kanade\n- **配置文件源**: `config_task_4_B.yaml`\n- **Working Folder**: `/data/yjh/pyidi_dic_sandbox`\n- **Python Path**: `/data/yjh/pyidi_dic_env/bin/python`\n- **GT Code Path**: `/data/yjh/pyidi_dic_sandbox/pyidi_dic_code.py`\n- **PSNR**: 42.44 dB\n- **CC**: 0.9994\n- **评估类型**: 2D displacement field tracking (ZNCC + Lucas-Kanade DIC)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_140_pyidi_dic/`\n- **核心数据清单**:\n  - Input: synthetic speckle image sequence with kn",
+      "github_repo": "https://github.com/ladisk/pyidi",
+      "paper_title": "️ pyidi: Digital Image Correlation",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 42.44,
+        "eval_type": "2D displacement field tracking (ZNCC + Lucas-Kanade DIC)"
+      },
+      "images": {
+        "folder": "Task_140_pyidi_dic",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_141": {
+      "id": "141",
+      "id_num": 141,
+      "name": "tttrlib_flim",
+      "domain": "A",
+      "domain_name": "Optical Microscopy",
+      "title": "tttrlib_flim",
+      "description": "FLIM decay fitting using bi-exponential model\n- **配置文件源**: `config_task_4_B.yaml`\n- **Working Folder**: `/data/yjh/tttrlib_flim_sandbox`\n- **Python Path**: `/data/yjh/tttrlib_flim_env/bin/python`\n- **GT Code Path**: `/data/yjh/tttrlib_flim_sandbox/tttrlib_flim_code.py`\n- **PSNR**: 69.40 dB\n- **CC**: 1.000000\n- **评估类型**: 1D TCSPC decay deconvolution (bi-exponential lifetime fitting)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_141_tttrlib_flim/`\n- **核心数据清单**:\n  - Input: TCSPC histogram + IRF\n  -",
+      "github_repo": "https://github.com/Fluorescence-Tools/tttrlib",
+      "paper_title": "️ tttrlib: Time-Tagged Time-Resolved Library",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 69.4,
+        "eval_type": "1D TCSPC decay deconvolution (bi-exponential lifetime fitting)"
+      },
+      "images": {
+        "folder": "Task_141_tttrlib_flim",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_142": {
+      "id": "142",
+      "id_num": 142,
+      "name": "phasorpy_flim",
+      "domain": "A",
+      "domain_name": "Optical Microscopy",
+      "title": "phasorpy_flim",
+      "description": "FLIM phasor analysis using phasorpy\n- **配置文件源**: `config_task_4_B.yaml`\n- **Working Folder**: `/data/yjh/phasorpy_flim_sandbox`\n- **Python Path**: `/data/yjh/phasorpy_flim_env/bin/python`\n- **GT Code Path**: `/data/yjh/phasorpy_flim_sandbox/phasorpy_flim_code.py`\n- **PSNR**: 35.58 dB\n- **SSIM**: 0.851426\n- **评估类型**: 2D FLIM component fraction mapping (phasor-based lifetime unmixing)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_142_phasorpy_flim/`\n- **核心数据清单**:\n  - Input: FLIM time-resolved imag",
+      "github_repo": "https://github.com/phasorpy/phasorpy",
+      "paper_title": "️ phasorpy: Phasor approach to FLIM",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 35.58,
+        "ssim": 0.851426,
+        "eval_type": "2D FLIM component fraction mapping (phasor-based lifetime unmixing)"
+      },
+      "images": {
+        "folder": "Task_142_phasorpy_flim",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_143": {
+      "id": "143",
+      "id_num": 143,
+      "name": "montepython_cosmo",
+      "domain": "F",
+      "domain_name": "Astrophysics",
+      "title": "montepython_cosmo",
+      "description": "Cosmological parameter inference using MontePython\n- **配置文件源**: `config_task_4_B.yaml`\n- **Working Folder**: `/data/yjh/montepython_cosmo_sandbox`\n- **Python Path**: `/data/yjh/montepython_cosmo_env/bin/python`\n- **GT Code Path**: `/data/yjh/montepython_cosmo_sandbox/montepython_cosmo_code.py`\n- **PSNR**: 58.31 dB\n- **CC**: 1.000000\n- **评估类型**: Cosmological parameter estimation (MCMC Bayesian inference, H₀=67.64±1.26, Ωm=0.3209±0.0086, Ωb=0.0491±0.0018)\n- **专属资源文件夹**: `/data/yjh/website_assets/T",
+      "github_repo": "https://github.com/brinckmann/montepython_public",
+      "paper_title": "️ MontePython 3: boosted MCMC sampler",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 58.31,
+        "eval_type": "Cosmological parameter estimation (MCMC Bayesian inference, H₀=67.64±1.26, Ωm=0.3209±0.0086, Ωb=0.0491±0.0018)"
+      },
+      "images": {
+        "folder": "Task_143_montepython_cosmo",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_144": {
+      "id": "144",
+      "id_num": 144,
+      "name": "fastmri_recon",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "fastmri_recon",
+      "description": "Accelerated MRI reconstruction using ISTA with TV regularization\n- **Inverse Problem**: Accelerated MRI image reconstruction from undersampled k-space data (compressed sensing MRI)\n- **GitHub Repo**: https://github.com/facebookresearch/fastMRI\n- **Method**: ISTA with Total Variation (TV) regularization for compressed sensing MRI reconstruction\n- **Forward Operator**: 2D FFT with random Cartesian undersampling mask (4× acceleration, 8% center fraction)\n- **Ground Truth**: Shepp-Logan phantom (128",
+      "github_repo": "",
+      "paper_title": "fastMRI: An Open Dataset and Benchmarks for Accelerated MRI",
+      "paper_link": "",
+      "metrics": {},
+      "images": {
+        "folder": "Task_144_fastmri_recon",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_145": {
+      "id": "145",
+      "id_num": 145,
+      "name": "direct_mri",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "direct_mri",
+      "description": "MRI reconstruction using iterative optimization (POCS/ISTA)\n- **配置文件源**: `config_task_5_C.yaml`\n- **Working Folder**: `/data/yjh/direct_mri_sandbox`\n- **Python Path**: `/data/yjh/direct_mri_env/bin/python`\n- **GT Code Path**: `/data/yjh/direct_mri_sandbox/direct_mri_code.py`\n- **PSNR**: 43.00 dB\n- **SSIM**: 0.9712\n- **评估类型**: 2D MRI reconstruction (deep learning / unrolled optimization)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_145_direct_mri/`\n- **核心数据清单**:\n  - Input: undersampled k-space\n ",
+      "github_repo": "https://github.com/NKI-AI/direct",
+      "paper_title": "DIRECT: Deep Image REConstruction Toolkit",
+      "paper_link": "https://doi.org/10.21105/joss.04278",
+      "metrics": {
+        "psnr": 43.0,
+        "ssim": 0.9712,
+        "eval_type": "2D MRI reconstruction (deep learning / unrolled optimization)"
+      },
+      "images": {
+        "folder": "Task_145_direct_mri",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_146": {
+      "id": "146",
+      "id_num": 146,
+      "name": "sigpy_mri",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "sigpy_mri",
+      "description": "MRI reconstruction using compressed sensing (sigpy)\n- **Inverse Problem**: Iterative MRI reconstruction from undersampled k-space data (compressed sensing, parallel imaging)\n- **Method**: L1-Wavelet compressed sensing reconstruction using SigPy's `L1WaveletRecon` app\n- **Forward Operator**: 2D FFT with Poisson variable-density undersampling mask (4× acceleration, 8-coil parallel imaging with birdcage sensitivity maps)\n- **Ground Truth**: Shepp-Logan phantom (128×128) generated via `sigpy.shepp_l",
+      "github_repo": "https://github.com/mikgroup/sigpy",
+      "paper_title": "SigPy: A Python Package for Signal Processing",
+      "paper_link": "https://doi.org/10.5281/zenodo.5893788",
+      "metrics": {},
+      "images": {
+        "folder": "Task_146_sigpy_mri",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_147": {
+      "id": "147",
+      "id_num": 147,
+      "name": "mri_nufft_recon",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "mri_nufft_recon",
+      "description": "Non-Cartesian MRI reconstruction using NUFFT\n- **Inverse Problem**: Non-Cartesian MRI reconstruction from radial k-space data via NUFFT operators\n- **Method**: Voronoi density-compensated adjoint (gridding) + Total Variation denoising, with CG iterative reconstruction as comparison\n- **Forward Operator**: NUFFT (Non-Uniform FFT) with 150 radial spokes (1.3× undersampled from Nyquist ~202), mri-nufft + finufft backend\n- **Ground Truth**: Shepp-Logan phantom (128×128) from scikit-image, resized wi",
+      "github_repo": "https://github.com/mind-inria/mri-nufft",
+      "paper_title": "MRI-NUFFT: Doing non-Cartesian MRI has never been easier",
+      "paper_link": "https://doi.org/10.21105/joss.07743",
+      "metrics": {
+        "psnr": 22.4,
+        "ssim": 0.551
+      },
+      "images": {
+        "folder": "Task_147_mri_nufft_recon",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_148": {
+      "id": "148",
+      "id_num": 148,
+      "name": "cil_tomo",
+      "domain": "C",
+      "domain_name": "X-ray/CT",
+      "title": "cil_tomo",
+      "description": "Limited-angle CT reconstruction using iterative optimization\n- **Inverse Problem**: CT tomographic reconstruction from limited-angle sinogram via iterative optimization\n- **Method**: FBP (baseline), CGLS (algebraic iterative), TV-FISTA (proximal gradient with Total Variation regularization)\n- **Forward Operator**: Radon transform (skimage) with 90 projections (limited-angle, half of full 180°), Gaussian noise σ=0.02\n- **Ground Truth**: Shepp-Logan phantom (128×128) from scikit-image, normalized ",
+      "github_repo": "https://github.com/TomographicImaging/CIL",
+      "paper_title": "Core Imaging Library Part I",
+      "paper_link": "https://doi.org/10.1098/rsta.2020.0192",
+      "metrics": {},
+      "images": {
+        "folder": "Task_148_cil_tomo",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_149": {
+      "id": "149",
+      "id_num": 149,
+      "name": "lucyd_deconv",
+      "domain": "A",
+      "domain_name": "Optical Microscopy",
+      "title": "lucyd_deconv",
+      "description": "Fluorescence microscopy deconvolution using Lucy-Richardson\n- **Inverse Problem**: Fluorescence microscopy image deconvolution (removing optical blur and Poisson noise)\n- **Method**: Richardson-Lucy (RL) iterative deconvolution with Total Variation (TV) regularization, inspired by the LUCYD feature-driven RL framework\n- **Forward Operator**: Convolution with Gaussian PSF (σ=2.5, 21×21 kernel) + Poisson noise (photon gain=500), modeling widefield fluorescence microscopy: y = Poisson(PSF ⊛ x)\n- **",
+      "github_repo": "https://github.com/ctom2/lucyd-deconvolution",
+      "paper_title": "LUCYD: A Feature-Driven Richardson-Lucy Deconvolution Network",
+      "paper_link": "https://doi.org/10.1007/978-3-031-43993-3_63",
+      "metrics": {},
+      "images": {
+        "folder": "Task_149_lucyd_deconv",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_150": {
+      "id": "150",
+      "id_num": 150,
+      "name": "ptychi_recon",
+      "domain": "A",
+      "domain_name": "Optical Microscopy",
+      "title": "ptychi_recon",
+      "description": "Ptychography reconstruction using gradient descent\n- **Inverse Problem**: Ptychographic phase retrieval — reconstructing a complex-valued object transmission function (amplitude + phase) from scanning coherent diffraction intensity patterns\n- **Method**: Extended Ptychographic Iterative Engine (ePIE) with stochastic position ordering, delayed probe update start, and max-denominator update rule\n- **Forward Operator**: For each of 100 overlapping scan positions (75% overlap), exit wave = probe × o",
+      "github_repo": "https://github.com/AdvancedPhotonSource/pty-chi",
+      "paper_title": "Pty-Chi: A PyTorch-based modern ptychographic data analysis package",
+      "paper_link": "",
+      "metrics": {},
+      "images": {
+        "folder": "Task_150_ptychi_recon",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_151": {
+      "id": "151",
+      "id_num": 151,
+      "name": "aspire_cryoem",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "aspire_cryoem",
+      "description": "Cryo-EM 3D reconstruction using ASPIRE\n- **Inverse Problem**: 3D structure reconstruction from cryo-EM 2D projection images — recovering a 3D electron density volume from noisy 2D projection images taken at unknown random orientations\n- **Method**: Weighted back-projection with known orientations, compared against ASPIRE MeanEstimator (Wiener-type least-squares estimator with conjugate gradient solver)\n- **Forward Operator**: For each of 2000 random 3D orientations θᵢ, the 2D projection is compu",
+      "github_repo": "https://github.com/ComputationalCryoEM/ASPIRE-Python",
+      "paper_title": "ASPIRE-Python",
+      "paper_link": "https://doi.org/10.5281/zenodo.5657281",
+      "metrics": {},
+      "images": {
+        "folder": "Task_151_aspire_cryoem",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_152": {
+      "id": "152",
+      "id_num": 152,
+      "name": "saxnerf_ct",
+      "domain": "C",
+      "domain_name": "X-ray/CT",
+      "title": "saxnerf_ct",
+      "description": "CT reconstruction using SAX-NeRF neural rendering\n- **配置文件源**: `config_task_5_C.yaml`\n- **Working Folder**: `/data/yjh/saxnerf_ct_sandbox`\n- **Python Path**: `/data/yjh/saxnerf_ct_env/bin/python`\n- **GT Code Path**: `/data/yjh/saxnerf_ct_sandbox/saxnerf_ct_code.py`\n- **PSNR**: 41.61 dB\n- **SSIM**: 0.9985\n- **评估类型**: Sparse-view CT reconstruction (30 angles, TV-regularized iterative)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_152_saxnerf_ct/`\n- **核心数据清单**:\n  - Input: sparse sinogram (30 projec",
+      "github_repo": "https://github.com/caiyuanhao1998/SAX-NeRF",
+      "paper_title": "Structure-Aware Sparse-View X-ray 3D Reconstruction",
+      "paper_link": "https://arxiv.org/abs/2311.10959",
+      "metrics": {
+        "psnr": 41.61,
+        "ssim": 0.9985,
+        "eval_type": "Sparse-view CT reconstruction (30 angles, TV-regularized iterative)"
+      },
+      "images": {
+        "folder": "Task_152_saxnerf_ct",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_153": {
+      "id": "153",
+      "id_num": 153,
+      "name": "r2gaussian_ct",
+      "domain": "C",
+      "domain_name": "X-ray/CT",
+      "title": "r2gaussian_ct",
+      "description": "CT reconstruction using R2-Gaussian splatting\n- **配置文件源**: `config_task_5_C.yaml`\n- **Working Folder**: `/data/yjh/r2gaussian_ct_sandbox`\n- **Python Path**: `/data/yjh/r2gaussian_ct_env/bin/python`\n- **GT Code Path**: `/data/yjh/r2gaussian_ct_sandbox/r2gaussian_ct_code.py`\n- **PSNR**: 22.49 dB ← 🔧 修复前: 19.73 dB\n- **SSIM**: 0.698\n- **修复说明**: hamming滤波; Gaussian 800; 混合0.7*FBP+0.3*GS\n- **RMSE**: 0.103209\n- **评估类型**: CT volume reconstruction via Gaussian Splatting (R2-Gaussian inspired, 75 angles, ",
+      "github_repo": "https://github.com/Ruyi-Zha/r2_gaussian",
+      "paper_title": "Rectifying Radiative Gaussian Splatting for Tomographic Reconstruction",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 22.49,
+        "ssim": 0.698,
+        "eval_type": "CT volume reconstruction via Gaussian Splatting (R2-Gaussian inspired, 75 angles, 500 Gaussians)"
+      },
+      "images": {
+        "folder": "Task_153_r2gaussian_ct",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_154": {
+      "id": "154",
+      "id_num": 154,
+      "name": "qiskit_qst",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "qiskit_qst",
+      "description": "Quantum state tomography using linear inversion and MLE\n- **配置文件源**: `config_task_5_D.yaml`\n- **Working Folder**: `/data/yjh/qiskit_qst_sandbox`\n- **Python Path**: `/data/yjh/qiskit_qst_env/bin/python`\n- **GT Code Path**: `/data/yjh/qiskit_qst_sandbox/qiskit_qst_code.py`\n- **PSNR**: 46.83 dB\n- **SSIM**: N/A\n- **评估类型**: Quantum state tomography (Fidelity=0.9963, Trace Distance=0.0099)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_154_qiskit_qst/`\n- **核心数据清单**:\n  - Input: `gt_output.npy`\n  - GT Ou",
+      "github_repo": "https://github.com/qiskit-community/qiskit-experiments",
+      "paper_title": "️ Qiskit Experiments",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 46.83,
+        "eval_type": "Quantum state tomography (Fidelity=0.9963, Trace Distance=0.0099)"
+      },
+      "images": {
+        "folder": "Task_154_qiskit_qst",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_155": {
+      "id": "155",
+      "id_num": 155,
+      "name": "suite2p_spike",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "suite2p_spike",
+      "description": "Calcium imaging spike inference using Suite2p OASIS\n- **配置文件源**: `config_task_5_D.yaml`\n- **Working Folder**: `/data/yjh/suite2p_spike_sandbox`\n- **Python Path**: `/data/yjh/suite2p_spike_env/bin/python`\n- **GT Code Path**: `/data/yjh/suite2p_spike_sandbox/suite2p_spike_code.py`\n- **PSNR**: 29.27 dB ← 🔧 修复前: 19.74 dB\n- **SSIM**: N/A\n- **修复说明**: 噪声0.15→0.08; 基线sigma 0.5→0.1\n- **评估类型**: Calcium spike deconvolution (F1=0.8895, CC=0.9475)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_155_suite2p_spi",
+      "github_repo": "https://github.com/MouseLand/suite2p",
+      "paper_title": "️ Suite2p: beyond 10,000 neurons",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 29.27,
+        "eval_type": "Calcium spike deconvolution (F1=0.8895, CC=0.9475)"
+      },
+      "images": {
+        "folder": "Task_155_suite2p_spike",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_156": {
+      "id": "156",
+      "id_num": 156,
+      "name": "kilosort_spike",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "kilosort_spike",
+      "description": "Spike sorting using Kilosort template matching\n- **配置文件源**: `config_task_5_D.yaml`\n- **Working Folder**: `/data/yjh/kilosort_spike_sandbox`\n- **Python Path**: `/data/yjh/kilosort_spike_env/bin/python`\n- **GT Code Path**: `/data/yjh/kilosort_spike_sandbox/kilosort_spike_code.py`\n- **PSNR**: N/A (spike sorting)\n- **SSIM**: N/A\n- **Accuracy**: 0.9904\n- **F1 Score**: 0.9765\n- **Detection Rate**: 0.9541\n- **评估类型**: Spike sorting (Accuracy=0.9904, F1=0.9765, Detection Rate=0.9541)\n- **专属资源文件夹**: `/dat",
+      "github_repo": "https://github.com/MouseLand/Kilosort",
+      "paper_title": "️ Kilosort4: accurate spike sorting by template matching",
+      "paper_link": "",
+      "metrics": {
+        "eval_type": "Spike sorting (Accuracy=0.9904, F1=0.9765, Detection Rate=0.9541)"
+      },
+      "images": {
+        "folder": "Task_156_kilosort_spike",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_157": {
+      "id": "157",
+      "id_num": 157,
+      "name": "plasmapy_langmuir",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "plasmapy_langmuir",
+      "description": "Langmuir probe analysis for plasma density/temperature\n- **配置文件源**: `config_task_5_D.yaml`\n- **Working Folder**: `/data/yjh/plasmapy_langmuir_sandbox`\n- **Python Path**: `/data/yjh/plasmapy_langmuir_env/bin/python`\n- **GT Code Path**: `/data/yjh/plasmapy_langmuir_sandbox/plasmapy_langmuir_code.py`\n- **PSNR**: N/A (parameter estimation)\n- **SSIM**: N/A\n- **T_e RE**: 0.05%\n- **n_e RE**: 0.07%\n- **V_p RE**: 0.32%\n- **评估类型**: Langmuir probe parameter extraction (T_e RE=0.37%, n_e RE=0.18%, V_p RE=0.",
+      "github_repo": "https://github.com/PlasmaPy/PlasmaPy",
+      "paper_title": "️ PlasmaPy: An open source Python package for plasma research",
+      "paper_link": "",
+      "metrics": {
+        "eval_type": "Langmuir probe parameter extraction (T_e RE=0.37%, n_e RE=0.18%, V_p RE=0.27%)"
+      },
+      "images": {
+        "folder": "Task_157_plasmapy_langmuir",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_158": {
+      "id": "158",
+      "id_num": 158,
+      "name": "ceviche_photonic",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "ceviche_photonic",
+      "description": "Photonic inverse design using ceviche adjoint optimization\n- **配置文件源**: `config_task_5_D.yaml`\n- **Working Folder**: `/data/yjh/ceviche_photonic_sandbox`\n- **Python Path**: `/data/yjh/ceviche_photonic_env/bin/python`\n- **GT Code Path**: `/data/yjh/ceviche_photonic_sandbox/ceviche_photonic_code.py`\n- **PSNR**: 24.34 dB\n- **SSIM**: 0.590\n- **评估类型**: Photonic inverse design (Transmission_ratio=0.811, Structure CC=0.964, Field CC=0.998)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_158_ceviche_photo",
+      "github_repo": "https://github.com/fancompute/ceviche",
+      "paper_title": "️ Ceviche: Electromagnetic inverse design",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 24.34,
+        "ssim": 0.59,
+        "eval_type": "Photonic inverse design (Transmission_ratio=0.811, Structure CC=0.964, Field CC=0.998)"
+      },
+      "images": {
+        "folder": "Task_158_ceviche_photonic",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_159": {
+      "id": "159",
+      "id_num": 159,
+      "name": "hippylib_bayesian",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "hippylib_bayesian",
+      "description": "Bayesian inverse problem using hIPPYlib\n- **配置文件源**: `config_task_5_D.yaml`\n- **Working Folder**: `/data/yjh/hippylib_bayesian_sandbox`\n- **Python Path**: `/data/yjh/hippylib_bayesian_env/bin/python`\n- **GT Code Path**: `/data/yjh/hippylib_bayesian_sandbox/hippylib_bayesian_code.py`\n- **PSNR**: 25.81 dB\n- **SSIM**: 0.938\n- **评估类型**: PDE-constrained Bayesian inversion (CC=0.942, RE=9.95%)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_159_hippylib_bayesian/`\n- **核心数据清单**:\n  - Input: `gt_output.npy",
+      "github_repo": "https://github.com/hippylib/hippylib",
+      "paper_title": "️ hIPPYlib: Inverse Problems Python library",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 25.81,
+        "ssim": 0.938,
+        "eval_type": "PDE-constrained Bayesian inversion (CC=0.942, RE=9.95%)"
+      },
+      "images": {
+        "folder": "Task_159_hippylib_bayesian",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_160": {
+      "id": "160",
+      "id_num": 160,
+      "name": "enterprise_pta",
+      "domain": "F",
+      "domain_name": "Astrophysics",
+      "title": "enterprise_pta",
+      "description": "Pulsar timing array gravitational wave detection using enterprise\n- **配置文件源**: `config_task_5_D.yaml`\n- **Working Folder**: `/data/yjh/enterprise_pta_sandbox`\n- **Python Path**: `/data/yjh/enterprise_pta_env/bin/python`\n- **GT Code Path**: `/data/yjh/enterprise_pta_sandbox/enterprise_pta_code.py`\n- **PSNR**: N/A (parameter estimation)\n- **SSIM**: N/A\n- **Parameter RE**: 17.5%, 5.7%, 45.1%\n- **PSD CC (red noise)**: 0.9882\n- **PSD CC (GW)**: 1.0000\n- **评估类型**: PTA Bayesian inference (parameter RE ",
+      "github_repo": "https://github.com/nanograv/enterprise",
+      "paper_title": "ENTERPRISE: Enhanced Numerical Toolbox Enabling a Robust PulsaR Inference SuitE",
+      "paper_link": "https://doi.org/10.5281/zenodo.4059815",
+      "metrics": {
+        "eval_type": "PTA Bayesian inference (parameter RE values, power spectrum CC)"
+      },
+      "images": {
+        "folder": "Task_160_enterprise_pta",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_161": {
+      "id": "161",
+      "id_num": 161,
+      "name": "pynpoint_hci",
+      "domain": "F",
+      "domain_name": "Astrophysics",
+      "title": "pynpoint_hci",
+      "description": "High-contrast imaging using PCA-based ADI reduction\n- **配置文件源**: `config_task_5_D.yaml`\n- **Working Folder**: `/data/yjh/pynpoint_hci_sandbox`\n- **Python Path**: `/data/yjh/pynpoint_hci_env/bin/python`\n- **GT Code Path**: `/data/yjh/pynpoint_hci_sandbox/pynpoint_hci_code.py`\n- **PSNR**: 28.88 dB\n- **SSIM**: N/A\n- **评估类型**: High-contrast imaging (SNR=3.39, Position Error=0.0px, Photometric Acc=4.16%)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_161_pynpoint_hci/`\n- **核心数据清单**:\n  - Input: `gt_out",
+      "github_repo": "https://github.com/PynPoint/PynPoint",
+      "paper_title": "PynPoint: a modular pipeline architecture for processing and analysis of high-contrast imaging data",
+      "paper_link": "https://doi.org/10.1051/0004-6361/201834136",
+      "metrics": {
+        "psnr": 28.88,
+        "eval_type": "High-contrast imaging (SNR=3.39, Position Error=0.0px, Photometric Acc=4.16%)"
+      },
+      "images": {
+        "folder": "Task_161_pynpoint_hci",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_162": {
+      "id": "162",
+      "id_num": 162,
+      "name": "prospector_sed",
+      "domain": "F",
+      "domain_name": "Astrophysics",
+      "title": "prospector_sed",
+      "description": "SED fitting for galaxy properties using Prospector\n- **配置文件源**: `config_task_5_D.yaml`\n- **Working Folder**: `/data/yjh/prospector_sed_sandbox`\n- **Python Path**: `/data/yjh/prospector_sed_env/bin/python`\n- **GT Code Path**: `/data/yjh/prospector_sed_sandbox/prospector_sed_code.py`\n- **PSNR**: N/A (parameter estimation)\n- **SSIM**: N/A\n- **CC**: 0.9999\n- **Mean Parameter RE**: 6.96%\n- **评估类型**: SED fitting (parameter RE values, Flux CC)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_162_prospecto",
+      "github_repo": "https://github.com/bd-j/prospector",
+      "paper_title": "Stellar Population Inference with Prospector",
+      "paper_link": "https://doi.org/10.3847/1538-4365/abef67",
+      "metrics": {
+        "eval_type": "SED fitting (parameter RE values, Flux CC)"
+      },
+      "images": {
+        "folder": "Task_162_prospector_sed",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_163": {
+      "id": "163",
+      "id_num": 163,
+      "name": "harmonica_gravity",
+      "domain": "E",
+      "domain_name": "Geophysics",
+      "title": "harmonica_gravity",
+      "description": "Gravity inversion using harmonica equivalent sources\n- **配置文件源**: `config_task_5_D.yaml`\n- **Working Folder**: `/data/yjh/harmonica_gravity_sandbox`\n- **Python Path**: `/data/yjh/harmonica_gravity_env/bin/python`\n- **GT Code Path**: `/data/yjh/harmonica_gravity_sandbox/harmonica_gravity_code.py`\n- **PSNR**: 45.45 dB\n- **SSIM**: 0.9924\n- **评估类型**: Gravity field inversion (CC=0.9993, RMSE=0.0758 mGal)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_163_harmonica_gravity/`\n- **核心数据清单**:\n  - Input: `g",
+      "github_repo": "https://github.com/fatiando/harmonica",
+      "paper_title": "Harmonica: Forward modeling, inversion, and processing gravity and magnetic data",
+      "paper_link": "https://doi.org/10.5281/zenodo.3628741",
+      "metrics": {
+        "psnr": 45.45,
+        "ssim": 0.9924,
+        "eval_type": "Gravity field inversion (CC=0.9993, RMSE=0.0758 mGal)"
+      },
+      "images": {
+        "folder": "Task_163_harmonica_gravity",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_164": {
+      "id": "164",
+      "id_num": 164,
+      "name": "pybaselines_spec",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "pybaselines_spec",
+      "description": "Baseline correction for spectroscopy using pybaselines\n- **配置文件源**: `config_task_5_E.yaml`\n- **Working Folder**: `/data/yjh/pybaselines_spec_sandbox`\n- **Python Path**: `/data/yjh/pybaselines_spec_env/bin/python`\n- **GT Code Path**: `/data/yjh/pybaselines_spec_sandbox/pybaselines_spec_code.py`\n- **PSNR**: 34.78 dB\n- **SSIM**: N/A\n- **评估类型**: 1D spectral baseline estimation (baseline PSNR, signal CC, signal RMSE)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_164_pybaselines_spec/`\n- **核心数据清单**:\n ",
+      "github_repo": "https://github.com/derb12/pybaselines",
+      "paper_title": "pybaselines: A Python library of algorithms for baseline correction",
+      "paper_link": "https://doi.org/10.5281/zenodo.16790579",
+      "metrics": {
+        "psnr": 34.78,
+        "eval_type": "1D spectral baseline estimation (baseline PSNR, signal CC, signal RMSE)"
+      },
+      "images": {
+        "folder": "Task_164_pybaselines_spec",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_165": {
+      "id": "165",
+      "id_num": 165,
+      "name": "spectrafit_peak",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "spectrafit_peak",
+      "description": "Spectral peak fitting using Voigt profiles\n- **配置文件源**: `config_task_5_E.yaml`\n- **Working Folder**: `/data/yjh/spectrafit_peak_sandbox`\n- **Python Path**: `/data/yjh/spectrafit_peak_env/bin/python`\n- **GT Code Path**: `/data/yjh/spectrafit_peak_sandbox/spectrafit_peak_code.py`\n- **PSNR**: 59.74 dB\n- **SSIM**: N/A\n- **评估类型**: 1D spectral peak fitting (curve PSNR/CC, parameter RE)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_165_spectrafit_peak/`\n- **核心数据清单**:\n  - Input: `gt_output.npy`\n  - GT O",
+      "github_repo": "https://github.com/Anselmoo/spectrafit",
+      "paper_title": "SpectraFit: Peak fitting and deconvolution",
+      "paper_link": "https://doi.org/10.1021/acsomega.3c09262",
+      "metrics": {
+        "psnr": 59.74,
+        "eval_type": "1D spectral peak fitting (curve PSNR/CC, parameter RE)"
+      },
+      "images": {
+        "folder": "Task_165_spectrafit_peak",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_166": {
+      "id": "166",
+      "id_num": 166,
+      "name": "sasview_saxs",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "sasview_saxs",
+      "description": "SAXS form factor fitting for particle size\n- **配置文件源**: `config_task_5_E.yaml`\n- **Working Folder**: `/data/yjh/sasview_saxs_sandbox`\n- **Python Path**: `/data/yjh/sasview_saxs_env/bin/python`\n- **GT Code Path**: `/data/yjh/sasview_saxs_sandbox/sasview_saxs_code.py`\n- **PSNR**: 37.67 dB\n- **SSIM**: N/A\n- **评估类型**: SAXS model fitting (parameter RE, I(q) PSNR/CC)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_166_sasview_saxs/`\n- **核心数据清单**:\n  - Input: `gt_output.npy`\n  - GT Output: `gt_output.npy`",
+      "github_repo": "https://github.com/SasView/sasview",
+      "paper_title": "️ SasView: Small Angle Scattering Analysis",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 37.67,
+        "eval_type": "SAXS model fitting (parameter RE, I(q) PSNR/CC)"
+      },
+      "images": {
+        "folder": "Task_166_sasview_saxs",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_167": {
+      "id": "167",
+      "id_num": 167,
+      "name": "mudic_dic",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "mudic_dic",
+      "description": "Digital image correlation using muDIC\n- **配置文件源**: `config_task_5_E.yaml`\n- **Working Folder**: `/data/yjh/mudic_dic_sandbox`\n- **Python Path**: `/data/yjh/mudic_dic_env/bin/python`\n- **GT Code Path**: `/data/yjh/mudic_dic_sandbox/mudic_dic_code.py`\n- **PSNR**: 39.12 dB (displacement field)\n- **SSIM**: 0.999298\n- **评估类型**: 2D DIC displacement recovery (displacement RMSE=0.031 px, strain PSNR=30.63 dB, strain CC=0.999)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_167_mudic_dic/`\n- **核心数据清单**:\n  ",
+      "github_repo": "https://github.com/PolymerGuy/muDIC",
+      "paper_title": "️ muDIC: Digital Image Correlation",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 39.12,
+        "ssim": 0.999298,
+        "eval_type": "2D DIC displacement recovery (displacement RMSE=0.031 px, strain PSNR=30.63 dB, strain CC=0.999)"
+      },
+      "images": {
+        "folder": "Task_167_mudic_dic",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_168": {
+      "id": "168",
+      "id_num": 168,
+      "name": "pyoma2_modal",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "pyoma2_modal",
+      "description": "Operational modal analysis using SSI\n- **配置文件源**: `config_task_5_E.yaml`\n- **Working Folder**: `/data/yjh/pyoma2_modal_sandbox`\n- **Python Path**: `/data/yjh/pyoma2_modal_env/bin/python`\n- **GT Code Path**: `/data/yjh/pyoma2_modal_sandbox/pyoma2_modal_code.py`\n- **PSNR**: N/A (parameter estimation)\n- **SSIM**: N/A\n- **Freq Mean RE**: 0.70%\n- **Damping Mean RE**: 56.6%\n- **Mean MAC**: 0.9965\n- **评估类型**: Modal parameter identification (frequency RE, damping RE, MAC)\n- **专属资源文件夹**: `/data/yjh/websi",
+      "github_repo": "https://github.com/dagghe/pyOMA2",
+      "paper_title": "️ pyOMA2: Operational Modal Analysis",
+      "paper_link": "",
+      "metrics": {
+        "eval_type": "Modal parameter identification (frequency RE, damping RE, MAC)"
+      },
+      "images": {
+        "folder": "Task_168_pyoma2_modal",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_169": {
+      "id": "169",
+      "id_num": 169,
+      "name": "crackpy_sif",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "crackpy_sif",
+      "description": "Stress intensity factor estimation from DIC displacement fields\n- **配置文件源**: `config_task_5_E.yaml`\n- **Working Folder**: `/data/yjh/crackpy_sif_sandbox`\n- **Python Path**: `/data/yjh/crackpy_sif_env/bin/python`\n- **GT Code Path**: `/data/yjh/crackpy_sif_sandbox/crackpy_sif_code.py`\n- **PSNR**: 177.40 dB (displacement field)\n- **SSIM**: N/A (1D/tabular)\n- **CC**: 1.000000\n- **RMSE**: 0.000000\n- **评估类型**: SIF extraction via Williams fitting (K_I RE, K_II RE, displacement RMSE)\n- **专属资源文件夹**: `/da",
+      "github_repo": "https://github.com/dlr-wf/crackpy",
+      "paper_title": "️ CrackPy: Crack detection and SIF estimation",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 177.4,
+        "eval_type": "SIF extraction via Williams fitting (K_I RE, K_II RE, displacement RMSE)"
+      },
+      "images": {
+        "folder": "Task_169_crackpy_sif",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_170": {
+      "id": "170",
+      "id_num": 170,
+      "name": "rampy_unmix",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "rampy_unmix",
+      "description": "Raman spectral unmixing using NMF\n- **配置文件源**: `config_task_5_E.yaml`\n- **Working Folder**: `/data/yjh/rampy_unmix_sandbox`\n- **Python Path**: `/data/yjh/rampy_unmix_env/bin/python`\n- **GT Code Path**: `/data/yjh/rampy_unmix_sandbox/rampy_unmix_code.py`\n- **PSNR**: 21.99 dB\n- **SSIM**: N/A\n- **评估类型**: Raman spectral unmixing (component CC, mixing RE, baseline PSNR)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_170_rampy_unmix/`\n- **核心数据清单**:\n  - Input: `gt_output.npy`\n  - GT Output: `gt_output.n",
+      "github_repo": "https://github.com/charlesll/rampy",
+      "paper_title": "️ Rampy: Raman spectroscopy analysis",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 21.99,
+        "eval_type": "Raman spectral unmixing (component CC, mixing RE, baseline PSNR)"
+      },
+      "images": {
+        "folder": "Task_170_rampy_unmix",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_171": {
+      "id": "171",
+      "id_num": 171,
+      "name": "spectrochempy_mcr",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "spectrochempy_mcr",
+      "description": "MCR-ALS spectral unmixing using spectrochempy\n- **配置文件源**: `config_task_5_E.yaml`\n- **Working Folder**: `/data/yjh/spectrochempy_mcr_sandbox`\n- **Python Path**: `/data/yjh/spectrochempy_mcr_env/bin/python`\n- **GT Code Path**: `/data/yjh/spectrochempy_mcr_sandbox/spectrochempy_mcr_code.py`\n- **PSNR**: 45.80 dB\n- **SSIM**: N/A\n- **评估类型**: MCR-ALS spectral decomposition (spectral CC, concentration RE, reconstruction PSNR)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_171_spectrochempy_mcr/`\n- **核心数",
+      "github_repo": "https://github.com/spectrochempy/spectrochempy",
+      "paper_title": "️ SpectroChemPy: MCR-ALS and spectroscopy",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 45.8,
+        "eval_type": "MCR-ALS spectral decomposition (spectral CC, concentration RE, reconstruction PSNR)"
+      },
+      "images": {
+        "folder": "Task_171_spectrochempy_mcr",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_172": {
+      "id": "172",
+      "id_num": 172,
+      "name": "angler_photonic",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "angler_photonic",
+      "description": "Photonic structure optimization using angler adjoint method\n- **配置文件源**: `config_task_5_E.yaml`\n- **Working Folder**: `/data/yjh/angler_photonic_sandbox`\n- **Python Path**: `/data/yjh/angler_photonic_env/bin/python`\n- **GT Code Path**: `/data/yjh/angler_photonic_sandbox/angler_photonic_code.py`\n- **PSNR**: 8.04 dB\n- **SSIM**: N/A\n- **评估类型**: Photonic inverse design (transmission match, structure PSNR/CC, convergence)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_172_angler_photonic/`\n- **核心数据清单*",
+      "github_repo": "https://github.com/fancompute/angler",
+      "paper_title": "️ Angler: Photonic inverse design",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 8.04,
+        "eval_type": "Photonic inverse design (transmission match, structure PSNR/CC, convergence)"
+      },
+      "images": {
+        "folder": "Task_172_angler_photonic",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_173": {
+      "id": "173",
+      "id_num": 173,
+      "name": "torch_radon_ct",
+      "domain": "C",
+      "domain_name": "X-ray/CT",
+      "title": "torch_radon_ct",
+      "description": "CT reconstruction using torch-radon with SIRT\n- **配置文件源**: `config_task_5_E.yaml`\n- **Working Folder**: `/data/yjh/torch_radon_ct_sandbox`\n- **Python Path**: `/data/yjh/torch_radon_ct_env/bin/python`\n- **GT Code Path**: `/data/yjh/torch_radon_ct_sandbox/torch_radon_ct_code.py`\n- **PSNR**: 30.01 dB\n- **SSIM**: 0.8513\n- **评估类型**: 2D CT reconstruction (PSNR, SSIM, RMSE)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_173_torch_radon_ct/`\n- **核心数据清单**:\n  - Input: `gt_output.npy`\n  - GT Output: `gt_out",
+      "github_repo": "https://github.com/matteo-ronchetti/torch-radon",
+      "paper_title": "TorchRadon: Fast Differentiable Routines for Computed Tomography",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 30.01,
+        "ssim": 0.8513,
+        "eval_type": "2D CT reconstruction (PSNR, SSIM, RMSE)"
+      },
+      "images": {
+        "folder": "Task_173_torch_radon_ct",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_174": {
+      "id": "174",
+      "id_num": 174,
+      "name": "pydmd_dmd",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "pydmd_dmd",
+      "description": "Dynamic mode decomposition using pyDMD\n- **配置文件源**: `config_task_5_F.yaml`\n- **Working Folder**: `/data/yjh/pydmd_dmd_sandbox`\n- **Python Path**: `/data/yjh/pydmd_dmd_env/bin/python`\n- **GT Code Path**: `/data/yjh/pydmd_dmd_sandbox/pydmd_dmd_code.py`\n- **PSNR**: 61.37 dB\n- **SSIM**: 0.999990 (CC)\n- **评估类型**: 2D spatiotemporal field reconstruction (DMD modes + eigenvalues)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_174_pydmd_dmd/`\n- **核心数据清单**:\n  - Input: `gt_output.npy`\n  - GT Output: `gt_out",
+      "github_repo": "https://github.com/PyDMD/PyDMD",
+      "paper_title": "️ PyDMD: Dynamic Mode Decomposition",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 61.37,
+        "ssim": 0.99999,
+        "eval_type": "2D spatiotemporal field reconstruction (DMD modes + eigenvalues)"
+      },
+      "images": {
+        "folder": "Task_174_pydmd_dmd",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_175": {
+      "id": "175",
+      "id_num": 175,
+      "name": "asteroid_bss",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "asteroid_bss",
+      "description": "Blind source separation using FastICA\n- **配置文件源**: `config_task_5.yaml`\n- **Working Folder**: `/data/yjh/asteroid_bss_sandbox/`\n- **Python Path**: `/data/yjh/asteroid_bss_env/bin/python`\n- **GT Code Path**: `/data/yjh/asteroid_bss_sandbox/asteroid_bss_code.py`\n- **PSNR**: 31.03 dB ← 🔧 修复前: 16.90 dB\n- **SSIM**: N/A (1D 音频信号)\n- **CC**: 0.9985\n- **SI-SDR**: 25.40 dB\n- **评估类型**: 音频盲源分离 (FastICA) — 逐源 PSNR 平均\n- **修复说明**: \n  - 过确定混合矩阵 (2×2→5×2, 5个传感器2个源)\n  - 降低噪声 (0.005→0.001)\n  - 多重启 ICA 策略 (3种非线性函数 ",
+      "github_repo": "https://github.com/asteroid-team/asteroid",
+      "paper_title": "️ Asteroid: Audio source separation",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 31.03,
+        "eval_type": "音频盲源分离 (FastICA) — 逐源 PSNR 平均"
+      },
+      "images": {
+        "folder": "Task_175_asteroid_bss",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_176": {
+      "id": "176",
+      "id_num": 176,
+      "name": "mne_nirs_flim",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "mne_nirs_flim",
+      "description": "fNIRS hemodynamic response estimation using modified Beer-Lambert law\n- **配置文件源**: `config_task_5_F.yaml`\n- **Working Folder**: `/data/yjh/mne_nirs_flim_sandbox`\n- **Python Path**: `/data/yjh/mne_nirs_flim_env/bin/python`\n- **GT Code Path**: `/data/yjh/mne_nirs_flim_sandbox/mne_nirs_flim_code.py`\n- **PSNR**: 31.01 dB\n- **SSIM**: N/A\n- **评估类型**: 1D hemodynamic signal inversion (MBLL, PSNR, CC)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_176_mne_nirs_flim/`\n- **核心数据清单**:\n  - Input: `gt_output.np",
+      "github_repo": "https://github.com/mne-tools/mne-nirs",
+      "paper_title": "️ MNE-NIRS: fNIRS analysis",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 31.01,
+        "eval_type": "1D hemodynamic signal inversion (MBLL, PSNR, CC)"
+      },
+      "images": {
+        "folder": "Task_176_mne_nirs_flim",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_177": {
+      "id": "177",
+      "id_num": 177,
+      "name": "mountainsort_spike",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "mountainsort_spike",
+      "description": "Spike sorting using MountainSort clustering\n- **配置文件源**: `config_task_5_F.yaml`\n- **Working Folder**: `/data/yjh/mountainsort_spike_sandbox`\n- **Python Path**: `/data/yjh/mountainsort_spike_env/bin/python`\n- **GT Code Path**: `/data/yjh/mountainsort_spike_sandbox/mountainsort_spike_code.py`\n- **PSNR**: N/A (spike sorting)\n- **SSIM**: N/A\n- **Precision**: 0.1809\n- **Recall**: 0.2048\n- **F1 Score**: 0.1921\n- **评估类型**: Spike sorting classification (Accuracy, Precision, Recall)\n- **专属资源文件夹**: `/data",
+      "github_repo": "https://github.com/flatironinstitute/mountainsort5",
+      "paper_title": "️ MountainSort: Spike sorting",
+      "paper_link": "",
+      "metrics": {
+        "eval_type": "Spike sorting classification (Accuracy, Precision, Recall)"
+      },
+      "images": {
+        "folder": "Task_177_mountainsort_spike",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_178": {
+      "id": "178",
+      "id_num": 178,
+      "name": "abtem_sim",
+      "domain": "A",
+      "domain_name": "Optical Microscopy",
+      "title": "abtem_sim",
+      "description": "TEM phase contrast simulation and inversion using abTEM\n- **配置文件源**: `config_task_5_F.yaml`\n- **Working Folder**: `/data/yjh/abtem_sim_sandbox`\n- **Python Path**: `/data/yjh/abtem_sim_env/bin/python`\n- **GT Code Path**: `/data/yjh/abtem_sim_sandbox/abtem_sim_code.py`\n- **PSNR**: 78.55 dB\n- **SSIM**: 1.0000\n- **评估类型**: 2D HRTEM image parameter fitting (defocus RE=0.0002, thickness RE=0.0004, image PSNR/CC)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_178_abtem_sim/`\n- **核心数据清单**:\n  - Input: `gt_",
+      "github_repo": "https://github.com/abTEM/abTEM",
+      "paper_title": "️ abTEM: Transmission electron microscopy simulation",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 78.55,
+        "ssim": 1.0,
+        "eval_type": "2D HRTEM image parameter fitting (defocus RE=0.0002, thickness RE=0.0004, image PSNR/CC)"
+      },
+      "images": {
+        "folder": "Task_178_abtem_sim",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_179": {
+      "id": "179",
+      "id_num": 179,
+      "name": "plenopticam_lf",
+      "domain": "A",
+      "domain_name": "Optical Microscopy",
+      "title": "plenopticam_lf",
+      "description": "Light field depth estimation using plenopticam\n- **配置文件源**: `config_task_5_F.yaml`\n- **Working Folder**: `/data/yjh/plenopticam_lf_sandbox`\n- **Python Path**: `/data/yjh/plenopticam_lf_env/bin/python`\n- **GT Code Path**: `/data/yjh/plenopticam_lf_sandbox/plenopticam_lf_code.py`\n- **PSNR**: 43.39 dB (sub-aperture), 8.27 dB (depth)\n- **SSIM**: 0.983 (sub-aperture)\n- **评估类型**: Light field depth estimation + sub-aperture reconstruction (depth PSNR/CC, image PSNR/SSIM)\n- **专属资源文件夹**: `/data/yjh/websi",
+      "github_repo": "https://github.com/hahnec/plenopticam",
+      "paper_title": "PlenoptiCam v1.0: A Light-Field Imaging Framework",
+      "paper_link": "https://doi.org/10.1109/TIP.2021.3095671",
+      "metrics": {
+        "psnr": 43.39,
+        "ssim": 0.983,
+        "eval_type": "Light field depth estimation + sub-aperture reconstruction (depth PSNR/CC, image PSNR/SSIM)"
+      },
+      "images": {
+        "folder": "Task_179_plenopticam_lf",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_180": {
+      "id": "180",
+      "id_num": 180,
+      "name": "pysyd_astero",
+      "domain": "F",
+      "domain_name": "Astrophysics",
+      "title": "pysyd_astero",
+      "description": "Asteroseismology power spectrum analysis using pySYD\n- **配置文件源**: `config_task_5_F.yaml`\n- **Working Folder**: `/data/yjh/pysyd_astero_sandbox`\n- **Python Path**: `/data/yjh/pysyd_astero_env/bin/python`\n- **GT Code Path**: `/data/yjh/pysyd_astero_sandbox/pysyd_astero_code.py`\n- **PSNR**: 14.60 dB (power spectrum)\n- **SSIM**: N/A (1D spectrum)\n- **CC**: 0.9116\n- **评估类型**: Asteroseismic parameter extraction (νmax RE, Δν RE, power spectrum CC)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_180_pysyd",
+      "github_repo": "https://github.com/ashleychontos/pySYD",
+      "paper_title": "️ pySYD: Asteroseismology",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 14.6,
+        "eval_type": "Asteroseismic parameter extraction (νmax RE, Δν RE, power spectrum CC)"
+      },
+      "images": {
+        "folder": "Task_180_pysyd_astero",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_181": {
+      "id": "181",
+      "id_num": 181,
+      "name": "seismic_dvv",
+      "domain": "E",
+      "domain_name": "Geophysics",
+      "title": "seismic_dvv",
+      "description": "Seismic velocity change estimation using stretching method\n- **配置文件源**: `config_task_5_F.yaml`\n- **Working Folder**: `/data/yjh/seismic_dvv_sandbox`\n- **Python Path**: `/data/yjh/seismic_dvv_env/bin/python`\n- **GT Code Path**: `/data/yjh/seismic_dvv_sandbox/seismic_dvv_code.py`\n- **PSNR**: 22.12 dB (dv/v time series)\n- **SSIM**: N/A (1D time series)\n- **CC**: 0.9642\n- **评估类型**: 1D seismic velocity change estimation (dv/v CC, RE)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_181_seismic_dvv/`\n- *",
+      "github_repo": "https://github.com/PeterMakus/SeisMIC",
+      "paper_title": "️ SeisMIC: Seismic velocity monitoring",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 22.12,
+        "eval_type": "1D seismic velocity change estimation (dv/v CC, RE)"
+      },
+      "images": {
+        "folder": "Task_181_seismic_dvv",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_182": {
+      "id": "182",
+      "id_num": 182,
+      "name": "mcmtpy_moment",
+      "domain": "E",
+      "domain_name": "Geophysics",
+      "title": "mcmtpy_moment",
+      "description": "Seismic moment tensor inversion using MCMC\n- **配置文件源**: `config_task_5_F.yaml`\n- **Working Folder**: `/data/yjh/mcmtpy_moment_sandbox`\n- **Python Path**: `/data/yjh/mcmtpy_moment_env/bin/python`\n- **GT Code Path**: `/data/yjh/mcmtpy_moment_sandbox/mcmtpy_moment_code.py`\n- **PSNR**: 33.56 dB (waveform fit)\n- **SSIM**: N/A (1D waveform)\n- **CC**: 0.8712\n- **评估类型**: Seismic moment tensor MCMC inversion (parameter RE, waveform CC)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_182_mcmtpy_moment/`\n- *",
+      "github_repo": "https://github.com/OUCyf/MCMTpy",
+      "paper_title": "️ MCMTpy: Moment tensor inversion",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 33.56,
+        "eval_type": "Seismic moment tensor MCMC inversion (parameter RE, waveform CC)"
+      },
+      "images": {
+        "folder": "Task_182_mcmtpy_moment",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_183": {
+      "id": "183",
+      "id_num": 183,
+      "name": "priism_radio",
+      "domain": "F",
+      "domain_name": "Astrophysics",
+      "title": "priism_radio",
+      "description": "Radio interferometry imaging using PRIISM with L1/TSV regularization\n- **配置文件源**: `config_task_5_F.yaml`\n- **Working Folder**: `/data/yjh/priism_radio_sandbox`\n- **Python Path**: `/data/yjh/priism_radio_env/bin/python`\n- **GT Code Path**: `/data/yjh/priism_radio_sandbox/priism_radio_code.py`\n- **PSNR**: 33.30 dB\n- **SSIM**: 0.9531\n- **评估类型**: 2D radio image reconstruction (sparse L1+TSV, PSNR/SSIM/CC)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_183_priism_radio/`\n- **核心数据清单**:\n  - Input: `gt_o",
+      "github_repo": "https://github.com/tnakazato/priism",
+      "paper_title": "️ PRIISM: Radio interferometry sparse modeling",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 33.3,
+        "ssim": 0.9531,
+        "eval_type": "2D radio image reconstruction (sparse L1+TSV, PSNR/SSIM/CC)"
+      },
+      "images": {
+        "folder": "Task_183_priism_radio",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_184": {
+      "id": "184",
+      "id_num": 184,
+      "name": "dps_diffusion",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "dps_diffusion",
+      "description": "Diffusion posterior sampling for image restoration\n- **配置文件源**: `config_task_5_G.yaml`\n- **Working Folder**: `/data/yjh/dps_diffusion_sandbox`\n- **Python Path**: `/data/yjh/dps_diffusion_env/bin/python`\n- **GT Code Path**: `/data/yjh/dps_diffusion_sandbox/dps_diffusion_code.py`\n- **PSNR**: 21.75 dB\n- **SSIM**: 0.7691\n- **评估类型**: 2D image deblurring/super-resolution via Diffusion Posterior Sampling\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_184_dps_diffusion/`\n- **核心数据清单**:\n  - Input: `gt_outp",
+      "github_repo": "https://github.com/DPS2022/diffusion-posterior-sampling",
+      "paper_title": "️ Diffusion Posterior Sampling",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 21.75,
+        "ssim": 0.7691,
+        "eval_type": "2D image deblurring/super-resolution via Diffusion Posterior Sampling"
+      },
+      "images": {
+        "folder": "Task_184_dps_diffusion",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_185": {
+      "id": "185",
+      "id_num": 185,
+      "name": "ddrm_restore",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "ddrm_restore",
+      "description": "DDRM image restoration using SVD-based diffusion\n- **配置文件源**: `config_task_5_G.yaml`\n- **Working Folder**: `/data/yjh/ddrm_restore_sandbox`\n- **Python Path**: `/data/yjh/ddrm_restore_env/bin/python`\n- **GT Code Path**: `/data/yjh/ddrm_restore_sandbox/ddrm_restore_code.py`\n- **PSNR**: 26.54 dB\n- **SSIM**: 0.8013\n- **评估类型**: 2D image super-resolution via SVD-based Denoising Diffusion Restoration (DDRM)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_185_ddrm_restore/`\n- **核心数据清单**:\n  - Input: `gt_ou",
+      "github_repo": "https://github.com/bahjat-kawar/ddrm",
+      "paper_title": "️ DDRM: Denoising Diffusion Restoration Models",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 26.54,
+        "ssim": 0.8013,
+        "eval_type": "2D image super-resolution via SVD-based Denoising Diffusion Restoration (DDRM)"
+      },
+      "images": {
+        "folder": "Task_185_ddrm_restore",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_186": {
+      "id": "186",
+      "id_num": 186,
+      "name": "neuralop_fno",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "neuralop_fno",
+      "description": "PDE solution using Fourier neural operator (FNO)\n- **配置文件源**: `config_task_5_G.yaml`\n- **Working Folder**: `/data/yjh/neuralop_fno_sandbox`\n- **Python Path**: `/data/yjh/neuralop_fno_env/bin/python`\n- **GT Code Path**: `/data/yjh/neuralop_fno_sandbox/neuralop_fno_code.py`\n- **PSNR**: 41.37 dB\n- **SSIM**: 0.9993\n- **评估类型**: 2D Darcy flow PDE solution prediction via Fourier Neural Operator (relative L2 error: 0.0151)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_186_neuralop_fno/`\n- **核心数据清单**:\n  ",
+      "github_repo": "https://github.com/neuraloperator/neuraloperator",
+      "paper_title": "️ Neural Operator: Fourier Neural Operator",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 41.37,
+        "ssim": 0.9993,
+        "eval_type": "2D Darcy flow PDE solution prediction via Fourier Neural Operator (relative L2 error: 0.0151)"
+      },
+      "images": {
+        "folder": "Task_186_neuralop_fno",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_187": {
+      "id": "187",
+      "id_num": 187,
+      "name": "cuqipy_bayesian",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "cuqipy_bayesian",
+      "description": "Bayesian inverse problem using CUQIpy\n- **配置文件源**: `config_task_5_G.yaml`\n- **Working Folder**: `/data/yjh/cuqipy_bayesian_sandbox`\n- **Python Path**: `/data/yjh/cuqipy_bayesian_env/bin/python`\n- **GT Code Path**: `/data/yjh/cuqipy_bayesian_sandbox/cuqipy_bayesian_code.py`\n- **PSNR**: 33.48 dB\n- **SSIM**: 0.8210\n- **评估类型**: 1D Bayesian deconvolution with uncertainty quantification (MAP estimate + posterior samples)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_187_cuqipy_bayesian/`\n- **核心数据清单**:",
+      "github_repo": "https://github.com/CUQI-DTU/CUQIpy",
+      "paper_title": "️ CUQIpy: Bayesian inverse problems",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 33.48,
+        "ssim": 0.821,
+        "eval_type": "1D Bayesian deconvolution with uncertainty quantification (MAP estimate + posterior samples)"
+      },
+      "images": {
+        "folder": "Task_187_cuqipy_bayesian",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_188": {
+      "id": "188",
+      "id_num": 188,
+      "name": "odl_inverse",
+      "domain": "C",
+      "domain_name": "X-ray/CT",
+      "title": "odl_inverse",
+      "description": "General inverse problem using ODL optimization\n- **配置文件源**: `config_task_5_G.yaml`\n- **Working Folder**: `/data/yjh/odl_inverse_sandbox`\n- **Python Path**: `/data/yjh/odl_inverse_env/bin/python`\n- **GT Code Path**: `/data/yjh/odl_inverse_sandbox/odl_inverse_code.py`\n- **PSNR**: 24.99 dB\n- **SSIM**: 0.9438\n- **评估类型**: 2D CT reconstruction with TV-regularized PDHG (parallel beam, Shepp-Logan phantom)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_188_odl_inverse/`\n- **核心数据清单**:\n  - Input: `gt_outpu",
+      "github_repo": "https://github.com/odlgroup/odl",
+      "paper_title": "️ ODL: Operator Discretization Library",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 24.99,
+        "ssim": 0.9438,
+        "eval_type": "2D CT reconstruction with TV-regularized PDHG (parallel beam, Shepp-Logan phantom)"
+      },
+      "images": {
+        "folder": "Task_188_odl_inverse",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_189": {
+      "id": "189",
+      "id_num": 189,
+      "name": "phiflow_pde",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "phiflow_pde",
+      "description": "PDE inverse problem using PhiFlow differentiable physics\n- **配置文件源**: `config_task_5_G.yaml`\n- **Working Folder**: `/data/yjh/phiflow_pde_sandbox`\n- **Python Path**: `/data/yjh/phiflow_pde_env/bin/python`\n- **GT Code Path**: `/data/yjh/phiflow_pde_sandbox/phiflow_pde_code.py`\n- **PSNR**: 35.22 dB\n- **SSIM**: 0.9314\n- **评估类型**: 2D heat equation initial condition inversion via differentiable PDE simulation\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_189_phiflow_pde/`\n- **核心数据清单**:\n  - Input: `gt",
+      "github_repo": "https://github.com/tum-pbs/PhiFlow",
+      "paper_title": "️ PhiFlow: Differentiable physics",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 35.22,
+        "ssim": 0.9314,
+        "eval_type": "2D heat equation initial condition inversion via differentiable PDE simulation"
+      },
+      "images": {
+        "folder": "Task_189_phiflow_pde",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_190": {
+      "id": "190",
+      "id_num": 190,
+      "name": "dm4ct_bench",
+      "domain": "C",
+      "domain_name": "X-ray/CT",
+      "title": "dm4ct_bench",
+      "description": "CT reconstruction using diffusion model guidance\n- **配置文件源**: `config_task_5_G.yaml`\n- **Working Folder**: `/data/yjh/dm4ct_bench_sandbox`\n- **Python Path**: `/data/yjh/dm4ct_bench_env/bin/python`\n- **GT Code Path**: `/data/yjh/dm4ct_bench_sandbox/dm4ct_bench_code.py`\n- **PSNR**: 23.49 dB\n- **SSIM**: 0.5918\n- **评估类型**: 2D sparse-view CT reconstruction with diffusion-style iterative refinement (TV prior + data consistency, 30→180 view enhancement, +6.25dB over FBP baseline)\n- **专属资源文件夹**: `/data/",
+      "github_repo": "https://github.com/DM4CT/DM4CT",
+      "paper_title": "️ DM4CT: Diffusion models for CT",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 23.49,
+        "ssim": 0.5918,
+        "eval_type": "2D sparse-view CT reconstruction with diffusion-style iterative refinement (TV prior + data consistency, 30→180 view enhancement, +6.25dB over FBP baseline)"
+      },
+      "images": {
+        "folder": "Task_190_dm4ct_bench",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_191": {
+      "id": "191",
+      "id_num": 191,
+      "name": "flowdec_deconv",
+      "domain": "A",
+      "domain_name": "Optical Microscopy",
+      "title": "flowdec_deconv",
+      "description": "3D fluorescence deconvolution using Richardson-Lucy\n- **配置文件源**: `config_task_5_G.yaml`\n- **Working Folder**: `/data/yjh/flowdec_deconv_sandbox`\n- **Python Path**: `/data/yjh/flowdec_deconv_env/bin/python`\n- **GT Code Path**: `/data/yjh/flowdec_deconv_sandbox/flowdec_deconv_code.py`\n- **PSNR**: 27.65 dB\n- **SSIM**: 0.8895\n- **评估类型**: 3D fluorescence microscopy deconvolution via Richardson-Lucy (per central z-slice evaluation)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_191_flowdec_deconv/`\n- *",
+      "github_repo": "https://github.com/hammerlab/flowdec",
+      "paper_title": "Cytokit: A single-cell analysis toolkit",
+      "paper_link": "https://doi.org/10.1101/460980",
+      "metrics": {
+        "psnr": 27.65,
+        "ssim": 0.8895,
+        "eval_type": "3D fluorescence microscopy deconvolution via Richardson-Lucy (per central z-slice evaluation)"
+      },
+      "images": {
+        "folder": "Task_191_flowdec_deconv",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_192": {
+      "id": "192",
+      "id_num": 192,
+      "name": "learned_pd_ct",
+      "domain": "C",
+      "domain_name": "X-ray/CT",
+      "title": "learned_pd_ct",
+      "description": "Learned primal-dual CT reconstruction\n- **配置文件源**: `config_task_5_K.yaml`\n- **Working Folder**: `/data/yjh/learned_pd_ct_sandbox/`\n- **Python Path**: `/data/yjh/learned_pd_ct_env/bin/python`\n- **GT Code Path**: `/data/yjh/learned_pd_ct_sandbox/learned_pd_ct_code.py`\n- **PSNR**: 30.00 dB\n- **SSIM**: 0.6460\n- **CC**: 0.9916\n- **评估类型**: CT 重建 (FBP + TV-PDHG 去噪) — 2D 图像 PSNR\n- **修复说明**: 新建任务 (从零执行 Step 1–8)\n  - 使用 scikit-image Radon 变换 + FBP + TV-PDHG 去噪 (Chambolle-Pock)\n  - 256×256 Shepp-Logan phan",
+      "github_repo": "https://github.com/adler-j/learned_primal_dual",
+      "paper_title": "Learned Primal-Dual Reconstruction",
+      "paper_link": "https://doi.org/10.1109/TMI.2018.2799231",
+      "metrics": {
+        "psnr": 30.0,
+        "ssim": 0.646,
+        "eval_type": "CT 重建 (FBP + TV-PDHG 去噪) — 2D 图像 PSNR"
+      },
+      "images": {
+        "folder": "Task_192_learned_pd_ct",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_193": {
+      "id": "193",
+      "id_num": 193,
+      "name": "pyxu_imaging",
+      "domain": "G",
+      "domain_name": "Spectroscopy/Scattering",
+      "title": "pyxu_imaging",
+      "description": "Imaging inverse problem using Pyxu optimization\n- **配置文件源**: `config_task_5_L.yaml`\n- **Working Folder**: `/data/yjh/pyxu_imaging_sandbox/`\n- **Python Path**: `/data/yjh/pyxu_imaging_env/bin/python`\n- **GT Code Path**: `/data/yjh/pyxu_imaging_sandbox/pyxu_imaging_code.py`\n- **PSNR**: 27.58 dB\n- **SSIM**: 0.9391\n- **CC**: 0.9906\n- **评估类型**: 2D image deconvolution (Gaussian blur + noise → TV-regularized reconstruction)\n- **反问题**: y = H*x + noise, 其中 H 为高斯模糊卷积算子 (σ=2.0), 噪声 std=0.02\n- **算法**: Conda",
+      "github_repo": "https://github.com/pyxu-org/pyxu",
+      "paper_title": "️ Pyxu: Computational imaging",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 27.58,
+        "ssim": 0.9391,
+        "eval_type": "2D image deconvolution (Gaussian blur + noise → TV-regularized reconstruction)"
+      },
+      "images": {
+        "folder": "Task_193_pyxu_imaging",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_194": {
+      "id": "194",
+      "id_num": 194,
+      "name": "naf_cbct_recon",
+      "domain": "C",
+      "domain_name": "X-ray/CT",
+      "title": "naf_cbct_recon",
+      "description": "Cone-beam CT reconstruction using NAF neural fields\n- **配置文件源**: `config_task_5_H.yaml`\n- **Working Folder**: `/data/yjh/naf_cbct_recon_sandbox`\n- **Python Path**: `/data/yjh/naf_cbct_recon_env/bin/python`\n- **GT Code Path**: `/data/yjh/naf_cbct_recon_sandbox/naf_cbct_recon_code.py`\n- **PSNR**: 34.78 dB\n- **SSIM**: 0.9657\n- **评估类型**: 3D CT reconstruction from sparse cone-beam projections\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_194_naf_cbct_recon/`\n- **核心数据清单**:\n  - Input: `gt_output.npy`\n ",
+      "github_repo": "https://github.com/Ruyi-Zha/naf_cbct",
+      "paper_title": "Neural Attenuation Fields for Sparse-View CBCT Reconstruction",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 34.78,
+        "ssim": 0.9657,
+        "eval_type": "3D CT reconstruction from sparse cone-beam projections"
+      },
+      "images": {
+        "folder": "Task_194_naf_cbct_recon",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_195": {
+      "id": "195",
+      "id_num": 195,
+      "name": "reconformer_mri",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "reconformer_mri",
+      "description": "MRI reconstruction using Reconformer transformer\n- **配置文件源**: `config_task_5_H.yaml`\n- **Working Folder**: `/data/yjh/reconformer_mri_sandbox`\n- **Python Path**: `/data/yjh/reconformer_mri_env/bin/python`\n- **GT Code Path**: `/data/yjh/reconformer_mri_sandbox/reconformer_mri_code.py`\n- **PSNR**: 27.05 dB\n- **SSIM**: 0.9706\n- **评估类型**: 2D MRI reconstruction from 4x undersampled k-space (FISTA-TV CS)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_195_reconformer_mri/`\n- **核心数据清单** (已验证并保存至专属文件夹):\n ",
+      "github_repo": "https://github.com/guopengf/ReconFormer",
+      "paper_title": "ReconFormer: Accelerated MRI Reconstruction Using Recurrent Transformer",
+      "paper_link": "https://doi.org/10.1109/tmi.2023.3314747",
+      "metrics": {
+        "psnr": 27.05,
+        "ssim": 0.9706,
+        "eval_type": "2D MRI reconstruction from 4x undersampled k-space (FISTA-TV CS)"
+      },
+      "images": {
+        "folder": "Task_195_reconformer_mri",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_196": {
+      "id": "196",
+      "id_num": 196,
+      "name": "promptmr_mri",
+      "domain": "D",
+      "domain_name": "Medical Imaging",
+      "title": "promptmr_mri",
+      "description": "MRI reconstruction using PromptMR with TV regularization\n- **配置文件源**: `config_task_5_H.yaml`\n- **Working Folder**: `/data/yjh/promptmr_mri_sandbox`\n- **Python Path**: `/data/yjh/promptmr_mri_env/bin/python`\n- **GT Code Path**: `/data/yjh/promptmr_mri_sandbox/promptmr_mri_code.py`\n- **PSNR**: 53.55 dB (avg T1=63.47, T2=43.64)\n- **SSIM**: 0.9982\n- **评估类型**: Multi-contrast MRI reconstruction from undersampled k-space (T1 4x, T2 8x, FISTA-TV)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_196_promptm",
+      "github_repo": "https://github.com/hellopipu/PromptMR",
+      "paper_title": "PromptMR: Prompting for Dynamic and Multi-Contrast MRI Reconstruction",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 53.55,
+        "ssim": 0.9982,
+        "eval_type": "Multi-contrast MRI reconstruction from undersampled k-space (T1 4x, T2 8x, FISTA-TV)"
+      },
+      "images": {
+        "folder": "Task_196_promptmr_mri",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_197": {
+      "id": "197",
+      "id_num": 197,
+      "name": "ezyrb_rom",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "ezyrb_rom",
+      "description": "Reduced-order modeling using EZyRB with POD-RBF\n- **配置文件源**: `config_task_5_H.yaml`\n- **Working Folder**: `/data/yjh/ezyrb_rom_sandbox`\n- **Python Path**: `/data/yjh/ezyrb_rom_env/bin/python`\n- **GT Code Path**: `/data/yjh/ezyrb_rom_sandbox/ezyrb_rom_code.py`\n- **PSNR**: 92.53 dB\n- **SSIM**: 1.0000\n- **评估类型**: 2D temperature field reconstruction (POD + RBF, Relative L2=0.000604)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_197_ezyrb_rom/`\n- **核心数据清单** (已验证并保存至专属文件夹):\n  - Input: `gt_output.npy` ",
+      "github_repo": "https://github.com/mathLab/EZyRB",
+      "paper_title": "️ EZyRB: Reduced order modeling",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 92.53,
+        "ssim": 1.0,
+        "eval_type": "2D temperature field reconstruction (POD + RBF, Relative L2=0.000604)"
+      },
+      "images": {
+        "folder": "Task_197_ezyrb_rom",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_198": {
+      "id": "198",
+      "id_num": 198,
+      "name": "koma_ssi",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "koma_ssi",
+      "description": "Structural system identification using SSI-COV\n- **配置文件源**: `config_task_5_H.yaml`\n- **Working Folder**: `/data/yjh/koma_ssi_sandbox`\n- **Python Path**: `/data/yjh/koma_ssi_env/bin/python`\n- **GT Code Path**: `/data/yjh/koma_ssi_sandbox/koma_ssi_code.py`\n- **PSNR**: N/A (parameter estimation)\n- **SSIM**: N/A\n- **Freq Mean RE**: 0.14%\n- **Damping Mean RE**: 10.0%\n- **Mean MAC**: 0.9999\n- **评估类型**: Modal parameter estimation via SSI (Freq RE=0.14%, Damping RE=9.95%, MAC=0.9999)\n- **专属资源文件夹**: `/da",
+      "github_repo": "https://github.com/knutankv/koma",
+      "paper_title": "️ KOMA: Operational modal analysis",
+      "paper_link": "",
+      "metrics": {
+        "eval_type": "Modal parameter estimation via SSI (Freq RE=0.14%, Damping RE=9.95%, MAC=0.9999)"
+      },
+      "images": {
+        "folder": "Task_198_koma_ssi",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_199": {
+      "id": "199",
+      "id_num": 199,
+      "name": "suncasa_radio",
+      "domain": "F",
+      "domain_name": "Astrophysics",
+      "title": "suncasa_radio",
+      "description": "Solar radio imaging using CLEAN algorithm\n- **配置文件源**: `config_task_5_H.yaml`\n- **Working Folder**: `/data/yjh/suncasa_radio_sandbox`\n- **Python Path**: `/data/yjh/suncasa_radio_env/bin/python`\n- **GT Code Path**: `/data/yjh/suncasa_radio_sandbox/suncasa_radio_code.py`\n- **PSNR**: 27.03 dB\n- **SSIM**: 0.6390\n- **评估类型**: Solar radio image reconstruction from interferometric visibilities (Wiener filter, CC=0.8425)\n- **专属资源文件夹**: `/data/yjh/website_assets/Task_199_suncasa_radio/`\n- **核心数据清单** (已验证并",
+      "github_repo": "https://github.com/suncasa/suncasa-src",
+      "paper_title": "️ SUNCASA: Solar radio imaging",
+      "paper_link": "",
+      "metrics": {
+        "psnr": 27.03,
+        "ssim": 0.639,
+        "eval_type": "Solar radio image reconstruction from interferometric visibilities (Wiener filter, CC=0.8425)"
+      },
+      "images": {
+        "folder": "Task_199_suncasa_radio",
+        "vis_result": "vis_result.png"
+      }
+    },
+    "task_200": {
+      "id": "200",
+      "id_num": 200,
+      "name": "vibtest_modal",
+      "domain": "H",
+      "domain_name": "Mechanics",
+      "title": "vibtest_modal",
+      "description": "Modal analysis from FRF using curve fitting\n- **配置文件源**: `config_task_5_H.yaml`\n- **Working Folder**: `/data/yjh/vibtest_modal_sandbox`\n- **Python Path**: `/data/yjh/vibtest_modal_env/bin/python`\n- **GT Code Path**: `/data/yjh/vibtest_modal_sandbox/vibtest_modal_code.py`\n- **PSNR**: N/A (parameter estimation)\n- **SSIM**: N/A\n- **Freq Mean RE**: 0.0243%\n- **Damping Mean RE**: 0.47%\n- **FRF CC**: 0.9980\n- **评估类型**: Modal parameter estimation from FRF (Freq RE=0.024%, Damping RE=0.47%, MAC=0.99999)",
+      "github_repo": "https://github.com/Vibration-Testing/vibrationtesting",
+      "paper_title": "️ Vibration Testing: Modal analysis",
+      "paper_link": "",
+      "metrics": {
+        "eval_type": "Modal parameter estimation from FRF (Freq RE=0.024%, Damping RE=0.47%, MAC=0.99999)"
+      },
+      "images": {
+        "folder": "Task_200_vibtest_modal",
         "vis_result": "vis_result.png"
       }
     }
