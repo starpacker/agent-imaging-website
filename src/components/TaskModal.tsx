@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useCallback, useState } from 'react';
-import { X, Copy, Check, ExternalLink, TestTube2, BookOpen } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { X, ExternalLink, TestTube2, BookOpen, Eye, Code2 } from 'lucide-react';
 import type { TaskData } from '@/app/page';
+import NotebookViewer from './NotebookViewer';
 
 /* ── Domain accent colors (9 domains A–I) ── */
 const DOMAIN_ACCENT: Record<string, string> = {
@@ -58,11 +59,31 @@ function DescriptionBlock({ text, accent }: { text: string; accent: string }) {
   );
 }
 
+/* ── Tab Button ── */
+function TabButton({ active, onClick, icon, label }: {
+  active: boolean; onClick: () => void; icon: React.ReactNode; label: string;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition ${
+        active
+          ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
+          : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/40'
+      }`}
+    >
+      {icon}
+      {label}
+    </button>
+  );
+}
+
 /* ── Main Modal ── */
 interface TaskModalProps { task: TaskData; onClose: () => void; }
 
 export default function TaskModal({ task, onClose }: TaskModalProps) {
   const accent = DOMAIN_ACCENT[task.domain] || '#06b6d4';
+  const [activeTab, setActiveTab] = useState<'overview' | 'notebook'>('overview');
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -75,9 +96,13 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
     return () => { document.body.style.overflow = ''; };
   }, []);
 
+  // Reset tab when task changes
+  useEffect(() => { setActiveTab('overview'); }, [task.name]);
+
   const imagePath = getImagePath(task);
   const hasMetrics = task.metrics && (task.metrics.psnr || task.metrics.ssim || task.metrics.ncc || task.metrics.nrmse);
   const githubLink = `https://github.com/HeSunPU/imaging-101/tree/main/tasks/${task.name}`;
+  const nbLink = `https://github.com/HeSunPU/imaging-101/tree/main/tasks/${task.name}/notebooks`;
 
   return (
     <div className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md" onClick={onClose}>
@@ -112,70 +137,104 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
           </button>
         </div>
 
+        {/* Tabs */}
+        <div className="flex items-center gap-2 px-6 py-3 border-b border-zinc-800/30">
+          <TabButton
+            active={activeTab === 'overview'}
+            onClick={() => setActiveTab('overview')}
+            icon={<Eye size={14} />}
+            label="Overview"
+          />
+          <TabButton
+            active={activeTab === 'notebook'}
+            onClick={() => setActiveTab('notebook')}
+            icon={<Code2 size={14} />}
+            label="Notebook"
+          />
+          <div className="flex-1" />
+          <a
+            href={nbLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-cyan-400 transition"
+          >
+            <BookOpen size={13} />
+            GitHub
+            <ExternalLink size={10} className="opacity-50" />
+          </a>
+        </div>
+
         {/* Body */}
         <div className="flex-1 overflow-y-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:divide-x lg:divide-zinc-800/50">
-            {/* Left: Description */}
-            <div className="p-6 space-y-6">
-              <div>
-                <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Task Description</h3>
-                <DescriptionBlock text={task.description} accent={accent} />
+          {activeTab === 'overview' ? (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:divide-x lg:divide-zinc-800/50">
+              {/* Left: Description */}
+              <div className="p-6 space-y-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Task Description</h3>
+                  <DescriptionBlock text={task.description} accent={accent} />
+                </div>
+
+                {/* Links & Info */}
+                <div className="space-y-3">
+                  <a
+                    href={githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs text-zinc-500 hover:text-cyan-400 transition"
+                  >
+                    <BookOpen size={14} />
+                    View task on GitHub
+                    <ExternalLink size={11} className="opacity-50" />
+                  </a>
+                  {task.has_tests && (
+                    <div className="flex items-center gap-2 text-xs text-green-400/70">
+                      <TestTube2 size={14} />
+                      Has unit tests (function-mode evaluation)
+                    </div>
+                  )}
+                </div>
               </div>
 
-              {/* Links & Info */}
-              <div className="space-y-3">
-                <a
-                  href={githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-xs text-zinc-500 hover:text-cyan-400 transition"
-                >
-                  <BookOpen size={14} />
-                  View task on GitHub
-                  <ExternalLink size={11} className="opacity-50" />
-                </a>
-                {task.has_tests && (
-                  <div className="flex items-center gap-2 text-xs text-green-400/70">
-                    <TestTube2 size={14} />
-                    Has unit tests (function-mode evaluation)
+              {/* Right: Image + Metrics */}
+              <div className="p-6 space-y-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Notebook Visualization</h3>
+                  <div className="rounded-xl overflow-hidden border border-zinc-800/50 bg-black/30">
+                    <img src={imagePath} alt={task.title} className="w-full h-auto" loading="lazy" />
+                  </div>
+                </div>
+
+                {hasMetrics && (
+                  <div>
+                    <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Metrics</h3>
+                    <div className="grid grid-cols-2 gap-2">
+                      {task.metrics.ncc && <MetricPill label="NCC" value={task.metrics.ncc} accent={accent} />}
+                      {task.metrics.nrmse && <MetricPill label="NRMSE" value={task.metrics.nrmse} accent={accent} />}
+                      {task.metrics.psnr && <MetricPill label="PSNR" value={task.metrics.psnr} accent={accent} />}
+                      {task.metrics.ssim && <MetricPill label="SSIM" value={task.metrics.ssim} accent={accent} />}
+                    </div>
                   </div>
                 )}
-              </div>
-            </div>
 
-            {/* Right: Image + Metrics */}
-            <div className="p-6 space-y-6">
-              <div>
-                <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Notebook Visualization</h3>
-                <div className="rounded-xl overflow-hidden border border-zinc-800/50 bg-black/30">
-                  <img src={imagePath} alt={task.title} className="w-full h-auto" loading="lazy" />
-                </div>
-              </div>
-
-              {hasMetrics && (
-                <div>
-                  <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Metrics</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    {task.metrics.ncc && <MetricPill label="NCC" value={task.metrics.ncc} accent={accent} />}
-                    {task.metrics.nrmse && <MetricPill label="NRMSE" value={task.metrics.nrmse} accent={accent} />}
-                    {task.metrics.psnr && <MetricPill label="PSNR" value={task.metrics.psnr} accent={accent} />}
-                    {task.metrics.ssim && <MetricPill label="SSIM" value={task.metrics.ssim} accent={accent} />}
+                {/* Domain Info */}
+                <div className="metric-highlight">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-3 h-3 rounded-full" style={{ background: accent }} />
+                    <span className="text-sm font-semibold text-zinc-200">{task.domain_name}</span>
                   </div>
+                  <p className="text-xs text-zinc-500">
+                    Domain {task.domain} &bull; {task.title}
+                  </p>
                 </div>
-              )}
-
-              {/* Domain Info */}
-              <div className="metric-highlight">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="w-3 h-3 rounded-full" style={{ background: accent }} />
-                  <span className="text-sm font-semibold text-zinc-200">{task.domain_name}</span>
-                </div>
-                <p className="text-xs text-zinc-500">
-                  Domain {task.domain} &bull; {task.title}
-                </p>
               </div>
             </div>
-          </div>
+          ) : (
+            /* Notebook Tab */
+            <div className="p-6">
+              <NotebookViewer taskName={task.name} />
+            </div>
+          )}
         </div>
       </div>
     </div>

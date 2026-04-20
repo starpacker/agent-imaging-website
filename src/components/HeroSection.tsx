@@ -9,9 +9,9 @@ import {
 
 /* ── Constants ── */
 const COMPARE_TASKS = [
-  { id: 'ct_sparse_view', title: 'Sparse-View CT Reconstruction', domain: 'Medicine', hasInput: true },
+  { id: 'lensless_imaging', title: 'Lensless Camera Reconstruction', domain: 'Computational Photography', hasInput: true },
   { id: 'eht_black_hole_original', title: 'EHT Black Hole Imaging', domain: 'Radio Astronomy', hasInput: true },
-  { id: 'mri_l1_wavelet', title: 'MRI L1-Wavelet Compressed Sensing', domain: 'Medicine', hasInput: true },
+  { id: 'microscope_denoising', title: 'Fluorescence Microscopy Denoising', domain: 'Biology / Microscopy', hasInput: true },
 ] as const;
 
 const DOMAIN_ICONS = [Activity, Telescope, Globe2, Microscope, Atom, Zap, Star, Camera, Rainbow];
