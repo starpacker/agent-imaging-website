@@ -2,15 +2,15 @@
   "meta": {
     "title": "imaging-101: Scientific Imaging Benchmark for Coding Agents",
     "total_tasks": 57,
-    "total_domains": 10
+    "total_domains": 6
   },
   "domains": {
     "A": {
-      "name_en": "Medicine",
-      "name_zh": "医学成像",
-      "icon": "🏥",
-      "desc": "Medical imaging inverse problems including CT reconstruction, MRI acceleration, PET imaging, ultrasound, and diffusion tensor imaging.",
-      "task_count": 19,
+      "name_en": "Astronomy",
+      "name_zh": "天文学",
+      "icon": "🔭",
+      "desc": "Radio interferometry (EHT), adaptive optics, high-contrast imaging, gravitational lensing, and atmospheric turbulence correction.",
+      "task_count": 9,
       "task_ids": [
         1,
         2,
@@ -20,7 +20,16 @@
         6,
         7,
         8,
-        9,
+        9
+      ]
+    },
+    "B": {
+      "name_en": "Biology",
+      "name_zh": "生物成像",
+      "icon": "🔬",
+      "desc": "Optical diffraction tomography, fluorescence microscopy, structured illumination, ptychography, light field imaging, and super-resolution.",
+      "task_count": 9,
+      "task_ids": [
         10,
         11,
         12,
@@ -29,17 +38,17 @@
         15,
         16,
         17,
-        18,
-        19
+        18
       ]
     },
-    "B": {
-      "name_en": "Radio Astronomy",
-      "name_zh": "射电天文",
-      "icon": "📡",
-      "desc": "Event Horizon Telescope (EHT) black hole imaging: static/dynamic reconstruction, uncertainty quantification, tomography, and feature extraction.",
-      "task_count": 5,
+    "C": {
+      "name_en": "Physics",
+      "name_zh": "物理成像",
+      "icon": "⚡",
+      "desc": "Phase retrieval, ptychography, non-line-of-sight imaging, lensless imaging, compressive spectral imaging, and deflectometry.",
+      "task_count": 6,
       "task_ids": [
+        19,
         20,
         21,
         22,
@@ -47,108 +56,63 @@
         24
       ]
     },
-    "C": {
-      "name_en": "Earth Science",
-      "name_zh": "地球科学",
-      "icon": "🌍",
-      "desc": "Geophysical inverse problems including seismic imaging, InSAR phase unwrapping, weather radar data assimilation, and climate reanalysis.",
-      "task_count": 7,
+    "D": {
+      "name_en": "Chemistry & Material Science",
+      "name_zh": "化学与材料科学",
+      "icon": "🧪",
+      "desc": "Hyperspectral unmixing, Raman spectroscopy, CARS spectroscopy, X-ray ptychography, and X-ray laminography/tomography.",
+      "task_count": 5,
       "task_ids": [
         25,
         26,
         27,
         28,
-        29,
-        30,
-        31
-      ]
-    },
-    "D": {
-      "name_en": "Biology / Microscopy",
-      "name_zh": "生物/显微成像",
-      "icon": "🔬",
-      "desc": "Biological imaging with fluorescence microscopy, optical diffraction tomography, Raman spectroscopy, light field microscopy, and super-resolution.",
-      "task_count": 8,
-      "task_ids": [
-        32,
-        33,
-        34,
-        35,
-        36,
-        37,
-        38,
-        39
+        29
       ]
     },
     "E": {
-      "name_en": "Physics / Optics",
-      "name_zh": "物理/光学",
-      "icon": "🔭",
-      "desc": "Optical and X-ray coherent imaging including ptychography, deflectometry, and wavefront sensing.",
-      "task_count": 5,
+      "name_en": "Earth Science",
+      "name_zh": "地球科学",
+      "icon": "🌍",
+      "desc": "Seismic imaging (FWI, traveltime tomography, LSRTM), InSAR phase unwrapping, weather radar data assimilation, and climate reanalysis.",
+      "task_count": 6,
       "task_ids": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    "F": {
+      "name_en": "Medicine",
+      "name_zh": "医学成像",
+      "icon": "🏥",
+      "desc": "CT reconstruction, MRI acceleration (compressed sensing, parallel imaging, deep learning), ultrasound, PET, photoacoustic, and electrical impedance tomography.",
+      "task_count": 22,
+      "task_ids": [
+        36,
+        37,
+        38,
+        39,
         40,
         41,
         42,
         43,
-        44
-      ]
-    },
-    "F": {
-      "name_en": "Medical Physics",
-      "name_zh": "医学物理",
-      "icon": "⚡",
-      "desc": "Medical physics imaging modalities: electrical impedance tomography, photoacoustic tomography, X-ray laminography, and ultrasound computed tomography.",
-      "task_count": 4,
-      "task_ids": [
+        44,
         45,
         46,
         47,
-        48
-      ]
-    },
-    "G": {
-      "name_en": "Astronomy",
-      "name_zh": "天文学",
-      "icon": "🌟",
-      "desc": "Astronomical imaging: exoplanet detection via angular differential imaging, lucky imaging, and gravitational lensing source reconstruction.",
-      "task_count": 3,
-      "task_ids": [
+        48,
         49,
         50,
-        51
-      ]
-    },
-    "H": {
-      "name_en": "Computational Photography",
-      "name_zh": "计算摄影",
-      "icon": "📷",
-      "desc": "Computational photography inverse problems: non-line-of-sight imaging, lensless camera reconstruction, and snapshot compressive spectral imaging.",
-      "task_count": 3,
-      "task_ids": [
+        51,
         52,
         53,
-        54
-      ]
-    },
-    "I": {
-      "name_en": "Spectral Imaging",
-      "name_zh": "光谱成像",
-      "icon": "🌈",
-      "desc": "Spectral analysis and imaging: multivariate curve resolution for hyperspectral data and CARS spectroscopy.",
-      "task_count": 2,
-      "task_ids": [
+        54,
         55,
-        56
-      ]
-    },
-    "J": {
-      "name_en": "Optics / Biology",
-      "name_zh": "光学/生物",
-      "icon": "🧬",
-      "desc": "Fourier ptychographic microscopy combining computational optics and biological imaging.",
-      "task_count": 1,
-      "task_ids": [
+        56,
         57
       ]
     }
@@ -157,320 +121,9 @@
     "task_01": {
       "id": "01",
       "id_num": 1,
-      "name": "ct_dual_energy",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "Dual-Energy CT Material Decomposition",
-      "description": "Dual-energy computed tomography (DECT) acquires two sets of X-ray projections at different tube voltages (e.g., 80 kVp and 140 kVp). Because materials attenuate X-rays differently at different energies — governed by energy-dependent mass attenuation coefficients (MACs) — two measurements at distinct spectra provide enough information to decompose the attenuation into contributions from two basis materials. Material decomposition enables quantitative imaging: separating bone from soft tissue, ...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "ct_dual_energy.png"
-      },
-      "source_github": "https://github.com/gjadick/dex-ct-sim"
-    },
-    "task_02": {
-      "id": "02",
-      "id_num": 2,
-      "name": "ct_fan_beam",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "Fan-Beam CT Reconstruction",
-      "description": "In clinical CT scanners, X-rays emanate from a point source that rotates around the patient, creating a divergent fan-beam geometry. This differs fundamentally from the parallel-beam Radon transform: each projection ray has a different angle and passes through the object at a magnification that depends on the source-to-object distance. Fan-beam CT is the standard clinical acquisition geometry for all modern diagnostic CT scanners. A short-scan acquisition covers only  radians (where  is the h...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "ct_fan_beam.png"
-      },
-      "source_github": "https://github.com/leehoy/CTReconstruction"
-    },
-    "task_03": {
-      "id": "03",
-      "id_num": 3,
-      "name": "ct_poisson_lowdose",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "Low-Dose CT (Poisson Noise)",
-      "description": "In X-ray computed tomography (CT), photons passing through the object are attenuated according to Beer's law and counted by detectors. At standard clinical dose, photon counts are high enough that noise is approximately Gaussian and uniform across detector bins. However, at reduced dose (low photon count), the discrete photon-counting process follows Poisson statistics, making the noise variance signal-dependent: rays passing through highly attenuating regions receive fewer photons and theref...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "ct_poisson_lowdose.png"
-      },
-      "source_github": "https://github.com/cabouman/svmbir"
-    },
-    "task_04": {
-      "id": "04",
-      "id_num": 4,
-      "name": "ct_sparse_view",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "Sparse-View CT Reconstruction",
-      "description": "X-ray computed tomography (CT) acquires projections of an object at many angles and reconstructs a cross-sectional image. In clinical practice, reducing the number of projection angles (sparse-view CT) lowers radiation dose but makes the reconstruction problem severely ill-posed. Standard filtered back projection (FBP) fails under sparse angular sampling, producing streak artifacts. Iterative methods with appropriate priors — particularly total variation (TV) — can recover high-quality images...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "ct_sparse_view.png"
-      }
-    },
-    "task_05": {
-      "id": "05",
-      "id_num": 5,
-      "name": "diffusion_mri_dti",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "Diffusion MRI Tensor Imaging",
-      "description": "Diffusion MRI exploits the random Brownian motion of water molecules to probe tissue microstructure. By applying magnetic field gradients in different spatial directions, the MRI signal becomes sensitized to water diffusion along those directions. In Diffusion Tensor Imaging (DTI), the diffusion process at each voxel is modeled as a 3x3 symmetric positive-definite tensor, capturing both the magnitude and directional preference of water diffusion. In biological tissue, water diffusion is aniso...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "diffusion_mri_dti.png"
-      },
-      "source_github": "https://dipy.org/"
-    },
-    "task_06": {
-      "id": "06",
-      "id_num": 6,
-      "name": "mri_dynamic_dce",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "Dynamic Contrast-Enhanced MRI",
-      "description": "Dynamic Contrast-Enhanced (DCE) MRI monitors the passage of a contrast agent (e.g., gadolinium chelate) through tissue over time. A bolus of contrast agent is injected intravenously and a rapid time-series of MRI images is acquired. The signal intensity in each voxel follows a characteristic uptake curve determined by local tissue perfusion, vascular permeability, and extracellular volume. Because each time frame must be acquired quickly to capture the fast dynamics of contrast agent wash-in ...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "mri_dynamic_dce.png"
-      },
-      "source_github": "https://github.com/ZhengguoTan/demo_dce_recon"
-    },
-    "task_07": {
-      "id": "07",
-      "id_num": 7,
-      "name": "mri_grappa",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "MRI GRAPPA Reconstruction",
-      "description": "Parallel imaging exploits spatial encoding from multiple receiver coils to reconstruct images from undersampled k-space. Unlike compressed sensing methods that solve an optimization problem with explicit regularization, GRAPPA (GeneRalized Autocalibrating Partially Parallel Acquisitions) directly interpolates missing k-space samples using linear kernels learned from a fully-sampled calibration region. The key insight is that linear relationships between k-space samples across coils are shift-...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "mri_grappa.png"
-      },
-      "source_github": "https://github.com/mckib2/pygrappa"
-    },
-    "task_08": {
-      "id": "08",
-      "id_num": 8,
-      "name": "mri_l1_wavelet",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "MRI L1-Wavelet Compressed Sensing",
-      "description": "Magnetic Resonance Imaging (MRI) acquires data in the spatial frequency domain (k-space). Each receive coil in a multi-coil array measures a modulated version of the full k-space, weighted by its spatially varying sensitivity profile. Fully sampling k-space is time-consuming, so compressed sensing MRI accelerates acquisition by deliberately undersampling k-space and using regularization to suppress the resulting aliasing artifacts during reconstruction. Multi-coil MRI exploits redundancy acro...",
-      "difficulty": "Easy",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "mri_l1_wavelet.png"
-      }
-    },
-    "task_09": {
-      "id": "09",
-      "id_num": 9,
-      "name": "mri_noncartesian_cs",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "Non-Cartesian MRI Compressed Sensing",
-      "description": "Magnetic Resonance Imaging (MRI) acquires data in the spatial frequency domain (k-space). While conventional MRI samples k-space on a Cartesian grid (enabling reconstruction via standard FFT), many acquisition strategies sample k-space along non-Cartesian trajectories such as radial spokes, spirals, or random patterns. These non-Cartesian trajectories offer advantages in motion robustness, SNR efficiency, and ultra-short echo time imaging, but require specialized reconstruction algorithms. In...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "mri_noncartesian_cs.png"
-      }
-    },
-    "task_10": {
-      "id": "10",
-      "id_num": 10,
-      "name": "mri_pnp_admm",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "MRI Plug-and-Play ADMM",
-      "description": "Compressed Sensing MRI (CS-MRI) accelerates acquisition by undersampling k-space (the Fourier domain of the image) and exploiting image structure during reconstruction. Classical CS-MRI uses explicit regularizers like Total Variation or wavelet sparsity. Plug-and-Play (PnP) methods replace these hand-crafted priors with a pretrained image denoiser, which implicitly defines a more expressive image prior. The key challenge is convergence: naively plugging a denoiser into an iterative algorithm ...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "mri_pnp_admm.png"
-      },
-      "source_github": "https://github.com/uclaopt/Provable_Plug_and_Play"
-    },
-    "task_11": {
-      "id": "11",
-      "id_num": 11,
-      "name": "mri_sense",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "MRI SENSE Reconstruction",
-      "description": "SENSE (SENSitivity Encoding) is one of the two foundational parallel imaging methods for MRI, alongside GRAPPA. While GRAPPA operates in k-space by interpolating missing samples, SENSE works in the image domain by directly solving the linear system that relates the unknown image to the acquired multi-coil k-space data through known coil sensitivity maps. CG-SENSE extends SENSE to handle arbitrary Cartesian undersampling patterns by formulating the reconstruction as a least-squares problem and...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "mri_sense.png"
-      },
-      "source_github": "https://github.com/mckib2/pygrappa"
-    },
-    "task_12": {
-      "id": "12",
-      "id_num": 12,
-      "name": "mri_t2_mapping",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "MRI T2 Relaxometry Mapping",
-      "description": "In multi-echo spin-echo (MESE) MRI, a series of images is acquired at different echo times (TE). The signal at each voxel decays exponentially with a time constant T2, which is characteristic of the tissue type. Quantitative T2 mapping converts this qualitative signal decay into a physical tissue property map (in milliseconds), enabling standardized, reproducible tissue characterization for clinical diagnosis of edema, fibrosis, iron overload, and demyelination.",
-      "difficulty": "Easy",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "mri_t2_mapping.png"
-      },
-      "source_github": "https://github.com/BAMMri/MyoQMRI"
-    },
-    "task_13": {
-      "id": "13",
-      "id_num": 13,
-      "name": "mri_tv",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "MRI Total Variation Reconstruction",
-      "description": "Magnetic Resonance Imaging (MRI) acquires data in the spatial frequency domain (k-space). Each receive coil in a multi-coil array measures a modulated version of the full k-space, weighted by its spatially varying sensitivity profile. Fully sampling k-space is time-consuming, so compressed sensing MRI accelerates acquisition by deliberately undersampling k-space and using regularization to suppress the resulting aliasing artifacts during reconstruction. Multi-coil MRI exploits redundancy acro...",
-      "difficulty": "Easy",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "mri_tv.png"
-      }
-    },
-    "task_14": {
-      "id": "14",
-      "id_num": 14,
-      "name": "mri_varnet",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "MRI Variational Network",
-      "description": "Traditional MRI reconstruction solves an optimization problem with hand-crafted regularizers (TV, wavelets) or plug-in denoisers. End-to-End Variational Networks (VarNet) replace this entire pipeline with a learned unrolled network: each cascade performs sensitivity-weighted data consistency followed by a U-Net regularizer, and the entire architecture is trained end-to-end on paired data. VarNet is the top-performing method on the fastMRI leaderboard and represents the current state-of-the-ar...",
-      "difficulty": "Hard",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "mri_varnet.png"
-      },
-      "source_github": "https://github.com/facebookresearch/fastMRI"
-    },
-    "task_15": {
-      "id": "15",
-      "id_num": 15,
-      "name": "pet_mlem",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "PET ML-EM Reconstruction",
-      "description": "Positron Emission Tomography (PET) images the distribution of a radioactive tracer injected into the body. When a positron annihilates with an electron, two 511 keV gamma photons are emitted in opposite directions and detected in coincidence by a ring of detectors. Each coincidence event defines a line of response (LOR) through the body, and the collected LOR counts form a sinogram. Unlike CT where transmitted X-rays follow Gaussian noise statistics, PET data follows Poisson statistics becaus...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "pet_mlem.png"
-      }
-    },
-    "task_16": {
-      "id": "16",
-      "id_num": 16,
-      "name": "plane_wave_ultrasound",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "Plane-Wave Ultrasound Beamforming",
-      "description": "Conventional ultrasound imaging fires focused beams sequentially, yielding frame rates of tens of images per second. Ultrafast imaging transmits a single unfocused plane wave that insonifies the entire medium simultaneously, achieving frame rates of thousands per second. The trade-off is that a single plane-wave acquisition produces low-contrast images; high-quality images require coherent compounding of several steered plane-wave firings. The standard reconstruction algorithm for focused-bea...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "plane_wave_ultrasound.png"
-      },
-      "source_github": "https://github.com/rehmanali1994/Plane_Wave_Ultrasound_Stolt_F-K_Migration.github.io"
-    },
-    "task_17": {
-      "id": "17",
-      "id_num": 17,
-      "name": "pnp_mri_reconstruction",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "Plug-and-Play MRI (MSSN)",
-      "description": "MRI acquires data in k-space (spatial frequency domain). Full k-space sampling is slow, so accelerated MRI uses radial undersampling — acquiring only a subset of radial lines through the k-space center. Reconstruction from these incomplete measurements is an ill-posed inverse problem.",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "pnp_mri_reconstruction.png"
-      }
-    },
-    "task_18": {
-      "id": "18",
-      "id_num": 18,
-      "name": "ultrasound_sos_tomography",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "Ultrasound Speed-of-Sound Tomography",
-      "description": "Ultrasound computed tomography (USCT) images the acoustic properties of tissue by transmitting pulses through the body from a ring array of transducers. Unlike reflection-mode ultrasound (B-mode), transmission tomography measures the travel time of acoustic waves through the medium, enabling quantitative mapping of the speed of sound. Speed-of-sound maps provide tissue characterization complementary to conventional ultrasound: fat (~1450 m/s) and glandular tissue (~1540 m/s) are distinguishab...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "ultrasound_sos_tomography.png"
-      }
-    },
-    "task_19": {
-      "id": "19",
-      "id_num": 19,
-      "name": "xray_tooth_gridrec",
-      "domain": "A",
-      "domain_name": "Medicine",
-      "title": "X-ray Tooth CT (Gridrec)",
-      "description": "X-ray computed tomography (CT) recovers the internal structure of an object from a series of X-ray transmission measurements taken at different angles. In parallel-beam geometry, each projection records the line integral of the linear attenuation coefficient along parallel rays. The collection of all projections for a fixed axial slice forms a sinogram. Recovering the attenuation map from the sinogram is the inverse Radon transform.",
-      "difficulty": "Easy",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "xray_tooth_gridrec.png"
-      }
-    },
-    "task_20": {
-      "id": "20",
-      "id_num": 20,
-      "name": "eht_black_hole_dynamic",
-      "domain": "B",
-      "domain_name": "Radio Astronomy",
-      "title": "EHT Dynamic Black Hole Imaging",
-      "description": "Reconstruct a time-varying video of a black hole (e.g., SgrA*) from sparse interferometric measurements obtained by the Event Horizon Telescope (EHT). Each time frame has a different set of (u,v) baseline measurements due to",
-      "difficulty": "Hard",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "eht_black_hole_dynamic.png"
-      }
-    },
-    "task_21": {
-      "id": "21",
-      "id_num": 21,
       "name": "eht_black_hole_original",
-      "domain": "B",
-      "domain_name": "Radio Astronomy",
+      "domain": "A",
+      "domain_name": "Astronomy",
       "title": "EHT Black Hole Imaging (Closure)",
       "description": "The Event Horizon Telescope (EHT) is a Very Long Baseline Interferometry (VLBI) array that links radio dishes across the globe, forming a virtual Earth-sized telescope operating at 230 GHz (1.3 mm wavelength) with ~20 microarcsecond angular resolution.",
       "difficulty": "Medium",
@@ -481,27 +134,27 @@
       },
       "source_github": "https://github.com/achael/eht-imaging"
     },
-    "task_22": {
-      "id": "22",
-      "id_num": 22,
-      "name": "eht_black_hole_tomography",
-      "domain": "B",
-      "domain_name": "Radio Astronomy",
-      "title": "EHT Black Hole Tomography",
-      "description": "The Event Horizon Telescope (EHT) captures sparse radio interferometric measurements of supermassive black holes. Orbiting hot plasma (\"hotspots\") near the black hole create time-varying emission that is gravitationally lensed and Doppler-boosted. The challenge is to recover the full 3D emission field from these sparse 2D projections, leveraging the physical constraint that the emission follows Keplerian orbital dynamics.",
+    "task_02": {
+      "id": "02",
+      "id_num": 2,
+      "name": "eht_black_hole_dynamic",
+      "domain": "A",
+      "domain_name": "Astronomy",
+      "title": "EHT Dynamic Black Hole Imaging",
+      "description": "Reconstruct a time-varying video of a black hole (e.g., SgrA*) from sparse interferometric measurements obtained by the Event Horizon Telescope (EHT). Each time frame has a different set of (u,v) baseline measurements due to",
       "difficulty": "Hard",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "eht_black_hole_tomography.png"
+        "filename": "eht_black_hole_dynamic.png"
       }
     },
-    "task_23": {
-      "id": "23",
-      "id_num": 23,
+    "task_03": {
+      "id": "03",
+      "id_num": 3,
       "name": "eht_black_hole_UQ",
-      "domain": "B",
-      "domain_name": "Radio Astronomy",
+      "domain": "A",
+      "domain_name": "Astronomy",
       "title": "EHT Black Hole Uncertainty Quantification",
       "description": "Standard image reconstruction methods (CLEAN, RML) produce a single point estimate. But the EHT inverse problem is severely ill-posed: many images are consistent with the sparse measurements. Which image features are reliable,",
       "difficulty": "Hard",
@@ -511,12 +164,12 @@
         "filename": "eht_black_hole_UQ.png"
       }
     },
-    "task_24": {
-      "id": "24",
-      "id_num": 24,
+    "task_04": {
+      "id": "04",
+      "id_num": 4,
       "name": "eht_black_hole_feature_extraction_dynamic",
-      "domain": "B",
-      "domain_name": "Radio Astronomy",
+      "domain": "A",
+      "domain_name": "Astronomy",
       "title": "EHT Black Hole Feature Extraction",
       "description": "Per-frame geometric parameter inference from time-varying EHT closure quantities using α-DPI (α-divergence variational inference + importance sampling). This task applies the α-DPI method independently to each time snapshot of a dynamic black hole observation, producing posterior distributions of geometric crescent parameters at each epoch. The output is a ridge plot showing how parameter posteriors evolve over time, similar to Figure 13 of the EHT Sgr A* Paper IV (2022, ApJL 930, L15).",
       "difficulty": "Hard",
@@ -526,26 +179,405 @@
         "filename": "eht_black_hole_feature_extraction_dynamic.png"
       }
     },
-    "task_25": {
-      "id": "25",
-      "id_num": 25,
-      "name": "insar_phase_unwrapping",
-      "domain": "C",
-      "domain_name": "Earth Science",
-      "title": "InSAR Phase Unwrapping",
-      "description": "Phase unwrapping is the problem of recovering the absolute phase from measurements that are wrapped modulo 2π. In interferometric synthetic aperture radar (InSAR), the measured interferogram phase lies in (−π, π], but the true deformation signal can span many multiples of 2π. Unwrapping is essential for extracting quantitative surface displacement information from satellite radar data.",
+    "task_05": {
+      "id": "05",
+      "id_num": 5,
+      "name": "eht_black_hole_tomography",
+      "domain": "A",
+      "domain_name": "Astronomy",
+      "title": "EHT Black Hole Tomography",
+      "description": "The Event Horizon Telescope (EHT) captures sparse radio interferometric measurements of supermassive black holes. Orbiting hot plasma (\"hotspots\") near the black hole create time-varying emission that is gravitationally lensed and Doppler-boosted. The challenge is to recover the full 3D emission field from these sparse 2D projections, leveraging the physical constraint that the emission follows Keplerian orbital dynamics.",
+      "difficulty": "Hard",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "eht_black_hole_tomography.png"
+      }
+    },
+    "task_06": {
+      "id": "06",
+      "id_num": 6,
+      "name": "lucky_imaging",
+      "domain": "A",
+      "domain_name": "Astronomy",
+      "title": "Lucky Imaging",
+      "description": "Ground-based astronomical imaging is fundamentally limited by atmospheric turbulence (\"seeing\"), which randomly distorts the incoming wavefront on timescales of tens of milliseconds. The Fried parameter  characterises the turbulence strength: the effective angular resolution is  rather than , where  is the telescope aperture. For typical amateur telescopes, , so the telescope operates far below its diffraction limit. Lucky imaging (Fried, 1978) exploits the statistical nature of turbulence. B...",
+      "difficulty": "Medium",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "lucky_imaging.png"
+      },
+      "source_github": "https://github.com/Rolf-Hempel/PlanetarySystemStacker"
+    },
+    "task_07": {
+      "id": "07",
+      "id_num": 7,
+      "name": "exoplanet_imaging",
+      "domain": "A",
+      "domain_name": "Astronomy",
+      "title": "Exoplanet Angular Differential Imaging",
+      "description": "Direct detection of exoplanets requires suppressing stellar light by a factor of –.  After adaptive optics and a coronagraph reduce the coherent stellar peak, the dominant residual is quasi-static speckle noise — wavefront errors that produce PSF artefacts resembling faint point sources.  Distinguishing a real companion from a speckle requires exploiting diversity between frames. Angular Differential Imaging (ADI) is the standard observational strategy: the telescope pupil is kept fixed while...",
+      "difficulty": "Medium",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "exoplanet_imaging.png"
+      },
+      "source_github": "https://github.com/carlos-gg/VIP_extras"
+    },
+    "task_08": {
+      "id": "08",
+      "id_num": 8,
+      "name": "shack-hartmann",
+      "domain": "A",
+      "domain_name": "Astronomy",
+      "title": "Shack-Hartmann Wavefront Sensing",
+      "description": "A Shack-Hartmann wavefront sensor (SH-WFS) measures the phase distortion of an incoming optical wavefront by dividing the telescope pupil into an array of small lenslets. Each lenslet focuses its sub-aperture onto a detector; the centroid",
+      "difficulty": "Medium",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "shack-hartmann.png"
+      }
+    },
+    "task_09": {
+      "id": "09",
+      "id_num": 9,
+      "name": "shapelet_source_reconstruction",
+      "domain": "A",
+      "domain_name": "Astronomy",
+      "title": "Shapelet Source Reconstruction",
+      "description": "Gravitational lensing distorts the images of distant galaxies as their light passes near massive foreground objects. Recovering the intrinsic source morphology from a lensed, blurred, noisy observation is a fundamental inverse problem in observational astronomy. Shapelets — orthonormal 2D basis functions built from Hermite polynomials — provide a compact, analytic representation of galaxy light profiles that linearizes the reconstruction problem when the lens model is known.",
       "difficulty": "Medium",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "insar_phase_unwrapping.png"
+        "filename": "shapelet_source_reconstruction.png"
+      },
+      "source_github": "https://github.com/sibirrer/lenstronomy"
+    },
+    "task_10": {
+      "id": "10",
+      "id_num": 10,
+      "name": "SSNP_ODT",
+      "domain": "B",
+      "domain_name": "Biology",
+      "title": "SSNP Optical Diffraction Tomography",
+      "description": "Optical Diffraction Tomography (ODT) recovers the 3D refractive index (RI) distribution of transparent biological samples. Traditional ODT requires coherent illumination and an interferometric setup to measure the complex",
+      "difficulty": "Hard",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "SSNP_ODT.png"
       }
+    },
+    "task_11": {
+      "id": "11",
+      "id_num": 11,
+      "name": "reflection_ODT",
+      "domain": "B",
+      "domain_name": "Biology",
+      "title": "Reflection Optical Diffraction Tomography",
+      "description": "This task implements reflection-mode multi-slice Fourier ptychographic tomography (rMS-FPT) for 3D refractive index reconstruction of samples on reflective substrates. Reference: Zhu et al., \"Reflection-mode multi-slice Fourier ptychographic tomography\", arXiv:2503.12246 (2025) GitHub: https://github.com/bu-cisl/rMSBP-python",
+      "difficulty": "Hard",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "reflection_ODT.png"
+      },
+      "source_github": "https://github.com/bu-cisl/rMSBP-python"
+    },
+    "task_12": {
+      "id": "12",
+      "id_num": 12,
+      "name": "fourier_ptychography",
+      "domain": "B",
+      "domain_name": "Biology",
+      "title": "Fourier Ptychographic Microscopy",
+      "description": "Fourier ptychography (FPM) is a computational microscopy technique that achieves simultaneous high resolution and wide field of view by computationally stitching together low-resolution images captured under different LED illumination angles.",
+      "difficulty": "Medium",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "fourier_ptychography.png"
+      }
+    },
+    "task_13": {
+      "id": "13",
+      "id_num": 13,
+      "name": "microscope_denoising",
+      "domain": "B",
+      "domain_name": "Biology",
+      "title": "Fluorescence Microscopy Denoising",
+      "description": "Live-cell fluorescence microscopy is fundamentally limited by the trade-off between signal-to-noise ratio (SNR) and phototoxicity: acquiring high-SNR images requires high laser power or long exposure, which damages living cells and bleaches fluorophores.",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "microscope_denoising.png"
+      },
+      "paper_link": "https://doi.org/10.1038/s41467-024-48575-9",
+      "source_github": "https://github.com/TristaZeng/ZS-DeconvNet"
+    },
+    "task_14": {
+      "id": "14",
+      "id_num": 14,
+      "name": "hessian_sim",
+      "domain": "B",
+      "domain_name": "Biology",
+      "title": "Hessian-SIM Super-Resolution",
+      "description": "",
+      "difficulty": "Medium",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "hessian_sim.png"
+      }
+    },
+    "task_15": {
+      "id": "15",
+      "id_num": 15,
+      "name": "light_field_microscope",
+      "domain": "B",
+      "domain_name": "Biology",
+      "title": "Light Field Microscopy",
+      "description": "Light-field microscopy places a microlens array (MLA) at the microscope image plane so that one camera exposure records both spatial and angular information. Each lenslet creates a local sub-image on the sensor, and the full sensor mosaic is interpreted as a multiplexed 4D light field. This permits snapshot volumetric imaging, but it trades lateral resolution for angular sampling. The reference paper for this task is Broxton et al., Wave optics theory and 3-D deconvolution for the light field...",
+      "difficulty": "Hard",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "light_field_microscope.png"
+      },
+      "source_github": "https://github.com/VicidominiLab/s2ISM"
+    },
+    "task_16": {
+      "id": "16",
+      "id_num": 16,
+      "name": "single_molecule_light_field",
+      "domain": "B",
+      "domain_name": "Biology",
+      "title": "Single Molecule Light Field",
+      "description": "Fourier Light Field Microscopy (FLFM) is a technique that achieves 3D single-molecule super-resolution by replacing the standard camera with a micro-lens array (MLA) placed at the back focal plane of the imaging system. Each micro-lens samples a different view of the sample — a different angle of incidence — so the same fluorescent molecule simultaneously appears at slightly different lateral positions in several sub-images. The lateral shift between views (parallax) carries depth information...",
+      "difficulty": "Medium",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "single_molecule_light_field.png"
+      },
+      "paper_link": "https://doi.org/10.1364/OPTICA.397172",
+      "source_github": "https://github.com/TheLeeLab/hexSMLFM"
+    },
+    "task_17": {
+      "id": "17",
+      "id_num": 17,
+      "name": "fpm_inr_reconstruction",
+      "domain": "B",
+      "domain_name": "Biology",
+      "title": "FPM Implicit Neural Reconstruction",
+      "description": "Fourier Ptychographic Microscopy (FPM) is a computational imaging technique that achieves both high resolution and wide field of view by capturing multiple low-resolution images under varying LED illuminations. Each LED illuminates the sample from a different angle, causing a different sub-band of the sample's spatial frequency spectrum to fall within the objective's limited numerical aperture (NA). By combining information from all LEDs, FPM can synthesize an image with resolution far exceed...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "fpm_inr_reconstruction.png"
+      },
+      "paper_link": "https://arxiv.org/abs/2310.18529",
+      "source_github": "https://hwzhou2020.github.io/FPM-INR-Web/"
+    },
+    "task_18": {
+      "id": "18",
+      "id_num": 18,
+      "name": "s2ism",
+      "domain": "B",
+      "domain_name": "Biology",
+      "title": "S2ISM Satellite Image Super-Resolution",
+      "description": "Image Scanning Microscopy (ISM) replaces the single-element detector of a confocal microscope with a small array detector (e.g., a 5x5 SPAD array). Each detector element captures a slightly offset view of the sample, encoding both lateral and",
+      "difficulty": "Medium",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "s2ism.png"
+      },
+      "source_github": "https://github.com/VicidominiLab/s2ISM"
+    },
+    "task_19": {
+      "id": "19",
+      "id_num": 19,
+      "name": "conventional_ptychography",
+      "domain": "C",
+      "domain_name": "Physics",
+      "title": "Conventional Ptychography",
+      "description": "Conventional ptychography (CP) is a lensless computational imaging technique that reconstructs a complex-valued sample (amplitude and phase) from a set of far-field diffraction patterns. It is widely used in synchrotron x-ray microscopy, electron",
+      "difficulty": "Medium",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "conventional_ptychography.png"
+      }
+    },
+    "task_20": {
+      "id": "20",
+      "id_num": 20,
+      "name": "spectral_snapshot_compressive_imaging",
+      "domain": "C",
+      "domain_name": "Physics",
+      "title": "Snapshot Compressive Spectral Imaging",
+      "description": "Coded Aperture Snapshot Spectral Imaging (CASSI) captures an entire 3D hyperspectral data cube in a single detector exposure. A binary coded aperture mask spatially modulates the scene, and a dispersive prism shifts each spectral channel by a wavelength-dependent displacement before all channels are integrated onto a 2D detector array. The system trades spectral resolution for the ability to capture all bands simultaneously — enabling single-shot acquisition of dynamic scenes. The inverse pro...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "spectral_snapshot_compressive_imaging.png"
+      },
+      "paper_link": "https://doi.org/10.1364/PRJ.411745"
+    },
+    "task_21": {
+      "id": "21",
+      "id_num": 21,
+      "name": "electron_ptychography",
+      "domain": "C",
+      "domain_name": "Physics",
+      "title": "Electron Ptychography",
+      "description": "In scanning transmission electron microscopy (STEM), a focused or defocused electron probe is raster-scanned across a thin specimen. At each probe position, a convergent-beam electron diffraction (CBED) pattern is recorded on a pixelated detector, forming a four-dimensional dataset (two real-space scan dimensions and two reciprocal-space detector dimensions). This \"4D-STEM\" dataset encodes rich information about the specimen's atomic structure, including phase shifts imparted on the electron ...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "electron_ptychography.png"
+      },
+      "source_github": "https://github.com/nsippl/py4DSTEM"
+    },
+    "task_22": {
+      "id": "22",
+      "id_num": 22,
+      "name": "confocal-nlos-fk",
+      "domain": "C",
+      "domain_name": "Physics",
+      "title": "Non-Line-of-Sight FK Migration",
+      "description": "Non-line-of-sight (NLOS) imaging recovers 3-D scenes hidden around a corner using indirect light paths.  A pulsed laser illuminates a visible relay wall; photons scatter to the hidden scene and back, and a single-photon detector",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "confocal-nlos-fk.png"
+      },
+      "source_github": "https://github.com/computational-imaging/nlos-fk"
+    },
+    "task_23": {
+      "id": "23",
+      "id_num": 23,
+      "name": "lensless_imaging",
+      "domain": "C",
+      "domain_name": "Physics",
+      "title": "Lensless Camera Reconstruction",
+      "description": "A lensless camera replaces the conventional lens with a thin, flat diffuser (e.g. Scotch tape).  Each point source in the scene produces a complex \"caustic\" pattern — the point spread function (PSF) — that covers the entire",
+      "difficulty": "Medium",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "lensless_imaging.png"
+      }
+    },
+    "task_24": {
+      "id": "24",
+      "id_num": 24,
+      "name": "differentiable_deflectometry",
+      "domain": "C",
+      "domain_name": "Physics",
+      "title": "Differentiable Deflectometry",
+      "description": "Deflectometry is an optical metrology technique that infers the shape of refractive or reflective surfaces by analysing how they distort known display patterns. A display screen shows sinusoidal fringe patterns, and one or more calibrated cameras observe those fringes through the optical element under test. Phase-shifting analysis — acquiring multiple images at known phase offsets — allows each camera pixel to be mapped to a precise location on the display, effectively encoding the ray deflec...",
+      "difficulty": "Hard",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "differentiable_deflectometry.png"
+      },
+      "source_github": "https://github.com/vccimaging/DiffDeflectometry"
+    },
+    "task_25": {
+      "id": "25",
+      "id_num": 25,
+      "name": "mcr_hyperspectral",
+      "domain": "D",
+      "domain_name": "Chemistry & Material Science",
+      "title": "MCR-ALS Hyperspectral Unmixing",
+      "description": "Hyperspectral imaging (HSI) captures a full spectrum at every spatial pixel, producing a 3D data cube. In many chemical imaging applications (Raman, IR, fluorescence), the sample consists of a small number of pure chemical components whose spectra overlap spatially. The goal of multivariate curve resolution (MCR) is to decompose the observed data into the underlying pure spectra and their spatial concentration maps — a blind source separation problem. MCR assumes a bilinear mixing model: each...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "mcr_hyperspectral.png"
+      },
+      "source_github": "https://github.com/usnistgov/pyMCR"
     },
     "task_26": {
       "id": "26",
       "id_num": 26,
+      "name": "raman_cell_phenotyping",
+      "domain": "D",
+      "domain_name": "Chemistry & Material Science",
+      "title": "Raman Cell Phenotyping",
+      "description": "Raman spectroscopy is a label-free, non-destructive technique that probes molecular vibrations via inelastic light scattering. Each molecule produces a characteristic Raman spectrum (a \"fingerprint\"), so the observed spectrum at any point in a biological sample is a superposition of contributions from all constituent biomolecules. By acquiring spectra on a spatial grid and stacking multiple focal planes, one obtains a four-dimensional hyperspectral volume (x, y, z, wavenumber). Extracting the...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "raman_cell_phenotyping.png"
+      }
+    },
+    "task_27": {
+      "id": "27",
+      "id_num": 27,
+      "name": "cars_spectroscopy",
+      "domain": "D",
+      "domain_name": "Chemistry & Material Science",
+      "title": "CARS Spectroscopy Temperature Inversion",
+      "description": "Coherent anti-Stokes Raman scattering (CARS) is a nonlinear optical technique used to measure gas-phase temperature and species concentration in combustion environments. The CARS signal depends on the complex third-order susceptibility , which encodes molecular rotational-vibrational population distributions that are functions of temperature. The forward model computes a theoretical CARS intensity spectrum  for a given temperature , pressure , and mole fraction . It accounts for: - Raman line...",
+      "difficulty": "Medium",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "cars_spectroscopy.png"
+      }
+    },
+    "task_28": {
+      "id": "28",
+      "id_num": 28,
+      "name": "xray_ptychography_tike",
+      "domain": "D",
+      "domain_name": "Chemistry & Material Science",
+      "title": "X-ray Ptychography (Tike)",
+      "description": "Ptychography is a coherent diffractive imaging technique that recovers both the amplitude and phase of a specimen's transmission function. A focused X-ray beam (the \"probe\") is raster-scanned across the sample with overlapping illumination areas. At each scan position, a far-field diffraction pattern is recorded on a photon-counting detector. Because adjacent positions share object information, the redundancy in the dataset enables simultaneous recovery of the complex object and the illuminat...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "xray_ptychography_tike.png"
+      },
+      "source_github": "https://github.com/AdvancedPhotonSource/tike"
+    },
+    "task_29": {
+      "id": "29",
+      "id_num": 29,
+      "name": "xray_laminography_tike",
+      "domain": "D",
+      "domain_name": "Chemistry & Material Science",
+      "title": "X-ray Laminography (Tike)",
+      "description": "Laminography is a 3D imaging technique that generalizes computed tomography (CT) by tilting the rotation axis relative to the beam direction. When the tilt angle equals pi/2, the geometry reduces to standard parallel-beam tomography; at other tilt angles",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "xray_laminography_tike.png"
+      },
+      "source_github": "https://github.com/AdvancedPhotonSource/tike"
+    },
+    "task_30": {
+      "id": "30",
+      "id_num": 30,
       "name": "seismic_FWI_original",
-      "domain": "C",
+      "domain": "E",
       "domain_name": "Earth Science",
       "title": "Seismic Full-Waveform Inversion",
       "description": "Recover the subsurface P-wave velocity field  from surface seismograms recorded over the Marmousi model.  The inverse problem minimizes: $$",
@@ -557,74 +589,11 @@
       },
       "source_github": "https://github.com/ar4/deepwave"
     },
-    "task_27": {
-      "id": "27",
-      "id_num": 27,
-      "name": "weather_radar_data_assimilation",
-      "domain": "C",
-      "domain_name": "Earth Science",
-      "title": "Weather Radar Data Assimilation",
-      "description": "Weather nowcasting aims to predict near-future precipitation patterns from radar observations. The Storm Event Imagery (SEVIR) dataset provides Vertically Integrated Liquid (VIL) radar mosaics over the contiguous United States, capturing precipitation intensity at regular spatial and temporal intervals. In operational settings, observations are often sparse due to sensor failures, limited coverage, or bandwidth constraints, making direct prediction from incomplete data an ill-posed inverse pr...",
-      "difficulty": "Hard",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "weather_radar_data_assimilation.png"
-      }
-    },
-    "task_28": {
-      "id": "28",
-      "id_num": 28,
-      "name": "era5_tensorvar",
-      "domain": "C",
-      "domain_name": "Earth Science",
-      "title": "ERA5 Tensor Variational Analysis",
-      "description": "Numerical weather prediction systems estimate the atmospheric state by assimilating a continuous stream of sparse, noisy observations into a model forecast. The standard tool is four-dimensional variational data",
-      "difficulty": "Hard",
-      "has_tests": false,
-      "metrics": {},
-      "images": {
-        "filename": "era5_tensorvar.png"
-      },
-      "source_github": "https://github.com/YimingYang2000/TensorVar"
-    },
-    "task_29": {
-      "id": "29",
-      "id_num": 29,
-      "name": "s2ism",
-      "domain": "C",
-      "domain_name": "Earth Science",
-      "title": "S2ISM Satellite Image Super-Resolution",
-      "description": "Image Scanning Microscopy (ISM) replaces the single-element detector of a confocal microscope with a small array detector (e.g., a 5x5 SPAD array). Each detector element captures a slightly offset view of the sample, encoding both lateral and",
-      "difficulty": "Medium",
-      "has_tests": false,
-      "metrics": {},
-      "images": {
-        "filename": "s2ism.png"
-      },
-      "source_github": "https://github.com/VicidominiLab/s2ISM"
-    },
-    "task_30": {
-      "id": "30",
-      "id_num": 30,
-      "name": "seismic_lsrtm_original",
-      "domain": "C",
-      "domain_name": "Earth Science",
-      "title": "Seismic Least-Squares RTM",
-      "description": "Least-squares reverse-time migration (LSRTM) estimates a reflectivity-like scattering image from seismic shot gathers. A smooth migration velocity model is treated as known, and the unknown image explains the scattered portion of the measured pressure field. For synthetic seismic benchmarks, the observed data are generated by propagating acoustic waves through a true velocity model . The inversion does not recover  directly. Instead, it reconstructs a scattering potential  that perturbs wave ...",
-      "difficulty": "Medium",
-      "has_tests": false,
-      "metrics": {},
-      "images": {
-        "filename": "seismic_lsrtm_original.png"
-      },
-      "source_github": "https://github.com/ar4/deepwave"
-    },
     "task_31": {
       "id": "31",
       "id_num": 31,
       "name": "seismic_traveltime_tomography",
-      "domain": "C",
+      "domain": "E",
       "domain_name": "Earth Science",
       "title": "Seismic Traveltime Tomography",
       "description": "Seismic traveltime tomography is a fundamental tool in solid-earth geophysics for imaging the subsurface velocity structure of the Earth.  When a seismic source (earthquake or controlled explosion) fires, compressional (P) waves propagate through the Earth and arrive at surface seismographs.  The first-arrival time at each station depends on the velocity field integrated along the fastest path — the raypath — connecting source to receiver.  By collecting many source–receiver pairs with differ...",
@@ -639,230 +608,382 @@
     "task_32": {
       "id": "32",
       "id_num": 32,
-      "name": "fpm_inr_reconstruction",
-      "domain": "D",
-      "domain_name": "Biology / Microscopy",
-      "title": "FPM Implicit Neural Reconstruction",
-      "description": "Fourier Ptychographic Microscopy (FPM) is a computational imaging technique that achieves both high resolution and wide field of view by capturing multiple low-resolution images under varying LED illuminations. Each LED illuminates the sample from a different angle, causing a different sub-band of the sample's spatial frequency spectrum to fall within the objective's limited numerical aperture (NA). By combining information from all LEDs, FPM can synthesize an image with resolution far exceed...",
+      "name": "seismic_lsrtm_original",
+      "domain": "E",
+      "domain_name": "Earth Science",
+      "title": "Seismic Least-Squares RTM",
+      "description": "Least-squares reverse-time migration (LSRTM) estimates a reflectivity-like scattering image from seismic shot gathers. A smooth migration velocity model is treated as known, and the unknown image explains the scattered portion of the measured pressure field. For synthetic seismic benchmarks, the observed data are generated by propagating acoustic waves through a true velocity model . The inversion does not recover  directly. Instead, it reconstructs a scattering potential  that perturbs wave ...",
       "difficulty": "Medium",
-      "has_tests": true,
+      "has_tests": false,
       "metrics": {},
       "images": {
-        "filename": "fpm_inr_reconstruction.png"
+        "filename": "seismic_lsrtm_original.png"
       },
-      "paper_link": "https://arxiv.org/abs/2310.18529",
-      "source_github": "https://hwzhou2020.github.io/FPM-INR-Web/"
+      "source_github": "https://github.com/ar4/deepwave"
     },
     "task_33": {
       "id": "33",
       "id_num": 33,
-      "name": "microscope_denoising",
-      "domain": "D",
-      "domain_name": "Biology / Microscopy",
-      "title": "Fluorescence Microscopy Denoising",
-      "description": "Live-cell fluorescence microscopy is fundamentally limited by the trade-off between signal-to-noise ratio (SNR) and phototoxicity: acquiring high-SNR images requires high laser power or long exposure, which damages living cells and bleaches fluorophores.",
+      "name": "insar_phase_unwrapping",
+      "domain": "E",
+      "domain_name": "Earth Science",
+      "title": "InSAR Phase Unwrapping",
+      "description": "Phase unwrapping is the problem of recovering the absolute phase from measurements that are wrapped modulo 2π. In interferometric synthetic aperture radar (InSAR), the measured interferogram phase lies in (−π, π], but the true deformation signal can span many multiples of 2π. Unwrapping is essential for extracting quantitative surface displacement information from satellite radar data.",
       "difficulty": "Medium",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "microscope_denoising.png"
-      },
-      "paper_link": "https://doi.org/10.1038/s41467-024-48575-9",
-      "source_github": "https://github.com/TristaZeng/ZS-DeconvNet"
+        "filename": "insar_phase_unwrapping.png"
+      }
     },
     "task_34": {
       "id": "34",
       "id_num": 34,
-      "name": "raman_cell_phenotyping",
-      "domain": "D",
-      "domain_name": "Biology / Microscopy",
-      "title": "Raman Cell Phenotyping",
-      "description": "Raman spectroscopy is a label-free, non-destructive technique that probes molecular vibrations via inelastic light scattering. Each molecule produces a characteristic Raman spectrum (a \"fingerprint\"), so the observed spectrum at any point in a biological sample is a superposition of contributions from all constituent biomolecules. By acquiring spectra on a spatial grid and stacking multiple focal planes, one obtains a four-dimensional hyperspectral volume (x, y, z, wavenumber). Extracting the...",
-      "difficulty": "Medium",
+      "name": "weather_radar_data_assimilation",
+      "domain": "E",
+      "domain_name": "Earth Science",
+      "title": "Weather Radar Data Assimilation",
+      "description": "Weather nowcasting aims to predict near-future precipitation patterns from radar observations. The Storm Event Imagery (SEVIR) dataset provides Vertically Integrated Liquid (VIL) radar mosaics over the contiguous United States, capturing precipitation intensity at regular spatial and temporal intervals. In operational settings, observations are often sparse due to sensor failures, limited coverage, or bandwidth constraints, making direct prediction from incomplete data an ill-posed inverse pr...",
+      "difficulty": "Hard",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "raman_cell_phenotyping.png"
+        "filename": "weather_radar_data_assimilation.png"
       }
     },
     "task_35": {
       "id": "35",
       "id_num": 35,
-      "name": "light_field_microscope",
-      "domain": "D",
-      "domain_name": "Biology / Microscopy",
-      "title": "Light Field Microscopy",
-      "description": "Light-field microscopy places a microlens array (MLA) at the microscope image plane so that one camera exposure records both spatial and angular information. Each lenslet creates a local sub-image on the sensor, and the full sensor mosaic is interpreted as a multiplexed 4D light field. This permits snapshot volumetric imaging, but it trades lateral resolution for angular sampling. The reference paper for this task is Broxton et al., Wave optics theory and 3-D deconvolution for the light field...",
+      "name": "era5_tensorvar",
+      "domain": "E",
+      "domain_name": "Earth Science",
+      "title": "ERA5 Tensor Variational Analysis",
+      "description": "Numerical weather prediction systems estimate the atmospheric state by assimilating a continuous stream of sparse, noisy observations into a model forecast. The standard tool is four-dimensional variational data",
       "difficulty": "Hard",
-      "has_tests": true,
+      "has_tests": false,
       "metrics": {},
       "images": {
-        "filename": "light_field_microscope.png"
+        "filename": "era5_tensorvar.png"
       },
-      "source_github": "https://github.com/VicidominiLab/s2ISM"
+      "source_github": "https://github.com/YimingYang2000/TensorVar"
     },
     "task_36": {
       "id": "36",
       "id_num": 36,
-      "name": "SSNP_ODT",
-      "domain": "D",
-      "domain_name": "Biology / Microscopy",
-      "title": "SSNP Optical Diffraction Tomography",
-      "description": "Optical Diffraction Tomography (ODT) recovers the 3D refractive index (RI) distribution of transparent biological samples. Traditional ODT requires coherent illumination and an interferometric setup to measure the complex",
-      "difficulty": "Hard",
-      "has_tests": false,
+      "name": "ct_fan_beam",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Fan-Beam CT Reconstruction",
+      "description": "In clinical CT scanners, X-rays emanate from a point source that rotates around the patient, creating a divergent fan-beam geometry. This differs fundamentally from the parallel-beam Radon transform: each projection ray has a different angle and passes through the object at a magnification that depends on the source-to-object distance. Fan-beam CT is the standard clinical acquisition geometry for all modern diagnostic CT scanners. A short-scan acquisition covers only  radians (where  is the h...",
+      "difficulty": "Medium",
+      "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "SSNP_ODT.png"
-      }
+        "filename": "ct_fan_beam.png"
+      },
+      "source_github": "https://github.com/leehoy/CTReconstruction"
     },
     "task_37": {
       "id": "37",
       "id_num": 37,
-      "name": "hessian_sim",
-      "domain": "D",
-      "domain_name": "Biology / Microscopy",
-      "title": "Hessian-SIM Super-Resolution",
-      "description": "",
+      "name": "ct_sparse_view",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Sparse-View CT Reconstruction",
+      "description": "X-ray computed tomography (CT) acquires projections of an object at many angles and reconstructs a cross-sectional image. In clinical practice, reducing the number of projection angles (sparse-view CT) lowers radiation dose but makes the reconstruction problem severely ill-posed. Standard filtered back projection (FBP) fails under sparse angular sampling, producing streak artifacts. Iterative methods with appropriate priors — particularly total variation (TV) — can recover high-quality images...",
       "difficulty": "Medium",
-      "has_tests": false,
+      "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "hessian_sim.png"
+        "filename": "ct_sparse_view.png"
       }
     },
     "task_38": {
       "id": "38",
       "id_num": 38,
-      "name": "reflection_ODT",
-      "domain": "D",
-      "domain_name": "Biology / Microscopy",
-      "title": "Reflection Optical Diffraction Tomography",
-      "description": "This task implements reflection-mode multi-slice Fourier ptychographic tomography (rMS-FPT) for 3D refractive index reconstruction of samples on reflective substrates. Reference: Zhu et al., \"Reflection-mode multi-slice Fourier ptychographic tomography\", arXiv:2503.12246 (2025) GitHub: https://github.com/bu-cisl/rMSBP-python",
-      "difficulty": "Hard",
-      "has_tests": false,
+      "name": "ct_poisson_lowdose",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Low-Dose CT (Poisson Noise)",
+      "description": "In X-ray computed tomography (CT), photons passing through the object are attenuated according to Beer's law and counted by detectors. At standard clinical dose, photon counts are high enough that noise is approximately Gaussian and uniform across detector bins. However, at reduced dose (low photon count), the discrete photon-counting process follows Poisson statistics, making the noise variance signal-dependent: rays passing through highly attenuating regions receive fewer photons and theref...",
+      "difficulty": "Medium",
+      "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "reflection_ODT.png"
+        "filename": "ct_poisson_lowdose.png"
       },
-      "source_github": "https://github.com/bu-cisl/rMSBP-python"
+      "source_github": "https://github.com/cabouman/svmbir"
     },
     "task_39": {
       "id": "39",
       "id_num": 39,
-      "name": "single_molecule_light_field",
-      "domain": "D",
-      "domain_name": "Biology / Microscopy",
-      "title": "Single Molecule Light Field",
-      "description": "Fourier Light Field Microscopy (FLFM) is a technique that achieves 3D single-molecule super-resolution by replacing the standard camera with a micro-lens array (MLA) placed at the back focal plane of the imaging system. Each micro-lens samples a different view of the sample — a different angle of incidence — so the same fluorescent molecule simultaneously appears at slightly different lateral positions in several sub-images. The lateral shift between views (parallax) carries depth information...",
+      "name": "ct_dual_energy",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Dual-Energy CT Material Decomposition",
+      "description": "Dual-energy computed tomography (DECT) acquires two sets of X-ray projections at different tube voltages (e.g., 80 kVp and 140 kVp). Because materials attenuate X-rays differently at different energies — governed by energy-dependent mass attenuation coefficients (MACs) — two measurements at distinct spectra provide enough information to decompose the attenuation into contributions from two basis materials. Material decomposition enables quantitative imaging: separating bone from soft tissue, ...",
       "difficulty": "Medium",
-      "has_tests": false,
+      "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "single_molecule_light_field.png"
+        "filename": "ct_dual_energy.png"
       },
-      "paper_link": "https://doi.org/10.1364/OPTICA.397172",
-      "source_github": "https://github.com/TheLeeLab/hexSMLFM"
+      "source_github": "https://github.com/gjadick/dex-ct-sim"
     },
     "task_40": {
       "id": "40",
       "id_num": 40,
-      "name": "differentiable_deflectometry",
-      "domain": "E",
-      "domain_name": "Physics / Optics",
-      "title": "Differentiable Deflectometry",
-      "description": "Deflectometry is an optical metrology technique that infers the shape of refractive or reflective surfaces by analysing how they distort known display patterns. A display screen shows sinusoidal fringe patterns, and one or more calibrated cameras observe those fringes through the optical element under test. Phase-shifting analysis — acquiring multiple images at known phase offsets — allows each camera pixel to be mapped to a precise location on the display, effectively encoding the ray deflec...",
-      "difficulty": "Hard",
+      "name": "xray_tooth_gridrec",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "X-ray Tooth CT (Gridrec)",
+      "description": "X-ray computed tomography (CT) recovers the internal structure of an object from a series of X-ray transmission measurements taken at different angles. In parallel-beam geometry, each projection records the line integral of the linear attenuation coefficient along parallel rays. The collection of all projections for a fixed axial slice forms a sinogram. Recovering the attenuation map from the sinogram is the inverse Radon transform.",
+      "difficulty": "Easy",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "differentiable_deflectometry.png"
-      },
-      "source_github": "https://github.com/vccimaging/DiffDeflectometry"
+        "filename": "xray_tooth_gridrec.png"
+      }
     },
     "task_41": {
       "id": "41",
       "id_num": 41,
-      "name": "electron_ptychography",
-      "domain": "E",
-      "domain_name": "Physics / Optics",
-      "title": "Electron Ptychography",
-      "description": "In scanning transmission electron microscopy (STEM), a focused or defocused electron probe is raster-scanned across a thin specimen. At each probe position, a convergent-beam electron diffraction (CBED) pattern is recorded on a pixelated detector, forming a four-dimensional dataset (two real-space scan dimensions and two reciprocal-space detector dimensions). This \"4D-STEM\" dataset encodes rich information about the specimen's atomic structure, including phase shifts imparted on the electron ...",
-      "difficulty": "Medium",
+      "name": "mri_l1_wavelet",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "MRI L1-Wavelet Compressed Sensing",
+      "description": "Magnetic Resonance Imaging (MRI) acquires data in the spatial frequency domain (k-space). Each receive coil in a multi-coil array measures a modulated version of the full k-space, weighted by its spatially varying sensitivity profile. Fully sampling k-space is time-consuming, so compressed sensing MRI accelerates acquisition by deliberately undersampling k-space and using regularization to suppress the resulting aliasing artifacts during reconstruction. Multi-coil MRI exploits redundancy acro...",
+      "difficulty": "Easy",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "electron_ptychography.png"
-      },
-      "source_github": "https://github.com/nsippl/py4DSTEM"
+        "filename": "mri_l1_wavelet.png"
+      }
     },
     "task_42": {
       "id": "42",
       "id_num": 42,
-      "name": "xray_ptychography_tike",
-      "domain": "E",
-      "domain_name": "Physics / Optics",
-      "title": "X-ray Ptychography (Tike)",
-      "description": "Ptychography is a coherent diffractive imaging technique that recovers both the amplitude and phase of a specimen's transmission function. A focused X-ray beam (the \"probe\") is raster-scanned across the sample with overlapping illumination areas. At each scan position, a far-field diffraction pattern is recorded on a photon-counting detector. Because adjacent positions share object information, the redundancy in the dataset enables simultaneous recovery of the complex object and the illuminat...",
-      "difficulty": "Medium",
+      "name": "mri_tv",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "MRI Total Variation Reconstruction",
+      "description": "Magnetic Resonance Imaging (MRI) acquires data in the spatial frequency domain (k-space). Each receive coil in a multi-coil array measures a modulated version of the full k-space, weighted by its spatially varying sensitivity profile. Fully sampling k-space is time-consuming, so compressed sensing MRI accelerates acquisition by deliberately undersampling k-space and using regularization to suppress the resulting aliasing artifacts during reconstruction. Multi-coil MRI exploits redundancy acro...",
+      "difficulty": "Easy",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "xray_ptychography_tike.png"
-      },
-      "source_github": "https://github.com/AdvancedPhotonSource/tike"
+        "filename": "mri_tv.png"
+      }
     },
     "task_43": {
       "id": "43",
       "id_num": 43,
-      "name": "conventional_ptychography",
-      "domain": "E",
-      "domain_name": "Physics / Optics",
-      "title": "Conventional Ptychography",
-      "description": "Conventional ptychography (CP) is a lensless computational imaging technique that reconstructs a complex-valued sample (amplitude and phase) from a set of far-field diffraction patterns. It is widely used in synchrotron x-ray microscopy, electron",
-      "difficulty": "Medium",
-      "has_tests": false,
+      "name": "mri_t2_mapping",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "MRI T2 Relaxometry Mapping",
+      "description": "In multi-echo spin-echo (MESE) MRI, a series of images is acquired at different echo times (TE). The signal at each voxel decays exponentially with a time constant T2, which is characteristic of the tissue type. Quantitative T2 mapping converts this qualitative signal decay into a physical tissue property map (in milliseconds), enabling standardized, reproducible tissue characterization for clinical diagnosis of edema, fibrosis, iron overload, and demyelination.",
+      "difficulty": "Easy",
+      "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "conventional_ptychography.png"
-      }
+        "filename": "mri_t2_mapping.png"
+      },
+      "source_github": "https://github.com/BAMMri/MyoQMRI"
     },
     "task_44": {
       "id": "44",
       "id_num": 44,
-      "name": "shack-hartmann",
-      "domain": "E",
-      "domain_name": "Physics / Optics",
-      "title": "Shack-Hartmann Wavefront Sensing",
-      "description": "A Shack-Hartmann wavefront sensor (SH-WFS) measures the phase distortion of an incoming optical wavefront by dividing the telescope pupil into an array of small lenslets. Each lenslet focuses its sub-aperture onto a detector; the centroid",
-      "difficulty": "Medium",
-      "has_tests": false,
-      "metrics": {},
-      "images": {
-        "filename": "shack-hartmann.png"
-      }
-    },
-    "task_45": {
-      "id": "45",
-      "id_num": 45,
-      "name": "eit_conductivity_reconstruction",
+      "name": "mri_sense",
       "domain": "F",
-      "domain_name": "Medical Physics",
-      "title": "Electrical Impedance Tomography",
-      "description": "Electrical Impedance Tomography (EIT) is a non-invasive imaging technique that recovers the internal conductivity distribution of a body from electrical measurements taken at its boundary. An array of electrodes is placed around the",
+      "domain_name": "Medicine",
+      "title": "MRI SENSE Reconstruction",
+      "description": "SENSE (SENSitivity Encoding) is one of the two foundational parallel imaging methods for MRI, alongside GRAPPA. While GRAPPA operates in k-space by interpolating missing samples, SENSE works in the image domain by directly solving the linear system that relates the unknown image to the acquired multi-coil k-space data through known coil sensitivity maps. CG-SENSE extends SENSE to handle arbitrary Cartesian undersampling patterns by formulating the reconstruction as a least-squares problem and...",
       "difficulty": "Medium",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "eit_conductivity_reconstruction.png"
-      }
+        "filename": "mri_sense.png"
+      },
+      "source_github": "https://github.com/mckib2/pygrappa"
+    },
+    "task_45": {
+      "id": "45",
+      "id_num": 45,
+      "name": "mri_grappa",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "MRI GRAPPA Reconstruction",
+      "description": "Parallel imaging exploits spatial encoding from multiple receiver coils to reconstruct images from undersampled k-space. Unlike compressed sensing methods that solve an optimization problem with explicit regularization, GRAPPA (GeneRalized Autocalibrating Partially Parallel Acquisitions) directly interpolates missing k-space samples using linear kernels learned from a fully-sampled calibration region. The key insight is that linear relationships between k-space samples across coils are shift-...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "mri_grappa.png"
+      },
+      "source_github": "https://github.com/mckib2/pygrappa"
     },
     "task_46": {
       "id": "46",
       "id_num": 46,
+      "name": "mri_noncartesian_cs",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Non-Cartesian MRI Compressed Sensing",
+      "description": "Magnetic Resonance Imaging (MRI) acquires data in the spatial frequency domain (k-space). While conventional MRI samples k-space on a Cartesian grid (enabling reconstruction via standard FFT), many acquisition strategies sample k-space along non-Cartesian trajectories such as radial spokes, spirals, or random patterns. These non-Cartesian trajectories offer advantages in motion robustness, SNR efficiency, and ultra-short echo time imaging, but require specialized reconstruction algorithms. In...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "mri_noncartesian_cs.png"
+      }
+    },
+    "task_47": {
+      "id": "47",
+      "id_num": 47,
+      "name": "diffusion_mri_dti",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Diffusion MRI Tensor Imaging",
+      "description": "Diffusion MRI exploits the random Brownian motion of water molecules to probe tissue microstructure. By applying magnetic field gradients in different spatial directions, the MRI signal becomes sensitized to water diffusion along those directions. In Diffusion Tensor Imaging (DTI), the diffusion process at each voxel is modeled as a 3x3 symmetric positive-definite tensor, capturing both the magnitude and directional preference of water diffusion. In biological tissue, water diffusion is aniso...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "diffusion_mri_dti.png"
+      },
+      "source_github": "https://dipy.org/"
+    },
+    "task_48": {
+      "id": "48",
+      "id_num": 48,
+      "name": "mri_dynamic_dce",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Dynamic Contrast-Enhanced MRI",
+      "description": "Dynamic Contrast-Enhanced (DCE) MRI monitors the passage of a contrast agent (e.g., gadolinium chelate) through tissue over time. A bolus of contrast agent is injected intravenously and a rapid time-series of MRI images is acquired. The signal intensity in each voxel follows a characteristic uptake curve determined by local tissue perfusion, vascular permeability, and extracellular volume. Because each time frame must be acquired quickly to capture the fast dynamics of contrast agent wash-in ...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "mri_dynamic_dce.png"
+      },
+      "source_github": "https://github.com/ZhengguoTan/demo_dce_recon"
+    },
+    "task_49": {
+      "id": "49",
+      "id_num": 49,
+      "name": "mri_pnp_admm",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "MRI Plug-and-Play ADMM",
+      "description": "Compressed Sensing MRI (CS-MRI) accelerates acquisition by undersampling k-space (the Fourier domain of the image) and exploiting image structure during reconstruction. Classical CS-MRI uses explicit regularizers like Total Variation or wavelet sparsity. Plug-and-Play (PnP) methods replace these hand-crafted priors with a pretrained image denoiser, which implicitly defines a more expressive image prior. The key challenge is convergence: naively plugging a denoiser into an iterative algorithm ...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "mri_pnp_admm.png"
+      },
+      "source_github": "https://github.com/uclaopt/Provable_Plug_and_Play"
+    },
+    "task_50": {
+      "id": "50",
+      "id_num": 50,
+      "name": "mri_varnet",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "MRI Variational Network",
+      "description": "Traditional MRI reconstruction solves an optimization problem with hand-crafted regularizers (TV, wavelets) or plug-in denoisers. End-to-End Variational Networks (VarNet) replace this entire pipeline with a learned unrolled network: each cascade performs sensitivity-weighted data consistency followed by a U-Net regularizer, and the entire architecture is trained end-to-end on paired data. VarNet is the top-performing method on the fastMRI leaderboard and represents the current state-of-the-ar...",
+      "difficulty": "Hard",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "mri_varnet.png"
+      },
+      "source_github": "https://github.com/facebookresearch/fastMRI"
+    },
+    "task_51": {
+      "id": "51",
+      "id_num": 51,
+      "name": "pnp_mri_reconstruction",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Plug-and-Play MRI (MSSN)",
+      "description": "MRI acquires data in k-space (spatial frequency domain). Full k-space sampling is slow, so accelerated MRI uses radial undersampling — acquiring only a subset of radial lines through the k-space center. Reconstruction from these incomplete measurements is an ill-posed inverse problem.",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "pnp_mri_reconstruction.png"
+      }
+    },
+    "task_52": {
+      "id": "52",
+      "id_num": 52,
+      "name": "plane_wave_ultrasound",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Plane-Wave Ultrasound Beamforming",
+      "description": "Conventional ultrasound imaging fires focused beams sequentially, yielding frame rates of tens of images per second. Ultrafast imaging transmits a single unfocused plane wave that insonifies the entire medium simultaneously, achieving frame rates of thousands per second. The trade-off is that a single plane-wave acquisition produces low-contrast images; high-quality images require coherent compounding of several steered plane-wave firings. The standard reconstruction algorithm for focused-bea...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "plane_wave_ultrasound.png"
+      },
+      "source_github": "https://github.com/rehmanali1994/Plane_Wave_Ultrasound_Stolt_F-K_Migration.github.io"
+    },
+    "task_53": {
+      "id": "53",
+      "id_num": 53,
+      "name": "ultrasound_sos_tomography",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Ultrasound Speed-of-Sound Tomography",
+      "description": "Ultrasound computed tomography (USCT) images the acoustic properties of tissue by transmitting pulses through the body from a ring array of transducers. Unlike reflection-mode ultrasound (B-mode), transmission tomography measures the travel time of acoustic waves through the medium, enabling quantitative mapping of the speed of sound. Speed-of-sound maps provide tissue characterization complementary to conventional ultrasound: fat (~1450 m/s) and glandular tissue (~1540 m/s) are distinguishab...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "ultrasound_sos_tomography.png"
+      }
+    },
+    "task_54": {
+      "id": "54",
+      "id_num": 54,
+      "name": "usct_FWI",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Ultrasound CT Full-Waveform Inversion",
+      "description": "Ultrasound Computed Tomography (USCT) is a non-invasive medical imaging technique that reconstructs acoustic property maps (primarily sound speed) of biological tissue. A ring array of ultrasonic transducers surrounds the tissue; each transducer sequentially transmits a pulse while all others record the resulting wavefield. By solving the inverse problem that maps these measurements back to the tissue's sound speed distribution, USCT can produce quantitative images useful for breast cancer de...",
+      "difficulty": "Hard",
+      "has_tests": false,
+      "metrics": {},
+      "images": {
+        "filename": "usct_FWI.png"
+      }
+    },
+    "task_55": {
+      "id": "55",
+      "id_num": 55,
+      "name": "pet_mlem",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "PET ML-EM Reconstruction",
+      "description": "Positron Emission Tomography (PET) images the distribution of a radioactive tracer injected into the body. When a positron annihilates with an electron, two 511 keV gamma photons are emitted in opposite directions and detected in coincidence by a ring of detectors. Each coincidence event defines a line of response (LOR) through the body, and the collected LOR counts form a sinogram. Unlike CT where transmitted X-rays follow Gaussian noise statistics, PET data follows Poisson statistics becaus...",
+      "difficulty": "Medium",
+      "has_tests": true,
+      "metrics": {},
+      "images": {
+        "filename": "pet_mlem.png"
+      }
+    },
+    "task_56": {
+      "id": "56",
+      "id_num": 56,
       "name": "photoacoustic_tomography",
       "domain": "F",
-      "domain_name": "Medical Physics",
+      "domain_name": "Medicine",
       "title": "Photoacoustic Tomography",
       "description": "Photoacoustic tomography (PAT) exploits the photoacoustic effect: a short laser pulse illuminates tissue, optical absorbers (e.g., blood vessels) absorb the light and undergo rapid thermoelastic expansion, launching broadband ultrasonic pressure waves. These waves propagate outward and are recorded by an array of ultrasonic detectors on the tissue boundary. The inverse problem is to recover the initial pressure distribution (proportional to absorbed optical energy) from the measured acoustic ...",
       "difficulty": "Medium",
@@ -873,176 +994,19 @@
       },
       "source_github": "https://github.com/csheaff/pa-tomography-xu-wang"
     },
-    "task_47": {
-      "id": "47",
-      "id_num": 47,
-      "name": "xray_laminography_tike",
-      "domain": "F",
-      "domain_name": "Medical Physics",
-      "title": "X-ray Laminography (Tike)",
-      "description": "Laminography is a 3D imaging technique that generalizes computed tomography (CT) by tilting the rotation axis relative to the beam direction. When the tilt angle equals pi/2, the geometry reduces to standard parallel-beam tomography; at other tilt angles",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "xray_laminography_tike.png"
-      },
-      "source_github": "https://github.com/AdvancedPhotonSource/tike"
-    },
-    "task_48": {
-      "id": "48",
-      "id_num": 48,
-      "name": "usct_FWI",
-      "domain": "F",
-      "domain_name": "Medical Physics",
-      "title": "Ultrasound CT Full-Waveform Inversion",
-      "description": "Ultrasound Computed Tomography (USCT) is a non-invasive medical imaging technique that reconstructs acoustic property maps (primarily sound speed) of biological tissue. A ring array of ultrasonic transducers surrounds the tissue; each transducer sequentially transmits a pulse while all others record the resulting wavefield. By solving the inverse problem that maps these measurements back to the tissue's sound speed distribution, USCT can produce quantitative images useful for breast cancer de...",
-      "difficulty": "Hard",
-      "has_tests": false,
-      "metrics": {},
-      "images": {
-        "filename": "usct_FWI.png"
-      }
-    },
-    "task_49": {
-      "id": "49",
-      "id_num": 49,
-      "name": "shapelet_source_reconstruction",
-      "domain": "G",
-      "domain_name": "Astronomy",
-      "title": "Shapelet Source Reconstruction",
-      "description": "Gravitational lensing distorts the images of distant galaxies as their light passes near massive foreground objects. Recovering the intrinsic source morphology from a lensed, blurred, noisy observation is a fundamental inverse problem in observational astronomy. Shapelets — orthonormal 2D basis functions built from Hermite polynomials — provide a compact, analytic representation of galaxy light profiles that linearizes the reconstruction problem when the lens model is known.",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "shapelet_source_reconstruction.png"
-      },
-      "source_github": "https://github.com/sibirrer/lenstronomy"
-    },
-    "task_50": {
-      "id": "50",
-      "id_num": 50,
-      "name": "exoplanet_imaging",
-      "domain": "G",
-      "domain_name": "Astronomy",
-      "title": "Exoplanet Angular Differential Imaging",
-      "description": "Direct detection of exoplanets requires suppressing stellar light by a factor of –.  After adaptive optics and a coronagraph reduce the coherent stellar peak, the dominant residual is quasi-static speckle noise — wavefront errors that produce PSF artefacts resembling faint point sources.  Distinguishing a real companion from a speckle requires exploiting diversity between frames. Angular Differential Imaging (ADI) is the standard observational strategy: the telescope pupil is kept fixed while...",
-      "difficulty": "Medium",
-      "has_tests": false,
-      "metrics": {},
-      "images": {
-        "filename": "exoplanet_imaging.png"
-      },
-      "source_github": "https://github.com/carlos-gg/VIP_extras"
-    },
-    "task_51": {
-      "id": "51",
-      "id_num": 51,
-      "name": "lucky_imaging",
-      "domain": "G",
-      "domain_name": "Astronomy",
-      "title": "Lucky Imaging",
-      "description": "Ground-based astronomical imaging is fundamentally limited by atmospheric turbulence (\"seeing\"), which randomly distorts the incoming wavefront on timescales of tens of milliseconds. The Fried parameter  characterises the turbulence strength: the effective angular resolution is  rather than , where  is the telescope aperture. For typical amateur telescopes, , so the telescope operates far below its diffraction limit. Lucky imaging (Fried, 1978) exploits the statistical nature of turbulence. B...",
-      "difficulty": "Medium",
-      "has_tests": false,
-      "metrics": {},
-      "images": {
-        "filename": "lucky_imaging.png"
-      },
-      "source_github": "https://github.com/Rolf-Hempel/PlanetarySystemStacker"
-    },
-    "task_52": {
-      "id": "52",
-      "id_num": 52,
-      "name": "confocal-nlos-fk",
-      "domain": "H",
-      "domain_name": "Computational Photography",
-      "title": "Non-Line-of-Sight FK Migration",
-      "description": "Non-line-of-sight (NLOS) imaging recovers 3-D scenes hidden around a corner using indirect light paths.  A pulsed laser illuminates a visible relay wall; photons scatter to the hidden scene and back, and a single-photon detector",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "confocal-nlos-fk.png"
-      },
-      "source_github": "https://github.com/computational-imaging/nlos-fk"
-    },
-    "task_53": {
-      "id": "53",
-      "id_num": 53,
-      "name": "spectral_snapshot_compressive_imaging",
-      "domain": "H",
-      "domain_name": "Computational Photography",
-      "title": "Snapshot Compressive Spectral Imaging",
-      "description": "Coded Aperture Snapshot Spectral Imaging (CASSI) captures an entire 3D hyperspectral data cube in a single detector exposure. A binary coded aperture mask spatially modulates the scene, and a dispersive prism shifts each spectral channel by a wavelength-dependent displacement before all channels are integrated onto a 2D detector array. The system trades spectral resolution for the ability to capture all bands simultaneously — enabling single-shot acquisition of dynamic scenes. The inverse pro...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "spectral_snapshot_compressive_imaging.png"
-      },
-      "paper_link": "https://doi.org/10.1364/PRJ.411745"
-    },
-    "task_54": {
-      "id": "54",
-      "id_num": 54,
-      "name": "lensless_imaging",
-      "domain": "H",
-      "domain_name": "Computational Photography",
-      "title": "Lensless Camera Reconstruction",
-      "description": "A lensless camera replaces the conventional lens with a thin, flat diffuser (e.g. Scotch tape).  Each point source in the scene produces a complex \"caustic\" pattern — the point spread function (PSF) — that covers the entire",
-      "difficulty": "Medium",
-      "has_tests": false,
-      "metrics": {},
-      "images": {
-        "filename": "lensless_imaging.png"
-      }
-    },
-    "task_55": {
-      "id": "55",
-      "id_num": 55,
-      "name": "mcr_hyperspectral",
-      "domain": "I",
-      "domain_name": "Spectral Imaging",
-      "title": "MCR-ALS Hyperspectral Unmixing",
-      "description": "Hyperspectral imaging (HSI) captures a full spectrum at every spatial pixel, producing a 3D data cube. In many chemical imaging applications (Raman, IR, fluorescence), the sample consists of a small number of pure chemical components whose spectra overlap spatially. The goal of multivariate curve resolution (MCR) is to decompose the observed data into the underlying pure spectra and their spatial concentration maps — a blind source separation problem. MCR assumes a bilinear mixing model: each...",
-      "difficulty": "Medium",
-      "has_tests": true,
-      "metrics": {},
-      "images": {
-        "filename": "mcr_hyperspectral.png"
-      },
-      "source_github": "https://github.com/usnistgov/pyMCR"
-    },
-    "task_56": {
-      "id": "56",
-      "id_num": 56,
-      "name": "cars_spectroscopy",
-      "domain": "I",
-      "domain_name": "Spectral Imaging",
-      "title": "CARS Spectroscopy Temperature Inversion",
-      "description": "Coherent anti-Stokes Raman scattering (CARS) is a nonlinear optical technique used to measure gas-phase temperature and species concentration in combustion environments. The CARS signal depends on the complex third-order susceptibility , which encodes molecular rotational-vibrational population distributions that are functions of temperature. The forward model computes a theoretical CARS intensity spectrum  for a given temperature , pressure , and mole fraction . It accounts for: - Raman line...",
-      "difficulty": "Medium",
-      "has_tests": false,
-      "metrics": {},
-      "images": {
-        "filename": "cars_spectroscopy.png"
-      }
-    },
     "task_57": {
       "id": "57",
       "id_num": 57,
-      "name": "fourier_ptychography",
-      "domain": "J",
-      "domain_name": "Optics / Biology",
-      "title": "Fourier Ptychographic Microscopy",
-      "description": "Fourier ptychography (FPM) is a computational microscopy technique that achieves simultaneous high resolution and wide field of view by computationally stitching together low-resolution images captured under different LED illumination angles.",
+      "name": "eit_conductivity_reconstruction",
+      "domain": "F",
+      "domain_name": "Medicine",
+      "title": "Electrical Impedance Tomography",
+      "description": "Electrical Impedance Tomography (EIT) is a non-invasive imaging technique that recovers the internal conductivity distribution of a body from electrical measurements taken at its boundary. An array of electrodes is placed around the",
       "difficulty": "Medium",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "fourier_ptychography.png"
+        "filename": "eit_conductivity_reconstruction.png"
       }
     }
   }

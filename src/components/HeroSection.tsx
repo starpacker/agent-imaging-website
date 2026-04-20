@@ -3,8 +3,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {
   FlaskConical, Github, ExternalLink, ChevronRight,
-  Microscope, Camera, Activity, Globe2, Telescope,
-  Rainbow, Zap, Atom, Star
+  Microscope, Activity, Globe2, Telescope,
+  Zap, Atom
 } from 'lucide-react';
 
 /* ── Constants ── */
@@ -14,12 +14,10 @@ const COMPARE_TASKS = [
   { id: 'microscope_denoising', title: 'Fluorescence Microscopy Denoising', domain: 'Biology / Microscopy', hasInput: true },
 ] as const;
 
-const DOMAIN_ICONS = [Activity, Telescope, Globe2, Microscope, Atom, Zap, Star, Camera, Rainbow, Microscope];
+const DOMAIN_ICONS = [Telescope, Microscope, Atom, FlaskConical, Globe2, Activity];
 const DOMAIN_LABELS = [
-  'Medicine', 'Radio Astronomy', 'Earth Science',
-  'Biology / Microscopy', 'Physics / Optics', 'Medical Physics',
-  'Astronomy', 'Computational Photography', 'Spectral Imaging',
-  'Optics / Biology',
+  'Astronomy', 'Biology', 'Physics',
+  'Chemistry & Material Science', 'Earth Science', 'Medicine',
 ];
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
@@ -175,7 +173,7 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
           <StatCard value={String(totalTasks)} label="Imaging Tasks" icon={<FlaskConical size={20} />} />
           <StatCard value={String(totalDomains)} label="Scientific Domains" icon={<Globe2 size={20} />} />
-          <StatCard value="43" label="With Unit Tests" icon={<Zap size={20} />} />
+          <StatCard value="40" label="Have Unit Tests" icon={<Zap size={20} />} />
           <StatCard value="3" label="Eval Modes" icon={<Activity size={20} />} />
         </div>
 
