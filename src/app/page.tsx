@@ -26,6 +26,8 @@ export interface TaskData {
     [key: string]: unknown;
   };
   images: { filename: string };
+  paper_link?: string;
+  source_github?: string;
 }
 
 export interface DomainData {

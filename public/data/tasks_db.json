@@ -188,7 +188,8 @@
       "metrics": {},
       "images": {
         "filename": "confocal-nlos-fk.png"
-      }
+      },
+      "source_github": "https://github.com/computational-imaging/nlos-fk"
     },
     "task_04": {
       "id": "04",
@@ -218,7 +219,8 @@
       "metrics": {},
       "images": {
         "filename": "ct_dual_energy.png"
-      }
+      },
+      "source_github": "https://github.com/gjadick/dex-ct-sim"
     },
     "task_06": {
       "id": "06",
@@ -233,7 +235,8 @@
       "metrics": {},
       "images": {
         "filename": "ct_fan_beam.png"
-      }
+      },
+      "source_github": "https://github.com/leehoy/CTReconstruction"
     },
     "task_07": {
       "id": "07",
@@ -248,7 +251,8 @@
       "metrics": {},
       "images": {
         "filename": "ct_poisson_lowdose.png"
-      }
+      },
+      "source_github": "https://github.com/cabouman/svmbir"
     },
     "task_08": {
       "id": "08",
@@ -278,7 +282,8 @@
       "metrics": {},
       "images": {
         "filename": "differentiable_deflectometry.png"
-      }
+      },
+      "source_github": "https://github.com/vccimaging/DiffDeflectometry"
     },
     "task_10": {
       "id": "10",
@@ -293,7 +298,8 @@
       "metrics": {},
       "images": {
         "filename": "diffusion_mri_dti.png"
-      }
+      },
+      "source_github": "https://dipy.org/"
     },
     "task_11": {
       "id": "11",
@@ -353,7 +359,8 @@
       "metrics": {},
       "images": {
         "filename": "eht_black_hole_original.png"
-      }
+      },
+      "source_github": "https://github.com/achael/eht-imaging"
     },
     "task_15": {
       "id": "15",
@@ -398,7 +405,8 @@
       "metrics": {},
       "images": {
         "filename": "electron_ptychography.png"
-      }
+      },
+      "source_github": "https://github.com/nsippl/py4DSTEM"
     },
     "task_18": {
       "id": "18",
@@ -413,7 +421,8 @@
       "metrics": {},
       "images": {
         "filename": "era5_tensorvar.png"
-      }
+      },
+      "source_github": "https://github.com/YimingYang2000/TensorVar"
     },
     "task_19": {
       "id": "19",
@@ -428,7 +437,8 @@
       "metrics": {},
       "images": {
         "filename": "exoplanet_imaging.png"
-      }
+      },
+      "source_github": "https://github.com/carlos-gg/VIP_extras"
     },
     "task_20": {
       "id": "20",
@@ -458,7 +468,9 @@
       "metrics": {},
       "images": {
         "filename": "fpm_inr_reconstruction.png"
-      }
+      },
+      "paper_link": "https://arxiv.org/abs/2310.18529",
+      "source_github": "https://hwzhou2020.github.io/FPM-INR-Web/"
     },
     "task_22": {
       "id": "22",
@@ -518,7 +530,8 @@
       "metrics": {},
       "images": {
         "filename": "light_field_microscope.png"
-      }
+      },
+      "source_github": "https://github.com/VicidominiLab/s2ISM"
     },
     "task_26": {
       "id": "26",
@@ -533,7 +546,8 @@
       "metrics": {},
       "images": {
         "filename": "lucky_imaging.png"
-      }
+      },
+      "source_github": "https://github.com/Rolf-Hempel/PlanetarySystemStacker"
     },
     "task_27": {
       "id": "27",
@@ -548,7 +562,8 @@
       "metrics": {},
       "images": {
         "filename": "mcr_hyperspectral.png"
-      }
+      },
+      "source_github": "https://github.com/usnistgov/pyMCR"
     },
     "task_28": {
       "id": "28",
@@ -563,7 +578,9 @@
       "metrics": {},
       "images": {
         "filename": "microscope_denoising.png"
-      }
+      },
+      "paper_link": "https://doi.org/10.1038/s41467-024-48575-9",
+      "source_github": "https://github.com/TristaZeng/ZS-DeconvNet"
     },
     "task_29": {
       "id": "29",
@@ -578,7 +595,8 @@
       "metrics": {},
       "images": {
         "filename": "mri_dynamic_dce.png"
-      }
+      },
+      "source_github": "https://github.com/ZhengguoTan/demo_dce_recon"
     },
     "task_30": {
       "id": "30",
@@ -593,7 +611,8 @@
       "metrics": {},
       "images": {
         "filename": "mri_grappa.png"
-      }
+      },
+      "source_github": "https://github.com/mckib2/pygrappa"
     },
     "task_31": {
       "id": "31",
@@ -638,7 +657,8 @@
       "metrics": {},
       "images": {
         "filename": "mri_pnp_admm.png"
-      }
+      },
+      "source_github": "https://github.com/uclaopt/Provable_Plug_and_Play"
     },
     "task_34": {
       "id": "34",
@@ -653,7 +673,8 @@
       "metrics": {},
       "images": {
         "filename": "mri_sense.png"
-      }
+      },
+      "source_github": "https://github.com/mckib2/pygrappa"
     },
     "task_35": {
       "id": "35",
@@ -668,7 +689,8 @@
       "metrics": {},
       "images": {
         "filename": "mri_t2_mapping.png"
-      }
+      },
+      "source_github": "https://github.com/BAMMri/MyoQMRI"
     },
     "task_36": {
       "id": "36",
@@ -698,7 +720,8 @@
       "metrics": {},
       "images": {
         "filename": "mri_varnet.png"
-      }
+      },
+      "source_github": "https://github.com/facebookresearch/fastMRI"
     },
     "task_38": {
       "id": "38",
@@ -728,7 +751,8 @@
       "metrics": {},
       "images": {
         "filename": "photoacoustic_tomography.png"
-      }
+      },
+      "source_github": "https://github.com/csheaff/pa-tomography-xu-wang"
     },
     "task_40": {
       "id": "40",
@@ -743,7 +767,8 @@
       "metrics": {},
       "images": {
         "filename": "plane_wave_ultrasound.png"
-      }
+      },
+      "source_github": "https://github.com/rehmanali1994/Plane_Wave_Ultrasound_Stolt_F-K_Migration.github.io"
     },
     "task_41": {
       "id": "41",
@@ -788,7 +813,8 @@
       "metrics": {},
       "images": {
         "filename": "reflection_ODT.png"
-      }
+      },
+      "source_github": "https://github.com/bu-cisl/rMSBP-python"
     },
     "task_44": {
       "id": "44",
@@ -803,7 +829,8 @@
       "metrics": {},
       "images": {
         "filename": "s2ism.png"
-      }
+      },
+      "source_github": "https://github.com/VicidominiLab/s2ISM"
     },
     "task_45": {
       "id": "45",
@@ -818,7 +845,8 @@
       "metrics": {},
       "images": {
         "filename": "seismic_FWI_original.png"
-      }
+      },
+      "source_github": "https://github.com/ar4/deepwave"
     },
     "task_46": {
       "id": "46",
@@ -833,7 +861,8 @@
       "metrics": {},
       "images": {
         "filename": "seismic_lsrtm_original.png"
-      }
+      },
+      "source_github": "https://github.com/ar4/deepwave"
     },
     "task_47": {
       "id": "47",
@@ -848,7 +877,8 @@
       "metrics": {},
       "images": {
         "filename": "seismic_traveltime_tomography.png"
-      }
+      },
+      "source_github": "https://github.com/TomoATT/PyTomoATT"
     },
     "task_48": {
       "id": "48",
@@ -878,7 +908,8 @@
       "metrics": {},
       "images": {
         "filename": "shapelet_source_reconstruction.png"
-      }
+      },
+      "source_github": "https://github.com/sibirrer/lenstronomy"
     },
     "task_50": {
       "id": "50",
@@ -893,7 +924,9 @@
       "metrics": {},
       "images": {
         "filename": "single_molecule_light_field.png"
-      }
+      },
+      "paper_link": "https://doi.org/10.1364/OPTICA.397172",
+      "source_github": "https://github.com/TheLeeLab/hexSMLFM"
     },
     "task_51": {
       "id": "51",
@@ -908,7 +941,8 @@
       "metrics": {},
       "images": {
         "filename": "spectral_snapshot_compressive_imaging.png"
-      }
+      },
+      "paper_link": "https://doi.org/10.1364/PRJ.411745"
     },
     "task_52": {
       "id": "52",
@@ -968,7 +1002,8 @@
       "metrics": {},
       "images": {
         "filename": "xray_laminography_tike.png"
-      }
+      },
+      "source_github": "https://github.com/AdvancedPhotonSource/tike"
     },
     "task_56": {
       "id": "56",
@@ -983,7 +1018,8 @@
       "metrics": {},
       "images": {
         "filename": "xray_ptychography_tike.png"
-      }
+      },
+      "source_github": "https://github.com/AdvancedPhotonSource/tike"
     },
     "task_57": {
       "id": "57",

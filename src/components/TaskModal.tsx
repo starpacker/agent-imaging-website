@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { X, ExternalLink, TestTube2, BookOpen, Eye, Code2 } from 'lucide-react';
+import { X, ExternalLink, TestTube2, BookOpen, Eye, Code2, Github, FileText } from 'lucide-react';
 import type { TaskData } from '@/app/page';
 import NotebookViewer from './NotebookViewer';
 
@@ -177,16 +177,42 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
 
                 {/* Links & Info */}
                 <div className="space-y-3">
-                  <a
-                    href={githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-xs text-zinc-500 hover:text-cyan-400 transition"
-                  >
-                    <BookOpen size={14} />
-                    View task on GitHub
-                    <ExternalLink size={11} className="opacity-50" />
-                  </a>
+                  <div className="flex flex-wrap gap-2">
+                    {task.paper_link && (
+                      <a
+                        href={task.paper_link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-purple-500/20 bg-purple-500/5 text-xs font-medium text-purple-400 hover:bg-purple-500/10 hover:border-purple-500/30 transition"
+                      >
+                        <FileText size={13} />
+                        Paper
+                        <ExternalLink size={10} className="opacity-50" />
+                      </a>
+                    )}
+                    {task.source_github && (
+                      <a
+                        href={task.source_github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-zinc-700/40 bg-zinc-800/30 text-xs font-medium text-zinc-300 hover:bg-zinc-800/60 hover:border-zinc-600/50 transition"
+                      >
+                        <Github size={13} />
+                        Source Code
+                        <ExternalLink size={10} className="opacity-50" />
+                      </a>
+                    )}
+                    <a
+                      href={githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-cyan-500/20 bg-cyan-500/5 text-xs font-medium text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-500/30 transition"
+                    >
+                      <BookOpen size={13} />
+                      Task
+                      <ExternalLink size={10} className="opacity-50" />
+                    </a>
+                  </div>
                   {task.has_tests && (
                     <div className="flex items-center gap-2 text-xs text-green-400/70">
                       <TestTube2 size={14} />
