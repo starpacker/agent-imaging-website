@@ -16,13 +16,16 @@ export interface TaskData {
   domain_name: string;
   title: string;
   description: string;
+  difficulty?: string;
+  has_tests?: boolean;
   metrics: {
     psnr?: number | string;
     ssim?: number | string;
-    eval_type?: string;
+    ncc?: number | string;
+    nrmse?: number | string;
     [key: string]: unknown;
   };
-  images: { folder: string; vis_result: string };
+  images: { filename: string };
 }
 
 export interface DomainData {
@@ -83,7 +86,7 @@ export default function Home() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="glass-card p-8 text-center max-w-md">
-          <div className="text-4xl mb-4">⚠️</div>
+          <div className="text-4xl mb-4">&#x26a0;&#xfe0f;</div>
           <h2 className="text-lg font-semibold text-red-400 mb-2">Failed to load data</h2>
           <p className="text-zinc-500 text-sm">{error}</p>
         </div>
@@ -96,7 +99,7 @@ export default function Home() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="flex flex-col items-center gap-4">
           <div className="w-10 h-10 border-2 border-cyan-500/40 border-t-cyan-400 rounded-full animate-spin" />
-          <p className="text-zinc-500 text-sm tracking-wide">Loading benchmark data…</p>
+          <p className="text-zinc-500 text-sm tracking-wide">Loading benchmark data...</p>
         </div>
       </div>
     );

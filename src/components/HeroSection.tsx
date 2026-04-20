@@ -4,21 +4,21 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {
   FlaskConical, Github, ExternalLink, ChevronRight,
   Microscope, Camera, Activity, Globe2, Telescope,
-  Rainbow, Cog, Zap
+  Rainbow, Zap, Atom, Star
 } from 'lucide-react';
 
 /* ── Constants ── */
 const COMPARE_TASKS = [
-  { id: '44', title: 'Digital Holographic Microscopy', domain: 'Optical Microscopy', hasInput: true },
-  { id: '15', title: 'Lensless ADMM Reconstruction', domain: 'Computational Photography', hasInput: true },
-  { id: '43', title: 'Abel Inversion (PyAbel)', domain: 'X-ray / CT', hasInput: false },
+  { id: 'ct_sparse_view', title: 'Sparse-View CT Reconstruction', domain: 'Medicine', hasInput: true },
+  { id: 'eht_black_hole_original', title: 'EHT Black Hole Imaging', domain: 'Radio Astronomy', hasInput: true },
+  { id: 'mri_l1_wavelet', title: 'MRI L1-Wavelet Compressed Sensing', domain: 'Medicine', hasInput: true },
 ] as const;
 
-const DOMAIN_ICONS = [Microscope, Camera, Zap, Activity, Globe2, Telescope, Rainbow, Cog];
+const DOMAIN_ICONS = [Activity, Telescope, Globe2, Microscope, Atom, Zap, Star, Camera, Rainbow];
 const DOMAIN_LABELS = [
-  'Optical Microscopy', 'Computational Photography', 'X-ray / CT',
-  'Medical Imaging', 'Geophysics', 'Astrophysics',
-  'Spectroscopy / Scattering', 'Mechanics',
+  'Medicine', 'Radio Astronomy', 'Earth Science',
+  'Biology / Microscopy', 'Physics / Optics', 'Medical Physics',
+  'Astronomy', 'Computational Photography', 'Spectral Imaging',
 ];
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
@@ -44,8 +44,8 @@ function CompareTeaser({ taskId, title, hasInput }: { taskId: string; title: str
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  const leftImg = hasInput ? `${BASE_PATH}/images/compare/task${taskId}_input.png` : `${BASE_PATH}/images/compare/task${taskId}_gt.png`;
-  const rightImg = `${BASE_PATH}/images/compare/task${taskId}_recon.png`;
+  const leftImg = hasInput ? `${BASE_PATH}/images/compare/${taskId}_input.png` : `${BASE_PATH}/images/compare/${taskId}_gt.png`;
+  const rightImg = `${BASE_PATH}/images/compare/${taskId}_recon.png`;
   const leftLabel = hasInput ? 'Input' : 'Ground Truth';
   const rightLabel = 'Reconstruction';
 
@@ -86,10 +86,10 @@ function CompareTeaser({ taskId, title, hasInput }: { taskId: string; title: str
         onTouchStart={(e) => { setIsDragging(true); updatePosition(e.touches[0].clientX); }}
       >
         {/* Right (full) */}
-        <img src={rightImg} alt={rightLabel} className="absolute inset-0 w-full h-full object-cover" draggable={false} />
+        <img src={rightImg} alt={rightLabel} className="absolute inset-0 w-full h-full object-contain bg-black" draggable={false} />
         {/* Left (clipped) */}
         <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderPos}%` }}>
-          <img src={leftImg} alt={leftLabel} className="absolute inset-0 w-full h-full object-cover" style={{ minWidth: containerRef.current ? `${containerRef.current.offsetWidth}px` : '100%' }} draggable={false} />
+          <img src={leftImg} alt={leftLabel} className="absolute inset-0 w-full h-full object-contain bg-black" style={{ minWidth: containerRef.current ? `${containerRef.current.offsetWidth}px` : '100%' }} draggable={false} />
         </div>
         {/* Slider line */}
         <div className="absolute top-0 bottom-0" style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)' }}>
@@ -107,8 +107,8 @@ function CompareTeaser({ taskId, title, hasInput }: { taskId: string; title: str
         </div>
       </div>
       <div className="text-center">
-        <p className="text-xs font-medium text-zinc-300">Task {taskId}</p>
-        <p className="text-[11px] text-zinc-500">{title}</p>
+        <p className="text-xs font-medium text-zinc-300">{title}</p>
+        <p className="text-[11px] text-zinc-500">{taskId.replace(/_/g, ' ')}</p>
       </div>
     </div>
   );
@@ -131,51 +131,51 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
         <div className="flex flex-wrap items-center gap-3 mb-8 animate-fade-in">
           <span className="badge">
             <FlaskConical size={14} className="text-cyan-400" />
-            Computational Imaging Benchmark
+            Scientific Imaging Benchmark
           </span>
-          <a href="https://github.com/starpacker/inverse_benchmark" target="_blank" rel="noopener noreferrer" className="badge hover:text-cyan-300">
+          <a href="https://github.com/HeSunPU/imaging-101" target="_blank" rel="noopener noreferrer" className="badge hover:text-cyan-300">
             <Github size={14} /> GitHub <ExternalLink size={11} className="opacity-50" />
-          </a>
-          <a href="https://arxiv.org/abs/2501.00000" target="_blank" rel="noopener noreferrer" className="badge hover:text-purple-300">
-            📄 arXiv Paper <ExternalLink size={11} className="opacity-50" />
           </a>
         </div>
 
         {/* Title */}
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-5 animate-slide-up">
-          <span className="text-white">Agent</span>
+          <span className="text-white">imaging</span>
           <span className="text-white">-</span>
-          <span className="gradient-text">Imaging</span>
+          <span className="gradient-text">101</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl leading-relaxed mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          A universal agent for solving&nbsp;
-          <span className="text-cyan-300 font-medium">{totalTasks} computational imaging inverse problems</span> across&nbsp;
-          <span className="text-teal-300 font-medium">{totalDomains} scientific domains</span> — from optical microscopy to astrophysical imaging.
+          A benchmark suite for evaluating <span className="text-cyan-300 font-medium">coding agents</span> on&nbsp;
+          <span className="text-cyan-300 font-medium">{totalTasks} computational &amp; scientific imaging</span> tasks across&nbsp;
+          <span className="text-teal-300 font-medium">{totalDomains} domains</span> — from medical MRI to black hole imaging.
         </p>
 
         {/* Abstract */}
         <div className="glass-card p-6 max-w-4xl mb-10 animate-slide-up" style={{ animationDelay: '0.15s' }}>
           <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-            <ChevronRight size={14} className="text-cyan-400" /> Abstract
+            <ChevronRight size={14} className="text-cyan-400" /> Overview
           </h3>
           <p className="text-sm leading-relaxed text-zinc-400">
-            Computational imaging inverse problems involve recovering latent physical quantities from indirect measurements.
-            Traditional approaches require extensive domain expertise, custom algorithms, and manual hyper-parameter tuning for each specific modality.
-            <strong className="text-zinc-200"> Agent-Imaging</strong> is a comprehensive benchmark that evaluates whether autonomous AI agents — powered by large language models — can independently understand,
-            implement, and solve diverse inverse problems across the full spectrum of computational imaging. Our benchmark spans
-            <strong className="text-zinc-200"> {totalTasks} tasks</strong> over <strong className="text-zinc-200">{totalDomains} scientific domains</strong>,
-            each requiring the agent to interpret the forward model, choose or invent a reconstruction algorithm, write working code, and achieve quantitative accuracy.
+            <strong className="text-zinc-200">imaging-101</strong> is a standardized benchmark for evaluating how well autonomous coding agents
+            can understand, implement, and solve computational imaging inverse problems. Each task provides a
+            problem description, raw measurement data, and reference implementations.
+            Agents must interpret the forward model, choose a reconstruction algorithm, write working code,
+            and achieve quantitative accuracy — measured via <strong className="text-zinc-200">NCC</strong> (normalized cross-correlation) and{' '}
+            <strong className="text-zinc-200">NRMSE</strong> (normalized root mean square error).
+            The benchmark supports <strong className="text-zinc-200">function-mode</strong> (per-module testing),{' '}
+            <strong className="text-zinc-200">end-to-end</strong> (full pipeline), and <strong className="text-zinc-200">plan-mode</strong> evaluation across
+            multiple agent frameworks including ReAct, Multi-Agent, Copilot, and DeepCode.
           </p>
         </div>
 
         {/* Stats Row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          <StatCard value={String(totalTasks)} label="Inverse Problems" icon={<FlaskConical size={20} />} />
+          <StatCard value={String(totalTasks)} label="Imaging Tasks" icon={<FlaskConical size={20} />} />
           <StatCard value={String(totalDomains)} label="Scientific Domains" icon={<Globe2 size={20} />} />
-          <StatCard value="10+" label="LLM Agents Tested" icon={<Zap size={20} />} />
-          <StatCard value="1200+" label="Code Evaluations" icon={<Cog size={20} />} />
+          <StatCard value="43" label="With Unit Tests" icon={<Zap size={20} />} />
+          <StatCard value="3" label="Eval Modes" icon={<Activity size={20} />} />
         </div>
 
         {/* Domain Icons */}

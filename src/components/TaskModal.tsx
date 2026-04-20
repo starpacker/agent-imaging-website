@@ -1,52 +1,20 @@
 'use client';
 
-import { useEffect, useCallback } from 'react';
-import { X, Copy, Check, ExternalLink } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useCallback, useState } from 'react';
+import { X, Copy, Check, ExternalLink, TestTube2, BookOpen } from 'lucide-react';
 import type { TaskData } from '@/app/page';
-import { getCodeSnippet } from '@/data/codeSnippets';
 
-/* ── Domain accent colors ── */
+/* ── Domain accent colors (9 domains A–I) ── */
 const DOMAIN_ACCENT: Record<string, string> = {
-  A: '#06b6d4', B: '#8b5cf6', C: '#f59e0b', D: '#ef4444',
-  E: '#22c55e', F: '#3b82f6', G: '#ec4899', H: '#f97316',
+  A: '#ef4444', B: '#3b82f6', C: '#22c55e', D: '#06b6d4',
+  E: '#8b5cf6', F: '#f59e0b', G: '#ec4899', H: '#f97316',
+  I: '#14b8a6',
 };
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
-/* ── Helper: image path for a task ── */
 function getImagePath(task: TaskData): string {
-  return `${BASE_PATH}/images/tasks/${task.images.folder}_${task.images.vis_result}`;
-}
-
-/* ── Code Block with copy ── */
-function CodeBlock({ code }: { code: string }) {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = useCallback(() => {
-    navigator.clipboard.writeText(code).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  }, [code]);
-
-  return (
-    <div className="code-block relative group">
-      <div className="flex items-center justify-between px-4 py-2 border-b border-zinc-800/50">
-        <span className="text-[11px] text-zinc-500 font-medium tracking-wide uppercase">Python — Agent Implementation</span>
-        <button
-          onClick={handleCopy}
-          className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-cyan-400 transition"
-        >
-          {copied ? <Check size={13} /> : <Copy size={13} />}
-          {copied ? 'Copied' : 'Copy'}
-        </button>
-      </div>
-      <pre className="p-4 overflow-x-auto text-[12.5px] leading-[1.7] text-zinc-300/90">
-        <code>{code}</code>
-      </pre>
-    </div>
-  );
+  return `${BASE_PATH}/images/tasks/${task.images.filename}`;
 }
 
 /* ── Metric Pill ── */
@@ -60,6 +28,7 @@ function MetricPill({ label, value, accent }: { label: string; value: string | n
   );
 }
 
+/* ── Description Block ── */
 function DescriptionBlock({ text, accent }: { text: string; accent: string }) {
   const lines = text.split('\n').map((line) => line.trim()).filter(Boolean);
   return (
@@ -95,23 +64,20 @@ interface TaskModalProps { task: TaskData; onClose: () => void; }
 export default function TaskModal({ task, onClose }: TaskModalProps) {
   const accent = DOMAIN_ACCENT[task.domain] || '#06b6d4';
 
-  // Close on Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  // Prevent body scroll
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };
   }, []);
 
-  const code = getCodeSnippet(task.id, task.title, task.domain_name);
   const imagePath = getImagePath(task);
-
-  const hasMetrics = task.metrics && (task.metrics.psnr || task.metrics.ssim || task.metrics.eval_type);
+  const hasMetrics = task.metrics && (task.metrics.psnr || task.metrics.ssim || task.metrics.ncc || task.metrics.nrmse);
+  const githubLink = `https://github.com/HeSunPU/imaging-101/tree/main/tasks/${task.name}`;
 
   return (
     <div className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md" onClick={onClose}>
@@ -128,7 +94,16 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium" style={{ background: `${accent}18`, color: accent }}>
                   {task.domain_name}
                 </span>
-                <span>Task {task.id_num}</span>
+                <span>{task.name}</span>
+                {task.difficulty && (
+                  <span className={`px-1.5 py-0.5 rounded text-[10px] ${
+                    task.difficulty === 'Hard' ? 'bg-red-500/20 text-red-400' :
+                    task.difficulty === 'Easy' ? 'bg-green-500/20 text-green-400' :
+                    'bg-yellow-500/20 text-yellow-400'
+                  }`}>
+                    {task.difficulty}
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -140,23 +115,38 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
         {/* Body */}
         <div className="flex-1 overflow-y-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:divide-x lg:divide-zinc-800/50">
-            {/* Left: Formulation + Code */}
+            {/* Left: Description */}
             <div className="p-6 space-y-6">
               <div>
-                <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Problem Description</h3>
+                <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Task Description</h3>
                 <DescriptionBlock text={task.description} accent={accent} />
               </div>
 
-              <div>
-                <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Agent Code</h3>
-                <CodeBlock code={code} />
+              {/* Links & Info */}
+              <div className="space-y-3">
+                <a
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-xs text-zinc-500 hover:text-cyan-400 transition"
+                >
+                  <BookOpen size={14} />
+                  View task on GitHub
+                  <ExternalLink size={11} className="opacity-50" />
+                </a>
+                {task.has_tests && (
+                  <div className="flex items-center gap-2 text-xs text-green-400/70">
+                    <TestTube2 size={14} />
+                    Has unit tests (function-mode evaluation)
+                  </div>
+                )}
               </div>
             </div>
 
             {/* Right: Image + Metrics */}
             <div className="p-6 space-y-6">
               <div>
-                <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Visualization</h3>
+                <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Notebook Visualization</h3>
                 <div className="rounded-xl overflow-hidden border border-zinc-800/50 bg-black/30">
                   <img src={imagePath} alt={task.title} className="w-full h-auto" loading="lazy" />
                 </div>
@@ -166,9 +156,10 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                 <div>
                   <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Metrics</h3>
                   <div className="grid grid-cols-2 gap-2">
+                    {task.metrics.ncc && <MetricPill label="NCC" value={task.metrics.ncc} accent={accent} />}
+                    {task.metrics.nrmse && <MetricPill label="NRMSE" value={task.metrics.nrmse} accent={accent} />}
                     {task.metrics.psnr && <MetricPill label="PSNR" value={task.metrics.psnr} accent={accent} />}
                     {task.metrics.ssim && <MetricPill label="SSIM" value={task.metrics.ssim} accent={accent} />}
-                    {task.metrics.eval_type && <MetricPill label="Eval" value={task.metrics.eval_type} accent="#71717a" />}
                   </div>
                 </div>
               )}
@@ -180,7 +171,7 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                   <span className="text-sm font-semibold text-zinc-200">{task.domain_name}</span>
                 </div>
                 <p className="text-xs text-zinc-500">
-                  Domain {task.domain} • This task evaluates the agent&apos;s ability to solve {task.title.toLowerCase()} problems.
+                  Domain {task.domain} &bull; {task.title}
                 </p>
               </div>
             </div>

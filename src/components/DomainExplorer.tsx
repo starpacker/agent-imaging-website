@@ -1,23 +1,25 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import type { DomainData, TaskData } from '@/app/page';
 
-/* ── Color Maps ── */
+/* ── Color Maps (9 domains A–I) ── */
 const DOMAIN_COLORS: Record<string, string> = {
-  A: '#06b6d4', B: '#8b5cf6', C: '#f59e0b', D: '#ef4444',
-  E: '#22c55e', F: '#3b82f6', G: '#ec4899', H: '#f97316',
+  A: '#ef4444', B: '#3b82f6', C: '#22c55e', D: '#06b6d4',
+  E: '#8b5cf6', F: '#f59e0b', G: '#ec4899', H: '#f97316',
+  I: '#14b8a6',
 };
 const DOMAIN_BG: Record<string, string> = {
-  A: 'rgba(6,182,212,0.06)', B: 'rgba(139,92,246,0.06)', C: 'rgba(245,158,11,0.06)', D: 'rgba(239,68,68,0.06)',
-  E: 'rgba(34,197,94,0.06)', F: 'rgba(59,130,246,0.06)', G: 'rgba(236,72,153,0.06)', H: 'rgba(249,115,22,0.06)',
+  A: 'rgba(239,68,68,0.06)', B: 'rgba(59,130,246,0.06)', C: 'rgba(34,197,94,0.06)', D: 'rgba(6,182,212,0.06)',
+  E: 'rgba(139,92,246,0.06)', F: 'rgba(245,158,11,0.06)', G: 'rgba(236,72,153,0.06)', H: 'rgba(249,115,22,0.06)',
+  I: 'rgba(20,184,166,0.06)',
 };
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 function getImagePath(task: TaskData): string {
-  return `${BASE_PATH}/images/tasks/${task.images.folder}_${task.images.vis_result}`;
+  return `${BASE_PATH}/images/tasks/${task.images.filename}`;
 }
 
 interface Props {
@@ -44,7 +46,7 @@ export default function DomainExplorer({ domains, getTasksForDomain, onSelectTas
           const tasks = isExpanded ? getTasksForDomain(key) : [];
 
           return (
-            <div key={key} className="col-span-1 sm:col-span-1">
+            <div key={key} className={isExpanded ? 'col-span-1 sm:col-span-2' : 'col-span-1'}>
               {/* Domain Card */}
               <div
                 className="domain-card glass-card neon-border p-5 rounded-2xl"
@@ -76,7 +78,7 @@ export default function DomainExplorer({ domains, getTasksForDomain, onSelectTas
 
               {/* Expanded Task Grid */}
               {isExpanded && tasks.length > 0 && (
-                <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-3 animate-fade-in">
+                <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 animate-fade-in">
                   {tasks.map((task) => (
                     <div
                       key={task.id}
@@ -87,7 +89,7 @@ export default function DomainExplorer({ domains, getTasksForDomain, onSelectTas
                         <img
                           src={getImagePath(task)}
                           alt={task.title}
-                          className="w-full h-full object-cover opacity-80 hover:opacity-100 transition"
+                          className="w-full h-full object-contain opacity-80 hover:opacity-100 transition"
                           loading="lazy"
                         />
                         <div className="absolute top-2 left-2">
@@ -95,12 +97,21 @@ export default function DomainExplorer({ domains, getTasksForDomain, onSelectTas
                             {task.id}
                           </span>
                         </div>
+                        {task.difficulty && (
+                          <div className="absolute top-2 right-2">
+                            <span className={`text-[10px] px-1.5 py-0.5 rounded ${
+                              task.difficulty === 'Hard' ? 'bg-red-500/20 text-red-400' :
+                              task.difficulty === 'Easy' ? 'bg-green-500/20 text-green-400' :
+                              'bg-yellow-500/20 text-yellow-400'
+                            }`}>
+                              {task.difficulty}
+                            </span>
+                          </div>
+                        )}
                       </div>
                       <div className="p-3">
                         <p className="text-xs font-medium text-zinc-200 line-clamp-2 leading-snug">{task.title}</p>
-                        {task.metrics?.psnr && (
-                          <p className="text-[10px] text-zinc-600 mt-1">PSNR: {task.metrics.psnr}</p>
-                        )}
+                        <p className="text-[10px] text-zinc-600 mt-1 truncate">{task.name}</p>
                       </div>
                     </div>
                   ))}

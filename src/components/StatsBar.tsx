@@ -3,8 +3,9 @@
 import type { DomainData } from '@/app/page';
 
 const DOMAIN_COLORS: Record<string, string> = {
-  A: '#06b6d4', B: '#8b5cf6', C: '#f59e0b', D: '#ef4444',
-  E: '#22c55e', F: '#3b82f6', G: '#ec4899', H: '#f97316',
+  A: '#ef4444', B: '#3b82f6', C: '#22c55e', D: '#06b6d4',
+  E: '#8b5cf6', F: '#f59e0b', G: '#ec4899', H: '#f97316',
+  I: '#14b8a6',
 };
 
 interface Props { domains: [string, DomainData][]; }
@@ -13,7 +14,7 @@ export default function StatsBar({ domains }: Props) {
   return (
     <section className="max-w-6xl mx-auto px-6 py-8">
       <div className="glass-card p-5 rounded-2xl">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+        <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-3">
           {domains.map(([key, domain]) => {
             const accent = DOMAIN_COLORS[key] || '#06b6d4';
             return (
