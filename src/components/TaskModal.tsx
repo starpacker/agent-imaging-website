@@ -9,7 +9,7 @@ import NotebookViewer from './NotebookViewer';
 const DOMAIN_ACCENT: Record<string, string> = {
   A: '#ef4444', B: '#3b82f6', C: '#22c55e', D: '#06b6d4',
   E: '#8b5cf6', F: '#f59e0b', G: '#ec4899', H: '#f97316',
-  I: '#14b8a6',
+  I: '#14b8a6', J: '#a78bfa',
 };
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';

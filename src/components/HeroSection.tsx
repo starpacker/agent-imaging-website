@@ -14,11 +14,12 @@ const COMPARE_TASKS = [
   { id: 'microscope_denoising', title: 'Fluorescence Microscopy Denoising', domain: 'Biology / Microscopy', hasInput: true },
 ] as const;
 
-const DOMAIN_ICONS = [Activity, Telescope, Globe2, Microscope, Atom, Zap, Star, Camera, Rainbow];
+const DOMAIN_ICONS = [Activity, Telescope, Globe2, Microscope, Atom, Zap, Star, Camera, Rainbow, Microscope];
 const DOMAIN_LABELS = [
   'Medicine', 'Radio Astronomy', 'Earth Science',
   'Biology / Microscopy', 'Physics / Optics', 'Medical Physics',
   'Astronomy', 'Computational Photography', 'Spectral Imaging',
+  'Optics / Biology',
 ];
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';

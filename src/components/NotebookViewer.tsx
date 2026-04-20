@@ -10,7 +10,7 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 interface NotebookCell {
   type: 'code' | 'markdown';
   source: string;
-  has_image?: boolean;
+  images?: string[];
   text_output?: string;
 }
 
@@ -81,7 +81,9 @@ function NotebookCellView({ cell, index }: { cell: NotebookCell; index: number }
         {isCode && (
           <span className="text-[10px] text-zinc-600 font-mono">
             {lines} lines
-            {cell.has_image && <span className="text-amber-500/70 ml-2">&#x1f4ca; output</span>}
+            {cell.images && cell.images.length > 0 && (
+              <span className="text-amber-500/70 ml-2">&#x1f4ca; {cell.images.length} figure{cell.images.length > 1 ? 's' : ''}</span>
+            )}
           </span>
         )}
         <div className="flex-1" />
@@ -118,11 +120,19 @@ function NotebookCellView({ cell, index }: { cell: NotebookCell; index: number }
                   <pre className="text-[11px] text-zinc-500 font-mono whitespace-pre-wrap">{cell.text_output}</pre>
                 </div>
               )}
-              {/* Image output indicator */}
-              {cell.has_image && (
-                <div className="px-4 py-2 bg-zinc-950/50 border-t border-zinc-800/40 flex items-center gap-2">
-                  <Image size={12} className="text-amber-500/60" />
-                  <span className="text-[11px] text-amber-500/60 italic">Figure output (see Visualization tab)</span>
+              {/* Image outputs */}
+              {cell.images && cell.images.length > 0 && (
+                <div className="border-t border-zinc-800/40 bg-zinc-950/30">
+                  {cell.images.map((imgFile, imgIdx) => (
+                    <div key={imgIdx} className="p-3">
+                      <img
+                        src={`${BASE_PATH}/images/nb/${imgFile}`}
+                        alt={`Output ${imgIdx}`}
+                        className="max-w-full h-auto rounded-lg border border-zinc-800/30"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
