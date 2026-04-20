@@ -146,9 +146,9 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl leading-relaxed mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          A benchmark suite for evaluating <span className="text-cyan-300 font-medium">coding agents</span> on&nbsp;
-          <span className="text-cyan-300 font-medium">{totalTasks} computational &amp; scientific imaging</span> tasks across&nbsp;
-          <span className="text-teal-300 font-medium">{totalDomains} domains</span> — from medical MRI to black hole imaging.
+          A benchmark suite for <span className="text-cyan-300 font-medium">computational and scientific imaging</span> inverse problems —&nbsp;
+          <span className="text-cyan-300 font-medium">{totalTasks} tasks</span> across&nbsp;
+          <span className="text-teal-300 font-medium">{totalDomains} domains</span>, from medical MRI to black hole imaging.
         </p>
 
         {/* Abstract */}
@@ -157,15 +157,13 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
             <ChevronRight size={14} className="text-cyan-400" /> Overview
           </h3>
           <p className="text-sm leading-relaxed text-zinc-400">
-            <strong className="text-zinc-200">imaging-101</strong> is a standardized benchmark for evaluating how well autonomous coding agents
-            can understand, implement, and solve computational imaging inverse problems. Each task provides a
-            problem description, raw measurement data, and reference implementations.
-            Agents must interpret the forward model, choose a reconstruction algorithm, write working code,
-            and achieve quantitative accuracy — measured via <strong className="text-zinc-200">NCC</strong> (normalized cross-correlation) and{' '}
-            <strong className="text-zinc-200">NRMSE</strong> (normalized root mean square error).
-            The benchmark supports <strong className="text-zinc-200">function-mode</strong> (per-module testing),{' '}
-            <strong className="text-zinc-200">end-to-end</strong> (full pipeline), and <strong className="text-zinc-200">plan-mode</strong> evaluation across
-            multiple agent frameworks including ReAct, Multi-Agent, Copilot, and DeepCode.
+            <strong className="text-zinc-200">imaging-101</strong> is a benchmark suite for{' '}
+            <strong className="text-zinc-200">computational and scientific imaging</strong> inverse problems.
+            Each task provides physics-based forward models, curated data, and reference solvers
+            ranging from classical algorithms to deep learning methods.
+            Forward models are grounded in physics — solvers span the spectrum from analytical to
+            iterative, regularized, and learned approaches.
+            All tasks include synthetic data generation and end-to-end tutorial notebooks.
           </p>
         </div>
 
@@ -173,8 +171,8 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
           <StatCard value={String(totalTasks)} label="Imaging Tasks" icon={<FlaskConical size={20} />} />
           <StatCard value={String(totalDomains)} label="Scientific Domains" icon={<Globe2 size={20} />} />
-          <StatCard value="40" label="Have Unit Tests" icon={<Zap size={20} />} />
-          <StatCard value="3" label="Eval Modes" icon={<Activity size={20} />} />
+          <StatCard value="56" label="Have Unit Tests" icon={<Zap size={20} />} />
+          <StatCard value="57" label="Tutorial Notebooks" icon={<Activity size={20} />} />
         </div>
 
         {/* Domain Icons */}

@@ -104,8 +104,8 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
   const nbLink = `https://github.com/HeSunPU/imaging-101/tree/main/tasks/${task.name}/notebooks`;
 
   return (
-    <div className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md" onClick={onClose}>
-      <div className="modal-content w-full max-w-5xl max-h-[90vh] glass-card overflow-hidden flex flex-col" onClick={(e) => e.stopPropagation()}>
+    <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md" onClick={onClose}>
+      <div className="w-full h-full flex flex-col overflow-hidden" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
         <div className="flex items-center gap-4 px-6 py-4 border-b border-zinc-800/50">
           <div className="flex items-center gap-3 flex-1 min-w-0">
