@@ -57,6 +57,31 @@ export default function Home() {
   const [selectedTask, setSelectedTask] = useState<TaskData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  // Open task: push history state so browser back closes the modal
+  const openTask = useCallback((task: TaskData) => {
+    setSelectedTask(task);
+    history.pushState({ taskModal: true }, '');
+  }, []);
+
+  // Close task: just clear state (called from popstate or from modal's onClose)
+  const closeTask = useCallback(() => {
+    setSelectedTask(null);
+  }, []);
+
+  // Close via explicit action (X button, overlay click, Escape): go back in history
+  const closeTaskViaAction = useCallback(() => {
+    history.back();
+  }, []);
+
+  // Listen for browser back button
+  useEffect(() => {
+    const handlePopState = () => {
+      setSelectedTask(null);
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   useEffect(() => {
     fetch(`${BASE_PATH}/data/tasks_db.json`)
       .then((r) => {
@@ -118,10 +143,10 @@ export default function Home() {
       <DomainExplorer
         domains={domainEntries}
         getTasksForDomain={getTasksForDomain}
-        onSelectTask={setSelectedTask}
+        onSelectTask={openTask}
       />
       {selectedTask && (
-        <TaskModal task={selectedTask} onClose={() => setSelectedTask(null)} />
+        <TaskModal task={selectedTask} onClose={closeTaskViaAction} />
       )}
       <Citation />
       <Footer />
