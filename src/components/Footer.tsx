@@ -26,7 +26,7 @@ export default function Footer() {
               <Github size={14} /> GitHub <ExternalLink size={11} className="opacity-50" />
             </a>
             <a
-              href="https://huggingface.co/datasets/AI4Imaging/imaging-101"
+              href="https://huggingface.co/datasets/starpacker52/imaging-101"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-xs text-slate-500 hover:text-slate-900 transition"

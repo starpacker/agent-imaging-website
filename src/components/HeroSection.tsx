@@ -144,7 +144,7 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm font-medium text-white hover:bg-slate-800 transition">
             <Github size={16} /> GitHub
           </a>
-          <a href="https://huggingface.co/datasets/AI4Imaging/imaging-101" target="_blank" rel="noopener noreferrer"
+          <a href="https://huggingface.co/datasets/starpacker52/imaging-101" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-50 border border-amber-200 text-sm font-medium text-amber-800 hover:bg-amber-100 hover:border-amber-300 transition">
             <span className="text-base">&#x1F917;</span> HuggingFace
           </a>
