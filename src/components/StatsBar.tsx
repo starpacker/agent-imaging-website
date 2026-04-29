@@ -20,11 +20,11 @@ export default function StatsBar({ domains }: Props) {
               <a
                 key={key}
                 href="#domains"
-                className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-zinc-800/40 transition group"
+                className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-slate-50 transition group"
               >
                 <span className="text-lg">{domain.icon}</span>
                 <div className="min-w-0">
-                  <div className="text-xs font-semibold text-zinc-300 truncate group-hover:text-white transition">
+                  <div className="text-xs font-semibold text-slate-700 truncate group-hover:text-slate-900 transition">
                     {domain.name_en}
                   </div>
                   <div className="text-[11px] font-bold" style={{ color: accent }}>

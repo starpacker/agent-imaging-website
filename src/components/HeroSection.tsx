@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {
   FlaskConical, Github, ExternalLink, ChevronRight,
   Microscope, Activity, Globe2, Telescope,
-  Zap, Atom
+  Zap, Atom, Database
 } from 'lucide-react';
 
 /* ── Constants ── */
@@ -21,21 +21,6 @@ const DOMAIN_LABELS = [
 ];
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-
-/* ── Helper: Stat Card ── */
-function StatCard({ value, label, icon }: { value: string; label: string; icon: React.ReactNode }) {
-  return (
-    <div className="glass-card p-5 flex items-center gap-4 group hover:border-cyan-500/25 transition">
-      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500/10 to-teal-500/10 flex items-center justify-center text-cyan-400 group-hover:from-cyan-500/20 group-hover:to-teal-500/20 transition">
-        {icon}
-      </div>
-      <div>
-        <div className="text-2xl font-bold gradient-text leading-none">{value}</div>
-        <div className="text-xs text-zinc-500 mt-1 tracking-wide uppercase">{label}</div>
-      </div>
-    </div>
-  );
-}
 
 /* ── Helper: Compare Teaser (custom implementation) ── */
 function CompareTeaser({ taskId, title, hasInput }: { taskId: string; title: string; hasInput: boolean }) {
@@ -106,8 +91,8 @@ function CompareTeaser({ taskId, title, hasInput }: { taskId: string; title: str
         </div>
       </div>
       <div className="text-center">
-        <p className="text-xs font-medium text-zinc-300">{title}</p>
-        <p className="text-[11px] text-zinc-500">{taskId.replace(/_/g, ' ')}</p>
+        <p className="text-xs font-medium text-slate-700">{title}</p>
+        <p className="text-[11px] text-slate-500">{taskId.replace(/_/g, ' ')}</p>
       </div>
     </div>
   );
@@ -121,66 +106,70 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
     <section className="relative overflow-hidden pb-4">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-cyan-500/[0.03] blur-[120px] animate-pulse-slow" />
-        <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-teal-500/[0.03] blur-[120px] animate-pulse-slow-delay" />
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-cyan-500/[0.04] blur-[120px] animate-pulse-slow" />
+        <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-teal-500/[0.04] blur-[120px] animate-pulse-slow-delay" />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-8 relative z-10">
         {/* Conference badge */}
         <div className="flex flex-wrap items-center gap-3 mb-6 animate-fade-in">
           <span className="badge">
-            <FlaskConical size={14} className="text-cyan-400" />
+            <FlaskConical size={14} className="text-cyan-600" />
             ICCP 2026
           </span>
         </div>
 
         {/* Title */}
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 animate-slide-up">
-          <span className="text-white">imaging</span>
-          <span className="text-white">-</span>
+          <span className="text-slate-900">imaging</span>
+          <span className="text-slate-900">-</span>
           <span className="gradient-text">101</span>
         </h1>
 
         {/* Paper title as subtitle */}
-        <p className="text-xl sm:text-2xl text-zinc-300 max-w-4xl leading-snug mb-4 animate-slide-up font-medium" style={{ animationDelay: '0.05s' }}>
+        <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl leading-snug mb-4 animate-slide-up font-medium" style={{ animationDelay: '0.05s' }}>
           Benchmarking LLM Agents for Scientific Computational Imaging Problems
         </p>
 
         {/* Short description */}
-        <p className="text-base text-zinc-500 max-w-3xl leading-relaxed mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          <span className="text-zinc-400">{totalTasks} expert-verified tasks</span> across{' '}
-          <span className="text-zinc-400">{totalDomains} scientific domains</span>, each grounded in a peer-reviewed paper
+        <p className="text-base text-slate-500 max-w-3xl leading-relaxed mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <span className="text-slate-600">{totalTasks} expert-verified tasks</span> across{' '}
+          <span className="text-slate-600">{totalDomains} scientific domains</span>, each grounded in a peer-reviewed paper
           and canonicalized into a standardized four-stage pipeline.
         </p>
 
         {/* Resource buttons */}
         <div className="flex flex-wrap gap-3 mb-10 animate-slide-up" style={{ animationDelay: '0.12s' }}>
           <a href="https://github.com/HeSunPU/imaging-101" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-800/80 border border-zinc-700/50 text-sm font-medium text-white hover:bg-zinc-700/80 hover:border-cyan-500/30 transition">
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm font-medium text-white hover:bg-slate-800 transition">
             <Github size={16} /> GitHub
           </a>
+          <a href="https://huggingface.co/datasets/AI4Imaging/imaging-101" target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-50 border border-amber-200 text-sm font-medium text-amber-800 hover:bg-amber-100 hover:border-amber-300 transition">
+            <span className="text-base">&#x1F917;</span> HuggingFace
+          </a>
           <a href={`${BASE_PATH}/guide/`}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-800/80 border border-zinc-700/50 text-sm font-medium text-white hover:bg-zinc-700/80 hover:border-cyan-500/30 transition">
-            <ChevronRight size={16} className="text-teal-400" /> Guide
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:border-cyan-300 transition">
+            <ChevronRight size={16} className="text-teal-600" /> Guide
           </a>
           <a href="#leaderboard"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-sm font-medium text-cyan-400 hover:bg-cyan-500/15 transition">
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-50 border border-cyan-200 text-sm font-medium text-cyan-700 hover:bg-cyan-100 transition">
             <Activity size={16} /> Leaderboard
           </a>
         </div>
 
         {/* Abstract */}
         <div className="glass-card p-6 max-w-4xl mb-10 animate-slide-up" style={{ animationDelay: '0.15s' }}>
-          <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-            <ChevronRight size={14} className="text-cyan-400" /> Abstract
+          <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3 flex items-center gap-2">
+            <ChevronRight size={14} className="text-cyan-600" /> Abstract
           </h3>
-          <p className="text-sm leading-relaxed text-zinc-400">
+          <p className="text-sm leading-relaxed text-slate-500">
             Computational imaging, which recovers hidden signals from indirect, noisy measurements, underpins
             quantitative discovery across scientific disciplines, yet building a correct reconstruction pipeline
             demands deep domain expertise and remains laborious even for domain scientists.
-            We introduce <strong className="text-zinc-200">Imaging-101</strong>, a benchmark of{' '}
-            <strong className="text-zinc-200">57 expert-verified computational imaging tasks</strong> spanning{' '}
-            <strong className="text-zinc-200">six scientific domains</strong>, each grounded in a peer-reviewed
+            We introduce <strong className="text-slate-800">Imaging-101</strong>, a benchmark of{' '}
+            <strong className="text-slate-800">57 expert-verified computational imaging tasks</strong> spanning{' '}
+            <strong className="text-slate-800">six scientific domains</strong>, each grounded in a peer-reviewed
             paper and canonicalized into a standardized four-stage pipeline (preprocessing, forward physics
             modeling, inverse solver, and visualization). Three evaluation tracks (planning, function-level
             unit tests, and end-to-end reconstruction) probe distinct agent capabilities across the full pipeline.
@@ -190,28 +179,20 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
           </p>
         </div>
 
-        {/* Stats Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          <StatCard value={String(totalTasks)} label="Imaging Tasks" icon={<FlaskConical size={20} />} />
-          <StatCard value={String(totalDomains)} label="Scientific Domains" icon={<Globe2 size={20} />} />
-          <StatCard value="56" label="Have Unit Tests" icon={<Zap size={20} />} />
-          <StatCard value="57" label="Tutorial Notebooks" icon={<Activity size={20} />} />
-        </div>
-
         {/* Domain Icons */}
-        <div className="flex flex-wrap gap-3 mb-12 animate-slide-up" style={{ animationDelay: '0.25s' }}>
+        <div className="flex flex-wrap gap-3 mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
           {DOMAIN_ICONS.map((Icon, i) => (
-            <div key={i} className="flex items-center gap-2 px-3 py-2 rounded-full border border-zinc-800/60 bg-zinc-900/30 text-xs text-zinc-500 hover:border-cyan-500/20 hover:text-zinc-300 transition">
-              <Icon size={14} className="text-cyan-500/70" />
+            <div key={i} className="flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 bg-white text-xs text-slate-600 hover:border-cyan-300 hover:text-slate-800 transition">
+              <Icon size={14} className="text-cyan-600" />
               {DOMAIN_LABELS[i]}
             </div>
           ))}
         </div>
 
         {/* Compare Sliders */}
-        <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
-          <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-            <Zap size={14} className="text-cyan-400" /> Example Reconstructions — Drag to Compare
+        <div className="animate-slide-up" style={{ animationDelay: '0.25s' }}>
+          <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4 flex items-center gap-2">
+            <Zap size={14} className="text-cyan-600" /> Example Reconstructions — Drag to Compare
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {COMPARE_TASKS.map((t) => (

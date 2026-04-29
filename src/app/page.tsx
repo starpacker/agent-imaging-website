@@ -91,8 +91,8 @@ export default function Home() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="glass-card p-8 text-center max-w-md">
           <div className="text-4xl mb-4">&#x26a0;&#xfe0f;</div>
-          <h2 className="text-lg font-semibold text-red-400 mb-2">Failed to load data</h2>
-          <p className="text-zinc-500 text-sm">{error}</p>
+          <h2 className="text-lg font-semibold text-red-600 mb-2">Failed to load data</h2>
+          <p className="text-slate-500 text-sm">{error}</p>
         </div>
       </div>
     );
@@ -102,8 +102,8 @@ export default function Home() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 border-2 border-cyan-500/40 border-t-cyan-400 rounded-full animate-spin" />
-          <p className="text-zinc-500 text-sm tracking-wide">Loading benchmark data...</p>
+          <div className="w-10 h-10 border-2 border-cyan-200 border-t-cyan-600 rounded-full animate-spin" />
+          <p className="text-slate-500 text-sm tracking-wide">Loading benchmark data...</p>
         </div>
       </div>
     );

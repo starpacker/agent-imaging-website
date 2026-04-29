@@ -72,8 +72,8 @@ function TrackTab({ label, active, onClick }: { label: string; active: boolean; 
       onClick={onClick}
       className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
         active
-          ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
-          : 'text-zinc-500 hover:text-zinc-300'
+          ? 'bg-cyan-50 text-cyan-700 border border-cyan-200'
+          : 'text-slate-500 hover:text-slate-700'
       }`}
     >
       {label}
@@ -85,7 +85,7 @@ function CellValue({ value, best, second }: { value: number; best: number; secon
   const isBest = Math.abs(value - best) < 0.05;
   const isSecond = !isBest && Math.abs(value - second) < 0.05;
   return (
-    <span className={isBest ? 'text-cyan-400 font-bold' : isSecond ? 'text-teal-400 underline' : 'text-zinc-300'}>
+    <span className={isBest ? 'text-cyan-700 font-bold' : isSecond ? 'text-teal-600 underline' : 'text-slate-600'}>
       {value.toFixed(1)}%
     </span>
   );
@@ -117,17 +117,17 @@ export default function Leaderboard() {
   return (
     <section id="leaderboard" className="max-w-6xl mx-auto px-6 py-12">
       <div className="flex items-center gap-3 mb-6">
-        <Trophy size={22} className="text-cyan-400" />
-        <h2 className="text-2xl font-bold text-white">Leaderboard</h2>
+        <Trophy size={22} className="text-cyan-600" />
+        <h2 className="text-2xl font-bold text-slate-900">Leaderboard</h2>
       </div>
 
-      <p className="text-sm text-zinc-400 mb-6 max-w-3xl">
-        Results from evaluating 7 frontier LLMs on all 57 tasks using a multi-agent pipeline (Planner → Critic → Architect → Coder → Judge).
-        <span className="text-zinc-500"> Bold = best, underline = second best.</span>
+      <p className="text-sm text-slate-500 mb-6 max-w-3xl">
+        Results from evaluating 7 frontier LLMs on all 57 tasks using a multi-agent pipeline (Planner &rarr; Critic &rarr; Architect &rarr; Coder &rarr; Judge).
+        <span className="text-slate-400"> Bold = best, underline = second best.</span>
       </p>
 
       {/* Track tabs */}
-      <div className="flex gap-2 mb-6 p-1 rounded-xl bg-zinc-900/60 border border-zinc-800/40 w-fit">
+      <div className="flex gap-2 mb-6 p-1 rounded-xl bg-slate-50 border border-slate-200 w-fit">
         <TrackTab label="End-to-End" active={track === 'e2e'} onClick={() => setTrack('e2e')} />
         <TrackTab label="Function-Level" active={track === 'function'} onClick={() => setTrack('function')} />
         <TrackTab label="Planning" active={track === 'planning'} onClick={() => setTrack('planning')} />
@@ -138,48 +138,48 @@ export default function Leaderboard() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-zinc-800">
-                <th className="text-left py-3 px-4 text-zinc-400 font-medium w-8">#</th>
-                <th className="text-left py-3 px-4 text-zinc-400 font-medium">Model</th>
+              <tr className="border-b border-slate-200">
+                <th className="text-left py-3 px-4 text-slate-500 font-medium w-8">#</th>
+                <th className="text-left py-3 px-4 text-slate-500 font-medium">Model</th>
                 {track === 'e2e' && (
                   <>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Success Rate</th>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Avg. Rounds</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Success Rate</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Avg. Rounds</th>
                   </>
                 )}
                 {track === 'function' && (
                   <>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Preprocessing</th>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Forward Physics</th>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Inverse Solver</th>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Overall (Module)</th>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Avg. Rounds</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Preprocessing</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Forward Physics</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Inverse Solver</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Overall (Module)</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Avg. Rounds</th>
                   </>
                 )}
                 {track === 'planning' && (
                   <>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Preprocessing</th>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Forward Physics</th>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Inverse Solver</th>
-                    <th className="text-right py-3 px-4 text-zinc-400 font-medium">Overall</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Preprocessing</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Forward Physics</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Inverse Solver</th>
+                    <th className="text-right py-3 px-4 text-slate-500 font-medium">Overall</th>
                   </>
                 )}
               </tr>
             </thead>
             <tbody>
               {sorted.map((m, i) => (
-                <tr key={m.name} className={`border-b border-zinc-800/40 ${i === 0 ? 'bg-cyan-500/[0.03]' : 'hover:bg-white/[0.02]'} transition`}>
-                  <td className="py-3 px-4 text-zinc-500 font-mono">{i + 1}</td>
+                <tr key={m.name} className={`border-b border-slate-100 ${i === 0 ? 'bg-cyan-50/50' : 'hover:bg-slate-50'} transition`}>
+                  <td className="py-3 px-4 text-slate-400 font-mono">{i + 1}</td>
                   <td className="py-3 px-4">
-                    <div className="font-medium text-white">{m.name}</div>
-                    <div className="text-[11px] text-zinc-600">{m.org}</div>
+                    <div className="font-medium text-slate-900">{m.name}</div>
+                    <div className="text-[11px] text-slate-400">{m.org}</div>
                   </td>
                   {track === 'e2e' && (
                     <>
                       <td className="text-right py-3 px-4 font-mono">
                         <CellValue value={m.e2e.success} best={e2eBT.best} second={e2eBT.second} />
                       </td>
-                      <td className="text-right py-3 px-4 font-mono text-zinc-400">{m.e2e.avg_rounds.toFixed(2)}</td>
+                      <td className="text-right py-3 px-4 font-mono text-slate-400">{m.e2e.avg_rounds.toFixed(2)}</td>
                     </>
                   )}
                   {track === 'function' && (
@@ -196,14 +196,14 @@ export default function Leaderboard() {
                       <td className="text-right py-3 px-4 font-mono">
                         <CellValue value={m.function.module_overall} best={funcBT.best} second={funcBT.second} />
                       </td>
-                      <td className="text-right py-3 px-4 font-mono text-zinc-400">{m.function.avg_rounds.toFixed(2)}</td>
+                      <td className="text-right py-3 px-4 font-mono text-slate-400">{m.function.avg_rounds.toFixed(2)}</td>
                     </>
                   )}
                   {track === 'planning' && (
                     <>
-                      <td className="text-right py-3 px-4 font-mono text-zinc-300">{m.planning.pre.toFixed(1)}%</td>
-                      <td className="text-right py-3 px-4 font-mono text-zinc-300">{m.planning.fwd.toFixed(1)}%</td>
-                      <td className="text-right py-3 px-4 font-mono text-zinc-300">{m.planning.inv.toFixed(1)}%</td>
+                      <td className="text-right py-3 px-4 font-mono text-slate-600">{m.planning.pre.toFixed(1)}%</td>
+                      <td className="text-right py-3 px-4 font-mono text-slate-600">{m.planning.fwd.toFixed(1)}%</td>
+                      <td className="text-right py-3 px-4 font-mono text-slate-600">{m.planning.inv.toFixed(1)}%</td>
                       <td className="text-right py-3 px-4 font-mono">
                         <CellValue value={m.planning.overall} best={planBT.best} second={planBT.second} />
                       </td>
@@ -216,10 +216,10 @@ export default function Leaderboard() {
         </div>
 
         {/* Claude Code callout */}
-        <div className="border-t border-zinc-800/40 px-4 py-3 bg-teal-500/[0.03] flex items-center gap-3">
-          <span className="text-xs px-2 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20 font-medium shrink-0">Reference</span>
-          <span className="text-sm text-zinc-300">
-            <strong className="text-white">Claude Code</strong> (black-box, shell access): <strong className="text-cyan-400">56.1%</strong> end-to-end success rate — reported separately due to different execution environment.
+        <div className="border-t border-slate-200 px-4 py-3 bg-teal-50/50 flex items-center gap-3">
+          <span className="text-xs px-2 py-0.5 rounded bg-teal-50 text-teal-700 border border-teal-200 font-medium shrink-0">Reference</span>
+          <span className="text-sm text-slate-600">
+            <strong className="text-slate-900">Claude Code</strong> (black-box, shell access): <strong className="text-cyan-700">56.1%</strong> end-to-end success rate — reported separately due to different execution environment.
           </span>
         </div>
       </div>

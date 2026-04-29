@@ -20,10 +20,10 @@ function getImagePath(task: TaskData): string {
 /* ── Metric Pill ── */
 function MetricPill({ label, value, accent }: { label: string; value: string | number; accent: string }) {
   return (
-    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-zinc-900/70 border border-zinc-800/60">
+    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-50 border border-slate-200">
       <div className="w-2 h-2 rounded-full" style={{ background: accent }} />
-      <span className="text-xs text-zinc-500">{label}</span>
-      <span className="text-sm font-semibold text-zinc-200 ml-auto">{value}</span>
+      <span className="text-xs text-slate-500">{label}</span>
+      <span className="text-sm font-semibold text-slate-800 ml-auto">{value}</span>
     </div>
   );
 }
@@ -40,8 +40,8 @@ function DescriptionBlock({ text, accent }: { text: string; accent: string }) {
           const label = (item[2] || item[3] || '').trim();
           const content = item[4].trim();
           return (
-            <div key={`${idx}-${num}`} className="text-sm text-zinc-400 leading-relaxed">
-              <span className="text-zinc-300">{num}.</span>{' '}
+            <div key={`${idx}-${num}`} className="text-sm text-slate-500 leading-relaxed">
+              <span className="text-slate-700">{num}.</span>{' '}
               <span className="font-semibold" style={{ color: accent }}>{label}</span>
               {content ? <>: {content}</> : null}
             </div>
@@ -49,7 +49,7 @@ function DescriptionBlock({ text, accent }: { text: string; accent: string }) {
         }
         const cleaned = line.replace(/\*\*(.*?)\*\*/g, '$1');
         return (
-          <p key={idx} className="text-sm text-zinc-400 leading-relaxed">
+          <p key={idx} className="text-sm text-slate-500 leading-relaxed">
             {cleaned}
           </p>
         );
@@ -67,8 +67,8 @@ function TabButton({ active, onClick, icon, label }: {
       onClick={onClick}
       className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition ${
         active
-          ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
-          : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/40'
+          ? 'bg-cyan-50 text-cyan-700 border border-cyan-200'
+          : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
       }`}
     >
       {icon}
@@ -104,26 +104,26 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
   const nbLink = `https://github.com/HeSunPU/imaging-101/tree/main/tasks/${task.name}/notebooks`;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md" onClick={onClose}>
-      <div className="w-full h-full flex flex-col overflow-hidden" onClick={(e) => e.stopPropagation()}>
+    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm" onClick={onClose}>
+      <div className="w-full h-full flex flex-col overflow-hidden bg-white" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
-        <div className="flex items-center gap-4 px-6 py-4 border-b border-zinc-800/50">
+        <div className="flex items-center gap-4 px-6 py-4 border-b border-slate-200">
           <div className="flex items-center gap-3 flex-1 min-w-0">
             <div className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold" style={{ background: `${accent}18`, color: accent }}>
               {task.id}
             </div>
             <div className="min-w-0">
-              <h2 className="text-lg font-bold text-white truncate">{task.title}</h2>
-              <div className="flex items-center gap-2 text-xs text-zinc-500">
+              <h2 className="text-lg font-bold text-slate-900 truncate">{task.title}</h2>
+              <div className="flex items-center gap-2 text-xs text-slate-500">
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium" style={{ background: `${accent}18`, color: accent }}>
                   {task.domain_name}
                 </span>
                 <span>{task.name}</span>
                 {task.difficulty && (
                   <span className={`px-1.5 py-0.5 rounded text-[10px] ${
-                    task.difficulty === 'Hard' ? 'bg-red-500/20 text-red-400' :
-                    task.difficulty === 'Easy' ? 'bg-green-500/20 text-green-400' :
-                    'bg-yellow-500/20 text-yellow-400'
+                    task.difficulty === 'Hard' ? 'bg-red-100 text-red-600' :
+                    task.difficulty === 'Easy' ? 'bg-green-100 text-green-600' :
+                    'bg-yellow-100 text-yellow-600'
                   }`}>
                     {task.difficulty}
                   </span>
@@ -131,13 +131,13 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
               </div>
             </div>
           </div>
-          <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-zinc-800 text-zinc-400 hover:text-white transition">
+          <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-900 transition">
             <X size={18} />
           </button>
         </div>
 
         {/* Tabs */}
-        <div className="flex items-center gap-2 px-6 py-3 border-b border-zinc-800/30">
+        <div className="flex items-center gap-2 px-6 py-3 border-b border-slate-100">
           <TabButton
             active={activeTab === 'overview'}
             onClick={() => setActiveTab('overview')}
@@ -155,7 +155,7 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
             href={nbLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-cyan-400 transition"
+            className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-cyan-600 transition"
           >
             <BookOpen size={13} />
             GitHub
@@ -166,11 +166,11 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
         {/* Body */}
         <div className="flex-1 overflow-y-auto">
           {activeTab === 'overview' ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:divide-x lg:divide-zinc-800/50">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:divide-x lg:divide-slate-200">
               {/* Left: Description */}
               <div className="p-6 space-y-6">
                 <div>
-                  <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Task Description</h3>
+                  <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Task Description</h3>
                   <DescriptionBlock text={task.description} accent={accent} />
                 </div>
 
@@ -182,7 +182,7 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                         href={task.paper_link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-purple-500/20 bg-purple-500/5 text-xs font-medium text-purple-400 hover:bg-purple-500/10 hover:border-purple-500/30 transition"
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-purple-200 bg-purple-50 text-xs font-medium text-purple-700 hover:bg-purple-100 hover:border-purple-300 transition"
                       >
                         <FileText size={13} />
                         Paper
@@ -194,7 +194,7 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                         href={task.source_github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-zinc-700/40 bg-zinc-800/30 text-xs font-medium text-zinc-300 hover:bg-zinc-800/60 hover:border-zinc-600/50 transition"
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 text-xs font-medium text-slate-700 hover:bg-slate-100 hover:border-slate-300 transition"
                       >
                         <Github size={13} />
                         Source Code
@@ -205,7 +205,7 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                       href={githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-cyan-500/20 bg-cyan-500/5 text-xs font-medium text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-500/30 transition"
+                      className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-cyan-200 bg-cyan-50 text-xs font-medium text-cyan-700 hover:bg-cyan-100 hover:border-cyan-300 transition"
                     >
                       <BookOpen size={13} />
                       Task
@@ -213,7 +213,7 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                     </a>
                   </div>
                   {task.has_tests && (
-                    <div className="flex items-center gap-2 text-xs text-green-400/70">
+                    <div className="flex items-center gap-2 text-xs text-green-600">
                       <TestTube2 size={14} />
                       Has unit tests (function-mode evaluation)
                     </div>
@@ -224,15 +224,15 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
               {/* Right: Image + Metrics */}
               <div className="p-6 space-y-6">
                 <div>
-                  <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Notebook Visualization</h3>
-                  <div className="rounded-xl overflow-hidden border border-zinc-800/50 bg-black/30">
+                  <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Notebook Visualization</h3>
+                  <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
                     <img src={imagePath} alt={task.title} className="w-full h-auto" loading="lazy" />
                   </div>
                 </div>
 
                 {hasMetrics && (
                   <div>
-                    <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">Metrics</h3>
+                    <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Metrics</h3>
                     <div className="grid grid-cols-2 gap-2">
                       {task.metrics.ncc && <MetricPill label="NCC" value={task.metrics.ncc} accent={accent} />}
                       {task.metrics.nrmse && <MetricPill label="NRMSE" value={task.metrics.nrmse} accent={accent} />}
@@ -246,9 +246,9 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                 <div className="metric-highlight">
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-3 h-3 rounded-full" style={{ background: accent }} />
-                    <span className="text-sm font-semibold text-zinc-200">{task.domain_name}</span>
+                    <span className="text-sm font-semibold text-slate-800">{task.domain_name}</span>
                   </div>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs text-slate-500">
                     Domain {task.domain} &bull; {task.title}
                   </p>
                 </div>

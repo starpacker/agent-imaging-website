@@ -5,14 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root {
-  --bg-primary: #06060b;
-  --bg-secondary: #0d0d14;
-  --bg-card: #12121a;
-  --border-color: #1e1e2a;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
   --accent-blue: #3b82f6;
-  --accent-cyan: #06b6d4;
-  --neon-blue: #00d4ff;
-  --neon-green: #00ff88;
+  --accent-cyan: #0891b2;
+  --neon-blue: #0891b2;
+  --neon-green: #059669;
 }
 
 * { box-sizing: border-box; padding: 0; margin: 0; }
@@ -20,7 +20,7 @@ html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--bg-primary);
-  color: #d4d4d8;
+  color: #334155;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -29,25 +29,25 @@ body {
 /* === Scrollbar === */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #3a3a4a; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
 /* === KaTeX === */
 .katex-display { margin: 1em 0 !important; overflow-x: auto; overflow-y: hidden; }
-.katex { font-size: 1.05em !important; color: #d4d4d8; }
+.katex { font-size: 1.05em !important; color: #334155; }
 
 /* === Glass Card === */
 .glass-card {
-  background: rgba(18, 18, 26, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glass-card:hover {
-  border-color: rgba(0, 212, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 24px rgba(0, 212, 255, 0.04);
+  border-color: rgba(8, 145, 178, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 0 24px rgba(8, 145, 178, 0.06);
 }
 
 /* === Domain Card === */
@@ -57,15 +57,15 @@ body {
 }
 .domain-card:hover {
   transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 212, 255, 0.06);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08), 0 0 40px rgba(8, 145, 178, 0.06);
 }
 
 /* === Task Card === */
 .task-card { transition: all 0.2s ease; cursor: pointer; }
 .task-card:hover {
   transform: translateY(-4px) scale(1.02);
-  border-color: rgba(0, 212, 255, 0.35);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-color: rgba(8, 145, 178, 0.4);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* === Modal === */
@@ -77,43 +77,44 @@ body {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 7px 16px; border-radius: 9999px;
   font-size: 0.82rem; font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.03);
-  transition: all 0.2s; text-decoration: none; color: #a1a1aa;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  transition: all 0.2s; text-decoration: none; color: #64748b;
 }
-.badge:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.15); color: #e4e4e7; }
+.badge:hover { background: #f1f5f9; border-color: #cbd5e1; color: #334155; }
 
 /* === Metrics === */
 .metric-highlight {
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.06), rgba(0, 255, 136, 0.06));
-  border: 1px solid rgba(0, 212, 255, 0.12);
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.06), rgba(5, 150, 105, 0.06));
+  border: 1px solid rgba(8, 145, 178, 0.15);
   border-radius: 12px; padding: 14px 20px;
 }
 
 /* === Grid BG === */
 .grid-bg {
+  background-color: #ffffff;
   background-image:
-    radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.02) 0%, transparent 70%),
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    radial-gradient(circle at 50% 50%, rgba(8, 145, 178, 0.03) 0%, transparent 70%),
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   background-size: 100% 100%, 80px 80px, 80px 80px;
 }
 
 /* === Gradients === */
 .gradient-text {
-  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 50%, #00d4ff 100%);
+  background: linear-gradient(135deg, #0891b2 0%, #059669 50%, #0891b2 100%);
   background-size: 200% auto;
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; animation: shimmer 4s linear infinite;
 }
 .gradient-text-purple {
-  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  background: linear-gradient(135deg, #7c3aed, #0891b2);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
 /* === Code Block === */
 .code-block {
-  background: #0c0c18; border: 1px solid #1a1a2e;
+  background: #f8fafc; border: 1px solid #e2e8f0;
   border-radius: 14px; font-family: 'JetBrains Mono', monospace;
 }
 
@@ -122,13 +123,13 @@ body {
 .neon-border::before {
   content: ''; position: absolute; inset: -1px;
   border-radius: inherit; padding: 1px;
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(0, 255, 136, 0.08), transparent, transparent);
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.3), rgba(5, 150, 105, 0.12), transparent, transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
 }
 
 /* === Teaser === */
-.teaser-container { border: 1px solid rgba(0, 212, 255, 0.15); border-radius: 14px; overflow: hidden; }
+.teaser-container { border: 1px solid rgba(8, 145, 178, 0.2); border-radius: 14px; overflow: hidden; }
 
 /* === Animations === */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -147,4 +148,4 @@ body {
 .__rcs-handle-root:hover { opacity: 0.9; }
 
 /* === Selection === */
-::selection { background: rgba(0, 212, 255, 0.2); color: #fff; }
+::selection { background: rgba(8, 145, 178, 0.15); color: #0f172a; }
