@@ -7,15 +7,15 @@ import {
   Radar, ResponsiveContainer, Tooltip, Legend,
 } from 'recharts';
 
-/* ── Model colors ── */
+/* ── Model colors — muted, professional palette ── */
 const MODEL_COLORS: Record<string, string> = {
-  'Claude-4.6-Opus': '#E07A5F',
-  'Gemini-3.1-Pro': '#4285F4',
-  'GPT-5.4': '#10a37f',
-  'Kimi-K2.5': '#7B2FF7',
-  'GLM-5': '#FF6B35',
-  'DeepSeek-V3': '#0066FF',
-  'Qwen3.6-Plus': '#FF4500',
+  'Claude-4.6-Opus': '#d97706',
+  'Gemini-3.1-Pro': '#2563eb',
+  'GPT-5.4': '#059669',
+  'Kimi-K2.5': '#7c3aed',
+  'GLM-5': '#dc2626',
+  'DeepSeek-V3': '#0891b2',
+  'Qwen3.6-Plus': '#9333ea',
 };
 
 interface DomainRadarEntry {
@@ -28,8 +28,10 @@ interface DomainRadarChartProps {
   models: string[];
 }
 
+const DEFAULT_SHOWN = new Set(['Claude-4.6-Opus', 'Gemini-3.1-Pro', 'GPT-5.4']);
+
 export default function DomainRadarChart({ data, models }: DomainRadarChartProps) {
-  const [activeModels, setActiveModels] = useState<Set<string>>(new Set(models));
+  const [activeModels, setActiveModels] = useState<Set<string>>(DEFAULT_SHOWN);
 
   const chartData = useMemo(() => {
     if (!data) return [];
@@ -93,13 +95,13 @@ export default function DomainRadarChart({ data, models }: DomainRadarChartProps
           })}
         </div>
 
-        <div className="w-full" style={{ height: 420 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <RadarChart cx="50%" cy="50%" outerRadius="75%" data={chartData}>
-              <PolarGrid stroke="#e2e8f0" />
+        <div className="w-full flex justify-center" style={{ height: 540 }}>
+          <ResponsiveContainer width="100%" height="100%" maxHeight={540}>
+            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
+              <PolarGrid stroke="#e2e8f0" strokeDasharray="3 3" />
               <PolarAngleAxis
                 dataKey="domain"
-                tick={{ fontSize: 12, fill: '#475569' }}
+                tick={{ fontSize: 13, fill: '#334155', fontWeight: 500 }}
               />
               <PolarRadiusAxis
                 angle={90}
@@ -114,9 +116,9 @@ export default function DomainRadarChart({ data, models }: DomainRadarChartProps
                   dataKey={m}
                   stroke={MODEL_COLORS[m] || '#666'}
                   fill={MODEL_COLORS[m] || '#666'}
-                  fillOpacity={0.06}
-                  strokeWidth={2}
-                  dot={{ r: 3, fill: MODEL_COLORS[m] || '#666' }}
+                  fillOpacity={0.04}
+                  strokeWidth={2.5}
+                  dot={{ r: 3.5, fill: MODEL_COLORS[m] || '#666', strokeWidth: 0 }}
                 />
               ))}
               <Tooltip
