@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import type { DomainData, TaskData } from '@/app/page';
 
@@ -75,46 +76,58 @@ export default function DomainExplorer({ domains, getTasksForDomain, onSelectTas
               </div>
 
               {/* Expanded Task Grid */}
-              {isExpanded && tasks.length > 0 && (
-                <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 animate-fade-in">
-                  {tasks.map((task) => (
-                    <div
-                      key={task.id}
-                      className="task-card rounded-xl overflow-hidden border border-slate-200 bg-white hover:bg-slate-50"
-                      onClick={(e) => { e.stopPropagation(); onSelectTask(task); }}
-                    >
-                      <div className="aspect-[4/3] relative bg-slate-50 overflow-hidden">
-                        <img
-                          src={getImagePath(task)}
-                          alt={task.title}
-                          className="w-full h-full object-contain opacity-90 hover:opacity-100 transition"
-                          loading="lazy"
-                        />
-                        <div className="absolute top-2 left-2">
-                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ background: `${accent}18`, color: accent }}>
-                            {task.id}
-                          </span>
-                        </div>
-                        {task.difficulty && (
-                          <div className="absolute top-2 right-2">
-                            <span className={`text-[10px] px-1.5 py-0.5 rounded ${
-                              task.difficulty === 'Hard' ? 'bg-red-100 text-red-600' :
-                              task.difficulty === 'Easy' ? 'bg-green-100 text-green-600' :
-                              'bg-yellow-100 text-yellow-600'
-                            }`}>
-                              {task.difficulty}
+              <AnimatePresence>
+                {isExpanded && tasks.length > 0 && (
+                  <motion.div
+                    className="mt-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    {tasks.map((task, idx) => (
+                      <motion.div
+                        key={task.id}
+                        className="task-card rounded-xl overflow-hidden border border-slate-200 bg-white hover:bg-slate-50"
+                        onClick={(e) => { e.stopPropagation(); onSelectTask(task); }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: idx * 0.03 }}
+                        whileHover={{ y: -4, scale: 1.02 }}
+                      >
+                        <div className="aspect-[4/3] relative bg-slate-50 overflow-hidden">
+                          <img
+                            src={getImagePath(task)}
+                            alt={task.title}
+                            className="w-full h-full object-contain opacity-90 hover:opacity-100 transition"
+                            loading="lazy"
+                          />
+                          <div className="absolute top-2 left-2">
+                            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ background: `${accent}18`, color: accent }}>
+                              {task.id}
                             </span>
                           </div>
-                        )}
-                      </div>
-                      <div className="p-3">
-                        <p className="text-xs font-medium text-slate-800 line-clamp-2 leading-snug">{task.title}</p>
-                        <p className="text-[10px] text-slate-400 mt-1 truncate">{task.name}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
+                          {task.difficulty && (
+                            <div className="absolute top-2 right-2">
+                              <span className={`text-[10px] px-1.5 py-0.5 rounded ${
+                                task.difficulty === 'Hard' ? 'bg-red-100 text-red-600' :
+                                task.difficulty === 'Easy' ? 'bg-green-100 text-green-600' :
+                                'bg-yellow-100 text-yellow-600'
+                              }`}>
+                                {task.difficulty}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                        <div className="p-3">
+                          <p className="text-xs font-medium text-slate-800 line-clamp-2 leading-snug">{task.title}</p>
+                          <p className="text-[10px] text-slate-400 mt-1 truncate">{task.name}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           );
         })}

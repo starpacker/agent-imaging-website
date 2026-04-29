@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import {
   FlaskConical, Github, ExternalLink, ChevronRight,
   Microscope, Activity, Globe2, Telescope,
@@ -104,42 +105,72 @@ interface HeroProps { totalTasks: number; totalDomains: number; }
 export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
   return (
     <section className="relative overflow-hidden pb-4">
-      {/* Background glow */}
+      {/* Hero banner background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-cyan-500/[0.04] blur-[120px] animate-pulse-slow" />
-        <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-teal-500/[0.04] blur-[120px] animate-pulse-slow-delay" />
+        <img
+          src={`${BASE_PATH}/images/hero_banner.png`}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.08]"
+          style={{ objectPosition: 'center 40%' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/80 to-white" />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-8 relative z-10">
         {/* Conference badge */}
-        <div className="flex flex-wrap items-center gap-3 mb-6 animate-fade-in">
+        <motion.div
+          className="flex flex-wrap items-center gap-3 mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <span className="badge">
             <FlaskConical size={14} className="text-cyan-600" />
             ICCP 2026
           </span>
-        </div>
+        </motion.div>
 
         {/* Title */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 animate-slide-up">
+        <motion.h1
+          className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
           <span className="text-slate-900">imaging</span>
           <span className="text-slate-900">-</span>
           <span className="gradient-text">101</span>
-        </h1>
+        </motion.h1>
 
         {/* Paper title as subtitle */}
-        <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl leading-snug mb-4 animate-slide-up font-medium" style={{ animationDelay: '0.05s' }}>
+        <motion.p
+          className="text-xl sm:text-2xl text-slate-600 max-w-4xl leading-snug mb-4 font-medium"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+        >
           Benchmarking LLM Agents for Scientific Computational Imaging Problems
-        </p>
+        </motion.p>
 
         {/* Short description */}
-        <p className="text-base text-slate-500 max-w-3xl leading-relaxed mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+        <motion.p
+          className="text-base text-slate-500 max-w-3xl leading-relaxed mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        >
           <span className="text-slate-600">{totalTasks} expert-verified tasks</span> across{' '}
           <span className="text-slate-600">{totalDomains} scientific domains</span>, each grounded in a peer-reviewed paper
           and canonicalized into a standardized four-stage pipeline.
-        </p>
+        </motion.p>
 
         {/* Resource buttons */}
-        <div className="flex flex-wrap gap-3 mb-10 animate-slide-up" style={{ animationDelay: '0.12s' }}>
+        <motion.div
+          className="flex flex-wrap gap-3 mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        >
           <a href="https://github.com/HeSunPU/imaging-101" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm font-medium text-white hover:bg-slate-800 transition">
             <Github size={16} /> GitHub
@@ -152,10 +183,15 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-50 border border-cyan-200 text-sm font-medium text-cyan-700 hover:bg-cyan-100 transition">
             <Activity size={16} /> Leaderboard
           </a>
-        </div>
+        </motion.div>
 
         {/* Abstract */}
-        <div className="glass-card p-6 max-w-4xl mb-10 animate-slide-up" style={{ animationDelay: '0.15s' }}>
+        <motion.div
+          className="glass-card p-6 max-w-4xl mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        >
           <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3 flex items-center gap-2">
             <ChevronRight size={14} className="text-cyan-600" /> Abstract
           </h3>
@@ -173,20 +209,34 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
             computational imaging that go beyond those exposed by general coding benchmarks, spanning algorithm
             selection, physical convention handling, and pipeline integration.
           </p>
-        </div>
+        </motion.div>
 
         {/* Domain Icons */}
-        <div className="flex flex-wrap gap-3 mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+        <motion.div
+          className="flex flex-wrap gap-3 mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        >
           {DOMAIN_ICONS.map((Icon, i) => (
-            <div key={i} className="flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 bg-white text-xs text-slate-600 hover:border-cyan-300 hover:text-slate-800 transition">
+            <motion.div
+              key={i}
+              className="flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 bg-white text-xs text-slate-600 hover:border-cyan-300 hover:text-slate-800 transition cursor-default"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Icon size={14} className="text-cyan-600" />
               {DOMAIN_LABELS[i]}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Compare Sliders */}
-        <div className="animate-slide-up" style={{ animationDelay: '0.25s' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        >
           <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4 flex items-center gap-2">
             <Zap size={14} className="text-cyan-600" /> Example Reconstructions — Drag to Compare
           </h3>
@@ -195,7 +245,7 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
               <CompareTeaser key={t.id} taskId={t.id} title={t.title} hasInput={t.hasInput} />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

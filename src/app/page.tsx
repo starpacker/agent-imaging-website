@@ -3,11 +3,16 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import HeroSection from '@/components/HeroSection';
 import Leaderboard from '@/components/Leaderboard';
+import DomainRadarChart from '@/components/DomainRadarChart';
+import DomainHeatmap from '@/components/DomainHeatmap';
 import DomainExplorer from '@/components/DomainExplorer';
 import StatsBar from '@/components/StatsBar';
+import SearchFilterBar from '@/components/SearchFilterBar';
 import TaskModal from '@/components/TaskModal';
+import DownloadButton from '@/components/DownloadButton';
 import Citation from '@/components/Citation';
 import Footer from '@/components/Footer';
+import MotionWrapper from '@/components/MotionWrapper';
 
 /* ── Type definitions ── */
 export interface TaskData {
@@ -48,14 +53,27 @@ export interface TasksDB {
   tasks: Record<string, TaskData>;
 }
 
+interface ModelResultsData {
+  models: string[];
+  function_mode: Record<string, unknown>;
+  e2e_claude_code: Record<string, unknown>;
+  domain_radar: Record<string, { domain_name: string; [key: string]: string | number }>;
+}
+
 /* ── Resolve basePath at runtime for fetch / img URLs ── */
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 /* ── Page Component ── */
 export default function Home() {
   const [db, setDb] = useState<TasksDB | null>(null);
+  const [modelResults, setModelResults] = useState<ModelResultsData | null>(null);
   const [selectedTask, setSelectedTask] = useState<TaskData | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // Search & filter state
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeDomains, setActiveDomains] = useState<Set<string>>(new Set());
+  const [activeDifficulties, setActiveDifficulties] = useState<Set<string>>(new Set());
 
   // Open task: push history state so browser back closes the modal
   const openTask = useCallback((task: TaskData) => {
@@ -82,6 +100,7 @@ export default function Home() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  // Fetch data
   useEffect(() => {
     fetch(`${BASE_PATH}/data/tasks_db.json`)
       .then((r) => {
@@ -90,6 +109,11 @@ export default function Home() {
       })
       .then((data: TasksDB) => setDb(data))
       .catch((e) => setError(e.message));
+
+    fetch(`${BASE_PATH}/data/model_results.json`)
+      .then((r) => r.json())
+      .then((data: ModelResultsData) => setModelResults(data))
+      .catch(() => {}); // non-critical
   }, []);
 
   const domainEntries = useMemo(
@@ -111,6 +135,58 @@ export default function Home() {
     },
     [db]
   );
+
+  // Filtered domain entries and tasks
+  const filteredDomainEntries = useMemo(() => {
+    if (activeDomains.size === 0) return domainEntries;
+    return domainEntries.filter(([key]) => activeDomains.has(key));
+  }, [domainEntries, activeDomains]);
+
+  const getFilteredTasksForDomain = useCallback(
+    (domainKey: string): TaskData[] => {
+      const tasks = getTasksForDomain(domainKey);
+      return tasks.filter((t) => {
+        if (activeDifficulties.size > 0 && t.difficulty && !activeDifficulties.has(t.difficulty)) {
+          return false;
+        }
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          return (
+            t.name.toLowerCase().includes(q) ||
+            t.title.toLowerCase().includes(q) ||
+            t.description.toLowerCase().includes(q)
+          );
+        }
+        return true;
+      });
+    },
+    [getTasksForDomain, searchQuery, activeDifficulties]
+  );
+
+  // Filter toggles
+  const toggleDomain = useCallback((key: string) => {
+    setActiveDomains((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  }, []);
+
+  const toggleDifficulty = useCallback((d: string) => {
+    setActiveDifficulties((prev) => {
+      const next = new Set(prev);
+      if (next.has(d)) next.delete(d);
+      else next.add(d);
+      return next;
+    });
+  }, []);
+
+  const clearAllFilters = useCallback(() => {
+    setSearchQuery('');
+    setActiveDomains(new Set());
+    setActiveDifficulties(new Set());
+  }, []);
 
   if (error) {
     return (
@@ -138,17 +214,55 @@ export default function Home() {
   return (
     <main className="grid-bg min-h-screen">
       <HeroSection totalTasks={db.meta.total_tasks} totalDomains={db.meta.total_domains} />
-      <Leaderboard />
-      <StatsBar domains={domainEntries} />
-      <DomainExplorer
+
+      <MotionWrapper>
+        <Leaderboard />
+      </MotionWrapper>
+
+      <MotionWrapper delay={0.1}>
+        <DomainRadarChart
+          data={modelResults?.domain_radar}
+          models={modelResults?.models || []}
+        />
+      </MotionWrapper>
+
+      <MotionWrapper delay={0.1}>
+        <DomainHeatmap data={modelResults?.domain_radar} />
+      </MotionWrapper>
+
+      <MotionWrapper>
+        <StatsBar domains={domainEntries} />
+      </MotionWrapper>
+
+      <SearchFilterBar
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        activeDomains={activeDomains}
+        onToggleDomain={toggleDomain}
+        activeDifficulties={activeDifficulties}
+        onToggleDifficulty={toggleDifficulty}
+        onClearAll={clearAllFilters}
         domains={domainEntries}
-        getTasksForDomain={getTasksForDomain}
+      />
+
+      <DomainExplorer
+        domains={filteredDomainEntries}
+        getTasksForDomain={getFilteredTasksForDomain}
         onSelectTask={openTask}
       />
+
       {selectedTask && (
         <TaskModal task={selectedTask} onClose={closeTaskViaAction} />
       )}
-      <Citation />
+
+      <MotionWrapper>
+        <DownloadButton />
+      </MotionWrapper>
+
+      <MotionWrapper>
+        <Citation />
+      </MotionWrapper>
+
       <Footer />
     </main>
   );

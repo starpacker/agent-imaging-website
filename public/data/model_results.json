@@ -1,0 +1,4218 @@
+{
+  "models": [
+    "Claude-4.6-Opus",
+    "DeepSeek-V3",
+    "GLM-5",
+    "GPT-5.4",
+    "Gemini-3.1-Pro",
+    "Kimi-K2.5",
+    "Qwen3.6-Plus"
+  ],
+  "function_mode": {
+    "SSNP_ODT": {
+      "Claude-4.6-Opus": {
+        "score": "41/43",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "22/23",
+        "solvers_score": "12/12"
+      },
+      "DeepSeek-V3": {
+        "score": "30/45",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "12/21",
+        "solvers_score": "6/12"
+      },
+      "GLM-5": {
+        "score": "42/47",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "19/23",
+        "solvers_score": "11/12"
+      },
+      "GPT-5.4": {
+        "score": "38/41",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "21/23",
+        "solvers_score": "12/12"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "43/47",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "21/23",
+        "solvers_score": "10/12"
+      },
+      "Kimi-K2.5": {
+        "score": "34/47",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "12/23",
+        "solvers_score": "11/12"
+      },
+      "Qwen3.6-Plus": {
+        "score": "38/43",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "21/23",
+        "solvers_score": "10/12"
+      },
+      "_domain": "B",
+      "_domain_name": "Biology"
+    },
+    "confocal-nlos-fk": {
+      "Claude-4.6-Opus": {
+        "score": "20/22",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "12/12",
+        "solvers_score": "8/10"
+      },
+      "DeepSeek-V3": {
+        "score": "0/0",
+        "overall": "n/a",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": ""
+      },
+      "GLM-5": {
+        "score": "9/10",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": "9/10"
+      },
+      "GPT-5.4": {
+        "score": "9/10",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": "9/10"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "9/10",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": "9/10"
+      },
+      "Kimi-K2.5": {
+        "score": "0/1",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": "0/1"
+      },
+      "Qwen3.6-Plus": {
+        "score": "0/1",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": "0/1"
+      },
+      "_domain": "C",
+      "_domain_name": "Physics"
+    },
+    "conventional_ptychography": {
+      "Claude-4.6-Opus": {
+        "score": "62/64",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "18/18",
+        "solvers_score": "0/1"
+      },
+      "DeepSeek-V3": {
+        "score": "77/77",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "18/18",
+        "solvers_score": "14/14"
+      },
+      "GLM-5": {
+        "score": "77/77",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "18/18",
+        "solvers_score": "14/14"
+      },
+      "GPT-5.4": {
+        "score": "44/46",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "0/1",
+        "solvers_score": "14/14"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "77/77",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "18/18",
+        "solvers_score": "14/14"
+      },
+      "Kimi-K2.5": {
+        "score": "59/59",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "",
+        "solvers_score": "14/14"
+      },
+      "Qwen3.6-Plus": {
+        "score": "62/63",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "18/18",
+        "solvers_score": "14/14"
+      },
+      "_domain": "C",
+      "_domain_name": "Physics"
+    },
+    "ct_dual_energy": {
+      "Claude-4.6-Opus": {
+        "score": "12/13",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "0/1",
+        "solvers_score": "7/7"
+      },
+      "DeepSeek-V3": {
+        "score": "31/31",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "16/16",
+        "solvers_score": ""
+      },
+      "GLM-5": {
+        "score": "10/14",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "0/1",
+        "solvers_score": "5/7"
+      },
+      "GPT-5.4": {
+        "score": "38/38",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "16/16",
+        "solvers_score": "7/7"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "38/38",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "16/16",
+        "solvers_score": "7/7"
+      },
+      "Kimi-K2.5": {
+        "score": "36/38",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "15/16",
+        "solvers_score": "7/7"
+      },
+      "Qwen3.6-Plus": {
+        "score": "7/15",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "0/1",
+        "solvers_score": "2/8"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "ct_fan_beam": {
+      "Claude-4.6-Opus": {
+        "score": "36/40",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "20/23",
+        "solvers_score": "9/10"
+      },
+      "DeepSeek-V3": {
+        "score": "35/40",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "19/23",
+        "solvers_score": "9/10"
+      },
+      "GLM-5": {
+        "score": "33/40",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "18/23",
+        "solvers_score": "8/10"
+      },
+      "GPT-5.4": {
+        "score": "37/40",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "20/23",
+        "solvers_score": "10/10"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "35/40",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "19/23",
+        "solvers_score": "9/10"
+      },
+      "Kimi-K2.5": {
+        "score": "25/27",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "0/1",
+        "solvers_score": "9/10"
+      },
+      "Qwen3.6-Plus": {
+        "score": "36/40",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "20/23",
+        "solvers_score": "9/10"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "ct_poisson_lowdose": {
+      "Claude-4.6-Opus": {
+        "score": "20/24",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "9/12",
+        "solvers_score": "0/1"
+      },
+      "DeepSeek-V3": {
+        "score": "20/31",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "9/13",
+        "solvers_score": "0/7"
+      },
+      "GLM-5": {
+        "score": "25/31",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "9/13",
+        "solvers_score": "5/7"
+      },
+      "GPT-5.4": {
+        "score": "27/31",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "9/13",
+        "solvers_score": "7/7"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "25/30",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "9/12",
+        "solvers_score": "5/7"
+      },
+      "Kimi-K2.5": {
+        "score": "39/44",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "9/12",
+        "solvers_score": "5/7"
+      },
+      "Qwen3.6-Plus": {
+        "score": "25/31",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "9/13",
+        "solvers_score": "5/7"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "ct_sparse_view": {
+      "Claude-4.6-Opus": {
+        "score": "28/30",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "8/9",
+        "solvers_score": "8/9"
+      },
+      "DeepSeek-V3": {
+        "score": "20/23",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "8/9",
+        "solvers_score": "7/9"
+      },
+      "GLM-5": {
+        "score": "21/23",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "8/9",
+        "solvers_score": "8/9"
+      },
+      "GPT-5.4": {
+        "score": "22/23",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "8/9",
+        "solvers_score": "9/9"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "19/23",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "6/9",
+        "solvers_score": "8/9"
+      },
+      "Kimi-K2.5": {
+        "score": "9/11",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "0/1",
+        "solvers_score": "0/1"
+      },
+      "Qwen3.6-Plus": {
+        "score": "21/23",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "8/9",
+        "solvers_score": "8/9"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "differentiable_deflectometry": {
+      "Claude-4.6-Opus": {
+        "score": "19/19",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "10/10",
+        "solvers_score": "5/5"
+      },
+      "DeepSeek-V3": {
+        "score": "19/19",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "10/10",
+        "solvers_score": "5/5"
+      },
+      "GLM-5": {
+        "score": "14/15",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "10/10",
+        "solvers_score": "0/1"
+      },
+      "GPT-5.4": {
+        "score": "19/19",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "10/10",
+        "solvers_score": "5/5"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "19/19",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "10/10",
+        "solvers_score": "5/5"
+      },
+      "Kimi-K2.5": {
+        "score": "17/19",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "10/10",
+        "solvers_score": "3/5"
+      },
+      "Qwen3.6-Plus": {
+        "score": "14/15",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "10/10",
+        "solvers_score": "0/1"
+      },
+      "_domain": "C",
+      "_domain_name": "Physics"
+    },
+    "diffusion_mri_dti": {
+      "Claude-4.6-Opus": {
+        "score": "33/33",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "19/19",
+        "solvers_score": "7/7"
+      },
+      "DeepSeek-V3": {
+        "score": "33/33",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "19/19",
+        "solvers_score": "7/7"
+      },
+      "GLM-5": {
+        "score": "33/33",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "19/19",
+        "solvers_score": "7/7"
+      },
+      "GPT-5.4": {
+        "score": "33/33",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "19/19",
+        "solvers_score": "7/7"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "33/33",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "19/19",
+        "solvers_score": "7/7"
+      },
+      "Kimi-K2.5": {
+        "score": "56/56",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "19/19",
+        "solvers_score": "7/7"
+      },
+      "Qwen3.6-Plus": {
+        "score": "33/33",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "19/19",
+        "solvers_score": "7/7"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "dps_motion_deblur": {
+      "Claude-4.6-Opus": {
+        "score": "10/19",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "9/9",
+        "physics_model_score": "",
+        "solvers_score": "1/10"
+      },
+      "DeepSeek-V3": {
+        "score": "6/6",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "6/6",
+        "solvers_score": ""
+      },
+      "GLM-5": {
+        "score": "12/12",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "6/6",
+        "physics_model_score": "6/6",
+        "solvers_score": ""
+      },
+      "GPT-5.4": {
+        "score": "11/22",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "0/6",
+        "physics_model_score": "1/6",
+        "solvers_score": "10/10"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "13/22",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "6/6",
+        "physics_model_score": "6/6",
+        "solvers_score": "1/10"
+      },
+      "Kimi-K2.5": {
+        "score": "6/6",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "6/6",
+        "solvers_score": ""
+      },
+      "Qwen3.6-Plus": {
+        "score": "6/6",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "6/6",
+        "solvers_score": ""
+      }
+    },
+    "eht_black_hole_UQ": {
+      "Claude-4.6-Opus": {
+        "score": "78/92",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "25/34",
+        "physics_model_score": "13/18",
+        "solvers_score": "23/23"
+      },
+      "DeepSeek-V3": {
+        "score": "3/47",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "3/18",
+        "solvers_score": "0/29"
+      },
+      "GLM-5": {
+        "score": "38/75",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "23/34",
+        "physics_model_score": "0/18",
+        "solvers_score": "15/23"
+      },
+      "GPT-5.4": {
+        "score": "46/75",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "25/34",
+        "physics_model_score": "6/18",
+        "solvers_score": "15/23"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "56/75",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "34/34",
+        "physics_model_score": "1/18",
+        "solvers_score": "21/23"
+      },
+      "Kimi-K2.5": {
+        "score": "15/75",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "0/34",
+        "physics_model_score": "0/18",
+        "solvers_score": "15/23"
+      },
+      "Qwen3.6-Plus": {
+        "score": "0/81",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "0/34",
+        "physics_model_score": "0/18",
+        "solvers_score": "0/29"
+      },
+      "_domain": "A",
+      "_domain_name": "Astronomy"
+    },
+    "eht_black_hole_dynamic": {
+      "Claude-4.6-Opus": {
+        "score": "4/5",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "",
+        "solvers_score": "0/1"
+      },
+      "DeepSeek-V3": {
+        "score": "19/22",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "13/15",
+        "solvers_score": "2/3"
+      },
+      "GLM-5": {
+        "score": "7/8",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "0/1",
+        "solvers_score": "3/3"
+      },
+      "GPT-5.4": {
+        "score": "21/22",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "14/15",
+        "solvers_score": "3/3"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "19/22",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "13/15",
+        "solvers_score": "2/3"
+      },
+      "Kimi-K2.5": {
+        "score": "37/40",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "12/15",
+        "solvers_score": "3/3"
+      },
+      "Qwen3.6-Plus": {
+        "score": "15/18",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "13/15",
+        "solvers_score": "2/3"
+      },
+      "_domain": "A",
+      "_domain_name": "Astronomy"
+    },
+    "eht_black_hole_feature_extraction_dynamic": {
+      "Claude-4.6-Opus": {
+        "score": "85/85",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "22/22",
+        "solvers_score": "27/27"
+      },
+      "DeepSeek-V3": {
+        "score": "85/85",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "22/22",
+        "solvers_score": "27/27"
+      },
+      "GLM-5": {
+        "score": "83/85",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "22/22",
+        "solvers_score": "25/27"
+      },
+      "GPT-5.4": {
+        "score": "85/85",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "22/22",
+        "solvers_score": "27/27"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "85/85",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "22/22",
+        "solvers_score": "27/27"
+      },
+      "Kimi-K2.5": {
+        "score": "85/85",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "22/22",
+        "solvers_score": "27/27"
+      },
+      "Qwen3.6-Plus": {
+        "score": "85/85",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "22/22",
+        "solvers_score": "27/27"
+      },
+      "_domain": "A",
+      "_domain_name": "Astronomy"
+    },
+    "eht_black_hole_original": {
+      "Claude-4.6-Opus": {
+        "score": "34/34",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "16/16",
+        "physics_model_score": "11/11",
+        "solvers_score": "7/7"
+      },
+      "DeepSeek-V3": {
+        "score": "25/34",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "11/16",
+        "physics_model_score": "7/11",
+        "solvers_score": "7/7"
+      },
+      "GLM-5": {
+        "score": "27/34",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "15/16",
+        "physics_model_score": "7/11",
+        "solvers_score": "5/7"
+      },
+      "GPT-5.4": {
+        "score": "20/34",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "16/16",
+        "physics_model_score": "0/11",
+        "solvers_score": "4/7"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "34/34",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "16/16",
+        "physics_model_score": "11/11",
+        "solvers_score": "7/7"
+      },
+      "Kimi-K2.5": {
+        "score": "13/34",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "0/16",
+        "physics_model_score": "7/11",
+        "solvers_score": "6/7"
+      },
+      "Qwen3.6-Plus": {
+        "score": "7/34",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "0/16",
+        "physics_model_score": "7/11",
+        "solvers_score": "0/7"
+      },
+      "_domain": "A",
+      "_domain_name": "Astronomy"
+    },
+    "eht_black_hole_tomography": {
+      "Claude-4.6-Opus": {
+        "score": "43/47",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "22/22",
+        "solvers_score": "8/12"
+      },
+      "DeepSeek-V3": {
+        "score": "42/47",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "20/22",
+        "solvers_score": "9/12"
+      },
+      "GLM-5": {
+        "score": "38/47",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "15/22",
+        "solvers_score": "10/12"
+      },
+      "GPT-5.4": {
+        "score": "13/15",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "0/1",
+        "solvers_score": "0/1"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "36/47",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "16/22",
+        "solvers_score": "7/12"
+      },
+      "Kimi-K2.5": {
+        "score": "40/47",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "18/22",
+        "solvers_score": "9/12"
+      },
+      "Qwen3.6-Plus": {
+        "score": "29/36",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "16/22",
+        "solvers_score": "0/1"
+      },
+      "_domain": "A",
+      "_domain_name": "Astronomy"
+    },
+    "eit_conductivity_reconstruction": {
+      "Claude-4.6-Opus": {
+        "score": "19/21",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "6/7",
+        "solvers_score": "5/6"
+      },
+      "DeepSeek-V3": {
+        "score": "8/21",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "0/7",
+        "solvers_score": "0/6"
+      },
+      "GLM-5": {
+        "score": "17/21",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "4/7",
+        "solvers_score": "5/6"
+      },
+      "GPT-5.4": {
+        "score": "10/15",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "0/1",
+        "solvers_score": "2/6"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "10/15",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "0/1",
+        "solvers_score": "2/6"
+      },
+      "Kimi-K2.5": {
+        "score": "4/14",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "1/7",
+        "solvers_score": "3/6"
+      },
+      "Qwen3.6-Plus": {
+        "score": "0/2",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "0/1",
+        "solvers_score": "0/1"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "electron_ptychography": {
+      "Claude-4.6-Opus": {
+        "score": "34/35",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "16/17"
+      },
+      "DeepSeek-V3": {
+        "score": "28/35",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "9/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "12/17"
+      },
+      "GLM-5": {
+        "score": "29/35",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "9/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "13/17"
+      },
+      "GPT-5.4": {
+        "score": "21/25",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "7/7",
+        "solvers_score": "14/17"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "32/35",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "14/17"
+      },
+      "Kimi-K2.5": {
+        "score": "28/35",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "9/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "12/17"
+      },
+      "Qwen3.6-Plus": {
+        "score": "28/35",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "9/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "12/17"
+      },
+      "_domain": "C",
+      "_domain_name": "Physics"
+    },
+    "exoplanet_imaging": {
+      "Claude-4.6-Opus": {
+        "score": "36/37",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "11/11",
+        "solvers_score": "13/14"
+      },
+      "DeepSeek-V3": {
+        "score": "23/24",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "11/11",
+        "solvers_score": "0/1"
+      },
+      "GLM-5": {
+        "score": "37/37",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "11/11",
+        "solvers_score": "14/14"
+      },
+      "GPT-5.4": {
+        "score": "37/37",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "11/11",
+        "solvers_score": "14/14"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "37/37",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "11/11",
+        "solvers_score": "14/14"
+      },
+      "Kimi-K2.5": {
+        "score": "37/37",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "11/11",
+        "solvers_score": "14/14"
+      },
+      "Qwen3.6-Plus": {
+        "score": "37/37",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "12/12",
+        "physics_model_score": "11/11",
+        "solvers_score": "14/14"
+      },
+      "_domain": "A",
+      "_domain_name": "Astronomy"
+    },
+    "fourier_ptychography": {
+      "Claude-4.6-Opus": {
+        "score": "49/49",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "13/13",
+        "solvers_score": "9/9"
+      },
+      "DeepSeek-V3": {
+        "score": "39/41",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "12/13",
+        "solvers_score": "0/1"
+      },
+      "GLM-5": {
+        "score": "48/49",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "13/13",
+        "solvers_score": "8/9"
+      },
+      "GPT-5.4": {
+        "score": "48/49",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "13/13",
+        "solvers_score": "8/9"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "49/49",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "13/13",
+        "solvers_score": "9/9"
+      },
+      "Kimi-K2.5": {
+        "score": "37/41",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "10/13",
+        "solvers_score": "0/1"
+      },
+      "Qwen3.6-Plus": {
+        "score": "27/28",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "n/a",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "0/1",
+        "solvers_score": ""
+      },
+      "_domain": "B",
+      "_domain_name": "Biology"
+    },
+    "fpm_inr_reconstruction": {
+      "Claude-4.6-Opus": {
+        "score": "5/19",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "5/8",
+        "solvers_score": "0/10"
+      },
+      "DeepSeek-V3": {
+        "score": "10/11",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "",
+        "solvers_score": "10/10"
+      },
+      "GLM-5": {
+        "score": "15/36",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "15/26",
+        "physics_model_score": "",
+        "solvers_score": "0/10"
+      },
+      "GPT-5.4": {
+        "score": "27/36",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "17/26",
+        "physics_model_score": "",
+        "solvers_score": "10/10"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "25/37",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "15/26",
+        "physics_model_score": "0/1",
+        "solvers_score": "10/10"
+      },
+      "Kimi-K2.5": {
+        "score": "3/36",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "0/26",
+        "physics_model_score": "",
+        "solvers_score": "3/10"
+      },
+      "Qwen3.6-Plus": {
+        "score": "6/36",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "0/26",
+        "physics_model_score": "",
+        "solvers_score": "6/10"
+      },
+      "_domain": "B",
+      "_domain_name": "Biology"
+    },
+    "insar_phase_unwrapping": {
+      "Claude-4.6-Opus": {
+        "score": "9/15",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "1/4",
+        "physics_model_score": "0/1",
+        "solvers_score": "8/10"
+      },
+      "DeepSeek-V3": {
+        "score": "10/14",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "1/4",
+        "physics_model_score": "9/9",
+        "solvers_score": "0/1"
+      },
+      "GLM-5": {
+        "score": "7/14",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "1/4",
+        "physics_model_score": "6/9",
+        "solvers_score": "0/1"
+      },
+      "GPT-5.4": {
+        "score": "17/20",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "9/9",
+        "solvers_score": "8/10"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "21/23",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "9/9",
+        "solvers_score": "8/10"
+      },
+      "Kimi-K2.5": {
+        "score": "11/14",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "2/4",
+        "physics_model_score": "9/9",
+        "solvers_score": "0/1"
+      },
+      "Qwen3.6-Plus": {
+        "score": "17/19",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "9/9",
+        "solvers_score": "8/10"
+      },
+      "_domain": "E",
+      "_domain_name": "Earth Science"
+    },
+    "lensless_imaging": {
+      "Claude-4.6-Opus": {
+        "score": "42/42",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "13/13",
+        "solvers_score": "16/16"
+      },
+      "DeepSeek-V3": {
+        "score": "38/42",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "13/13",
+        "solvers_score": "12/16"
+      },
+      "GLM-5": {
+        "score": "42/42",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "13/13",
+        "solvers_score": "16/16"
+      },
+      "GPT-5.4": {
+        "score": "13/15",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "0/1",
+        "solvers_score": "0/1"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "42/42",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "13/13",
+        "solvers_score": "16/16"
+      },
+      "Kimi-K2.5": {
+        "score": "40/42",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "13/13",
+        "solvers_score": "14/16"
+      },
+      "Qwen3.6-Plus": {
+        "score": "29/29",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "",
+        "solvers_score": "16/16"
+      },
+      "_domain": "C",
+      "_domain_name": "Physics"
+    },
+    "light_field_microscope": {
+      "Claude-4.6-Opus": {
+        "score": "0/0",
+        "overall": "n/a",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": ""
+      },
+      "DeepSeek-V3": {
+        "score": "0/0",
+        "overall": "n/a",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": ""
+      },
+      "GLM-5": {
+        "score": "0/0",
+        "overall": "n/a",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": ""
+      },
+      "GPT-5.4": {
+        "score": "0/0",
+        "overall": "n/a",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": ""
+      },
+      "Gemini-3.1-Pro": {
+        "score": "0/0",
+        "overall": "n/a",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": ""
+      },
+      "Kimi-K2.5": {
+        "score": "4/4",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "4/4",
+        "physics_model_score": "",
+        "solvers_score": ""
+      },
+      "Qwen3.6-Plus": {
+        "score": "0/0",
+        "overall": "n/a",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": ""
+      },
+      "_domain": "B",
+      "_domain_name": "Biology"
+    },
+    "lucky_imaging": {
+      "Claude-4.6-Opus": {
+        "score": "46/46",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "23/23",
+        "physics_model_score": "",
+        "solvers_score": "23/23"
+      },
+      "DeepSeek-V3": {
+        "score": "66/69",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "23/23",
+        "physics_model_score": "22/22",
+        "solvers_score": "21/24"
+      },
+      "GLM-5": {
+        "score": "68/68",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "23/23",
+        "physics_model_score": "22/22",
+        "solvers_score": "23/23"
+      },
+      "GPT-5.4": {
+        "score": "68/68",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "23/23",
+        "physics_model_score": "22/22",
+        "solvers_score": "23/23"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "68/68",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "23/23",
+        "physics_model_score": "22/22",
+        "solvers_score": "23/23"
+      },
+      "Kimi-K2.5": {
+        "score": "44/45",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "n/a",
+        "preprocessing_score": "23/23",
+        "physics_model_score": "21/22",
+        "solvers_score": ""
+      },
+      "Qwen3.6-Plus": {
+        "score": "68/68",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "23/23",
+        "physics_model_score": "22/22",
+        "solvers_score": "23/23"
+      },
+      "_domain": "A",
+      "_domain_name": "Astronomy"
+    },
+    "mcr_hyperspectral": {
+      "Claude-4.6-Opus": {
+        "score": "26/27",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "0/1"
+      },
+      "DeepSeek-V3": {
+        "score": "34/34",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "8/8"
+      },
+      "GLM-5": {
+        "score": "34/34",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "8/8"
+      },
+      "GPT-5.4": {
+        "score": "19/21",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "0/1",
+        "solvers_score": "8/8"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "34/34",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "8/8"
+      },
+      "Kimi-K2.5": {
+        "score": "34/34",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "8/8"
+      },
+      "Qwen3.6-Plus": {
+        "score": "26/27",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "7/7",
+        "solvers_score": "0/1"
+      },
+      "_domain": "D",
+      "_domain_name": "Chemistry & Material Science"
+    },
+    "microscope_denoising": {
+      "Claude-4.6-Opus": {
+        "score": "37/44",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "13/13",
+        "solvers_score": "10/17"
+      },
+      "DeepSeek-V3": {
+        "score": "25/28",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "11/13",
+        "solvers_score": "0/1"
+      },
+      "GLM-5": {
+        "score": "42/44",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "12/13",
+        "solvers_score": "16/17"
+      },
+      "GPT-5.4": {
+        "score": "14/16",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "0/1",
+        "solvers_score": "0/1"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "43/44",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "12/13",
+        "solvers_score": "17/17"
+      },
+      "Kimi-K2.5": {
+        "score": "41/44",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "11/13",
+        "solvers_score": "16/17"
+      },
+      "Qwen3.6-Plus": {
+        "score": "41/44",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "14/14",
+        "physics_model_score": "11/13",
+        "solvers_score": "16/17"
+      },
+      "_domain": "B",
+      "_domain_name": "Biology"
+    },
+    "mri_dynamic_dce": {
+      "Claude-4.6-Opus": {
+        "score": "56/56",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "11/11",
+        "solvers_score": "16/16"
+      },
+      "DeepSeek-V3": {
+        "score": "54/56",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "11/11",
+        "solvers_score": "14/16"
+      },
+      "GLM-5": {
+        "score": "56/56",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "11/11",
+        "solvers_score": "16/16"
+      },
+      "GPT-5.4": {
+        "score": "55/56",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "11/11",
+        "solvers_score": "15/16"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "56/56",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "11/11",
+        "solvers_score": "16/16"
+      },
+      "Kimi-K2.5": {
+        "score": "55/56",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "11/11",
+        "solvers_score": "15/16"
+      },
+      "Qwen3.6-Plus": {
+        "score": "55/56",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "11/11",
+        "solvers_score": "15/16"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "mri_grappa": {
+      "Claude-4.6-Opus": {
+        "score": "17/17",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "5/5",
+        "solvers_score": "4/4"
+      },
+      "DeepSeek-V3": {
+        "score": "13/13",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "5/5",
+        "solvers_score": ""
+      },
+      "GLM-5": {
+        "score": "14/17",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "5/5",
+        "solvers_score": "1/4"
+      },
+      "GPT-5.4": {
+        "score": "17/17",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "5/5",
+        "solvers_score": "4/4"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "17/17",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "5/5",
+        "solvers_score": "4/4"
+      },
+      "Kimi-K2.5": {
+        "score": "15/17",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "5/5",
+        "solvers_score": "2/4"
+      },
+      "Qwen3.6-Plus": {
+        "score": "15/17",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "5/5",
+        "solvers_score": "2/4"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "mri_l1_wavelet": {
+      "Claude-4.6-Opus": {
+        "score": "16/16",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "16/16",
+        "solvers_score": ""
+      },
+      "DeepSeek-V3": {
+        "score": "41/49",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "15/16",
+        "solvers_score": "18/25"
+      },
+      "GLM-5": {
+        "score": "42/49",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "15/16",
+        "solvers_score": "19/25"
+      },
+      "GPT-5.4": {
+        "score": "48/49",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "15/16",
+        "solvers_score": "25/25"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "41/49",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "15/16",
+        "solvers_score": "18/25"
+      },
+      "Kimi-K2.5": {
+        "score": "38/49",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "15/16",
+        "solvers_score": "15/25"
+      },
+      "Qwen3.6-Plus": {
+        "score": "36/49",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "15/16",
+        "solvers_score": "13/25"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "mri_noncartesian_cs": {
+      "Claude-4.6-Opus": {
+        "score": "39/39",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "12/12",
+        "solvers_score": "17/17"
+      },
+      "DeepSeek-V3": {
+        "score": "14/27",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "",
+        "solvers_score": "4/17"
+      },
+      "GLM-5": {
+        "score": "38/39",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "11/12",
+        "solvers_score": "17/17"
+      },
+      "GPT-5.4": {
+        "score": "39/39",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "12/12",
+        "solvers_score": "17/17"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "39/39",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "12/12",
+        "solvers_score": "17/17"
+      },
+      "Kimi-K2.5": {
+        "score": "31/39",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "12/12",
+        "solvers_score": "9/17"
+      },
+      "Qwen3.6-Plus": {
+        "score": "22/23",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "12/12",
+        "solvers_score": "0/1"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "mri_pnp_admm": {
+      "Claude-4.6-Opus": {
+        "score": "26/26",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": "3/3"
+      },
+      "DeepSeek-V3": {
+        "score": "0/4",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "0/1",
+        "solvers_score": "0/1"
+      },
+      "GLM-5": {
+        "score": "23/23",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": ""
+      },
+      "GPT-5.4": {
+        "score": "26/26",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": "3/3"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "26/26",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": "3/3"
+      },
+      "Kimi-K2.5": {
+        "score": "22/23",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": "3/3"
+      },
+      "Qwen3.6-Plus": {
+        "score": "21/24",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": "0/1"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "mri_sense": {
+      "Claude-4.6-Opus": {
+        "score": "7/8",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "n/a",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "0/1",
+        "solvers_score": ""
+      },
+      "DeepSeek-V3": {
+        "score": "14/14",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "5/5",
+        "solvers_score": "9/9"
+      },
+      "GLM-5": {
+        "score": "21/21",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "5/5",
+        "solvers_score": "9/9"
+      },
+      "GPT-5.4": {
+        "score": "21/21",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "5/5",
+        "solvers_score": "9/9"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "21/21",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "5/5",
+        "solvers_score": "9/9"
+      },
+      "Kimi-K2.5": {
+        "score": "21/21",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "5/5",
+        "solvers_score": "9/9"
+      },
+      "Qwen3.6-Plus": {
+        "score": "21/21",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "5/5",
+        "solvers_score": "9/9"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "mri_t2_mapping": {
+      "Claude-4.6-Opus": {
+        "score": "23/23",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "9/9",
+        "solvers_score": "14/14"
+      },
+      "DeepSeek-V3": {
+        "score": "22/29",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "2/6",
+        "physics_model_score": "9/9",
+        "solvers_score": "11/14"
+      },
+      "GLM-5": {
+        "score": "29/29",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "6/6",
+        "physics_model_score": "9/9",
+        "solvers_score": "14/14"
+      },
+      "GPT-5.4": {
+        "score": "29/29",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "6/6",
+        "physics_model_score": "9/9",
+        "solvers_score": "14/14"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "29/29",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "6/6",
+        "physics_model_score": "9/9",
+        "solvers_score": "14/14"
+      },
+      "Kimi-K2.5": {
+        "score": "29/29",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "6/6",
+        "physics_model_score": "9/9",
+        "solvers_score": "14/14"
+      },
+      "Qwen3.6-Plus": {
+        "score": "23/24",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "9/9",
+        "solvers_score": "14/14"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "mri_tv": {
+      "Claude-4.6-Opus": {
+        "score": "21/22",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "",
+        "solvers_score": "0/1"
+      },
+      "DeepSeek-V3": {
+        "score": "53/55",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "14/16",
+        "solvers_score": "18/18"
+      },
+      "GLM-5": {
+        "score": "53/55",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "14/16",
+        "solvers_score": "18/18"
+      },
+      "GPT-5.4": {
+        "score": "53/55",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "14/16",
+        "solvers_score": "18/18"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "53/55",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "14/16",
+        "solvers_score": "18/18"
+      },
+      "Kimi-K2.5": {
+        "score": "53/55",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "14/16",
+        "solvers_score": "18/18"
+      },
+      "Qwen3.6-Plus": {
+        "score": "39/40",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "21/21",
+        "physics_model_score": "0/1",
+        "solvers_score": "18/18"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "mri_varnet": {
+      "Claude-4.6-Opus": {
+        "score": "7/11",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "",
+        "solvers_score": "0/4"
+      },
+      "DeepSeek-V3": {
+        "score": "1/11",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "1/11",
+        "physics_model_score": "",
+        "solvers_score": ""
+      },
+      "GLM-5": {
+        "score": "7/11",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "",
+        "solvers_score": "0/4"
+      },
+      "GPT-5.4": {
+        "score": "11/11",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "",
+        "solvers_score": "4/4"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "11/11",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "",
+        "solvers_score": "4/4"
+      },
+      "Kimi-K2.5": {
+        "score": "10/15",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "3/4",
+        "solvers_score": "0/4"
+      },
+      "Qwen3.6-Plus": {
+        "score": "7/8",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "",
+        "solvers_score": "0/1"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "pet_mlem": {
+      "Claude-4.6-Opus": {
+        "score": "26/27",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "18/18",
+        "solvers_score": "0/1"
+      },
+      "DeepSeek-V3": {
+        "score": "33/39",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "18/18",
+        "solvers_score": "0/6"
+      },
+      "GLM-5": {
+        "score": "37/39",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "17/18",
+        "solvers_score": "6/6"
+      },
+      "GPT-5.4": {
+        "score": "39/39",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "18/18",
+        "solvers_score": "6/6"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "35/39",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "15/18",
+        "solvers_score": "6/6"
+      },
+      "Kimi-K2.5": {
+        "score": "16/23",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "0/1",
+        "solvers_score": "6/6"
+      },
+      "Qwen3.6-Plus": {
+        "score": "29/33",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "8/8",
+        "physics_model_score": "15/18",
+        "solvers_score": "6/6"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "photoacoustic_reconstruction": {
+      "Claude-4.6-Opus": {
+        "score": "22/22",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "",
+        "solvers_score": "9/9"
+      },
+      "DeepSeek-V3": {
+        "score": "30/31",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "8/9",
+        "solvers_score": "9/9"
+      },
+      "GLM-5": {
+        "score": "0/1",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "0/1",
+        "solvers_score": ""
+      },
+      "GPT-5.4": {
+        "score": "9/9",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "9/9",
+        "solvers_score": ""
+      },
+      "Gemini-3.1-Pro": {
+        "score": "22/22",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "13/13",
+        "physics_model_score": "9/9",
+        "solvers_score": ""
+      },
+      "Kimi-K2.5": {
+        "score": "27/31",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "10/13",
+        "physics_model_score": "8/9",
+        "solvers_score": "9/9"
+      },
+      "Qwen3.6-Plus": {
+        "score": "0/0",
+        "overall": "n/a",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": ""
+      }
+    },
+    "photoacoustic_tomography": {
+      "Claude-4.6-Opus": {
+        "score": "7/11",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "",
+        "solvers_score": "0/4"
+      },
+      "DeepSeek-V3": {
+        "score": "33/33",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "14/14",
+        "solvers_score": "4/4"
+      },
+      "GLM-5": {
+        "score": "31/33",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "14/14",
+        "solvers_score": "3/4"
+      },
+      "GPT-5.4": {
+        "score": "29/33",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "14/14",
+        "solvers_score": "0/4"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "30/33",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "14/14",
+        "solvers_score": "3/4"
+      },
+      "Kimi-K2.5": {
+        "score": "28/33",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "14/14",
+        "solvers_score": "0/4"
+      },
+      "Qwen3.6-Plus": {
+        "score": "31/33",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "14/14",
+        "solvers_score": "3/4"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "plane_wave_ultrasound": {
+      "Claude-4.6-Opus": {
+        "score": "2/3",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "fail",
+        "preprocessing_score": "2/2",
+        "physics_model_score": "",
+        "solvers_score": "0/1"
+      },
+      "DeepSeek-V3": {
+        "score": "5/6",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "2/2",
+        "physics_model_score": "3/3",
+        "solvers_score": "0/1"
+      },
+      "GLM-5": {
+        "score": "3/6",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "3/3",
+        "solvers_score": "0/2"
+      },
+      "GPT-5.4": {
+        "score": "5/6",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "2/2",
+        "physics_model_score": "3/3",
+        "solvers_score": "0/1"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "5/7",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "2/2",
+        "physics_model_score": "3/3",
+        "solvers_score": "0/2"
+      },
+      "Kimi-K2.5": {
+        "score": "2/5",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "2/2",
+        "physics_model_score": "0/1",
+        "solvers_score": "0/2"
+      },
+      "Qwen3.6-Plus": {
+        "score": "5/7",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "2/2",
+        "physics_model_score": "3/3",
+        "solvers_score": "0/2"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "pnp_mri_reconstruction": {
+      "Claude-4.6-Opus": {
+        "score": "4/4",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": "4/4"
+      },
+      "DeepSeek-V3": {
+        "score": "25/26",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "11/12",
+        "solvers_score": "4/4"
+      },
+      "GLM-5": {
+        "score": "25/26",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "11/12",
+        "solvers_score": "4/4"
+      },
+      "GPT-5.4": {
+        "score": "14/15",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "0/1",
+        "solvers_score": "4/4"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "25/26",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "11/12",
+        "solvers_score": "4/4"
+      },
+      "Kimi-K2.5": {
+        "score": "24/26",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "10/12",
+        "solvers_score": "4/4"
+      },
+      "Qwen3.6-Plus": {
+        "score": "24/26",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "10/12",
+        "solvers_score": "4/4"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "raman_cell_phenotyping": {
+      "Claude-4.6-Opus": {
+        "score": "0/0",
+        "overall": "n/a",
+        "preprocessing": "n/a",
+        "physics_model": "n/a",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "",
+        "solvers_score": ""
+      },
+      "DeepSeek-V3": {
+        "score": "6/6",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "6/6",
+        "solvers_score": ""
+      },
+      "GLM-5": {
+        "score": "20/21",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "9/10",
+        "physics_model_score": "6/6",
+        "solvers_score": "5/5"
+      },
+      "GPT-5.4": {
+        "score": "20/21",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "9/10",
+        "physics_model_score": "6/6",
+        "solvers_score": "5/5"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "20/21",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "9/10",
+        "physics_model_score": "6/6",
+        "solvers_score": "5/5"
+      },
+      "Kimi-K2.5": {
+        "score": "20/21",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "9/10",
+        "physics_model_score": "6/6",
+        "solvers_score": "5/5"
+      },
+      "Qwen3.6-Plus": {
+        "score": "11/12",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "6/6",
+        "solvers_score": "5/5"
+      },
+      "_domain": "D",
+      "_domain_name": "Chemistry & Material Science"
+    },
+    "reflection_ODT": {
+      "Claude-4.6-Opus": {
+        "score": "63/63",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "20/20",
+        "solvers_score": "25/25"
+      },
+      "DeepSeek-V3": {
+        "score": "59/63",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "20/20",
+        "solvers_score": "21/25"
+      },
+      "GLM-5": {
+        "score": "55/56",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "19/20",
+        "solvers_score": "25/25"
+      },
+      "GPT-5.4": {
+        "score": "63/63",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "20/20",
+        "solvers_score": "25/25"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "63/63",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "20/20",
+        "solvers_score": "25/25"
+      },
+      "Kimi-K2.5": {
+        "score": "61/63",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "19/20",
+        "solvers_score": "24/25"
+      },
+      "Qwen3.6-Plus": {
+        "score": "63/63",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "20/20",
+        "solvers_score": "25/25"
+      },
+      "_domain": "B",
+      "_domain_name": "Biology"
+    },
+    "seismic_FWI_original": {
+      "Claude-4.6-Opus": {
+        "score": "38/40",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "29/31",
+        "solvers_score": "9/9"
+      },
+      "DeepSeek-V3": {
+        "score": "29/32",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "",
+        "physics_model_score": "29/31",
+        "solvers_score": "0/1"
+      },
+      "GLM-5": {
+        "score": "29/40",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "20/31",
+        "solvers_score": "9/9"
+      },
+      "GPT-5.4": {
+        "score": "39/40",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "30/31",
+        "solvers_score": "9/9"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "39/40",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "30/31",
+        "solvers_score": "9/9"
+      },
+      "Kimi-K2.5": {
+        "score": "35/40",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "26/31",
+        "solvers_score": "9/9"
+      },
+      "Qwen3.6-Plus": {
+        "score": "39/40",
+        "overall": "fail",
+        "preprocessing": "n/a",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "30/31",
+        "solvers_score": "9/9"
+      },
+      "_domain": "E",
+      "_domain_name": "Earth Science"
+    },
+    "shapelet_source_reconstruction": {
+      "Claude-4.6-Opus": {
+        "score": "38/40",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "6/7",
+        "physics_model_score": "25/26",
+        "solvers_score": "7/7"
+      },
+      "DeepSeek-V3": {
+        "score": "29/34",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "0/1",
+        "physics_model_score": "22/26",
+        "solvers_score": "7/7"
+      },
+      "GLM-5": {
+        "score": "37/40",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "6/7",
+        "physics_model_score": "24/26",
+        "solvers_score": "7/7"
+      },
+      "GPT-5.4": {
+        "score": "31/33",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "n/a",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "24/26",
+        "solvers_score": ""
+      },
+      "Gemini-3.1-Pro": {
+        "score": "36/40",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "22/26",
+        "solvers_score": "7/7"
+      },
+      "Kimi-K2.5": {
+        "score": "7/9",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "0/1",
+        "solvers_score": "0/1"
+      },
+      "Qwen3.6-Plus": {
+        "score": "11/15",
+        "overall": "fail",
+        "preprocessing": "fail",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "5/7",
+        "physics_model_score": "0/1",
+        "solvers_score": "6/7"
+      },
+      "_domain": "A",
+      "_domain_name": "Astronomy"
+    },
+    "single_molecule_light_field": {
+      "Claude-4.6-Opus": {
+        "score": "50/50",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "25/25",
+        "solvers_score": "14/14"
+      },
+      "DeepSeek-V3": {
+        "score": "36/36",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "25/25",
+        "solvers_score": ""
+      },
+      "GLM-5": {
+        "score": "50/50",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "25/25",
+        "solvers_score": "14/14"
+      },
+      "GPT-5.4": {
+        "score": "36/37",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "25/25",
+        "solvers_score": "0/1"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "49/50",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "24/25",
+        "solvers_score": "14/14"
+      },
+      "Kimi-K2.5": {
+        "score": "11/12",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "n/a",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "0/1",
+        "solvers_score": ""
+      },
+      "Qwen3.6-Plus": {
+        "score": "50/50",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "25/25",
+        "solvers_score": "14/14"
+      },
+      "_domain": "B",
+      "_domain_name": "Biology"
+    },
+    "spectral_snapshot_compressive_imaging": {
+      "Claude-4.6-Opus": {
+        "score": "12/13",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "7/7",
+        "solvers_score": "0/1"
+      },
+      "DeepSeek-V3": {
+        "score": "24/25",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "7/7",
+        "solvers_score": "12/13"
+      },
+      "GLM-5": {
+        "score": "16/25",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "7/7",
+        "solvers_score": "4/13"
+      },
+      "GPT-5.4": {
+        "score": "12/12",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "7/7",
+        "solvers_score": ""
+      },
+      "Gemini-3.1-Pro": {
+        "score": "18/25",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "7/7",
+        "solvers_score": "6/13"
+      },
+      "Kimi-K2.5": {
+        "score": "12/13",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "7/7",
+        "solvers_score": "0/1"
+      },
+      "Qwen3.6-Plus": {
+        "score": "12/13",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "5/5",
+        "physics_model_score": "7/7",
+        "solvers_score": "0/1"
+      },
+      "_domain": "C",
+      "_domain_name": "Physics"
+    },
+    "ultrasound_sos_tomography": {
+      "Claude-4.6-Opus": {
+        "score": "25/25",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "10/10",
+        "solvers_score": "8/8"
+      },
+      "DeepSeek-V3": {
+        "score": "10/10",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "",
+        "physics_model_score": "10/10",
+        "solvers_score": ""
+      },
+      "GLM-5": {
+        "score": "22/25",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "10/10",
+        "solvers_score": "5/8"
+      },
+      "GPT-5.4": {
+        "score": "25/25",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "10/10",
+        "solvers_score": "8/8"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "25/25",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "10/10",
+        "solvers_score": "8/8"
+      },
+      "Kimi-K2.5": {
+        "score": "25/25",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "10/10",
+        "solvers_score": "8/8"
+      },
+      "Qwen3.6-Plus": {
+        "score": "25/25",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "7/7",
+        "physics_model_score": "10/10",
+        "solvers_score": "8/8"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    },
+    "weather_radar_data_assimilation": {
+      "Claude-4.6-Opus": {
+        "score": "31/32",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": "6/7"
+      },
+      "DeepSeek-V3": {
+        "score": "24/24",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "",
+        "solvers_score": "7/7"
+      },
+      "GLM-5": {
+        "score": "25/26",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": "6/7"
+      },
+      "GPT-5.4": {
+        "score": "19/25",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": ""
+      },
+      "Gemini-3.1-Pro": {
+        "score": "32/32",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": "7/7"
+      },
+      "Kimi-K2.5": {
+        "score": "24/32",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": "5/7"
+      },
+      "Qwen3.6-Plus": {
+        "score": "30/32",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "11/11",
+        "physics_model_score": "8/8",
+        "solvers_score": "5/7"
+      },
+      "_domain": "E",
+      "_domain_name": "Earth Science"
+    },
+    "xray_laminography_tike": {
+      "Claude-4.6-Opus": {
+        "score": "10/10",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "6/6",
+        "solvers_score": "4/4"
+      },
+      "DeepSeek-V3": {
+        "score": "12/20",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "fail",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "0/6",
+        "solvers_score": "2/4"
+      },
+      "GLM-5": {
+        "score": "20/20",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "6/6",
+        "solvers_score": "4/4"
+      },
+      "GPT-5.4": {
+        "score": "20/20",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "6/6",
+        "solvers_score": "4/4"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "20/20",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "6/6",
+        "solvers_score": "4/4"
+      },
+      "Kimi-K2.5": {
+        "score": "16/20",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "2/6",
+        "solvers_score": "4/4"
+      },
+      "Qwen3.6-Plus": {
+        "score": "20/20",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "10/10",
+        "physics_model_score": "6/6",
+        "solvers_score": "4/4"
+      },
+      "_domain": "D",
+      "_domain_name": "Chemistry & Material Science"
+    },
+    "xray_ptychography_tike": {
+      "Claude-4.6-Opus": {
+        "score": "17/17",
+        "overall": "pass",
+        "preprocessing": "n/a",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "",
+        "physics_model_score": "13/13",
+        "solvers_score": "4/4"
+      },
+      "DeepSeek-V3": {
+        "score": "28/28",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "n/a",
+        "preprocessing_score": "15/15",
+        "physics_model_score": "13/13",
+        "solvers_score": ""
+      },
+      "GLM-5": {
+        "score": "32/32",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "15/15",
+        "physics_model_score": "13/13",
+        "solvers_score": "4/4"
+      },
+      "GPT-5.4": {
+        "score": "19/20",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "15/15",
+        "physics_model_score": "0/1",
+        "solvers_score": "4/4"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "32/32",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "15/15",
+        "physics_model_score": "13/13",
+        "solvers_score": "4/4"
+      },
+      "Kimi-K2.5": {
+        "score": "32/32",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "15/15",
+        "physics_model_score": "13/13",
+        "solvers_score": "4/4"
+      },
+      "Qwen3.6-Plus": {
+        "score": "32/32",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "15/15",
+        "physics_model_score": "13/13",
+        "solvers_score": "4/4"
+      },
+      "_domain": "D",
+      "_domain_name": "Chemistry & Material Science"
+    },
+    "xray_tooth_gridrec": {
+      "Claude-4.6-Opus": {
+        "score": "25/25",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "pass",
+        "preprocessing_score": "9/9",
+        "physics_model_score": "7/7",
+        "solvers_score": "9/9"
+      },
+      "DeepSeek-V3": {
+        "score": "24/25",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "9/9",
+        "physics_model_score": "6/7",
+        "solvers_score": "9/9"
+      },
+      "GLM-5": {
+        "score": "18/18",
+        "overall": "pass",
+        "preprocessing": "pass",
+        "physics_model": "n/a",
+        "solvers": "pass",
+        "preprocessing_score": "9/9",
+        "physics_model_score": "",
+        "solvers_score": "9/9"
+      },
+      "GPT-5.4": {
+        "score": "24/25",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "pass",
+        "solvers": "fail",
+        "preprocessing_score": "9/9",
+        "physics_model_score": "7/7",
+        "solvers_score": "8/9"
+      },
+      "Gemini-3.1-Pro": {
+        "score": "18/19",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "9/9",
+        "physics_model_score": "0/1",
+        "solvers_score": "9/9"
+      },
+      "Kimi-K2.5": {
+        "score": "22/25",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "9/9",
+        "physics_model_score": "4/7",
+        "solvers_score": "9/9"
+      },
+      "Qwen3.6-Plus": {
+        "score": "23/25",
+        "overall": "fail",
+        "preprocessing": "pass",
+        "physics_model": "fail",
+        "solvers": "pass",
+        "preprocessing_score": "9/9",
+        "physics_model_score": "5/7",
+        "solvers_score": "9/9"
+      },
+      "_domain": "F",
+      "_domain_name": "Medicine"
+    }
+  },
+  "e2e_claude_code": {
+    "SSNP_ODT": {
+      "ncc": 0.8137,
+      "nrmse": 0.2322,
+      "psnr": 12.68,
+      "ssim": 0.6936,
+      "verdict": "partial"
+    },
+    "confocal-nlos-fk": {
+      "ncc": 0.9174,
+      "nrmse": 0.0768,
+      "psnr": 22.78,
+      "ssim": 0.3574,
+      "verdict": "pass"
+    },
+    "conventional_ptychography": {
+      "ncc": 0.4504,
+      "nrmse": 0.2036,
+      "psnr": null,
+      "ssim": null,
+      "verdict": "fail"
+    },
+    "ct_dual_energy": {
+      "ncc": 0.9914,
+      "nrmse": 0.0414,
+      "psnr": 28.02,
+      "ssim": 0.7405,
+      "verdict": "pass"
+    },
+    "ct_fan_beam": {
+      "ncc": 0.9721,
+      "nrmse": 0.0857,
+      "psnr": 21.34,
+      "ssim": 0.5013,
+      "verdict": "pass"
+    },
+    "ct_poisson_lowdose": {
+      "ncc": 0.9942,
+      "nrmse": 0.0336,
+      "psnr": 29.46,
+      "ssim": 0.97,
+      "verdict": "pass"
+    },
+    "ct_sparse_view": {
+      "ncc": 0.9873,
+      "nrmse": 0.0339,
+      "psnr": 29.4,
+      "ssim": 0.933,
+      "verdict": "pass"
+    },
+    "differentiable_deflectometry": {
+      "ncc": null,
+      "nrmse": null,
+      "psnr": null,
+      "ssim": null,
+      "verdict": "n/a"
+    },
+    "diffusion_mri_dti": {
+      "ncc": 0.9966,
+      "nrmse": 0.0398,
+      "psnr": 27.99,
+      "ssim": 0.8166,
+      "verdict": "pass"
+    },
+    "eht_black_hole": {
+      "ncc": 0.0993,
+      "nrmse": 0.2274,
+      "psnr": 12.86,
+      "ssim": 0.4129,
+      "verdict": "fail"
+    },
+    "eht_black_hole_UQ": {
+      "ncc": 0.6712,
+      "nrmse": 0.1037,
+      "psnr": 19.68,
+      "ssim": 0.3062,
+      "verdict": "fail"
+    },
+    "eht_black_hole_dynamic": {
+      "ncc": 0.9583,
+      "nrmse": 0.0371,
+      "psnr": 28.62,
+      "ssim": 0.9347,
+      "verdict": "pass"
+    },
+    "eht_black_hole_feature_extraction_dynamic": {
+      "ncc": 0.9958,
+      "nrmse": 0.0209,
+      "psnr": 33.62,
+      "ssim": 0.9908,
+      "verdict": "pass"
+    },
+    "eht_black_hole_original": {
+      "ncc": 0.9428,
+      "nrmse": 0.0432,
+      "psnr": 27.3,
+      "ssim": 0.9495,
+      "verdict": "pass"
+    },
+    "eht_black_hole_tomography": {
+      "ncc": 0.7342,
+      "nrmse": 0.0338,
+      "psnr": 29.42,
+      "ssim": 0.5937,
+      "verdict": "partial"
+    },
+    "eit_conductivity_reconstruction": {
+      "ncc": 0.5467,
+      "nrmse": 0.05,
+      "psnr": 26.02,
+      "ssim": 0.7701,
+      "verdict": "fail"
+    },
+    "electron_ptychography": {
+      "ncc": -0.0005,
+      "nrmse": 0.1305,
+      "psnr": 11.78,
+      "ssim": 0.0109,
+      "verdict": "fail"
+    },
+    "exoplanet_imaging": {
+      "ncc": 0.9552,
+      "nrmse": 0.0077,
+      "psnr": 36.68,
+      "ssim": 0.9823,
+      "verdict": "pass"
+    },
+    "fourier_ptychography": {
+      "ncc": 0.9705,
+      "nrmse": 0.0387,
+      "psnr": 28.02,
+      "ssim": null,
+      "verdict": "pass"
+    },
+    "fpm_inr_reconstruction": {
+      "ncc": 0.5409,
+      "nrmse": 0.4664,
+      "psnr": 6.77,
+      "ssim": 0.3528,
+      "verdict": "fail"
+    },
+    "hessian_sim": {
+      "ncc": 0.9936,
+      "nrmse": 0.0288,
+      "psnr": 30.81,
+      "ssim": 0.8426,
+      "verdict": "pass"
+    },
+    "insar_phase_unwrapping": {
+      "ncc": 0.9986,
+      "nrmse": 0.0078,
+      "psnr": 44.34,
+      "ssim": 0.9575,
+      "verdict": "pass"
+    },
+    "lensless_imaging": {
+      "ncc": 0.8752,
+      "nrmse": 0.0415,
+      "psnr": 27.64,
+      "ssim": 0.5219,
+      "verdict": "partial"
+    },
+    "light_field_microscope": {
+      "ncc": 0.9586,
+      "nrmse": 0.0703,
+      "psnr": 23.06,
+      "ssim": null,
+      "verdict": "pass"
+    },
+    "lucky_imaging": {
+      "ncc": 0.9837,
+      "nrmse": 0.3862,
+      "psnr": 8.26,
+      "ssim": 0.0162,
+      "verdict": "pass"
+    },
+    "mcr_hyperspectral": {
+      "ncc": 0.9999,
+      "nrmse": 0.004,
+      "psnr": 48.86,
+      "ssim": 0.9952,
+      "verdict": "pass"
+    },
+    "microscope_denoising": {
+      "ncc": 0.9891,
+      "nrmse": 0.0246,
+      "psnr": 40.73,
+      "ssim": 0.8948,
+      "verdict": "pass"
+    },
+    "mri_dynamic_dce": {
+      "ncc": 0.9671,
+      "nrmse": 0.0541,
+      "psnr": 25.34,
+      "ssim": 0.6428,
+      "verdict": "pass"
+    },
+    "mri_grappa": {
+      "ncc": 0.9991,
+      "nrmse": 0.1537,
+      "psnr": 16.27,
+      "ssim": 0.7184,
+      "verdict": "pass"
+    },
+    "mri_l1_wavelet": {
+      "ncc": 0.8005,
+      "nrmse": 0.1208,
+      "psnr": 18.36,
+      "ssim": 0.3444,
+      "verdict": "partial"
+    },
+    "mri_noncartesian_cs": {
+      "ncc": 0.9924,
+      "nrmse": 0.0278,
+      "psnr": 31.13,
+      "ssim": 0.7777,
+      "verdict": "pass"
+    },
+    "mri_pnp_admm": {
+      "ncc": 0.9899,
+      "nrmse": 0.0329,
+      "psnr": 29.66,
+      "ssim": 0.9235,
+      "verdict": "pass"
+    },
+    "mri_sense": {
+      "ncc": 0.966,
+      "nrmse": 0.0575,
+      "psnr": 24.81,
+      "ssim": 0.5161,
+      "verdict": "pass"
+    },
+    "mri_t2_mapping": {
+      "ncc": 0.998,
+      "nrmse": 0.0177,
+      "psnr": 35.02,
+      "ssim": 0.8743,
+      "verdict": "pass"
+    },
+    "mri_tv": {
+      "ncc": 0.9396,
+      "nrmse": 0.0386,
+      "psnr": 28.26,
+      "ssim": 0.6909,
+      "verdict": "pass"
+    },
+    "mri_varnet": {
+      "ncc": 0.9977,
+      "nrmse": 0.0145,
+      "psnr": 36.91,
+      "ssim": 0.9241,
+      "verdict": "pass"
+    },
+    "pet_mlem": {
+      "ncc": 0.9801,
+      "nrmse": 0.0308,
+      "psnr": 30.22,
+      "ssim": 0.9162,
+      "verdict": "pass"
+    },
+    "photoacoustic_tomography": {
+      "ncc": 0.7516,
+      "nrmse": 0.1574,
+      "psnr": 16.06,
+      "ssim": 0.6643,
+      "verdict": "partial"
+    },
+    "plane_wave_ultrasound": {
+      "ncc": 0.9998,
+      "nrmse": 0.0389,
+      "psnr": 28.2,
+      "ssim": 0.8729,
+      "verdict": "pass"
+    },
+    "pnp_cassi": {
+      "ncc": 0.9739,
+      "nrmse": 0.0494,
+      "psnr": 26.45,
+      "ssim": null,
+      "verdict": "pass"
+    },
+    "pnp_mri_reconstruction": {
+      "ncc": 0.9269,
+      "nrmse": 0.11,
+      "psnr": 19.65,
+      "ssim": 0.5355,
+      "verdict": "pass"
+    },
+    "raman_cell_phenotyping": {
+      "ncc": 0.9985,
+      "nrmse": 0.0085,
+      "psnr": 45.42,
+      "ssim": 0.9962,
+      "verdict": "pass"
+    },
+    "reflection_ODT": {
+      "ncc": 1.0,
+      "nrmse": 0.0,
+      "psnr": 190.88,
+      "ssim": 1.0,
+      "verdict": "pass"
+    },
+    "seismic_FWI_original": {
+      "ncc": 0.9474,
+      "nrmse": 0.0824,
+      "psnr": 24.46,
+      "ssim": 0.7668,
+      "verdict": "pass"
+    },
+    "shapelet_source_reconstruction": {
+      "ncc": 0.9854,
+      "nrmse": 0.0175,
+      "psnr": 34.87,
+      "ssim": 0.8765,
+      "verdict": "pass"
+    },
+    "single_molecule_light_field": {
+      "ncc": null,
+      "nrmse": null,
+      "psnr": null,
+      "ssim": null,
+      "verdict": "n/a"
+    },
+    "spectral_snapshot_compressive_imaging": {
+      "ncc": 0.9831,
+      "nrmse": 0.0402,
+      "psnr": 28.24,
+      "ssim": null,
+      "verdict": "pass"
+    },
+    "ultrasound_sos_tomography": {
+      "ncc": 0.9899,
+      "nrmse": 0.0071,
+      "psnr": 50.46,
+      "ssim": 0.9682,
+      "verdict": "pass"
+    },
+    "usct_FWI": {
+      "ncc": 0.3033,
+      "nrmse": 0.0971,
+      "psnr": 35.04,
+      "ssim": 0.6992,
+      "verdict": "fail"
+    },
+    "weather_radar_data_assimilation": {
+      "ncc": 0.9164,
+      "nrmse": 0.0363,
+      "psnr": 28.8,
+      "ssim": 0.8882,
+      "verdict": "pass"
+    },
+    "xray_laminography_tike": {
+      "ncc": 0.9705,
+      "nrmse": 0.0058,
+      "psnr": 44.78,
+      "ssim": null,
+      "verdict": "pass"
+    },
+    "xray_ptychography_tike": {
+      "ncc": 0.9174,
+      "nrmse": 0.0244,
+      "psnr": 25.93,
+      "ssim": 0.8217,
+      "verdict": "pass"
+    },
+    "xray_tooth_gridrec": {
+      "ncc": 0.62,
+      "nrmse": 0.1064,
+      "psnr": 16.37,
+      "ssim": 0.3506,
+      "verdict": "fail"
+    }
+  },
+  "domain_radar": {
+    "A": {
+      "domain_name": "Astronomy",
+      "Claude-4.6-Opus": 37.5,
+      "DeepSeek-V3": 12.5,
+      "GLM-5": 25.0,
+      "GPT-5.4": 37.5,
+      "Gemini-3.1-Pro": 50.0,
+      "Kimi-K2.5": 25.0,
+      "Qwen3.6-Plus": 37.5
+    },
+    "B": {
+      "domain_name": "Biology",
+      "Claude-4.6-Opus": 50.0,
+      "DeepSeek-V3": 16.7,
+      "GLM-5": 16.7,
+      "GPT-5.4": 16.7,
+      "Gemini-3.1-Pro": 33.3,
+      "Kimi-K2.5": 14.3,
+      "Qwen3.6-Plus": 33.3
+    },
+    "C": {
+      "domain_name": "Physics",
+      "Claude-4.6-Opus": 33.3,
+      "DeepSeek-V3": 40.0,
+      "GLM-5": 33.3,
+      "GPT-5.4": 33.3,
+      "Gemini-3.1-Pro": 50.0,
+      "Kimi-K2.5": 16.7,
+      "Qwen3.6-Plus": 16.7
+    },
+    "D": {
+      "domain_name": "Chemistry & Material Science",
+      "Claude-4.6-Opus": 66.7,
+      "DeepSeek-V3": 75.0,
+      "GLM-5": 75.0,
+      "GPT-5.4": 25.0,
+      "Gemini-3.1-Pro": 75.0,
+      "Kimi-K2.5": 50.0,
+      "Qwen3.6-Plus": 50.0
+    },
+    "E": {
+      "domain_name": "Earth Science",
+      "Claude-4.6-Opus": 0.0,
+      "DeepSeek-V3": 33.3,
+      "GLM-5": 0.0,
+      "GPT-5.4": 0.0,
+      "Gemini-3.1-Pro": 33.3,
+      "Kimi-K2.5": 0.0,
+      "Qwen3.6-Plus": 0.0
+    },
+    "F": {
+      "domain_name": "Medicine",
+      "Claude-4.6-Opus": 47.6,
+      "DeepSeek-V3": 28.6,
+      "GLM-5": 28.6,
+      "GPT-5.4": 47.6,
+      "Gemini-3.1-Pro": 47.6,
+      "Kimi-K2.5": 19.0,
+      "Qwen3.6-Plus": 14.3
+    }
+  }
+}

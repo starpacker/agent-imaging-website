@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { X, ExternalLink, BookOpen, Eye, Code2, Github, FileText } from 'lucide-react';
+import { X, ExternalLink, BookOpen, Eye, Code2, Github, FileText, BarChart3 } from 'lucide-react';
 import type { TaskData } from '@/app/page';
 import NotebookViewer from './NotebookViewer';
+import TaskModelComparison from './TaskModelComparison';
 
 /* ── Domain accent colors (9 domains A–I) ── */
 const DOMAIN_ACCENT: Record<string, string> = {
@@ -82,7 +83,7 @@ interface TaskModalProps { task: TaskData; onClose: () => void; }
 
 export default function TaskModal({ task, onClose }: TaskModalProps) {
   const accent = DOMAIN_ACCENT[task.domain] || '#06b6d4';
-  const [activeTab, setActiveTab] = useState<'overview' | 'notebook'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'notebook' | 'models'>('overview');
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -149,6 +150,12 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
             onClick={() => setActiveTab('notebook')}
             icon={<Code2 size={14} />}
             label="Notebook"
+          />
+          <TabButton
+            active={activeTab === 'models'}
+            onClick={() => setActiveTab('models')}
+            icon={<BarChart3 size={14} />}
+            label="Model Results"
           />
         </div>
 
@@ -280,10 +287,15 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                 </div>
               </div>
             </div>
-          ) : (
+          ) : activeTab === 'notebook' ? (
             /* Notebook Tab */
             <div className="p-6">
               <NotebookViewer taskName={task.name} />
+            </div>
+          ) : (
+            /* Model Results Tab */
+            <div className="p-6">
+              <TaskModelComparison taskName={task.name} accent={accent} />
             </div>
           )}
         </div>
