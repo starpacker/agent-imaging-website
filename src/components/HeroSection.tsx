@@ -135,6 +135,9 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
           <a href="https://github.com/HeSunPU/imaging-101" target="_blank" rel="noopener noreferrer" className="badge hover:text-cyan-300">
             <Github size={14} /> GitHub <ExternalLink size={11} className="opacity-50" />
           </a>
+          <a href={`${BASE_PATH}/guide/`} className="badge hover:text-cyan-300">
+            <ChevronRight size={14} className="text-teal-400" /> Evaluation &amp; Task Guide
+          </a>
         </div>
 
         {/* Title */}
