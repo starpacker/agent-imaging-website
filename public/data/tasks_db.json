@@ -132,7 +132,8 @@
       "images": {
         "filename": "eht_black_hole_original.png"
       },
-      "source_github": "https://github.com/achael/eht-imaging"
+      "source_github": "https://github.com/achael/eht-imaging",
+      "references": "- Chael, A.A., Johnson, M.D., Bouman, K.L., et al. (2018). *Interferometric Imaging Directly with Closure Phases and Closure Amplitudes*. ApJ, 857, 23.\n- EHT Collaboration et al. (2019). *First M87 Event Horizon Telescope Results. Paper I-VI*. ApJL, 875.\n- Thompson, A.R., Moran, J.M., & Swenson, G.W. (2017). *Interferometry and Synthesis in Radio Astronomy* (3rd ed.). Springer.\n- ehtim: https://github.com/achael/eht-imaging"
     },
     "task_02": {
       "id": "02",
@@ -147,7 +148,8 @@
       "metrics": {},
       "images": {
         "filename": "eht_black_hole_dynamic.png"
-      }
+      },
+      "references": "- Bouman et al. 2017, arXiv:1711.01357 (\"StarWarps\")\n- Event Horizon Telescope Collaboration, Paper IV (2019), ApJL 875, L4\n- Chael et al. 2018, ApJ 857:23 (closure-only imaging)"
     },
     "task_03": {
       "id": "03",
@@ -162,7 +164,8 @@
       "metrics": {},
       "images": {
         "filename": "eht_black_hole_UQ.png"
-      }
+      },
+      "references": "- Sun, H. & Bouman, K.L. (2020). *Deep Probabilistic Imaging: Uncertainty Quantification and Multi-modal Solution Characterization for Computational Imaging*. arXiv:2010.14462.\n- Dinh, L., Sohl-Dickstein, J., & Bengio, S. (2017). *Density estimation using Real-NVP*. ICLR 2017.\n- EHT Collaboration et al. (2019). *First M87 Event Horizon Telescope Results*. ApJL, 875.\n- Chael, A.A. et al. (2018). *Interferometric Imaging Directly with Closure Phases and Closure Amplitudes*. ApJ, 857, 23."
     },
     "task_04": {
       "id": "04",
@@ -177,7 +180,8 @@
       "metrics": {},
       "images": {
         "filename": "eht_black_hole_feature_extraction_dynamic.png"
-      }
+      },
+      "references": "- Sun et al. (2022), ApJ 932:99 — α-DPI method\n- EHT Collaboration (2022), ApJL 930:L15 — Sgr A* Paper IV (Variability, Figure 13)\n- EHT Collaboration (2022), ApJL 930:L12 — Sgr A* Paper I"
     },
     "task_05": {
       "id": "05",
@@ -192,7 +196,8 @@
       "metrics": {},
       "images": {
         "filename": "eht_black_hole_tomography.png"
-      }
+      },
+      "references": "1. Levis, A., Bharadwaj, P., Dugan, K.P., Vardhan, R., Dahlbom, D., Bouman, K.L. (2022). \"Gravitationally Lensed Black Hole Emission Tomography.\" CVPR 2022. [arXiv:2204.03715]\n2. Levis, A., et al. (2024). \"Orbital polarimetric tomography of a flare near the Sagittarius A* supermassive black hole.\" Nature Astronomy."
     },
     "task_06": {
       "id": "06",
@@ -208,7 +213,8 @@
       "images": {
         "filename": "lucky_imaging.png"
       },
-      "source_github": "https://github.com/Rolf-Hempel/PlanetarySystemStacker"
+      "source_github": "https://github.com/Rolf-Hempel/PlanetarySystemStacker",
+      "references": "1. Fried, D. L. (1978). \"Probability of getting a lucky short-exposure image through turbulence.\" *Journal of the Optical Society of America*, 68(12), 1651–1658.\n2. Hempel, R. \"PlanetarySystemStacker\" — open-source Python implementation. https://github.com/Rolf-Hempel/PlanetarySystemStacker\n3. Law, N. M., Mackay, C. D., & Baldwin, J. E. (2006). \"Lucky imaging: high angular resolution imaging in the visible from the ground.\" *Astronomy & Astrophysics*, 446(2), 739–745."
     },
     "task_07": {
       "id": "07",
@@ -224,7 +230,8 @@
       "images": {
         "filename": "exoplanet_imaging.png"
       },
-      "source_github": "https://github.com/carlos-gg/VIP_extras"
+      "source_github": "https://github.com/carlos-gg/VIP_extras",
+      "references": "1. Soummer, R., Pueyo, L. & Larkin, J. (2012). *Detection and Characterization of Exoplanets and Disks Using Projections on Karhunen-Loève Eigenimages*. ApJL 755, L28. arXiv:1207.4197\n2. Ko, C.-L., Douglas, E. S. & Hom, J. (2024). *A PyTorch benchmark for high-contrast imaging post processing (torchKLIP)*. SPIE 13138, 1313811. arXiv:2409.16466\n3. Mawet, D. et al. (2014). *Fundamental Limitations of High Contrast Imaging Set by Small Sample Statistics*. ApJ 792, 97.\n4. Gomez Gonzalez, C. A. et al. (2017). *VIP: Vortex Image Processing package for high-contrast direct imaging*. AJ 154, 7."
     },
     "task_08": {
       "id": "08",
@@ -239,7 +246,8 @@
       "metrics": {},
       "images": {
         "filename": "shack-hartmann.png"
-      }
+      },
+      "references": "1. Por, E. H., Haffert, S. Y., et al. (2018). *HCIPy: an open-source adaptive\n   optics simulation framework.* SPIE 10703.\n2. Hardy, J. W. (1998). *Adaptive Optics for Astronomical Telescopes.* OUP.\n3. Roddier, F. (1999). *Adaptive Optics in Astronomy.* Cambridge UP."
     },
     "task_09": {
       "id": "09",
@@ -255,7 +263,8 @@
       "images": {
         "filename": "shapelet_source_reconstruction.png"
       },
-      "source_github": "https://github.com/sibirrer/lenstronomy"
+      "source_github": "https://github.com/sibirrer/lenstronomy",
+      "references": "- Refregier, A. (2003). \"Shapelets: I. A Method for Image Analysis.\" *Monthly Notices of the Royal Astronomical Society*, 338(1), 35–47.\n- Birrer, S. et al. (2021). \"lenstronomy II: A gravitational lensing software ecosystem.\" *Journal of Open Source Software*, 6(62), 3283.\n- Barkana, R. (1998). \"Fast calculation of a family of elliptical mass gravitational lens models.\" *The Astrophysical Journal*, 502(2), 531."
     },
     "task_10": {
       "id": "10",
@@ -270,7 +279,8 @@
       "metrics": {},
       "images": {
         "filename": "SSNP_ODT.png"
-      }
+      },
+      "references": "- Zhu, J., Wang, H., & Tian, L. (2022). *High-fidelity intensity diffraction tomography with a non-paraxial multiple-scattering model*. Optics Express, 30(18), 32808-32821.\n- Lim, J., Ayoub, A.B., Antoine, E.E., & Psaltis, D. (2019). *High-fidelity optical diffraction tomography of multiple scattering samples*. Light: Science & Applications, 8(1), 82.\n- Sharma, A. & Agrawal, A. (2004). *New method for nonparaxial beam propagation*. J. Opt. Soc. Am. A, 21(6), 1082-1087."
     },
     "task_11": {
       "id": "11",
@@ -286,7 +296,8 @@
       "images": {
         "filename": "reflection_ODT.png"
       },
-      "source_github": "https://github.com/bu-cisl/rMSBP-python"
+      "source_github": "https://github.com/bu-cisl/rMSBP-python",
+      "references": "- Zhu et al. (2025). *Reflection-mode multi-slice Fourier ptychographic tomography*. arXiv:2503.12246.\n- GitHub: https://github.com/bu-cisl/rMSBP-python"
     },
     "task_12": {
       "id": "12",
@@ -301,7 +312,8 @@
       "metrics": {},
       "images": {
         "filename": "fourier_ptychography.png"
-      }
+      },
+      "references": "L. Loetgering et al., \"PtyLab.m/py/jl: a cross-platform, open-source inverse\nmodeling toolbox for conventional and Fourier ptychography,\" Opt. Express 31,\n13763–13797 (2023)."
     },
     "task_13": {
       "id": "13",
@@ -318,7 +330,8 @@
         "filename": "microscope_denoising.png"
       },
       "paper_link": "https://doi.org/10.1038/s41467-024-48575-9",
-      "source_github": "https://github.com/TristaZeng/ZS-DeconvNet"
+      "source_github": "https://github.com/TristaZeng/ZS-DeconvNet",
+      "references": "- Qiao C. et al., \"Zero-shot learning enables instant denoising and super-resolution\n  in optical fluorescence microscopy,\" *Nature Communications* 15, 4180 (2024).\n  https://doi.org/10.1038/s41467-024-48575-9\n\n- Zenodo dataset: https://doi.org/10.5281/zenodo.7261163\n\n- GitHub: https://github.com/TristaZeng/ZS-DeconvNet"
     },
     "task_14": {
       "id": "14",
@@ -333,7 +346,8 @@
       "metrics": {},
       "images": {
         "filename": "hessian_sim.png"
-      }
+      },
+      "references": "1. Huang, X. *et al.* Fast, long-term, super-resolution imaging with Hessian\n   structured illumination microscopy. *Nature Biotechnology* **36**, 451–459\n   (2018).\n2. Heintzmann, R. & Cremer, C. Laterally modulated excitation microscopy:\n   improvement of resolution by using a diffraction grating. *Proc. SPIE*\n   **3568**, 185–196 (1999).\n3. Goldstein, T. & Osher, S. The split Bregman method for L1-regularized\n   problems. *SIAM J. Imaging Sci.* **2**, 323–343 (2009)."
     },
     "task_15": {
       "id": "15",
@@ -349,7 +363,8 @@
       "images": {
         "filename": "light_field_microscope.png"
       },
-      "source_github": "https://github.com/VicidominiLab/s2ISM"
+      "source_github": "https://github.com/VicidominiLab/s2ISM",
+      "references": "- M. Broxton, L. Grosenick, S. Yang, N. Cohen, A. Andalman, K. Deisseroth, M. Levoy, *Wave optics theory and 3-D deconvolution for the light field microscope*, Optics Express 21(21):25418, 2013."
     },
     "task_16": {
       "id": "16",
@@ -366,7 +381,8 @@
         "filename": "single_molecule_light_field.png"
       },
       "paper_link": "https://doi.org/10.1364/OPTICA.397172",
-      "source_github": "https://github.com/TheLeeLab/hexSMLFM"
+      "source_github": "https://github.com/TheLeeLab/hexSMLFM",
+      "references": "- R. R. Sims, S. Abdul Rehman, M. D. Lew, S. I. Golding, E. Galgani, J. G. Bhatt, C. Croop, S. F. Lee, K. Bhatt, G. Bhatt. *Single-molecule light field microscopy.* Optica 7, 1065–1072 (2020). DOI: [10.1364/OPTICA.397172](https://doi.org/10.1364/OPTICA.397172)\n- `hexSMLFM` repository, TheLeeLab, University of Cambridge: https://github.com/TheLeeLab/hexSMLFM"
     },
     "task_17": {
       "id": "17",
@@ -383,7 +399,8 @@
         "filename": "fpm_inr_reconstruction.png"
       },
       "paper_link": "https://arxiv.org/abs/2310.18529",
-      "source_github": "https://hwzhou2020.github.io/FPM-INR-Web/"
+      "source_github": "https://hwzhou2020.github.io/FPM-INR-Web/",
+      "references": "- Zhou, H., Feng, B.Y., Guo, H., Lin, S., Liang, M., Metzler, C.A., & Yang, C. (2023). \"Fourier ptychographic microscopy image stack reconstruction using implicit neural representations.\" *Optica*, 10(12), 1679-1687. https://doi.org/10.1364/OPTICA.505283\n- Project page: https://hwzhou2020.github.io/FPM-INR-Web/"
     },
     "task_18": {
       "id": "18",
@@ -399,7 +416,8 @@
       "images": {
         "filename": "s2ism.png"
       },
-      "source_github": "https://github.com/VicidominiLab/s2ISM"
+      "source_github": "https://github.com/VicidominiLab/s2ISM",
+      "references": "- M. Castello et al., \"Image Scanning Microscopy with Single-Photon Detector Array,\" *Nature Methods*, 2019.\n- s2ISM reference implementation: [https://github.com/VicidominiLab/s2ISM](https://github.com/VicidominiLab/s2ISM)"
     },
     "task_19": {
       "id": "19",
@@ -414,7 +432,8 @@
       "metrics": {},
       "images": {
         "filename": "conventional_ptychography.png"
-      }
+      },
+      "references": "L. Loetgering, M. Du, D. B. Flaes, T. Aidukas, F. Wechsler, D. S. Penagos Molina,\nM. Rose, A. Pelekanidis, W. Eschen, J. Hess, T. Wilhein, R. Heintzmann, J. Rothhardt,\nand S. Witte, \"PtyLab.m/py/jl: a cross-platform, open-source inverse modeling toolbox\nfor conventional and Fourier ptychography,\" Opt. Express 31, 13763–13797 (2023)."
     },
     "task_20": {
       "id": "20",
@@ -430,7 +449,8 @@
       "images": {
         "filename": "spectral_snapshot_compressive_imaging.png"
       },
-      "paper_link": "https://doi.org/10.1364/PRJ.411745"
+      "paper_link": "https://doi.org/10.1364/PRJ.411745",
+      "references": "- Zheng, Liu, Meng, Qiao, Tong, Yang, Han, Yuan. \"Deep plug-and-play priors for spectral snapshot compressive imaging.\" *Photon. Res.* 9(2), B18–B29 (2021). https://doi.org/10.1364/PRJ.411745\n- Yuan. \"Generalized Alternating Projection Based Total Variation Minimization for Compressive Sensing.\" *ICIP* 2016."
     },
     "task_21": {
       "id": "21",
@@ -446,7 +466,8 @@
       "images": {
         "filename": "electron_ptychography.png"
       },
-      "source_github": "https://github.com/nsippl/py4DSTEM"
+      "source_github": "https://github.com/nsippl/py4DSTEM",
+      "references": "- Rodenburg, J. M. & Faulkner, H. M. L. (2004). A phase retrieval algorithm for shifting illumination. Applied Physics Letters, 85(20), 4795-4797.\n- Ophus, C. (2019). Four-dimensional scanning transmission electron microscopy (4D-STEM): from scanning nanodiffraction to ptychography and beyond. Microscopy and Microanalysis, 25(3), 563-582.\n- Savitzky, B. H., et al. (2021). py4DSTEM: A Software Package for Four-Dimensional Scanning Transmission Electron Microscopy (4D-STEM) Data Analysis. Microscopy and Microanalysis, 27(4), 712-743."
     },
     "task_22": {
       "id": "22",
@@ -462,7 +483,8 @@
       "images": {
         "filename": "confocal-nlos-fk.png"
       },
-      "source_github": "https://github.com/computational-imaging/nlos-fk"
+      "source_github": "https://github.com/computational-imaging/nlos-fk",
+      "references": "- Lindell, Wetzstein, O'Toole, \"Wave-Based Non-Line-of-Sight Imaging using\n  Fast f-k Migration\", ACM Trans. Graph. 38(4), 2019.  [nature25489.pdf](nature25489.pdf)\n- O'Toole et al., \"Confocal Non-Line-of-Sight Imaging Based on the Light\n  Cone Transform\", Nature 555, 2018.  [nature25489.pdf](./nature25489.pdf)\n- Reference code: https://github.com/computational-imaging/nlos-fk"
     },
     "task_23": {
       "id": "23",
@@ -477,7 +499,8 @@
       "metrics": {},
       "images": {
         "filename": "lensless_imaging.png"
-      }
+      },
+      "references": "- Biscarrat, C. & Parthasarathy, S. (2018). *Build your own DiffuserCam:\n  Tutorial.* [waller-lab.github.io/DiffuserCam/tutorial.html](https://waller-lab.github.io/DiffuserCam/tutorial.html)\n- Bezzam, E. et al. (2023). *LenslessPiCam: A hardware and software platform\n  for lensless computational imaging with a Raspberry Pi.* JOSS, 8(86).\n  https://doi.org/10.21105/joss.04747\n- Boyd, S. et al. (2011). *Distributed optimisation and statistical learning\n  via the alternating direction method of multipliers.* Found. Trends Mach.\n  Learn., 3(1), 1–122."
     },
     "task_24": {
       "id": "24",
@@ -493,7 +516,8 @@
       "images": {
         "filename": "differentiable_deflectometry.png"
       },
-      "source_github": "https://github.com/vccimaging/DiffDeflectometry"
+      "source_github": "https://github.com/vccimaging/DiffDeflectometry",
+      "references": "Wang, C., Chen, N., & Heidrich, W. (2021). Towards self-calibrated lens metrology by differentiable refractive deflectometry. *Optics Express*, 29(19), 30284–30295.\n\n- [Project page](https://vccimaging.org/Publications/Wang2021DiffDeflectometry/)\n- [Paper PDF](https://vccimaging.org/Publications/Wang2021DiffDeflectometry/Wang2021DiffDeflectometry.pdf)\n- [Original code](https://github.com/vccimaging/DiffDeflectometry)"
     },
     "task_25": {
       "id": "25",
@@ -509,7 +533,8 @@
       "images": {
         "filename": "mcr_hyperspectral.png"
       },
-      "source_github": "https://github.com/usnistgov/pyMCR"
+      "source_github": "https://github.com/usnistgov/pyMCR",
+      "references": "- Camp, C.H. (2019). \"pyMCR: A Python Library for Multivariate Curve Resolution and Related Constrained Factorizations.\" *Journal of Research of NIST*, 124, 124018.\n- pyMCR GitHub: https://github.com/usnistgov/pyMCR"
     },
     "task_26": {
       "id": "26",
@@ -524,7 +549,8 @@
       "metrics": {},
       "images": {
         "filename": "raman_cell_phenotyping.png"
-      }
+      },
+      "references": "- Kallepitis, C., Bergholt, M., Mazo, M. et al. Quantitative volumetric Raman imaging of three dimensional cell cultures. *Nat Commun* 8, 14843 (2017).\n- Winter, M.E. N-FINDR: An algorithm for fast autonomous spectral end-member determination in hyperspectral data. *Imaging Spectrometry V*, SPIE, 1999.\n- Heinz, D.C. Fully constrained least squares linear spectral mixture analysis method for material quantification in hyperspectral imagery. *IEEE Trans. Geosci. Remote Sens.* 39(3), 529–545 (2001)."
     },
     "task_27": {
       "id": "27",
@@ -539,7 +565,8 @@
       "metrics": {},
       "images": {
         "filename": "cars_spectroscopy.png"
-      }
+      },
+      "references": "- Kataoka, H., Maeda, S., & Hirose, C. (1982). Effects of laser linewidth on the coherent anti-Stokes Raman spectroscopy spectral profile. Applied Spectroscopy, 36(5), 565-569.\n- Palmer, R. E. (1989). The CARSFT computer code for calculating coherent anti-Stokes Raman spectra. Sandia National Laboratories Report SAND89-8206.\n- Martinsson, L., Bengtsson, P. E., Aldén, M., Kröll, S., & Bonamy, J. (1993). A test of the G-matrix approach to N2 CARS modelling. Journal of Chemical Physics, 99(4), 2466-2477."
     },
     "task_28": {
       "id": "28",
@@ -555,7 +582,8 @@
       "images": {
         "filename": "xray_ptychography_tike.png"
       },
-      "source_github": "https://github.com/AdvancedPhotonSource/tike"
+      "source_github": "https://github.com/AdvancedPhotonSource/tike",
+      "references": "- Thibault, P., et al. \"High-resolution scanning x-ray diffraction microscopy.\" Science 321.5887 (2008): 379-382.\n- Ching, D. J. and Hidayetoglu, M. and Leyffer, S. and Wild, S. M. and Gursoy, D. \"Tike: a toolbox for tomographic reconstruction of ptychographic data.\" (2024)."
     },
     "task_29": {
       "id": "29",
@@ -571,7 +599,8 @@
       "images": {
         "filename": "xray_laminography_tike.png"
       },
-      "source_github": "https://github.com/AdvancedPhotonSource/tike"
+      "source_github": "https://github.com/AdvancedPhotonSource/tike",
+      "references": "- Ching, D. J., & Gursoy, D. (2020). \"XDesign: an open-source software package for\n  designing X-ray imaging phantoms and experiments.\" Journal of Synchrotron Radiation.\n- Tike: https://github.com/AdvancedPhotonSource/tike"
     },
     "task_30": {
       "id": "30",
@@ -587,7 +616,8 @@
       "images": {
         "filename": "seismic_FWI_original.png"
       },
-      "source_github": "https://github.com/ar4/deepwave"
+      "source_github": "https://github.com/ar4/deepwave",
+      "references": "The wave propagation algorithm follows the deepwave Python backend\n(Alan Richardson, https://github.com/ar4/deepwave) and the C-PML derivation\nin Pasalic & McGarry (2010) SEG."
     },
     "task_31": {
       "id": "31",
@@ -603,7 +633,8 @@
       "images": {
         "filename": "seismic_traveltime_tomography.png"
       },
-      "source_github": "https://github.com/TomoATT/PyTomoATT"
+      "source_github": "https://github.com/TomoATT/PyTomoATT",
+      "references": "- Chen, Y., et al. (2024). \"Adjoint-state traveltime tomography for 2D isotropic elastic media.\" *arXiv:2412.00031*.\n- PyTomoATT GitHub repository: https://github.com/TomoATT/PyTomoATT\n- Sethian, J. A. (1996). \"A fast marching level set method for monotonically advancing fronts.\" *Proceedings of the National Academy of Sciences*, 93(4), 1591–1595."
     },
     "task_32": {
       "id": "32",
@@ -619,7 +650,8 @@
       "images": {
         "filename": "seismic_lsrtm_original.png"
       },
-      "source_github": "https://github.com/ar4/deepwave"
+      "source_github": "https://github.com/ar4/deepwave",
+      "references": "- Pasalic, D. and McGarry, R. (2010). *Convolutional perfectly matched layer for acoustic and elastic wave equations*. SEG Technical Program Expanded Abstracts.\n- Richardson, A. Deepwave LSRTM example repository and documentation: https://github.com/ar4/deepwave\n- Marmousi benchmark velocity model."
     },
     "task_33": {
       "id": "33",
@@ -634,7 +666,8 @@
       "metrics": {},
       "images": {
         "filename": "insar_phase_unwrapping.png"
-      }
+      },
+      "references": "- Chartrand, Calef, Warren. \"Exploiting Sparsity for Phase Unwrapping.\" IGARSS 2019.\n- Chen and Zebker. \"Two-dimensional phase unwrapping with use of statistical models for cost functions.\" JOSA A, 2001 (SNAPHU).\n- Chartrand. \"Shrinkage mappings and their induced penalty functions.\" ICASSP 2014."
     },
     "task_34": {
       "id": "34",
@@ -649,7 +682,8 @@
       "metrics": {},
       "images": {
         "filename": "weather_radar_data_assimilation.png"
-      }
+      },
+      "references": "1. Chen, S., et al. \"FlowDAS: Flow-based Data Assimilation.\" 2025.\n2. SEVIR Dataset: https://proceedings.neurips.cc/paper/2020/hash/fa78a16157fed00d7a80515818f2ef00-Abstract.html"
     },
     "task_35": {
       "id": "35",
@@ -665,7 +699,8 @@
       "images": {
         "filename": "era5_tensorvar.png"
       },
-      "source_github": "https://github.com/YimingYang2000/TensorVar"
+      "source_github": "https://github.com/YimingYang2000/TensorVar",
+      "references": "* Yang Y., Cui T., Tang X., Tao J., Yu Z., Wang Q., Bouman K. L., Wang H.,\n  *Tensor-Var: Efficient four-dimensional variational data assimilation*,\n  2025. https://github.com/YimingYang2000/TensorVar\n* Hersbach H. et al., *The ERA5 global reanalysis*, Q. J. R. Meteorol. Soc.,\n  146(730):1999–2049, 2020.\n* Bocquet M., *Introduction to the principles and methods of data\n  assimilation in the geosciences*, ENPC Lecture Notes, 2014."
     },
     "task_36": {
       "id": "36",
@@ -681,7 +716,8 @@
       "images": {
         "filename": "ct_fan_beam.png"
       },
-      "source_github": "https://github.com/leehoy/CTReconstruction"
+      "source_github": "https://github.com/leehoy/CTReconstruction",
+      "references": "- Kak, A.C. and Slaney, M. (1988). Principles of Computerized Tomographic Imaging. IEEE Press. Chapter 3: Fan-beam algorithms.\n- Parker, D.L. (1982). Optimal short scan convolution reconstruction for fan beam CT. Medical Physics, 9(2), 254-257.\n- leehoy/CTReconstruction: https://github.com/leehoy/CTReconstruction — Fan-beam FBP reference (Python).\n- xtie97/CT_fanbeam_recon_numba: https://github.com/xtie97/CT_fanbeam_recon_numba — Fan-beam forward projection reference."
     },
     "task_37": {
       "id": "37",
@@ -696,7 +732,8 @@
       "metrics": {},
       "images": {
         "filename": "ct_sparse_view.png"
-      }
+      },
+      "references": "- Sidky, E.Y. and Pan, X. (2008). \"Image reconstruction in circular cone-beam computed tomography by constrained, total-variation minimization.\" *Physics in Medicine & Biology*, 53(17), 4777.\n- Chambolle, A. and Pock, T. (2011). \"A first-order primal-dual algorithm for convex problems with applications to imaging.\" *Journal of Mathematical Imaging and Vision*, 40(1), 120-145.\n- Shepp, L.A. and Logan, B.F. (1974). \"The Fourier reconstruction of a head section.\" *IEEE Transactions on Nuclear Science*, 21(3), 21-43."
     },
     "task_38": {
       "id": "38",
@@ -712,7 +749,8 @@
       "images": {
         "filename": "ct_poisson_lowdose.png"
       },
-      "source_github": "https://github.com/cabouman/svmbir"
+      "source_github": "https://github.com/cabouman/svmbir",
+      "references": "- Bouman, C.A. and Sauer, K. (1993). \"A Generalized Gaussian Image Model for Edge-Preserving MAP Estimation.\" *IEEE Transactions on Image Processing*, 2(3), 296-310.\n- Thibault, J.-B., Sauer, K.D., Bouman, C.A., and Hsieh, J. (2007). \"A three-dimensional statistical approach to improved image quality for multislice helical CT.\" *Medical Physics*, 34(11), 4526-4544.\n- Venkatakrishnan, S.V., Bouman, C.A., and Wohlberg, B. (2013). \"Model-Based Iterative Reconstruction for Bright-Field Electron Tomography.\" *IEEE Transactions on Computational Imaging*, 1(1), 1-15.\n- SVMBIR software package: https://github.com/cabouman/svmbir"
     },
     "task_39": {
       "id": "39",
@@ -728,7 +766,8 @@
       "images": {
         "filename": "ct_dual_energy.png"
       },
-      "source_github": "https://github.com/gjadick/dex-ct-sim"
+      "source_github": "https://github.com/gjadick/dex-ct-sim",
+      "references": "- Alvarez, R. E., & Macovski, A. (1976). Energy-selective reconstructions in X-ray computerized tomography. *Physics in Medicine and Biology*, 21(5), 733.\n- Jadick, G. (2023). dex-ct-sim: Dual-energy X-ray CT simulation. https://github.com/gjadick/dex-ct-sim\n- Hubbell, J. H., & Seltzer, S. M. (1995). Tables of X-ray mass attenuation coefficients. NIST Standard Reference Database 126."
     },
     "task_40": {
       "id": "40",
@@ -743,7 +782,8 @@
       "metrics": {},
       "images": {
         "filename": "xray_tooth_gridrec.png"
-      }
+      },
+      "references": "- Dowd, B.A., Campbell, G.H., Marr, R.B., Nagarkar, V.V., Tipnis, S.V., Axe, L. and Siddons, D.P. (1999). Developments in synchrotron x-ray computed microtomography at the National Synchrotron Light Source. *Proc. SPIE*, 3772.\n- Gursoy, D., De Carlo, F., Xiao, X., and Jacobsen, C. (2014). TomoPy: a framework for the analysis of synchrotron tomographic data. *Journal of Synchrotron Radiation*, 21(5), 1188-1193.\n- Kak, A.C. and Slaney, M. (2001). *Principles of Computerized Tomographic Imaging*. SIAM."
     },
     "task_41": {
       "id": "41",
@@ -758,7 +798,8 @@
       "metrics": {},
       "images": {
         "filename": "mri_l1_wavelet.png"
-      }
+      },
+      "references": "- Lustig, M., Donoho, D., & Pauly, J. M. (2007). Sparse MRI: The application of compressed sensing for rapid MR imaging. *Magnetic Resonance in Medicine*, 58(6), 1182-1195.\n- Mallat, S. (2009). *A Wavelet Tour of Signal Processing: The Sparse Way*. Academic Press.\n- Beck, A. & Teboulle, M. (2009). A fast iterative shrinkage-thresholding algorithm for linear inverse problems. *SIAM Journal on Imaging Sciences*, 2(1), 183-202.\n- Ong, F. & Lustig, M. (2019). SigPy: A Python package for high performance iterative reconstruction. *Proceedings of the ISMRM*. (Algorithm ported from SigPy's L1WaveletRecon.)"
     },
     "task_42": {
       "id": "42",
@@ -773,7 +814,8 @@
       "metrics": {},
       "images": {
         "filename": "mri_tv.png"
-      }
+      },
+      "references": "- Lustig, M., Donoho, D., & Pauly, J. M. (2007). Sparse MRI: The application of compressed sensing for rapid MR imaging. *Magnetic Resonance in Medicine*, 58(6), 1182-1195.\n- Block, K. T., Uecker, M., & Frahm, J. (2007). Undersampled radial MRI with multiple coils. Iterative image reconstruction using a total variation constraint. *Magnetic Resonance in Medicine*, 57(6), 1086-1098.\n- Chambolle, A. & Pock, T. (2011). A first-order primal-dual algorithm for convex problems with applications to imaging. *Journal of Mathematical Imaging and Vision*, 40(1), 120-145.\n- Ong, F. & Lustig, M. (2019). SigPy: A Python package for high performance iterative reconstruction. *Proceedings of the ISMRM*. (Algorithm ported from SigPy's TotalVariationRecon.)\n- Wu, Z., Sun, H., & Bouman, K. L. (2025). InverseBench: A Comprehensive Benchmark for Scientific Inverse Problems."
     },
     "task_43": {
       "id": "43",
@@ -789,7 +831,8 @@
       "images": {
         "filename": "mri_t2_mapping.png"
       },
-      "source_github": "https://github.com/BAMMri/MyoQMRI"
+      "source_github": "https://github.com/BAMMri/MyoQMRI",
+      "references": "- Hennig, J. (1988). Multiecho imaging sequences with low refocusing flip angles. Journal of Magnetic Resonance, 78(3), 397-407.\n- Prasloski, T., et al. (2012). Applications of stimulated echo correction to multicomponent T2 analysis. Magnetic Resonance in Medicine, 67(6), 1803-1814.\n- BAMMri/MyoQMRI: https://github.com/BAMMri/MyoQMRI — Extended Phase Graph T2 mapping reference implementation."
     },
     "task_44": {
       "id": "44",
@@ -805,7 +848,8 @@
       "images": {
         "filename": "mri_sense.png"
       },
-      "source_github": "https://github.com/mckib2/pygrappa"
+      "source_github": "https://github.com/mckib2/pygrappa",
+      "references": "1. Pruessmann, K.P. et al. (1999). SENSE: Sensitivity Encoding for Fast MRI. MRM, 42(5), 952-962.\n2. Pruessmann, K.P. et al. (2001). Advances in sensitivity encoding with arbitrary k-space trajectories. MRM, 46(4), 638-651.\n3. pygrappa: https://github.com/mckib2/pygrappa"
     },
     "task_45": {
       "id": "45",
@@ -821,7 +865,8 @@
       "images": {
         "filename": "mri_grappa.png"
       },
-      "source_github": "https://github.com/mckib2/pygrappa"
+      "source_github": "https://github.com/mckib2/pygrappa",
+      "references": "1. Griswold, M.A. et al. (2002). Generalized Autocalibrating Partially Parallel Acquisitions (GRAPPA). Magnetic Resonance in Medicine, 47(6), 1202-1210.\n2. pygrappa: https://github.com/mckib2/pygrappa"
     },
     "task_46": {
       "id": "46",
@@ -836,7 +881,8 @@
       "metrics": {},
       "images": {
         "filename": "mri_noncartesian_cs.png"
-      }
+      },
+      "references": "- Lustig, M., Donoho, D., & Pauly, J. M. (2007). Sparse MRI: The application of compressed sensing for rapid MR imaging. *Magnetic Resonance in Medicine*, 58(6), 1182-1195.\n- Ong, F. & Lustig, M. (2019). SigPy: A Python package for high performance iterative reconstruction. *Proceedings of the ISMRM*.\n- Pipe, J. G. & Menon, P. (1999). Sampling density compensation in MRI: Rationale and an iterative numerical solution. *Magnetic Resonance in Medicine*, 41(1), 179-186."
     },
     "task_47": {
       "id": "47",
@@ -852,7 +898,8 @@
       "images": {
         "filename": "diffusion_mri_dti.png"
       },
-      "source_github": "https://dipy.org/"
+      "source_github": "https://dipy.org/",
+      "references": "- Basser, P.J., Mattiello, J., LeBihan, D. (1994). MR diffusion tensor spectroscopy and imaging. Biophysical Journal, 66(1), 259-267.\n- Salvador, R., et al. (2005). Formal characterization and extension of the linearized diffusion tensor model. Human Brain Mapping, 24(2), 144-155.\n- DIPY: Diffusion Imaging in Python — https://dipy.org/ (reference implementation for DTI fitting)."
     },
     "task_48": {
       "id": "48",
@@ -868,7 +915,8 @@
       "images": {
         "filename": "mri_dynamic_dce.png"
       },
-      "source_github": "https://github.com/ZhengguoTan/demo_dce_recon"
+      "source_github": "https://github.com/ZhengguoTan/demo_dce_recon",
+      "references": "- Lustig, M., Donoho, D., & Pauly, J. M. (2007). Sparse MRI: The application of compressed sensing for rapid MR imaging. Magnetic Resonance in Medicine, 58(6), 1182-1195.\n- Chambolle, A. (2004). An algorithm for total variation minimization and applications. Journal of Mathematical Imaging and Vision, 20(1-2), 89-97.\n- Feng, L., et al. (2014). Golden-angle radial sparse parallel MRI: Combination of compressed sensing, parallel imaging, and golden-angle radial sampling for fast and flexible dynamic volumetric MRI. Magnetic Resonance in Medicine, 72(3), 707-717.\n- Demo DCE Recon: https://github.com/ZhengguoTan/demo_dce_recon"
     },
     "task_49": {
       "id": "49",
@@ -884,7 +932,8 @@
       "images": {
         "filename": "mri_pnp_admm.png"
       },
-      "source_github": "https://github.com/uclaopt/Provable_Plug_and_Play"
+      "source_github": "https://github.com/uclaopt/Provable_Plug_and_Play",
+      "references": "1. Ryu, E.K., Liu, J., Wang, S., Chen, X., Wang, Z. & Yin, W. (2019). Plug-and-Play Methods Provably Converge with Properly Trained Denoisers. ICML 2019.\n2. Zhang, K., Zuo, W., Chen, Y., Meng, D. & Zhang, L. (2017). Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising. IEEE TIP, 26(7).\n3. Miyato, T., Kataoka, T., Koyama, M. & Yoshida, Y. (2018). Spectral Normalization for Generative Adversarial Networks. ICLR 2018.\n4. GitHub: https://github.com/uclaopt/Provable_Plug_and_Play"
     },
     "task_50": {
       "id": "50",
@@ -900,7 +949,8 @@
       "images": {
         "filename": "mri_varnet.png"
       },
-      "source_github": "https://github.com/facebookresearch/fastMRI"
+      "source_github": "https://github.com/facebookresearch/fastMRI",
+      "references": "1. Sriram, A. et al. (2020). End-to-End Variational Networks for Accelerated MRI Reconstruction. MICCAI 2020.\n2. Zbontar, J. et al. (2018). fastMRI: An Open Dataset and Benchmarks for Accelerated MRI. arXiv:1811.08839.\n3. fastMRI GitHub: https://github.com/facebookresearch/fastMRI\n4. fastMRI Dataset: https://fastmri.med.nyu.edu/"
     },
     "task_51": {
       "id": "51",
@@ -931,7 +981,8 @@
       "images": {
         "filename": "plane_wave_ultrasound.png"
       },
-      "source_github": "https://github.com/rehmanali1994/Plane_Wave_Ultrasound_Stolt_F-K_Migration.github.io"
+      "source_github": "https://github.com/rehmanali1994/Plane_Wave_Ultrasound_Stolt_F-K_Migration.github.io",
+      "references": "- Garcia D, Le Tarnec L, Muth S, Montagnon E, Porée J, Cloutier G. Stolt's f-k migration for plane wave ultrasound imaging. *IEEE Trans Ultrason Ferroelectr Freq Control.* 2013;60(9):1853-1867.\n- Reference implementation: https://github.com/rehmanali1994/Plane_Wave_Ultrasound_Stolt_F-K_Migration.github.io\n- Data source: https://www.biomecardio.com/en/index.html (PICMUS / Garcia lab datasets)"
     },
     "task_53": {
       "id": "53",
@@ -946,7 +997,8 @@
       "metrics": {},
       "images": {
         "filename": "ultrasound_sos_tomography.png"
-      }
+      },
+      "references": "- Duric, N. et al. (2007). \"Detection of breast cancer with ultrasound tomography: First results with the Computed Ultrasound Risk Evaluation (CURE) prototype.\" *Medical Physics*, 34(2), 773-785.\n- Li, C. et al. (2009). \"In vivo breast sound-speed imaging with ultrasound tomography.\" *Ultrasound in Medicine & Biology*, 35(10), 1615-1628.\n- Chambolle, A. and Pock, T. (2011). \"A first-order primal-dual algorithm for convex problems with applications to imaging.\" *Journal of Mathematical Imaging and Vision*, 40(1), 120-145."
     },
     "task_54": {
       "id": "54",
@@ -961,7 +1013,8 @@
       "metrics": {},
       "images": {
         "filename": "usct_FWI.png"
-      }
+      },
+      "references": "1. Osnabrugge, G., Leedumrongwatthanakun, S., & Vellekoop, I. M. (2016). A convergent Born series for solving the inhomogeneous Helmholtz equation in arbitrarily large media. *Journal of Computational Physics*, 322, 113-124.\n2. Wiskin, J. W., et al. (2013). Full wave, non-linear, inverse scattering. *Acoustical Imaging*, 31, 183-193."
     },
     "task_55": {
       "id": "55",
@@ -976,7 +1029,8 @@
       "metrics": {},
       "images": {
         "filename": "pet_mlem.png"
-      }
+      },
+      "references": "- Shepp, L.A. and Vardi, Y. (1982). Maximum Likelihood Reconstruction for Emission Tomography. IEEE Transactions on Medical Imaging, 1(2), 113-122.\n- Hudson, H.M. and Larkin, R.S. (1994). Accelerated image reconstruction using ordered subsets of projection data. IEEE Transactions on Medical Imaging, 13(4), 601-609.\n- Lange, K. and Carson, R. (1984). EM reconstruction algorithms for emission and transmission tomography. Journal of Computer Assisted Tomography, 8(2), 306-316."
     },
     "task_56": {
       "id": "56",
@@ -992,7 +1046,8 @@
       "images": {
         "filename": "photoacoustic_tomography.png"
       },
-      "source_github": "https://github.com/csheaff/pa-tomography-xu-wang"
+      "source_github": "https://github.com/csheaff/pa-tomography-xu-wang",
+      "references": "- M. Xu and L. V. Wang, \"Universal back-projection algorithm for photoacoustic computed tomography,\" Physical Review E, vol. 71, no. 1, 016706, 2005.\n- Reference implementation: csheaff/pa-tomography-xu-wang (GitHub)."
     },
     "task_57": {
       "id": "57",
@@ -1007,7 +1062,8 @@
       "metrics": {},
       "images": {
         "filename": "eit_conductivity_reconstruction.png"
-      }
+      },
+      "references": "- Adler, A. and Lionheart, W.R.B. (2006). \"Uses and abuses of EIDORS: an extensible software base for EIT.\" *Physiological Measurement*, 27(5), S25–S42.\n- Adler, A. et al. (2009). \"GREIT: a unified approach to 2D linear EIT reconstruction of lung images.\" *Physiological Measurement*, 30(6), S35–S55.\n- Liu, B. et al. (2018). \"pyEIT: A python based framework for Electrical Impedance Tomography.\" *SoftwareX*, 7, 304–308."
     }
   }
 }

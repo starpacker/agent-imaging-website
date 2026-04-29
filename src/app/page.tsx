@@ -30,6 +30,7 @@ export interface TaskData {
   images: { filename: string };
   paper_link?: string;
   source_github?: string;
+  references?: string;
 }
 
 export interface DomainData {

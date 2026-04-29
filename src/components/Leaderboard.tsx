@@ -122,7 +122,7 @@ export default function Leaderboard() {
       </div>
 
       <p className="text-sm text-slate-500 mb-6 max-w-3xl">
-        Results from evaluating 7 frontier LLMs on all 57 tasks using a multi-agent pipeline (Planner &rarr; Critic &rarr; Architect &rarr; Coder &rarr; Judge).
+        Results from evaluating 7 frontier LLMs on all 57 tasks.
         <span className="text-slate-400"> Bold = best, underline = second best.</span>
       </p>
 

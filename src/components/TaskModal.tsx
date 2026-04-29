@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { X, ExternalLink, TestTube2, BookOpen, Eye, Code2, Github, FileText } from 'lucide-react';
+import { X, ExternalLink, BookOpen, Eye, Code2, Github, FileText } from 'lucide-react';
 import type { TaskData } from '@/app/page';
 import NotebookViewer from './NotebookViewer';
 
@@ -174,6 +174,39 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                   <DescriptionBlock text={task.description} accent={accent} />
                 </div>
 
+                {/* References */}
+                {task.references && (
+                  <div>
+                    <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">References</h3>
+                    <div className="space-y-1.5">
+                      {task.references.split('\n').filter((l: string) => l.trim()).map((line: string, i: number) => {
+                        const cleaned = line.replace(/^[-•*]\s*/, '').replace(/^\d+\.\s*/, '');
+                        // Extract URLs and make them clickable
+                        const urlMatch = cleaned.match(/(https?:\/\/[^\s)]+)/);
+                        if (urlMatch) {
+                          const before = cleaned.slice(0, urlMatch.index);
+                          const url = urlMatch[1];
+                          const after = cleaned.slice((urlMatch.index || 0) + url.length);
+                          return (
+                            <p key={i} className="text-xs text-slate-500 leading-relaxed">
+                              <span className="text-slate-400 mr-1">[{i + 1}]</span>
+                              {before}
+                              <a href={url} target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:underline break-all">{url}</a>
+                              {after}
+                            </p>
+                          );
+                        }
+                        return (
+                          <p key={i} className="text-xs text-slate-500 leading-relaxed">
+                            <span className="text-slate-400 mr-1">[{i + 1}]</span>
+                            {cleaned}
+                          </p>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
                 {/* Links & Info */}
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2">
@@ -212,12 +245,6 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                       <ExternalLink size={10} className="opacity-50" />
                     </a>
                   </div>
-                  {task.has_tests && (
-                    <div className="flex items-center gap-2 text-xs text-green-600">
-                      <TestTube2 size={14} />
-                      Has unit tests (function-mode evaluation)
-                    </div>
-                  )}
                 </div>
               </div>
 
