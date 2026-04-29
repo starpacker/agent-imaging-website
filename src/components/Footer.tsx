@@ -2,7 +2,6 @@
 
 import { Github, ExternalLink } from 'lucide-react';
 
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 export default function Footer() {
   return (
@@ -18,12 +17,6 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a
-              href={`${BASE_PATH}/guide/`}
-              className="flex items-center gap-2 text-xs text-slate-500 hover:text-slate-900 transition"
-            >
-              Guide
-            </a>
             <a
               href="https://github.com/HeSunPU/imaging-101"
               target="_blank"

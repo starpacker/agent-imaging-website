@@ -148,10 +148,6 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-50 border border-amber-200 text-sm font-medium text-amber-800 hover:bg-amber-100 hover:border-amber-300 transition">
             <span className="text-base">&#x1F917;</span> HuggingFace
           </a>
-          <a href={`${BASE_PATH}/guide/`}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:border-cyan-300 transition">
-            <ChevronRight size={16} className="text-teal-600" /> Guide
-          </a>
           <a href="#leaderboard"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-50 border border-cyan-200 text-sm font-medium text-cyan-700 hover:bg-cyan-100 transition">
             <Activity size={16} /> Leaderboard
