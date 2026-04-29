@@ -150,17 +150,6 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
             icon={<Code2 size={14} />}
             label="Notebook"
           />
-          <div className="flex-1" />
-          <a
-            href={nbLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-cyan-600 transition"
-          >
-            <BookOpen size={13} />
-            GitHub
-            <ExternalLink size={10} className="opacity-50" />
-          </a>
         </div>
 
         {/* Body */}
@@ -242,6 +231,16 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                     >
                       <BookOpen size={13} />
                       Task
+                      <ExternalLink size={10} className="opacity-50" />
+                    </a>
+                    <a
+                      href={nbLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 text-xs font-medium text-slate-700 hover:bg-slate-100 hover:border-slate-300 transition"
+                    >
+                      <Code2 size={13} />
+                      Notebook
                       <ExternalLink size={10} className="opacity-50" />
                     </a>
                   </div>
