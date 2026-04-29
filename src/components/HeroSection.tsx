@@ -183,6 +183,10 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-50 border border-cyan-200 text-sm font-medium text-cyan-700 hover:bg-cyan-100 transition">
             <Activity size={16} /> Leaderboard
           </a>
+          <a href="#domains"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-50 border border-teal-200 text-sm font-medium text-teal-700 hover:bg-teal-100 hover:border-teal-300 transition">
+            <Microscope size={16} /> Explore Tasks
+          </a>
         </motion.div>
 
         {/* Abstract */}
