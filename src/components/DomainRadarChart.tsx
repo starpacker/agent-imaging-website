@@ -7,15 +7,15 @@ import {
   Radar, ResponsiveContainer, Tooltip, Legend,
 } from 'recharts';
 
-/* ── Model colors — muted, professional palette ── */
+/* ── Model colors — maximally distinct hues ── */
 const MODEL_COLORS: Record<string, string> = {
-  'Claude-4.6-Opus': '#d97706',
-  'Gemini-3.1-Pro': '#2563eb',
-  'GPT-5.4': '#059669',
-  'Kimi-K2.5': '#7c3aed',
-  'GLM-5': '#dc2626',
-  'DeepSeek-V3': '#0891b2',
-  'Qwen3.6-Plus': '#9333ea',
+  'Claude-4.6-Opus': '#d97706',   // amber
+  'Gemini-3.1-Pro': '#2563eb',   // blue
+  'GPT-5.4': '#059669',           // emerald
+  'Kimi-K2.5': '#7c3aed',         // violet
+  'GLM-5': '#dc2626',             // red
+  'DeepSeek-V3': '#0d9488',       // teal
+  'Qwen3.6-Plus': '#c026d3',      // fuchsia
 };
 
 interface DomainRadarEntry {

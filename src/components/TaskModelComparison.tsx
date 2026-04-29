@@ -11,13 +11,13 @@ const MODEL_ORDER = [
 ];
 
 const MODEL_COLORS: Record<string, string> = {
-  'Claude-4.6-Opus': '#E07A5F',
-  'Gemini-3.1-Pro': '#4285F4',
-  'GPT-5.4': '#10a37f',
-  'Kimi-K2.5': '#7B2FF7',
-  'GLM-5': '#FF6B35',
-  'DeepSeek-V3': '#0066FF',
-  'Qwen3.6-Plus': '#FF4500',
+  'Claude-4.6-Opus': '#d97706',
+  'Gemini-3.1-Pro': '#2563eb',
+  'GPT-5.4': '#059669',
+  'Kimi-K2.5': '#7c3aed',
+  'GLM-5': '#dc2626',
+  'DeepSeek-V3': '#0d9488',
+  'Qwen3.6-Plus': '#c026d3',
 };
 
 interface ModelResults {
