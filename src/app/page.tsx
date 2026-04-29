@@ -2,9 +2,11 @@
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import HeroSection from '@/components/HeroSection';
+import Leaderboard from '@/components/Leaderboard';
 import DomainExplorer from '@/components/DomainExplorer';
 import StatsBar from '@/components/StatsBar';
 import TaskModal from '@/components/TaskModal';
+import Citation from '@/components/Citation';
 import Footer from '@/components/Footer';
 
 /* ── Type definitions ── */
@@ -110,6 +112,7 @@ export default function Home() {
   return (
     <main className="grid-bg min-h-screen">
       <HeroSection totalTasks={db.meta.total_tasks} totalDomains={db.meta.total_domains} />
+      <Leaderboard />
       <StatsBar domains={domainEntries} />
       <DomainExplorer
         domains={domainEntries}
@@ -119,6 +122,7 @@ export default function Home() {
       {selectedTask && (
         <TaskModal task={selectedTask} onClose={() => setSelectedTask(null)} />
       )}
+      <Citation />
       <Footer />
     </main>
   );

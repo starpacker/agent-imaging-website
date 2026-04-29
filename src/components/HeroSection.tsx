@@ -126,47 +126,67 @@ export default function HeroSection({ totalTasks, totalDomains }: HeroProps) {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-8 relative z-10">
-        {/* Badges */}
-        <div className="flex flex-wrap items-center gap-3 mb-8 animate-fade-in">
+        {/* Conference badge */}
+        <div className="flex flex-wrap items-center gap-3 mb-6 animate-fade-in">
           <span className="badge">
             <FlaskConical size={14} className="text-cyan-400" />
-            Scientific Imaging Benchmark
+            ICCP 2026
           </span>
-          <a href="https://github.com/HeSunPU/imaging-101" target="_blank" rel="noopener noreferrer" className="badge hover:text-cyan-300">
-            <Github size={14} /> GitHub <ExternalLink size={11} className="opacity-50" />
-          </a>
-          <a href={`${BASE_PATH}/guide/`} className="badge hover:text-cyan-300">
-            <ChevronRight size={14} className="text-teal-400" /> Evaluation &amp; Task Guide
-          </a>
         </div>
 
         {/* Title */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-5 animate-slide-up">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 animate-slide-up">
           <span className="text-white">imaging</span>
           <span className="text-white">-</span>
           <span className="gradient-text">101</span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl leading-relaxed mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          A benchmark suite for <span className="text-cyan-300 font-medium">computational and scientific imaging</span> inverse problems —&nbsp;
-          <span className="text-cyan-300 font-medium">{totalTasks} tasks</span> across&nbsp;
-          <span className="text-teal-300 font-medium">{totalDomains} domains</span>, from medical MRI to black hole imaging.
+        {/* Paper title as subtitle */}
+        <p className="text-xl sm:text-2xl text-zinc-300 max-w-4xl leading-snug mb-4 animate-slide-up font-medium" style={{ animationDelay: '0.05s' }}>
+          Benchmarking LLM Agents for Scientific Computational Imaging Problems
         </p>
+
+        {/* Short description */}
+        <p className="text-base text-zinc-500 max-w-3xl leading-relaxed mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <span className="text-zinc-400">{totalTasks} expert-verified tasks</span> across{' '}
+          <span className="text-zinc-400">{totalDomains} scientific domains</span>, each grounded in a peer-reviewed paper
+          and canonicalized into a standardized four-stage pipeline.
+        </p>
+
+        {/* Resource buttons */}
+        <div className="flex flex-wrap gap-3 mb-10 animate-slide-up" style={{ animationDelay: '0.12s' }}>
+          <a href="https://github.com/HeSunPU/imaging-101" target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-800/80 border border-zinc-700/50 text-sm font-medium text-white hover:bg-zinc-700/80 hover:border-cyan-500/30 transition">
+            <Github size={16} /> GitHub
+          </a>
+          <a href={`${BASE_PATH}/guide/`}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-800/80 border border-zinc-700/50 text-sm font-medium text-white hover:bg-zinc-700/80 hover:border-cyan-500/30 transition">
+            <ChevronRight size={16} className="text-teal-400" /> Guide
+          </a>
+          <a href="#leaderboard"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-sm font-medium text-cyan-400 hover:bg-cyan-500/15 transition">
+            <Activity size={16} /> Leaderboard
+          </a>
+        </div>
 
         {/* Abstract */}
         <div className="glass-card p-6 max-w-4xl mb-10 animate-slide-up" style={{ animationDelay: '0.15s' }}>
           <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-            <ChevronRight size={14} className="text-cyan-400" /> Overview
+            <ChevronRight size={14} className="text-cyan-400" /> Abstract
           </h3>
           <p className="text-sm leading-relaxed text-zinc-400">
-            <strong className="text-zinc-200">imaging-101</strong> is a benchmark suite for{' '}
-            <strong className="text-zinc-200">computational and scientific imaging</strong> inverse problems.
-            Each task provides physics-based forward models, curated data, and reference solvers
-            ranging from classical algorithms to deep learning methods.
-            Forward models are grounded in physics — solvers span the spectrum from analytical to
-            iterative, regularized, and learned approaches.
-            All tasks include synthetic data generation and end-to-end tutorial notebooks.
+            Computational imaging, which recovers hidden signals from indirect, noisy measurements, underpins
+            quantitative discovery across scientific disciplines, yet building a correct reconstruction pipeline
+            demands deep domain expertise and remains laborious even for domain scientists.
+            We introduce <strong className="text-zinc-200">Imaging-101</strong>, a benchmark of{' '}
+            <strong className="text-zinc-200">57 expert-verified computational imaging tasks</strong> spanning{' '}
+            <strong className="text-zinc-200">six scientific domains</strong>, each grounded in a peer-reviewed
+            paper and canonicalized into a standardized four-stage pipeline (preprocessing, forward physics
+            modeling, inverse solver, and visualization). Three evaluation tracks (planning, function-level
+            unit tests, and end-to-end reconstruction) probe distinct agent capabilities across the full pipeline.
+            Evaluating seven frontier LLMs uncovers systematic challenges in applying coding agents to
+            computational imaging that go beyond those exposed by general coding benchmarks, spanning algorithm
+            selection, physical convention handling, and pipeline integration.
           </p>
         </div>
 
