@@ -77,8 +77,24 @@ interface ModelResultsData {
 /* ── Resolve basePath at runtime for fetch / img URLs ── */
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
+function getTaskUrl(taskName: string): string {
+  return `${BASE_PATH}/tasks/${taskName}/`;
+}
+
+function getHomeUrl(): string {
+  return `${BASE_PATH}/`;
+}
+
+function getTaskNameFromPathname(pathname: string): string | null {
+  const taskPrefix = `${BASE_PATH}/tasks/`;
+  if (!pathname.startsWith(taskPrefix)) return null;
+
+  const taskName = pathname.slice(taskPrefix.length).split('/')[0];
+  return taskName ? decodeURIComponent(taskName) : null;
+}
+
 /* ── Page Component ── */
-export default function Home() {
+export default function Home({ initialTaskName }: { initialTaskName?: string } = {}) {
   const [db, setDb] = useState<TasksDB | null>(null);
   const [modelResults, setModelResults] = useState<ModelResultsData | null>(null);
   const [selectedTask, setSelectedTask] = useState<TaskData | null>(null);
@@ -92,7 +108,7 @@ export default function Home() {
   // Open task: push history state so browser back closes the modal
   const openTask = useCallback((task: TaskData) => {
     setSelectedTask(task);
-    history.pushState({ taskModal: true }, '');
+    history.pushState({ taskModal: true, taskName: task.name }, '', getTaskUrl(task.name));
   }, []);
 
   // Close task: just clear state (called from popstate or from modal's onClose)
@@ -102,17 +118,42 @@ export default function Home() {
 
   // Close via explicit action (X button, overlay click, Escape): go back in history
   const closeTaskViaAction = useCallback(() => {
-    history.back();
+    if (history.state?.taskModal) {
+      history.back();
+      return;
+    }
+
+    setSelectedTask(null);
+    history.pushState({}, '', getHomeUrl());
   }, []);
 
-  // Listen for browser back button
   useEffect(() => {
-    const handlePopState = () => {
-      setSelectedTask(null);
+    if (!db || !initialTaskName) return;
+
+    const taskFromUrl = Object.values(db.tasks).find((task) => task.name === initialTaskName);
+    if (taskFromUrl) {
+      setSelectedTask(taskFromUrl);
+    }
+  }, [db, initialTaskName]);
+
+  // Keep the modal in sync with browser Back/Forward task URLs.
+  useEffect(() => {
+    if (!db) return;
+
+    const syncTaskFromUrl = () => {
+      const taskName = getTaskNameFromPathname(window.location.pathname);
+      if (!taskName) {
+        setSelectedTask(null);
+        return;
+      }
+
+      const taskFromUrl = Object.values(db.tasks).find((task) => task.name === taskName);
+      setSelectedTask(taskFromUrl ?? null);
     };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+
+    window.addEventListener('popstate', syncTaskFromUrl);
+    return () => window.removeEventListener('popstate', syncTaskFromUrl);
+  }, [db]);
 
   // Fetch data
   useEffect(() => {
