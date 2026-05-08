@@ -5,6 +5,7 @@ import { X, ExternalLink, BookOpen, Eye, Code2, Github, FileText, BarChart3 } fr
 import type { TaskData } from '@/app/page';
 import NotebookViewer from './NotebookViewer';
 import TaskModelComparison from './TaskModelComparison';
+import MarkdownContent from './MarkdownContent';
 
 /* ── Domain accent colors (9 domains A–I) ── */
 const DOMAIN_ACCENT: Record<string, string> = {
@@ -15,6 +16,9 @@ const DOMAIN_ACCENT: Record<string, string> = {
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 function getImagePath(task: TaskData): string {
+  if (task.overview_image?.path) {
+    return `${BASE_PATH}${task.overview_image.path}`;
+  }
   return `${BASE_PATH}/images/tasks/${task.images.filename}`;
 }
 
@@ -100,6 +104,7 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
   useEffect(() => { setActiveTab('overview'); }, [task.name]);
 
   const imagePath = getImagePath(task);
+  const readmeContent = task.readme_markdown || task.description;
   const hasMetrics = task.metrics && (task.metrics.psnr || task.metrics.ssim || task.metrics.ncc || task.metrics.nrmse);
   const githubLink = `https://github.com/HeSunPU/imaging-101/tree/main/tasks/${task.name}`;
   const nbLink = `https://github.com/HeSunPU/imaging-101/tree/main/tasks/${task.name}/notebooks`;
@@ -166,8 +171,20 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
               {/* Left: Description */}
               <div className="p-6 space-y-6">
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Task Description</h3>
-                  <DescriptionBlock text={task.description} accent={accent} />
+                  <div className="flex items-center justify-between gap-3 mb-3">
+                    <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Overview</h3>
+                    {task.readme_url && (
+                      <a
+                        href={task.readme_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-cyan-700 hover:underline"
+                      >
+                        README.md
+                      </a>
+                    )}
+                  </div>
+                  <MarkdownContent content={readmeContent} taskName={task.name} />
                 </div>
 
                 {/* References */}
@@ -257,10 +274,15 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
               {/* Right: Image + Metrics */}
               <div className="p-6 space-y-6">
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Notebook Visualization</h3>
+                  <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Final Reconstruction</h3>
                   <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
                     <img src={imagePath} alt={task.title} className="w-full h-auto" loading="lazy" />
                   </div>
+                  {task.overview_image?.source && (
+                    <p className="mt-2 text-[11px] leading-relaxed text-slate-400">
+                      {task.overview_image.source}
+                    </p>
+                  )}
                 </div>
 
                 {hasMetrics && (

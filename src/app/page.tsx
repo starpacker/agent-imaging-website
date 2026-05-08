@@ -33,6 +33,13 @@ export interface TaskData {
     [key: string]: unknown;
   };
   images: { filename: string };
+  overview_image?: {
+    path: string;
+    source: string;
+    source_image?: string;
+  };
+  readme_markdown?: string;
+  readme_url?: string;
   paper_link?: string;
   source_github?: string;
   references?: string;
@@ -47,10 +54,17 @@ export interface DomainData {
   task_ids: number[];
 }
 
+export interface FeaturedExampleData {
+  domain: string;
+  task_name: string;
+  classic_reason: string;
+}
+
 export interface TasksDB {
   meta: { title: string; total_tasks: number; total_domains: number };
   domains: Record<string, DomainData>;
   tasks: Record<string, TaskData>;
+  featured_examples?: FeaturedExampleData[];
 }
 
 interface ModelResultsData {
@@ -215,6 +229,31 @@ export default function Home() {
     <main className="grid-bg min-h-screen">
       <HeroSection totalTasks={db.meta.total_tasks} totalDomains={db.meta.total_domains} />
 
+      <div id="explore-tasks">
+        <MotionWrapper>
+          <StatsBar domains={domainEntries} />
+        </MotionWrapper>
+
+        <SearchFilterBar
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          activeDomains={activeDomains}
+          onToggleDomain={toggleDomain}
+          activeDifficulties={activeDifficulties}
+          onToggleDifficulty={toggleDifficulty}
+          onClearAll={clearAllFilters}
+          domains={domainEntries}
+        />
+
+        <DomainExplorer
+          domains={filteredDomainEntries}
+          getTasksForDomain={getFilteredTasksForDomain}
+          onSelectTask={openTask}
+          featuredExamples={db.featured_examples || []}
+          allTasks={Object.values(db.tasks)}
+        />
+      </div>
+
       <MotionWrapper>
         <Leaderboard />
       </MotionWrapper>
@@ -229,27 +268,6 @@ export default function Home() {
       <MotionWrapper delay={0.1}>
         <DomainHeatmap data={modelResults?.domain_radar} />
       </MotionWrapper>
-
-      <MotionWrapper>
-        <StatsBar domains={domainEntries} />
-      </MotionWrapper>
-
-      <SearchFilterBar
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        activeDomains={activeDomains}
-        onToggleDomain={toggleDomain}
-        activeDifficulties={activeDifficulties}
-        onToggleDifficulty={toggleDifficulty}
-        onClearAll={clearAllFilters}
-        domains={domainEntries}
-      />
-
-      <DomainExplorer
-        domains={filteredDomainEntries}
-        getTasksForDomain={getFilteredTasksForDomain}
-        onSelectTask={openTask}
-      />
 
       {selectedTask && (
         <TaskModal task={selectedTask} onClose={closeTaskViaAction} />

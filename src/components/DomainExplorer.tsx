@@ -1,41 +1,136 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronRight } from 'lucide-react';
-import type { DomainData, TaskData } from '@/app/page';
+import { ChevronDown, ChevronRight, Star } from 'lucide-react';
+import type { DomainData, FeaturedExampleData, TaskData } from '@/app/page';
 
-/* ── Color Maps (9 domains A–I) ── */
 const DOMAIN_COLORS: Record<string, string> = {
-  A: '#8b5cf6', B: '#22c55e', C: '#3b82f6',
-  D: '#f59e0b', E: '#06b6d4', F: '#ef4444',
+  A: '#8b5cf6',
+  B: '#22c55e',
+  C: '#3b82f6',
+  D: '#f59e0b',
+  E: '#06b6d4',
+  F: '#ef4444',
 };
+
 const DOMAIN_BG: Record<string, string> = {
-  A: 'rgba(139,92,246,0.08)', B: 'rgba(34,197,94,0.08)', C: 'rgba(59,130,246,0.08)',
-  D: 'rgba(245,158,11,0.08)', E: 'rgba(6,182,212,0.08)', F: 'rgba(239,68,68,0.08)',
+  A: 'rgba(139,92,246,0.08)',
+  B: 'rgba(34,197,94,0.08)',
+  C: 'rgba(59,130,246,0.08)',
+  D: 'rgba(245,158,11,0.08)',
+  E: 'rgba(6,182,212,0.08)',
+  F: 'rgba(239,68,68,0.08)',
 };
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
+function withBasePath(path: string): string {
+  return `${BASE_PATH}${path.startsWith('/') ? path : `/${path}`}`;
+}
+
 function getImagePath(task: TaskData): string {
+  if (task.overview_image?.path) return withBasePath(task.overview_image.path);
   return `${BASE_PATH}/images/tasks/${task.images.filename}`;
+}
+
+interface FeaturedExamplesProps {
+  examples: FeaturedExampleData[];
+  allTasks: TaskData[];
+  domains: [string, DomainData][];
+  onSelectTask: (task: TaskData) => void;
+}
+
+function FeaturedExamples({ examples, allTasks, domains, onSelectTask }: FeaturedExamplesProps) {
+  const domainLookup = useMemo(() => Object.fromEntries(domains), [domains]);
+  const taskLookup = useMemo(
+    () => new Map(allTasks.map((task) => [task.name, task])),
+    [allTasks]
+  );
+
+  if (examples.length === 0) return null;
+
+  return (
+    <div className="mb-12">
+      <div className="flex items-center gap-2 mb-4">
+        <Star size={18} className="text-cyan-600" />
+        <h3 className="text-xl font-semibold text-slate-900">Featured Examples</h3>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        {examples.map((example) => {
+          const task = taskLookup.get(example.task_name);
+          if (!task) return null;
+          const domain = domainLookup[example.domain];
+          const accent = DOMAIN_COLORS[example.domain] || '#06b6d4';
+          return (
+            <button
+              key={`${example.domain}-${example.task_name}`}
+              type="button"
+              onClick={() => onSelectTask(task)}
+              className="text-left rounded-xl border border-slate-200 bg-white overflow-hidden hover:border-cyan-300 hover:shadow-lg transition"
+            >
+              <div className="aspect-[4/3] bg-slate-50 border-b border-slate-100">
+                <img
+                  src={getImagePath(task)}
+                  alt={task.title}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] font-bold tracking-wider" style={{ color: accent }}>
+                    {example.domain}
+                  </span>
+                  <span className="text-xs text-slate-400">{domain?.name_en || task.domain_name}</span>
+                </div>
+                <p className="text-sm font-semibold text-slate-900 leading-snug mb-2">{task.title}</p>
+                <p className="text-xs text-slate-500 leading-relaxed">{example.classic_reason}</p>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 interface Props {
   domains: [string, DomainData][];
   getTasksForDomain: (key: string) => TaskData[];
   onSelectTask: (task: TaskData) => void;
+  featuredExamples: FeaturedExampleData[];
+  allTasks: TaskData[];
 }
 
-export default function DomainExplorer({ domains, getTasksForDomain, onSelectTask }: Props) {
+export default function DomainExplorer({
+  domains,
+  getTasksForDomain,
+  onSelectTask,
+  featuredExamples,
+  allTasks,
+}: Props) {
   const [expanded, setExpanded] = useState<string | null>(null);
 
   const toggle = (key: string) => setExpanded((prev) => (prev === key ? null : key));
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-12" id="domains">
-      <h2 className="text-3xl font-bold text-slate-900 mb-2">Explore by Domain</h2>
-      <p className="text-slate-500 text-sm mb-10">Click a domain to reveal its tasks. Click any task card for details.</p>
+    <section className="max-w-6xl mx-auto px-6 py-12">
+      <h2 className="text-3xl font-bold text-slate-900 mb-2">Explore Tasks</h2>
+      <p className="text-slate-500 text-sm mb-10">
+        Start from the classic example in each domain, or open a domain to browse every task.
+      </p>
+
+      <FeaturedExamples
+        examples={featuredExamples}
+        allTasks={allTasks}
+        domains={domains}
+        onSelectTask={onSelectTask}
+      />
+
+      <div className="mb-4">
+        <h3 className="text-xl font-semibold text-slate-900">Browse by Domain</h3>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {domains.map(([key, domain]) => {
@@ -46,7 +141,6 @@ export default function DomainExplorer({ domains, getTasksForDomain, onSelectTas
 
           return (
             <div key={key} className={isExpanded ? 'col-span-1 sm:col-span-2' : 'col-span-1'}>
-              {/* Domain Card */}
               <div
                 className="domain-card glass-card neon-border p-5 rounded-2xl"
                 style={{ borderColor: isExpanded ? `${accent}33` : undefined }}
@@ -75,7 +169,6 @@ export default function DomainExplorer({ domains, getTasksForDomain, onSelectTas
                 <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">{domain.desc}</p>
               </div>
 
-              {/* Expanded Task Grid */}
               <AnimatePresence>
                 {isExpanded && tasks.length > 0 && (
                   <motion.div
