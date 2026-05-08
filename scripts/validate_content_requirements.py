@@ -169,6 +169,24 @@ def assert_modal_renders_readme() -> None:
             fail(f"Overview README panel must contain only README.md content, found {forbidden}")
 
 
+def assert_search_renders_matching_tasks() -> None:
+    page_text = PAGE.read_text(encoding="utf-8")
+    explorer_text = (ROOT / "src" / "components" / "DomainExplorer.tsx").read_text(encoding="utf-8")
+
+    if "readme_markdown" not in page_text:
+        fail("Search filtering must include README.md content, not only summaries")
+    if "hasActiveFilters" not in page_text or "isFiltering={hasActiveFilters}" not in page_text:
+        fail("page.tsx must pass active search/filter state into DomainExplorer")
+    if "getFilteredTasksForDomain(key).length > 0" not in page_text:
+        fail("Filtered domains must be limited to domains with matching tasks")
+    if "isFiltering" not in explorer_text:
+        fail("DomainExplorer must receive active search/filter state")
+    if "Matching Tasks" not in explorer_text:
+        fail("DomainExplorer must render a direct matching-task result grid while filtering")
+    if "!isFiltering &&" not in explorer_text:
+        fail("Featured examples should not obscure search results while filtering")
+
+
 def main() -> None:
     db = load_db()
     assert_section_order()
@@ -176,6 +194,7 @@ def main() -> None:
     assert_readmes(db)
     assert_overview_images(db)
     assert_modal_renders_readme()
+    assert_search_renders_matching_tasks()
     print("All content requirements passed.")
 
 

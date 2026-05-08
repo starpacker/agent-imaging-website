@@ -101,6 +101,60 @@ interface Props {
   onSelectTask: (task: TaskData) => void;
   featuredExamples: FeaturedExampleData[];
   allTasks: TaskData[];
+  isFiltering: boolean;
+}
+
+function TaskCard({
+  task,
+  accent,
+  onSelectTask,
+}: {
+  task: TaskData;
+  accent: string;
+  onSelectTask: (task: TaskData) => void;
+}) {
+  return (
+    <motion.div
+      className="task-card rounded-xl overflow-hidden border border-slate-200 bg-white hover:bg-slate-50"
+      onClick={(e) => {
+        e.stopPropagation();
+        onSelectTask(task);
+      }}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.25 }}
+      whileHover={{ y: -4, scale: 1.02 }}
+    >
+      <div className="aspect-[4/3] relative bg-slate-50 overflow-hidden">
+        <img
+          src={getImagePath(task)}
+          alt={task.title}
+          className="w-full h-full object-contain opacity-90 hover:opacity-100 transition"
+          loading="lazy"
+        />
+        <div className="absolute top-2 left-2">
+          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ background: `${accent}18`, color: accent }}>
+            {task.id}
+          </span>
+        </div>
+        {task.difficulty && (
+          <div className="absolute top-2 right-2">
+            <span className={`text-[10px] px-1.5 py-0.5 rounded ${
+              task.difficulty === 'Hard' ? 'bg-red-100 text-red-600' :
+              task.difficulty === 'Easy' ? 'bg-green-100 text-green-600' :
+              'bg-yellow-100 text-yellow-600'
+            }`}>
+              {task.difficulty}
+            </span>
+          </div>
+        )}
+      </div>
+      <div className="p-3">
+        <p className="text-xs font-medium text-slate-800 line-clamp-2 leading-snug">{task.title}</p>
+        <p className="text-[10px] text-slate-400 mt-1 truncate">{task.name}</p>
+      </div>
+    </motion.div>
+  );
 }
 
 export default function DomainExplorer({
@@ -109,10 +163,16 @@ export default function DomainExplorer({
   onSelectTask,
   featuredExamples,
   allTasks,
+  isFiltering,
 }: Props) {
   const [expanded, setExpanded] = useState<string | null>(null);
 
   const toggle = (key: string) => setExpanded((prev) => (prev === key ? null : key));
+  const matchingTasksByDomain = useMemo(
+    () => domains.map(([key, domain]) => ({ key, domain, tasks: getTasksForDomain(key) })),
+    [domains, getTasksForDomain]
+  );
+  const matchingTaskCount = matchingTasksByDomain.reduce((total, group) => total + group.tasks.length, 0);
 
   return (
     <section className="max-w-6xl mx-auto px-6 py-12">
@@ -121,18 +181,68 @@ export default function DomainExplorer({
         Start from the classic example in each domain, or open a domain to browse every task.
       </p>
 
-      <FeaturedExamples
-        examples={featuredExamples}
-        allTasks={allTasks}
-        domains={domains}
-        onSelectTask={onSelectTask}
-      />
+      {!isFiltering && (
+        <FeaturedExamples
+          examples={featuredExamples}
+          allTasks={allTasks}
+          domains={domains}
+          onSelectTask={onSelectTask}
+        />
+      )}
 
-      <div className="mb-4">
-        <h3 className="text-xl font-semibold text-slate-900">Browse by Domain</h3>
-      </div>
+      {isFiltering && (
+        <div className="mb-12">
+          <div className="flex items-end justify-between gap-4 mb-4">
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900">Matching Tasks</h3>
+              <p className="text-sm text-slate-500 mt-1">
+                {matchingTaskCount} task{matchingTaskCount === 1 ? '' : 's'} match the current search and filters.
+              </p>
+            </div>
+          </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {matchingTaskCount > 0 ? (
+            <div className="space-y-8">
+              {matchingTasksByDomain.map(({ key, domain, tasks }) => {
+                if (tasks.length === 0) return null;
+                const accent = DOMAIN_COLORS[key] || '#06b6d4';
+                return (
+                  <div key={key}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-lg">{domain.icon}</span>
+                      <h4 className="text-sm font-semibold text-slate-800">{domain.name_en}</h4>
+                      <span className="text-xs text-slate-400">{tasks.length} tasks</span>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                      {tasks.map((task) => (
+                        <TaskCard
+                          key={task.id}
+                          task={task}
+                          accent={accent}
+                          onSelectTask={onSelectTask}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="rounded-xl border border-dashed border-slate-300 bg-white p-8 text-center">
+              <p className="text-sm font-medium text-slate-700">No matching tasks</p>
+              <p className="text-xs text-slate-500 mt-1">Try a broader keyword or clear one of the active filters.</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {!isFiltering && (
+        <div className="mb-4">
+          <h3 className="text-xl font-semibold text-slate-900">Browse by Domain</h3>
+        </div>
+      )}
+
+      {!isFiltering && <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {domains.map(([key, domain]) => {
           const isExpanded = expanded === key;
           const accent = DOMAIN_COLORS[key] || '#06b6d4';
@@ -181,41 +291,11 @@ export default function DomainExplorer({
                     {tasks.map((task, idx) => (
                       <motion.div
                         key={task.id}
-                        className="task-card rounded-xl overflow-hidden border border-slate-200 bg-white hover:bg-slate-50"
-                        onClick={(e) => { e.stopPropagation(); onSelectTask(task); }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: idx * 0.03 }}
-                        whileHover={{ y: -4, scale: 1.02 }}
                       >
-                        <div className="aspect-[4/3] relative bg-slate-50 overflow-hidden">
-                          <img
-                            src={getImagePath(task)}
-                            alt={task.title}
-                            className="w-full h-full object-contain opacity-90 hover:opacity-100 transition"
-                            loading="lazy"
-                          />
-                          <div className="absolute top-2 left-2">
-                            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ background: `${accent}18`, color: accent }}>
-                              {task.id}
-                            </span>
-                          </div>
-                          {task.difficulty && (
-                            <div className="absolute top-2 right-2">
-                              <span className={`text-[10px] px-1.5 py-0.5 rounded ${
-                                task.difficulty === 'Hard' ? 'bg-red-100 text-red-600' :
-                                task.difficulty === 'Easy' ? 'bg-green-100 text-green-600' :
-                                'bg-yellow-100 text-yellow-600'
-                              }`}>
-                                {task.difficulty}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                        <div className="p-3">
-                          <p className="text-xs font-medium text-slate-800 line-clamp-2 leading-snug">{task.title}</p>
-                          <p className="text-[10px] text-slate-400 mt-1 truncate">{task.name}</p>
-                        </div>
+                        <TaskCard task={task} accent={accent} onSelectTask={onSelectTask} />
                       </motion.div>
                     ))}
                   </motion.div>
@@ -224,7 +304,7 @@ export default function DomainExplorer({
             </div>
           );
         })}
-      </div>
+      </div>}
     </section>
   );
 }

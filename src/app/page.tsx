@@ -150,25 +150,21 @@ export default function Home() {
     [db]
   );
 
-  // Filtered domain entries and tasks
-  const filteredDomainEntries = useMemo(() => {
-    if (activeDomains.size === 0) return domainEntries;
-    return domainEntries.filter(([key]) => activeDomains.has(key));
-  }, [domainEntries, activeDomains]);
-
   const getFilteredTasksForDomain = useCallback(
     (domainKey: string): TaskData[] => {
       const tasks = getTasksForDomain(domainKey);
+      const q = searchQuery.trim().toLowerCase();
       return tasks.filter((t) => {
         if (activeDifficulties.size > 0 && t.difficulty && !activeDifficulties.has(t.difficulty)) {
           return false;
         }
-        if (searchQuery) {
-          const q = searchQuery.toLowerCase();
+        if (q) {
           return (
             t.name.toLowerCase().includes(q) ||
             t.title.toLowerCase().includes(q) ||
-            t.description.toLowerCase().includes(q)
+            t.description.toLowerCase().includes(q) ||
+            t.domain_name.toLowerCase().includes(q) ||
+            (t.readme_markdown || '').toLowerCase().includes(q)
           );
         }
         return true;
@@ -176,6 +172,18 @@ export default function Home() {
     },
     [getTasksForDomain, searchQuery, activeDifficulties]
   );
+
+  const hasActiveFilters = searchQuery.trim().length > 0 || activeDomains.size > 0 || activeDifficulties.size > 0;
+
+  // Filtered domain entries and tasks
+  const filteredDomainEntries = useMemo(() => {
+    const domainFiltered = activeDomains.size === 0
+      ? domainEntries
+      : domainEntries.filter(([key]) => activeDomains.has(key));
+
+    if (!hasActiveFilters) return domainFiltered;
+    return domainFiltered.filter(([key]) => getFilteredTasksForDomain(key).length > 0);
+  }, [domainEntries, activeDomains, hasActiveFilters, getFilteredTasksForDomain]);
 
   // Filter toggles
   const toggleDomain = useCallback((key: string) => {
@@ -251,6 +259,7 @@ export default function Home() {
           onSelectTask={openTask}
           featuredExamples={db.featured_examples || []}
           allTasks={Object.values(db.tasks)}
+          isFiltering={hasActiveFilters}
         />
       </div>
 
