@@ -237,7 +237,7 @@ export default function DomainExplorer({
       )}
 
       {!isFiltering && (
-        <div className="mb-4">
+        <div id="domains" className="mb-4 scroll-mt-8">
           <h3 className="text-xl font-semibold text-slate-900">Browse by Domain</h3>
         </div>
       )}

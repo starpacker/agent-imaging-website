@@ -5,6 +5,7 @@ import { X, Eye, Code2, BarChart3 } from 'lucide-react';
 import type { TaskData } from '@/app/page';
 import NotebookViewer from './NotebookViewer';
 import TaskModelComparison from './TaskModelComparison';
+import MarkdownContent from './MarkdownContent';
 
 const DOMAIN_ACCENT: Record<string, string> = {
   A: '#8b5cf6',
@@ -47,14 +48,6 @@ function TabButton({
       {icon}
       {label}
     </button>
-  );
-}
-
-function ReadmeSource({ content }: { content: string }) {
-  return (
-    <pre className="whitespace-pre-wrap break-words font-mono text-[13px] leading-6 text-slate-700">
-      {content}
-    </pre>
   );
 }
 
@@ -177,7 +170,7 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
                   data-readme-source-url={task.readme_url}
                   className="rounded-lg border border-slate-200 bg-white p-4"
                 >
-                  <ReadmeSource content={readmeContent} />
+                  <MarkdownContent content={readmeContent} taskName={task.name} />
                 </div>
               </section>
 

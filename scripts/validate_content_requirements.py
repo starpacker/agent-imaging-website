@@ -156,8 +156,10 @@ def assert_modal_renders_readme() -> None:
         fail("TaskModal must mark the left Overview README panel")
     if "data-overview-image-panel" not in text:
         fail("TaskModal must mark the right Overview image panel")
-    if "whitespace-pre-wrap" not in text:
-        fail("TaskModal must preserve raw README.md text in the left panel")
+    if "MarkdownContent" not in text:
+        fail("TaskModal must compile README.md through MarkdownContent")
+    if "whitespace-pre-wrap" in text:
+        fail("TaskModal must not render README.md as raw pre-wrapped source")
 
     readme_idx = text.find("data-overview-readme-panel")
     image_idx = text.find("data-overview-image-panel")
