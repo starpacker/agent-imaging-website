@@ -10,19 +10,14 @@
   },
   "dependencies": {
     "framer-motion": "^11.0.0",
-    "katex": "^0.16.9",
     "lucide-react": "^0.344.0",
     "next": "^14.2.0",
     "react": "^18.2.0",
     "react-compare-image": "^3.5.14",
     "react-compare-slider": "^3.1.0",
     "react-dom": "^18.2.0",
-    "react-markdown": "^9.1.0",
     "react-syntax-highlighter": "^15.5.0",
-    "recharts": "^3.8.1",
-    "rehype-katex": "^7.0.1",
-    "remark-gfm": "^4.0.1",
-    "remark-math": "^6.0.0"
+    "recharts": "^3.8.1"
   },
   "devDependencies": {
     "@types/node": "^20",

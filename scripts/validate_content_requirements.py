@@ -8,8 +8,11 @@ website repository root.
 
 from __future__ import annotations
 
+import base64
 import json
+import os
 from pathlib import Path
+from urllib.request import Request, urlopen
 
 from PIL import Image
 
@@ -20,6 +23,7 @@ TASKS_DB = ROOT / "public" / "data" / "tasks_db.json"
 PAGE = ROOT / "src" / "app" / "page.tsx"
 HERO = ROOT / "src" / "components" / "HeroSection.tsx"
 TASK_MODAL = ROOT / "src" / "components" / "TaskModal.tsx"
+GITHUB_CONTENTS = "https://api.github.com/repos/HeSunPU/imaging-101/contents/tasks"
 
 
 def fail(message: str) -> None:
@@ -85,15 +89,28 @@ def assert_featured_examples(db: dict) -> None:
 
 
 def assert_readmes(db: dict) -> None:
+    token = os.environ.get("GITHUB_TOKEN", "").strip()
     for key, task in db["tasks"].items():
         task_name = task["name"]
-        readme = TASKS_ROOT / task_name / "README.md"
-        if not readme.exists():
-            fail(f"{key} {task_name}: missing source README.md")
-        expected = readme.read_text(encoding="utf-8", errors="ignore").replace("\r\n", "\n")
         actual = task.get("readme_markdown", "").replace("\r\n", "\n")
-        if actual != expected:
-            fail(f"{key} {task_name}: readme_markdown must equal full README.md content")
+        if not actual.strip():
+            fail(f"{key} {task_name}: readme_markdown is empty")
+
+        if token:
+            url = f"{GITHUB_CONTENTS}/{task_name}/README.md?ref=main"
+            request = Request(
+                url,
+                headers={
+                    "Authorization": f"Bearer {token}",
+                    "User-Agent": "imaging-101-content-validator",
+                },
+            )
+            with urlopen(request, timeout=30) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            expected = base64.b64decode(payload["content"]).decode("utf-8").replace("\r\n", "\n")
+            if actual != expected:
+                fail(f"{key} {task_name}: readme_markdown must equal full README.md content")
+
         readme_url = task.get("readme_url", "")
         expected_url = (
             "https://github.com/HeSunPU/imaging-101/blob/main/"
@@ -135,8 +152,21 @@ def assert_modal_renders_readme() -> None:
     text = TASK_MODAL.read_text(encoding="utf-8")
     if "readme_markdown" not in text:
         fail("TaskModal must render task.readme_markdown in the Overview tab")
-    if "MarkdownContent" not in text:
-        fail("TaskModal must use MarkdownContent for README rendering")
+    if "data-overview-readme-panel" not in text:
+        fail("TaskModal must mark the left Overview README panel")
+    if "data-overview-image-panel" not in text:
+        fail("TaskModal must mark the right Overview image panel")
+    if "whitespace-pre-wrap" not in text:
+        fail("TaskModal must preserve raw README.md text in the left panel")
+
+    readme_idx = text.find("data-overview-readme-panel")
+    image_idx = text.find("data-overview-image-panel")
+    if readme_idx > image_idx:
+        fail("Overview README panel must appear before the final image panel")
+    readme_panel = text[readme_idx:image_idx]
+    for forbidden in ("task.references", "paper_link", "source_github", "githubLink", "nbLink"):
+        if forbidden in readme_panel:
+            fail(f"Overview README panel must contain only README.md content, found {forbidden}")
 
 
 def main() -> None:

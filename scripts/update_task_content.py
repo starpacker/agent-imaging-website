@@ -3,10 +3,13 @@
 
 from __future__ import annotations
 
+import base64
 import json
+import os
 import shutil
 from pathlib import Path
 from typing import Any
+from urllib.request import Request, urlopen
 
 from PIL import Image
 
@@ -16,6 +19,7 @@ REPO_ROOT = ROOT.parent
 TASKS_ROOT = REPO_ROOT / "tasks"
 TASKS_DB = ROOT / "public" / "data" / "tasks_db.json"
 FINAL_DIR = ROOT / "public" / "images" / "final"
+GITHUB_CONTENTS = "https://api.github.com/repos/HeSunPU/imaging-101/contents/tasks"
 
 
 FEATURED_EXAMPLES = [
@@ -426,19 +430,37 @@ def ensure_png(task_name: str, selection: dict[str, Any]) -> dict[str, str]:
     }
 
 
+def read_task_readme(key: str, task_name: str) -> str:
+    token = os.environ.get("GITHUB_TOKEN", "").strip()
+    if token:
+        url = f"{GITHUB_CONTENTS}/{task_name}/README.md?ref=main"
+        request = Request(
+            url,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "User-Agent": "imaging-101-content-updater",
+            },
+        )
+        with urlopen(request, timeout=30) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+        return base64.b64decode(payload["content"]).decode("utf-8").replace("\r\n", "\n")
+
+    readme = TASKS_ROOT / task_name / "README.md"
+    if not readme.exists():
+        raise FileNotFoundError(f"{key} {task_name}: missing README.md")
+    return readme.read_text(encoding="utf-8", errors="ignore").replace("\r\n", "\n")
+
+
 def main() -> None:
     payload = json.loads(TASKS_DB.read_text(encoding="utf-8"))
     payload["featured_examples"] = FEATURED_EXAMPLES
 
     for key, task in payload["tasks"].items():
         task_name = task["name"]
-        readme = TASKS_ROOT / task_name / "README.md"
-        if not readme.exists():
-            raise FileNotFoundError(f"{key} {task_name}: missing README.md")
         if task_name not in IMAGE_SELECTIONS:
             raise KeyError(f"{key} {task_name}: missing image selection")
 
-        task["readme_markdown"] = readme.read_text(encoding="utf-8", errors="ignore").replace("\r\n", "\n")
+        task["readme_markdown"] = read_task_readme(key, task_name)
         task["readme_url"] = (
             "https://github.com/HeSunPU/imaging-101/blob/main/"
             f"tasks/{task_name}/README.md"
