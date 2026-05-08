@@ -1468,33 +1468,33 @@
   "featured_examples": [
     {
       "domain": "A",
-      "task_name": "eht_black_hole_original",
-      "classic_reason": "Chosen for Astronomy because static EHT black-hole imaging is the canonical VLBI imaging problem behind the first M87* result; closure phase/amplitude reconstruction is a standard baseline in the EHT literature."
+      "task_name": "eht_black_hole_feature_extraction_dynamic",
+      "classic_reason": "Selected by task number A04. This EHT dynamic feature-extraction task represents the Astronomy example requested for the featured task set."
     },
     {
       "domain": "B",
-      "task_name": "fourier_ptychography",
-      "classic_reason": "Chosen for Biology/Microscopy because Fourier ptychographic microscopy is a widely used computational microscopy baseline for phase retrieval, synthetic-aperture resolution enhancement, and wide-field reconstruction."
+      "task_name": "microscope_denoising",
+      "classic_reason": "Selected by task number B13. Fluorescence microscopy denoising is the Biology example requested for the featured task set."
     },
     {
       "domain": "C",
-      "task_name": "conventional_ptychography",
-      "classic_reason": "Chosen for Physics/Optics because conventional ptychography is a foundational coherent diffraction imaging task: recover a complex object from overlapping diffraction patterns using iterative phase retrieval."
+      "task_name": "spectral_snapshot_compressive_imaging",
+      "classic_reason": "Selected by task number C20. Snapshot compressive spectral imaging is the Physics example requested for the featured task set."
     },
     {
       "domain": "D",
-      "task_name": "mcr_hyperspectral",
-      "classic_reason": "Chosen for Chemistry/Materials because MCR-ALS hyperspectral unmixing is the classic chemometrics baseline for separating concentration maps and spectra from mixed spectral image cubes."
+      "task_name": "xray_ptychography_tike",
+      "classic_reason": "Selected by task number D28. X-ray ptychography with Tike is the Chemistry and Material Science example requested for the featured task set."
     },
     {
       "domain": "E",
-      "task_name": "seismic_FWI_original",
-      "classic_reason": "Chosen for Earth Science because seismic full-waveform inversion is a representative geophysical imaging inverse problem that reconstructs a subsurface velocity model from wavefield measurements."
+      "task_name": "insar_phase_unwrapping",
+      "classic_reason": "Selected by task number E33. InSAR phase unwrapping is the Earth Science example requested for the featured task set."
     },
     {
       "domain": "F",
-      "task_name": "mri_sense",
-      "classic_reason": "Chosen for Medicine because SENSE is one of the foundational MRI parallel-imaging baselines, directly reconstructing an image from undersampled multi-coil k-space and coil sensitivity maps."
+      "task_name": "mri_pnp_admm",
+      "classic_reason": "Selected by task number F49. MRI Plug-and-Play ADMM is the Medicine example requested for the featured task set."
     }
   ]
 }
