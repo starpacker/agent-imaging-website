@@ -10,6 +10,7 @@ const nextConfig = {
   transpilePackages: ['react-compare-slider'],
   experimental: {
     esmExternals: 'loose',
+    cpus: 2,
   },
   env: {
     NEXT_PUBLIC_BASE_PATH: '/agent-imaging-website',
