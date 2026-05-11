@@ -52,6 +52,31 @@ function pointSizeForMode(mode: string): number {
   return 0.038;
 }
 
+function fitVisiblePositions(positions: number[]): number[] {
+  if (positions.length === 0) return positions;
+
+  const min = [Infinity, Infinity, Infinity];
+  const max = [-Infinity, -Infinity, -Infinity];
+
+  for (let i = 0; i < positions.length; i += 3) {
+    for (let axis = 0; axis < 3; axis += 1) {
+      const value = positions[i + axis];
+      min[axis] = Math.min(min[axis], value);
+      max[axis] = Math.max(max[axis], value);
+    }
+  }
+
+  const center = [
+    (min[0] + max[0]) / 2,
+    (min[1] + max[1]) / 2,
+    (min[2] + max[2]) / 2,
+  ];
+  const span = Math.max(max[0] - min[0], max[1] - min[1], max[2] - min[2]);
+  const scale = Number.isFinite(span) && span > 1e-6 ? 1.82 / span : 1;
+
+  return positions.map((value, index) => (value - center[index % 3]) * scale);
+}
+
 function createPointCloud(payload: PointCloudPayload, threshold: number) {
   const positions: number[] = [];
   const colors: number[] = [];
@@ -66,16 +91,17 @@ function createPointCloud(payload: PointCloudPayload, threshold: number) {
   }
 
   const geometry = new THREE.BufferGeometry();
-  geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geometry.setAttribute('position', new THREE.Float32BufferAttribute(fitVisiblePositions(positions), 3));
   geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+  geometry.computeBoundingSphere();
 
   const material = new THREE.PointsMaterial({
     size: pointSizeForMode(payload.mode),
     vertexColors: true,
     transparent: true,
-    opacity: payload.mode === 'heightfield' ? 0.96 : 0.9,
+    opacity: payload.mode === 'heightfield' ? 0.98 : 0.94,
     depthWrite: false,
-    blending: THREE.AdditiveBlending,
+    blending: THREE.NormalBlending,
   });
 
   return {
@@ -157,6 +183,7 @@ export default function ThreeDTaskViewer({ taskName }: Props) {
     mount.appendChild(renderer.domElement);
 
     const controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(0, 0, 0);
     controls.enableDamping = true;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 0.8;
