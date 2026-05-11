@@ -6,6 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RotateCcw } from 'lucide-react';
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const SCREEN_LEFT_SHIFT = 0.05;
 
 const THREE_D_TASKS = new Set([
   'eht_black_hole_original',
@@ -196,8 +197,14 @@ export default function ThreeDTaskViewer({ taskName }: Props) {
     const resize = () => {
       const width = mount.clientWidth;
       const height = Math.max(360, Math.min(620, Math.round(width * 0.56)));
-      renderer.setSize(width, height, false);
-      camera.aspect = width / height;
+      const renderWidth = Math.round(width * (1 + SCREEN_LEFT_SHIFT * 2.5));
+      const offsetLeft = Math.round(width * SCREEN_LEFT_SHIFT * 2.25);
+      renderer.setSize(renderWidth, height, false);
+      renderer.domElement.style.width = `${renderWidth}px`;
+      renderer.domElement.style.height = `${height}px`;
+      renderer.domElement.style.marginLeft = `-${offsetLeft}px`;
+      renderer.domElement.style.display = 'block';
+      camera.aspect = renderWidth / height;
       camera.updateProjectionMatrix();
     };
     resize();
