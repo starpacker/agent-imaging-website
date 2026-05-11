@@ -53,8 +53,13 @@ function pointSizeForMode(mode: string): number {
   return 0.038;
 }
 
-function fitVisiblePositions(positions: number[]): number[] {
-  if (positions.length === 0) return positions;
+function defaultThresholdForTask(taskName: string): number {
+  if (taskName === 'eht_black_hole_tomography') return 0.02;
+  return 0.08;
+}
+
+function fitVisiblePositions(positions: number[], preserveDomain: boolean): number[] {
+  if (positions.length === 0 || preserveDomain) return positions;
 
   const min = [Infinity, Infinity, Infinity];
   const max = [-Infinity, -Infinity, -Infinity];
@@ -92,7 +97,10 @@ function createPointCloud(payload: PointCloudPayload, threshold: number) {
   }
 
   const geometry = new THREE.BufferGeometry();
-  geometry.setAttribute('position', new THREE.Float32BufferAttribute(fitVisiblePositions(positions), 3));
+  geometry.setAttribute('position', new THREE.Float32BufferAttribute(
+    fitVisiblePositions(positions, Boolean(payload.bounds?.preserve_domain)),
+    3
+  ));
   geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
   geometry.computeBoundingSphere();
 
@@ -113,6 +121,34 @@ function createPointCloud(payload: PointCloudPayload, threshold: number) {
 
 function addContextGeometry(scene: THREE.Scene, payload: PointCloudPayload) {
   addFrame(scene);
+
+  if (payload.task === 'eht_black_hole_tomography') {
+    const sphereGeometry = new THREE.SphereGeometry(0.22, 32, 18);
+    scene.add(
+      new THREE.Mesh(
+        sphereGeometry,
+        new THREE.MeshBasicMaterial({ color: 0x020617 })
+      )
+    );
+    scene.add(
+      new THREE.Mesh(
+        sphereGeometry,
+        new THREE.MeshBasicMaterial({ color: 0x94a3b8, wireframe: true, transparent: true, opacity: 0.32 })
+      )
+    );
+
+    const orbit = new THREE.Mesh(
+      new THREE.TorusGeometry(0.62, 0.008, 8, 128),
+      new THREE.MeshBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.52 })
+    );
+    scene.add(orbit);
+
+    const disk = new THREE.Mesh(
+      new THREE.CircleGeometry(0.78, 96),
+      new THREE.MeshBasicMaterial({ color: 0xf97316, transparent: true, opacity: 0.06, side: THREE.DoubleSide })
+    );
+    scene.add(disk);
+  }
 
   if (payload.mode === 'heightfield') {
     const plane = new THREE.Mesh(
@@ -144,11 +180,12 @@ export default function ThreeDTaskViewer({ taskName }: Props) {
   const controlsRef = useRef<OrbitControls | null>(null);
   const [payload, setPayload] = useState<PointCloudPayload | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [threshold, setThreshold] = useState(0.08);
+  const [threshold, setThreshold] = useState(defaultThresholdForTask(taskName));
 
   useEffect(() => {
     setPayload(null);
     setError(null);
+    setThreshold(defaultThresholdForTask(taskName));
     if (!hasThreeDView(taskName)) return;
 
     fetch(`${BASE_PATH}/data/3d/${taskName}.json`)
