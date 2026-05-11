@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect, useState, type ReactNode } from 'react';
-import { X, Eye, Code2, BarChart3 } from 'lucide-react';
+import { X, Eye, Code2, BarChart3, Box } from 'lucide-react';
 import type { TaskData } from '@/app/page';
 import NotebookViewer from './NotebookViewer';
 import TaskModelComparison from './TaskModelComparison';
 import MarkdownContent from './MarkdownContent';
+import ThreeDTaskViewer, { hasThreeDView } from './ThreeDTaskViewer';
 
 const DOMAIN_ACCENT: Record<string, string> = {
   A: '#8b5cf6',
@@ -58,7 +59,8 @@ interface TaskModalProps {
 
 export default function TaskModal({ task, onClose }: TaskModalProps) {
   const accent = DOMAIN_ACCENT[task.domain] || '#06b6d4';
-  const [activeTab, setActiveTab] = useState<'overview' | 'notebook' | 'models'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'notebook' | 'threeD' | 'models'>('overview');
+  const has3D = hasThreeDView(task.name);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -141,6 +143,14 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
             icon={<Code2 size={14} />}
             label="Notebook"
           />
+          {has3D && (
+            <TabButton
+              active={activeTab === 'threeD'}
+              onClick={() => setActiveTab('threeD')}
+              icon={<Box size={14} />}
+              label="3D View"
+            />
+          )}
           <TabButton
             active={activeTab === 'models'}
             onClick={() => setActiveTab('models')}
@@ -194,6 +204,10 @@ export default function TaskModal({ task, onClose }: TaskModalProps) {
           ) : activeTab === 'notebook' ? (
             <div className="p-6">
               <NotebookViewer taskName={task.name} />
+            </div>
+          ) : activeTab === 'threeD' ? (
+            <div className="p-6">
+              <ThreeDTaskViewer taskName={task.name} />
             </div>
           ) : (
             <div className="p-6">

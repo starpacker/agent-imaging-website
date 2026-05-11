@@ -3557,7 +3557,7 @@
       "_domain": "E",
       "_domain_name": "Earth Science"
     },
-    "xray_laminography_tike": {
+    "xray_laminography": {
       "Claude-4.6-Opus": {
         "score": "10/10",
         "overall": "pass",
@@ -3631,7 +3631,7 @@
       "_domain": "D",
       "_domain_name": "Chemistry & Material Science"
     },
-    "xray_ptychography_tike": {
+    "xray_ptychography": {
       "Claude-4.6-Opus": {
         "score": "17/17",
         "overall": "pass",
@@ -4131,14 +4131,14 @@
       "ssim": 0.8882,
       "verdict": "pass"
     },
-    "xray_laminography_tike": {
+    "xray_laminography": {
       "ncc": 0.9705,
       "nrmse": 0.0058,
       "psnr": 44.78,
       "ssim": null,
       "verdict": "pass"
     },
-    "xray_ptychography_tike": {
+    "xray_ptychography": {
       "ncc": 0.9174,
       "nrmse": 0.0244,
       "psnr": 25.93,

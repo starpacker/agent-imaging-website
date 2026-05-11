@@ -49,18 +49,18 @@ FEATURED_EXAMPLES = [
     },
     {
         "domain": "D",
-        "task_name": "xray_ptychography_tike",
+        "task_name": "xray_ptychography",
         "classic_reason": (
-            "Selected by task number D28. X-ray ptychography with Tike is the "
+            "Selected by task number D28. X-ray ptychography is the "
             "Chemistry and Material Science example requested for the featured task set."
         ),
     },
     {
         "domain": "E",
-        "task_name": "insar_phase_unwrapping",
+        "task_name": "seismic_FWI_original",
         "classic_reason": (
-            "Selected by task number E33. InSAR phase unwrapping is the Earth "
-            "Science example requested for the featured task set."
+            "Selected by task number E30. Seismic Full-Waveform Inversion is the "
+            "Earth Science representative example requested for the featured task set."
         ),
     },
     {
@@ -207,13 +207,13 @@ IMAGE_SELECTIONS: dict[str, dict[str, Any]] = {
         "source": "public/images/nb/cars_spectroscopy_1.png",
         "note": "Notebook cell 7, fitted CARS spectrum from the inversion result.",
     },
-    "xray_ptychography_tike": {
-        "source": "public/images/nb/xray_ptychography_tike_4.png",
+    "xray_ptychography": {
+        "source": "public/images/nb/xray_ptychography_4.png",
         "grid": (1, 2, 0, 0),
         "note": "Notebook cell 17, reconstructed X-ray ptychography object phase.",
     },
-    "xray_laminography_tike": {
-        "source": "public/images/nb/xray_laminography_tike_2.png",
+    "xray_laminography": {
+        "source": "public/images/nb/xray_laminography_2.png",
         "grid": (3, 4, 1, 1),
         "note": "Notebook cell 13, central reconstructed laminography slice.",
     },

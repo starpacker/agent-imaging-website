@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Image, Code2, FileText, ChevronDown, ChevronRight } from 'lucide-react';
+import MarkdownContent from './MarkdownContent';
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -21,34 +22,6 @@ interface NotebookData {
   cells: NotebookCell[];
 }
 
-/* ── Minimal Markdown renderer (no dependency) ── */
-function renderMarkdown(text: string): string {
-  return text
-    // Headers
-    .replace(/^#### (.+)$/gm, '<h4 class="text-sm font-semibold text-slate-700 mt-4 mb-1">$1</h4>')
-    .replace(/^### (.+)$/gm, '<h3 class="text-base font-semibold text-slate-800 mt-5 mb-2">$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2 class="text-lg font-bold text-slate-900 mt-6 mb-2">$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1 class="text-xl font-bold text-slate-900 mt-6 mb-3">$1</h1>')
-    // Bold & italic
-    .replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-800">$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    // Inline code
-    .replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 rounded bg-slate-100 text-cyan-700 text-xs font-mono">$1</code>')
-    // Links
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" class="text-cyan-600 hover:underline">$1</a>')
-    // Lists
-    .replace(/^[-*] (.+)$/gm, '<li class="ml-4 text-slate-500 text-sm">$1</li>')
-    .replace(/^(\d+)\. (.+)$/gm, '<li class="ml-4 text-slate-500 text-sm">$1. $2</li>')
-    // LaTeX blocks (display)
-    .replace(/\$\$([^$]+)\$\$/g, '<div class="my-2 px-3 py-2 bg-slate-50 rounded text-xs text-slate-600 font-mono overflow-x-auto">$1</div>')
-    // Inline LaTeX
-    .replace(/\$([^$]+)\$/g, '<span class="text-slate-700 font-mono text-xs">$1</span>')
-    // Paragraphs - wrap remaining lines
-    .replace(/^(?!<[hla-z])([\S].+)$/gm, '<p class="text-sm text-slate-500 leading-relaxed">$1</p>')
-    // Line breaks
-    .replace(/\n\n/g, '<div class="h-2"></div>');
-}
-
 /* ── Cell Number Badge ── */
 function CellBadge({ index, type }: { index: number; type: string }) {
   const isCode = type === 'code';
@@ -63,7 +36,7 @@ function CellBadge({ index, type }: { index: number; type: string }) {
 }
 
 /* ── Single Cell ── */
-function NotebookCellView({ cell, index }: { cell: NotebookCell; index: number }) {
+function NotebookCellView({ cell, index, taskName }: { cell: NotebookCell; index: number; taskName: string }) {
   const [collapsed, setCollapsed] = useState(false);
   const isCode = cell.type === 'code';
   const lines = cell.source.split('\n').length;
@@ -137,10 +110,9 @@ function NotebookCellView({ cell, index }: { cell: NotebookCell; index: number }
               )}
             </div>
           ) : (
-            <div
-              className="px-4 py-3 space-y-1"
-              dangerouslySetInnerHTML={{ __html: renderMarkdown(cell.source) }}
-            />
+            <div className="px-4 py-3 space-y-1">
+              <MarkdownContent content={cell.source} taskName={taskName} />
+            </div>
           )}
         </div>
       )}
@@ -204,7 +176,7 @@ export default function NotebookViewer({ taskName }: { taskName: string }) {
       {/* Cells */}
       <div className="space-y-2">
         {nb.cells.map((cell, i) => (
-          <NotebookCellView key={i} cell={cell} index={i} />
+          <NotebookCellView key={i} cell={cell} index={i} taskName={taskName} />
         ))}
       </div>
     </div>

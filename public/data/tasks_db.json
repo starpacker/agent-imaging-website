@@ -527,7 +527,7 @@
       "name": "s2ism",
       "domain": "B",
       "domain_name": "Biology",
-      "title": "S2ISM Satellite Image Super-Resolution",
+      "title": "s2ISM: Scalable Structured Image Scanning Microscopy",
       "description": "Image Scanning Microscopy (ISM) replaces the single-element detector of a confocal microscope with a small array detector (e.g., a 5x5 SPAD array). Each detector element captures a slightly offset view of the sample, encoding both lateral and",
       "difficulty": "Medium",
       "has_tests": false,
@@ -541,8 +541,8 @@
       "readme_url": "https://github.com/HeSunPU/imaging-101/blob/main/tasks/s2ism/README.md",
       "overview_image": {
         "path": "/images/final/s2ism.png",
-        "source": "Notebook cell 16 / task image, s2ISM reconstruction panel.",
-        "source_image": "public/images/tasks/s2ism.png"
+        "source": "Notebook cell 16, s2ISM reconstruction compared with ground truth and raw ISM sum.",
+        "source_image": "public/images/nb/s2ism_0.png"
       }
     },
     "task_19": {
@@ -760,49 +760,49 @@
     "task_28": {
       "id": "28",
       "id_num": 28,
-      "name": "xray_ptychography_tike",
+      "name": "xray_ptychography",
       "domain": "D",
       "domain_name": "Chemistry & Material Science",
-      "title": "X-ray Ptychography (Tike)",
+      "title": "X-ray Ptychography",
       "description": "Ptychography is a coherent diffractive imaging technique that recovers both the amplitude and phase of a specimen's transmission function. A focused X-ray beam (the \"probe\") is raster-scanned across the sample with overlapping illumination areas. At each scan position, a far-field diffraction pattern is recorded on a photon-counting detector. Because adjacent positions share object information, the redundancy in the dataset enables simultaneous recovery of the complex object and the illuminat...",
       "difficulty": "Medium",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "xray_ptychography_tike.png"
+        "filename": "xray_ptychography.png"
       },
       "source_github": "https://github.com/AdvancedPhotonSource/tike",
       "references": "- Thibault, P., et al. \"High-resolution scanning x-ray diffraction microscopy.\" Science 321.5887 (2008): 379-382.\n- Ching, D. J. and Hidayetoglu, M. and Leyffer, S. and Wild, S. M. and Gursoy, D. \"Tike: a toolbox for tomographic reconstruction of ptychographic data.\" (2024).",
       "readme_markdown": "# X-ray Ptychography Reconstruction\n\n> Reconstruct a complex-valued transmission function from far-field diffraction patterns collected by raster-scanning a focused X-ray probe across a Siemens star test sample.\n\n> Domain: Physics | Keywords: wave imaging, phase retrieval | Difficulty: Medium\n\n## Background\n\nPtychography is a coherent diffractive imaging technique that recovers both the amplitude and phase of a specimen's transmission function. A focused X-ray beam (the \"probe\") is raster-scanned across the sample with overlapping illumination areas. At each scan position, a far-field diffraction pattern is recorded on a photon-counting detector. Because adjacent positions share object information, the redundancy in the dataset enables simultaneous recovery of the complex object and the illumination probe, even though only intensity (not phase) is measured at the detector.\n\nThis task uses real experimental data collected at the Velociprobe instrument at the Advanced Photon Source (APS), Argonne National Laboratory. The sample is a Siemens star test pattern, a standard resolution target in X-ray microscopy.\n\n## Problem Description\n\nThe measurement process for a single scan position $j$ is modeled as:\n\n$$I_j = \\left| \\mathcal{F} \\left[ P \\cdot O_j \\right] \\right|^2$$\n\nwhere:\n- $O_j$ is the patch of the complex object $\\psi$ extracted at scan position $\\mathbf{r}_j$\n- $P$ is the complex-valued illumination probe\n- $\\mathcal{F}$ denotes the 2D discrete Fourier transform (far-field propagation)\n- $I_j$ is the measured diffraction intensity at the detector\n\nThe inverse problem is: given the set of measured intensities $\\lbrace I_j \\rbrace_{j=1}^{N}$, the scan positions $\\lbrace \\mathbf{r}_j \\rbrace$, and an initial estimate of the probe $P$, recover the complex-valued object transmission function $\\psi$ (and optionally refine $P$).\n\nThis problem is ill-posed because the detector measures only intensity, discarding all phase information. The overlap between adjacent scan positions provides the constraint that makes recovery possible, but the problem remains non-convex with no closed-form solution.\n\n**Inputs:**\n- Diffraction patterns: $(N, W, H)$ real-valued intensities\n- Scan positions: $(N, 2)$ pixel coordinates\n- Probe guess: $(1, 1, S, W, H)$ complex-valued illumination function\n\n**Outputs:**\n- Reconstructed object: $(D, W', H')$ complex-valued transmission function (D=1 for single-slice)\n- Reconstructed probe: $(1, 1, S, W, H)$ refined illumination function\n- Cost history: per-iteration objective function values\n\n## Data Description\n\n### data/raw_data.npz\n\n| Key | Shape | Dtype | Description |\n|-----|-------|-------|-------------|\n| `diffraction_patterns` | (1, 516, 128, 128) | float32 | Measured far-field diffraction intensities in photon counts. Batch dimension first. |\n| `scan_positions` | (1, 516, 2) | float32 | Probe center coordinates in pixel units, relative to the object frame. |\n| `probe_guess` | (1, 1, 1, 1, 128, 128) | complex64 | Initial estimate of the focused X-ray probe illumination function. |\n\n### data/meta_data.json\n\nContains imaging parameters: `n_positions` (516), `probe_shape` [1,1,1,128,128], `diffraction_shape` [128,128], `scan_range_pixels`, `data_min`, `data_max`, and `description`.\n\n### data/ground_truth.npz\n\nNo `ground_truth.npz` is provided for this task; this is real experimental data with no simulation ground truth available. Instead, a `baseline_reference.npz` is used for evaluation, containing the output of the reference reconstruction pipeline.\n\n### data/baseline_reference.npz\n\n| Key | Shape | Dtype | Description |\n|-----|-------|-------|-------------|\n| `object_phase` | (1, H, W) | float32 | Phase of the reconstructed object from the baseline pipeline. |\n| `object_amplitude` | (1, H, W) | float32 | Amplitude of the reconstructed object from the baseline pipeline. |\n\n## Method Hints\n\nUse an iterative ptychographic engine that alternates between updating the object and the probe. The least-squares gradient (lstsq_grad) algorithm family is well-suited: it uses gradient-based updates with automatic step-size selection and supports mini-batching over scan positions.\n\nKey considerations:\n- **Mini-batching**: Dividing the scan positions into batches (e.g., 7 batches for 516 positions) provides stochastic acceleration and reduces per-iteration memory.\n- **Probe refinement**: Jointly updating the probe alongside the object is essential because the initial probe guess may not exactly match the experimental illumination.\n- **Object initialization**: A uniform complex array (e.g., $0.5 + 0i$) is a reasonable starting point for the object.\n- **Scan position preprocessing**: Shift scan coordinates so the minimum position has a small positive offset (e.g., 20 pixels) to ensure all positions map to valid regions of the object array.\n\nThe domain-standard library `tike` provides a complete implementation of this algorithm family.\n\n## References\n\n- Thibault, P., et al. \"High-resolution scanning x-ray diffraction microscopy.\" Science 321.5887 (2008): 379-382.\n- Ching, D. J. and Hidayetoglu, M. and Leyffer, S. and Wild, S. M. and Gursoy, D. \"Tike: a toolbox for tomographic reconstruction of ptychographic data.\" (2024).\n",
       "readme_url": "https://github.com/HeSunPU/imaging-101/blob/main/tasks/xray_ptychography_tike/README.md",
       "overview_image": {
-        "path": "/images/final/xray_ptychography_tike.png",
+        "path": "/images/final/xray_ptychography.png",
         "source": "Notebook cell 17, reconstructed X-ray ptychography object phase.",
-        "source_image": "public/images/nb/xray_ptychography_tike_4.png"
+        "source_image": "public/images/nb/xray_ptychography_4.png"
       }
     },
     "task_29": {
       "id": "29",
       "id_num": 29,
-      "name": "xray_laminography_tike",
+      "name": "xray_laminography",
       "domain": "D",
       "domain_name": "Chemistry & Material Science",
-      "title": "X-ray Laminography (Tike)",
+      "title": "X-ray Laminography",
       "description": "Laminography is a 3D imaging technique that generalizes computed tomography (CT) by tilting the rotation axis relative to the beam direction. When the tilt angle equals pi/2, the geometry reduces to standard parallel-beam tomography; at other tilt angles",
       "difficulty": "Medium",
       "has_tests": true,
       "metrics": {},
       "images": {
-        "filename": "xray_laminography_tike.png"
+        "filename": "xray_laminography.png"
       },
       "source_github": "https://github.com/AdvancedPhotonSource/tike",
       "references": "- Ching, D. J., & Gursoy, D. (2020). \"XDesign: an open-source software package for\n  designing X-ray imaging phantoms and experiments.\" Journal of Synchrotron Radiation.\n- Tike: https://github.com/AdvancedPhotonSource/tike",
       "readme_markdown": "# X-ray Laminography/Tomography Reconstruction\n\n> Reconstruct a 3D complex-valued volume from simulated parallel-beam projections of a nanoparticle assembly phantom using iterative conjugate gradient.\n\n**Domain:** Physics\n**Keywords:** tomographic imaging, iterative reconstruction\n**Difficulty:** Easy\n\n---\n\n## Background\n\nLaminography is a 3D imaging technique that generalizes computed tomography (CT) by\ntilting the rotation axis relative to the beam direction. When the tilt angle equals\n$\\pi/2$, the geometry reduces to standard parallel-beam tomography; at other tilt angles\nthe technique is called laminography, and it is particularly useful for imaging flat,\nlaterally extended specimens that cannot be rotated through a full 180 degrees in\nconventional CT.\n\nThe object under study is a nanoparticle assembly (NALM) phantom -- a synthetic\n3D complex-valued volume that models the complex refractive index distribution of\na nanomaterial sample. An asymmetric marker is embedded in the phantom to break\nrotational symmetry, making it possible to visually verify reconstruction orientation.\n\n---\n\n## Problem Description\n\nThe forward model is the laminographic projection operator, which for a given tilt\nangle `tilt` and rotation angle `theta`, maps a 3D complex-valued volume to a 2D\ncomplex-valued projection:\n\n$$d(\\theta) = \\mathcal{P}_{\\text{tilt}} \\left[V\\right] (\\theta)$$\n\nwhere V is the 3D volume (complex refractive index), theta is the rotation angle, and\nthe projection operator integrates through the volume along rays determined by the tilt\ngeometry.\n\nFor $tilt = \\pi/2$ (standard tomography), the projection reduces to the Radon\ntransform -- integration along lines perpendicular to the detector plane for each\nrotation angle:\n\n$$d(\\theta, u, v) = \\int V(R_\\theta \\cdot \\mathbf{r})\\, dl$$\n\nwhere R_theta is the rotation matrix for angle theta and the integral is along the\nbeam direction.\n\nIn Fourier space, the laminographic forward model corresponds to extracting tilted\nplanes from the 3D Fourier transform of the volume (a generalization of the Fourier\nSlice Theorem).\n\n**Inverse problem:** Given $N_{\\theta}$ projections $\\lbrace d(\\theta_{i}) \\rbrace$ at known angles, recover\nthe 3D volume V. This is a linear inverse problem that is typically underdetermined\nor ill-conditioned, especially for limited angular coverage or laminographic (non- $\\pi/2$)\ntilt angles.\n\n| Symbol | Description | Size |\n|--------|-------------|------|\n| **V** | 3D complex refractive index volume | 128 x 128 x 128 |\n| **d** | Complex projection data (sinogram) | 128 x 128 x 128  |\n| $\\theta$ | Rotation angles | 128 |\n| **tilt** | Tilt angle between rotation axis and beam | scalar ($\\pi/2$ radians) |\n\n---\n\n## Data Description\n\n### data/raw_data.npz\n\n| Key | Shape | Dtype | Description |\n|-----|-------|-------|-------------|\n| `projections` | (1, 128, 128, 128) | complex64 | Simulated laminographic projections (batch, n_angles, n, n), unitless complex values |\n| `theta` | (1, 128) | float32 | Projection angles in radians, uniformly spaced over [0, $\\pi$) |\n\n### data/ground_truth.npz\n\n| Key | Shape | Dtype | Description |\n|-----|-------|-------|-------------|\n| `volume` | (1, 128, 128, 128) | complex64 | Ground truth 3D complex refractive index of the NALM phantom with asymmetric marker, unitless |\n\n### data/meta_data.json\n\nContains imaging parameters:\n- `volume_shape`: [128, 128, 128] -- dimensions of the 3D volume\n- `n_angles`: 128 -- number of projection angles\n- `tilt_rad`: 1.5708 ($\\pi/2$) -- tilt angle in radians\n- `tilt_deg`: 90.0 -- tilt angle in degrees\n- `theta_range_rad`: [0.0, $\\pi$] -- range of rotation angles\n\n---\n\n## Method Hints\n\nUse an iterative conjugate gradient solver to minimize the data-fidelity objective:\n\n$$\\min_V \\| \\mathcal{P}_{\\text{tilt}}[V] - d \\|^2$$\n\nThe `tike` library provides GPU-accelerated implementations of the laminographic forward\nand adjoint operators, as well as a conjugate gradient solver (`algorithm='cgrad'`).\nThe reconstruction can be organized as multiple rounds of a fixed number of CG\niterations, allowing the cost function to be monitored between rounds. With 5 rounds\nof 4 iterations each (20 total iterations), the cost converges from approximately 1.24\nto approximately 0.013 for this dataset.\n\n---\n\n## References\n\n- Ching, D. J., & Gursoy, D. (2020). \"XDesign: an open-source software package for\n  designing X-ray imaging phantoms and experiments.\" Journal of Synchrotron Radiation.\n- Tike: https://github.com/AdvancedPhotonSource/tike\n",
       "readme_url": "https://github.com/HeSunPU/imaging-101/blob/main/tasks/xray_laminography_tike/README.md",
       "overview_image": {
-        "path": "/images/final/xray_laminography_tike.png",
+        "path": "/images/final/xray_laminography.png",
         "source": "Notebook cell 13, central reconstructed laminography slice.",
-        "source_image": "public/images/nb/xray_laminography_tike_2.png"
+        "source_image": "public/images/nb/xray_laminography_2.png"
       }
     },
     "task_30": {
@@ -1483,13 +1483,13 @@
     },
     {
       "domain": "D",
-      "task_name": "xray_ptychography_tike",
-      "classic_reason": "Selected by task number D28. X-ray ptychography with Tike is the Chemistry and Material Science example requested for the featured task set."
+      "task_name": "xray_ptychography",
+      "classic_reason": "Selected by task number D28. X-ray ptychography is the Chemistry and Material Science example requested for the featured task set."
     },
     {
       "domain": "E",
-      "task_name": "insar_phase_unwrapping",
-      "classic_reason": "Selected by task number E33. InSAR phase unwrapping is the Earth Science example requested for the featured task set."
+      "task_name": "seismic_FWI_original",
+      "classic_reason": "Selected by task number E30. Seismic Full-Waveform Inversion is the Earth Science representative example requested for the featured task set."
     },
     {
       "domain": "F",
